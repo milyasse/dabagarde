@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "generatedAt": "2026-10-22T12:43:38.182Z",
+ "generatedAt": "2026-10-22T14:38:54.536Z",
  "records": [
   {
    "id": "ain-aouda-annassiha",
@@ -220,7 +220,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-zarhoun-s254617.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:43:50.461Z",
+     "lastCheckedAt": "2026-10-22T14:39:07.095Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -257,7 +257,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-al-kobba-s242204.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -294,7 +294,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-arrajae-s241926.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -331,7 +331,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-de-l'hopital-universitaire-s238498.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -368,7 +368,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-lhoumadi-s238176.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -405,7 +405,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-masjid-arreda-s246384.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -442,7 +442,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-siberia-s251245.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T12:44:11.513Z",
+     "lastCheckedAt": "2026-10-22T14:39:25.810Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -964,6 +964,80 @@
    ]
   },
   {
+   "id": "tanger-boughaz",
+   "name": "Pharmacie Al Boughaz",
+   "address": "78, rue du mexique, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.779907,
+   "longitude": -5.815633,
+   "coordinatesSource": "source",
+   "phone": "+212539938017",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-al-boughaz-s238187.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-annassiha",
+   "name": "Pharmacie Annassiha",
+   "address": "16, avenue koweit, hay bouhout, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.74143,
+   "longitude": -5.831194,
+   "coordinatesSource": "source",
+   "phone": "+212539954505",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-annassiha-s23614.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
    "id": "tanger-assalam",
    "name": "Pharmacie Assalam",
    "address": "3, rue 48, jirari ii, el aouama 90000 tanger - maroc",
@@ -997,6 +1071,228 @@
    "notes": [
     "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
    ]
+  },
+  {
+   "id": "tanger-ibn-annafis",
+   "name": "Pharmacie Ibn Annafis",
+   "address": "avenue des far, quartier el mouwadefine, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.7613726,
+   "longitude": -5.8172443,
+   "coordinatesSource": "source",
+   "phone": "+212539958125",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-ibn-annafis-s165262.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-ibouyen",
+   "name": "Pharmacie Ibouyen",
+   "address": "15, route tanja el balia, lotissement mediterannée, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.7709348,
+   "longitude": -5.7648886,
+   "coordinatesSource": "source",
+   "phone": "+212539300690",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-ibouyen-s237699.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-moucharraf",
+   "name": "Pharmacie Moucharraf",
+   "address": "azib abakkiw. quartier asil, 9000 tanger - maroc",
+   "city": "tanger",
+   "district": "Tanger",
+   "latitude": 35.7307443,
+   "longitude": -5.7709993,
+   "coordinatesSource": "source",
+   "phone": null,
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-moucharraf-s252446.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-riad-achifaa",
+   "name": "Pharmacie Riad Achifaa",
+   "address": "sidi driss à côté lycee hassan ii, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "Tanger",
+   "latitude": 35.7352022,
+   "longitude": -5.8341342,
+   "coordinatesSource": "source",
+   "phone": "+212539385491",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-riad-achifaa-s238708.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-tarik-moujahidine",
+   "name": "Pharmacie Tarik Al Moujahidine",
+   "address": "hay el moujahidine, résidence omar, bloc nr.24, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.7671199,
+   "longitude": -5.8477067,
+   "coordinatesSource": "source",
+   "phone": "+212539314079",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-tarik-al-moujahidine-s238188.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-wissal",
+   "name": "Pharmacie Wissal",
+   "address": "moujamàa al hassani, rés bait atiq, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.7323989,
+   "longitude": -5.8554916,
+   "coordinatesSource": "source",
+   "phone": "+212539384230",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde Jour",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-wissal-s96285.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T14:39:34.346Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Garde Jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "temara-annassiha",
