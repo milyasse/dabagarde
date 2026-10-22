@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-22T01:21:52.490Z",
+  "steps": [
+    "2026-10-22T01:22:25.831Z regions : 12 éléments via overpass-api.de en 33 s",
+    "2026-10-22T01:23:28.433Z provinces : échec overpass-api.de: HTTP 504",
+    "2026-10-22T01:27:52.251Z provinces : échec overpass.private.coffee: HTTP 504",
+    "2026-10-22T01:28:03.339Z provinces : échec maps.mail.ru: HTTP 504",
+    "2026-10-22T01:28:55.767Z provinces : échec overpass-api.de: HTTP 504",
+    "2026-10-22T01:31:04.113Z provinces : échec overpass.private.coffee: HTTP 502",
+    "2026-10-22T01:31:15.046Z provinces : échec maps.mail.ru: HTTP 504"
+  ],
+  "anomalies": [],
+  "ok": false,
+  "error": "Error: Overpass indisponible pour provinces : overpass-api.de: HTTP 504 | overpass.private.coffee: HTTP 504 | maps.mail.ru: HTTP 504 | overpass-api.de: HTTP 504 | overpass.private.coffee: HTTP 502 | maps.mail.ru: HTTP 504\n    at overpass (file:///home/runner/work/dabagarde/dabagarde/scripts/build-geo.ts:73:9)\n    at async main (file:///home/runner/work/dabagarde/dabagarde/scripts/build-geo.ts:124:19)"
+}
