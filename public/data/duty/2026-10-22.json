@@ -1,7 +1,44 @@
 {
  "date": "2026-10-22",
- "generatedAt": "2026-10-22T02:32:31.163Z",
+ "generatedAt": "2026-10-22T08:35:36.005Z",
  "records": [
+  {
+   "id": "ben-guerir-zarhoun",
+   "name": "Pharmacie Zarhoun",
+   "address": "hay chaabiyat, près de terrain de proximité, 10m du magasin si hassan",
+   "city": "ben-guerir",
+   "district": "-",
+   "latitude": 32.2374268,
+   "longitude": -7.9348937,
+   "coordinatesSource": "source",
+   "phone": "+212666980820",
+   "dutyDate": "2026-10-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-zarhoun-s254617.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T08:35:54.265Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
   {
    "id": "rabat-hikma",
    "name": "Pharmacie Al Hikma",
