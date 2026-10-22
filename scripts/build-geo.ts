@@ -197,10 +197,30 @@ async function main() {
   const placeEls: OsmEl[] = [];
   const TILES: [number, number, number, number][] = [];
   for (let i = 0; i < 6; i++) for (let j = 0; j < 4; j++) TILES.push([round(20.5 + 2.6 * i), round(-17.3 + 4.1 * j), round(20.5 + 2.6 * (i + 1)), round(-17.3 + 4.1 * (j + 1))]);
+  const PLACES = 'data-sources/geo/places'; // tuiles déjà obtenues (format compact), reprises au passage suivant
+  let missingTiles = 0;
   for (const [a, b, c, d] of TILES) {
-    const els = await overpass(`places-${a.toFixed(1)}_${b.toFixed(1)}`, `[out:json][timeout:300];node["place"~"^(city|town|village|suburb|quarter)$"]["name"](${a},${b},${c},${d});out;`);
-    placeEls.push(...els);
+    const key = `places-${a.toFixed(1)}_${b.toFixed(1)}`;
+    const cache = join(PLACES, `${key}.json`);
+    if (!fixtureDir && existsSync(cache)) {
+      const rows = JSON.parse(readFileSync(cache, 'utf8')) as [number, number, number, Record<string, string>][];
+      for (const [id, lat, lon, tags] of rows) placeEls.push({ type: 'node', id, lat, lon, tags });
+      continue;
+    }
+    try {
+      const els = await overpass(key, `[out:json][timeout:300];node["place"~"^(city|town|village|suburb|quarter)$"]["name"](${a},${b},${c},${d});out;`);
+      placeEls.push(...els);
+      if (!fixtureDir) {
+        mkdirSync(PLACES, { recursive: true });
+        const keep = ['place', 'name', 'name:fr', 'name:ar', 'name:en', 'population'];
+        writeFileSync(cache, JSON.stringify(els.map((e) => [e.id, e.lat, e.lon, Object.fromEntries(Object.entries(e.tags ?? {}).filter(([k]) => keep.includes(k)))])));
+      }
+    } catch (e) {
+      missingTiles++;
+      anomalies.push(`Tuile ${key} reportée au prochain passage : ${String((e as Error).message).slice(0, 120)}`);
+    }
   }
+  report.missingTiles = missingTiles;
   const localities: GeoLocality[] = [];
   const usedIds = new Set<string>();
   const seen = new Set<string>();
