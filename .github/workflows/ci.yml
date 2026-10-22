@@ -1,0 +1,58 @@
+name: Vérifications
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Données de garde publiées par l'app actuelle
+        uses: actions/checkout@v4
+        with:
+          repository: milyasse/pharmacies-garde-maroc
+          path: source-app
+          sparse-checkout: public/data
+      - run: |
+          rsync -a --exclude geo source-app/public/data/ public/data/
+          rm -rf source-app
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Types
+        run: npm run typecheck
+      - name: Tests
+        run: npm test
+      - name: Recherche de secrets
+        run: |
+          if git grep -nE '(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|ghp_[A-Za-z0-9]{30,}|AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,})' -- . ':!package-lock.json'; then echo "::error::Secret potentiel détecté"; exit 1; fi
+      - name: Construire
+        env:
+          BASE_PATH: /dabagarde/
+          SITE_URL: https://milyasse.github.io/dabagarde
+        run: npm run build:site
+      - name: Playwright
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Parcours de l'interface
+        env:
+          BASE_PATH: /dabagarde/
+        run: |
+          npx vite preview --port 4173 --strictPort &
+          sleep 5
+          node scripts/verify-ui.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification
+          path: verif
+          retention-days: 7

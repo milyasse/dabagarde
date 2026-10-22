@@ -1,0 +1,59 @@
+name: Déploiement
+
+# Pendant la refonte, les gardes sont collectées par l'app actuelle (milyasse/pharmacies-garde-maroc).
+# Ce dépôt reprend ses données publiées au lieu de solliciter une seconde fois les sources.
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '35 */2 * * *' # ~30 min après la collecte de l'app actuelle
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Données de garde publiées par l'app actuelle
+        uses: actions/checkout@v4
+        with:
+          repository: milyasse/pharmacies-garde-maroc
+          path: source-app
+          sparse-checkout: public/data
+      - name: Copier les données
+        run: |
+          rsync -a --exclude geo source-app/public/data/ public/data/
+          rm -rf source-app
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - name: Construire
+        env:
+          BASE_PATH: /dabagarde/
+          SITE_URL: https://milyasse.github.io/dabagarde
+        run: npm run build:site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

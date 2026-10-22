@@ -1,0 +1,40 @@
+{
+  "name": "dabagarde",
+  "private": true,
+  "version": "2.0.0-alpha.0",
+  "description": "DabaGarde : pharmacies de garde au Maroc, sources datées, carte et itinéraires.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts",
+    "collect": "node --experimental-strip-types --no-warnings scripts/collect.ts",
+    "check:sources": "node --experimental-strip-types --no-warnings scripts/collect.ts --dry-run --verbose --strict",
+    "collect:sante": "node --experimental-strip-types --no-warnings scripts/collect-health.ts",
+    "build:site": "vite build && node --experimental-strip-types --no-warnings scripts/build-pages.ts",
+    "geo": "node --experimental-strip-types --no-warnings scripts/build-geo.ts"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "leaflet": "^1.9.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/leaflet": "^1.9.18",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "tailwindcss": "^4.1.8",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^1.0.0"
+  }
+}
