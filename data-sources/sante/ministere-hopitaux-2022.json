@@ -4,104 +4,1368 @@
   "fichier": "https://data.gov.ma/data/fr/dataset/2932e8a4-272c-4101-80ef-85519de47e7c/resource/7ac78092-9ef1-4389-a54f-06ac95efae8e/download/repartition-des-hopitaux-par-region-et-province-2022.xlsx",
   "licence": "Open Data Commons Open Database License (ODbL)",
   "donneesMisesAJourLe": "2023-11-14",
-  "extraitLe": "2026-10-21",
-  "perimetre": "Délégations Rabat, Salé et Skhirate-Témara (lignes recopiées sans modification)",
+  "extraitLe": "2026-10-22",
+  "perimetre": "Tout le Maroc (lignes recopiées sans modification)",
   "hopitaux": [
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Al Hoceima",
+      "commune": "Al Hoceima (Mun.)"
+    },
+    {
+      "nom": "C. d'oncologie d'Al Hoceima",
+      "categorie": "CRO",
+      "categorieLibelle": "Centre Régional d'Oncologie",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Al Hoceima",
+      "commune": "Al Hoceima (Mun.)"
+    },
+    {
+      "nom": "Imzouren",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Al Hoceima",
+      "commune": "Imzouren (Mun.)"
+    },
+    {
+      "nom": "Targuist",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Al Hoceima",
+      "commune": "Targuist (Mun.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Chefchaouen",
+      "commune": "Chefchaouen (Mun.)"
+    },
+    {
+      "nom": "Ksar El Kebir",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Larache",
+      "commune": "Ksar El Kebir (Mun.)"
+    },
+    {
+      "nom": "Lalla Meriem",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Larache",
+      "commune": "Larache (Mun.)"
+    },
+    {
+      "nom": "Abou Kacem Zahraoui",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Ouezzane",
+      "commune": "Ouezzane (Mun.)"
+    },
+    {
+      "nom": "Assilah",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Assilah (Mun.)"
+    },
+    {
+      "nom": "Mohammed Vi",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Bni Makada (Arrond.)"
+    },
+    {
+      "nom": "Arrazi",
+      "categorie": "HPsyR",
+      "categorieLibelle": "Hôpital Psychiatrique Régional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Mghogha (Arrond.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Al Madina (Arrond.)"
+    },
+    {
+      "nom": "Al Kortobi",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Al Madina (Arrond.)"
+    },
+    {
+      "nom": "Duc De Tovar",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Al Madina (Arrond.)"
+    },
+    {
+      "nom": "Centre d'oncologie",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Al Madina (Arrond.)"
+    },
+    {
+      "nom": "Hôpital mère enfant Mohamed VI",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Gueznaia (Mun.)"
+    },
+    {
+      "nom": "Hôpital psychiatrique Mohamed VI",
+      "categorie": "CPU",
+      "categorieLibelle": "Centre Psychiatrique Universitaire",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Gueznaia (Mun.)"
+    },
+    {
+      "nom": "Hôpital des spécialité Mohamed VI",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tanger Assilah",
+      "commune": "Gueznaia (Mun.)"
+    },
+    {
+      "nom": "Hôpital.Civil",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tetouan",
+      "commune": "Tétouan (Mun.)"
+    },
+    {
+      "nom": "Errazi",
+      "categorie": "HPsyP",
+      "categorieLibelle": "Hôpital Psychiatrique Provincial/préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tetouan",
+      "commune": "Tétouan (Mun.)"
+    },
+    {
+      "nom": "Ben Karrich",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Tetouan",
+      "commune": "Dar Bni Karrich"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Mdiq-Fnideq",
+      "commune": "Fnideq (Mun.)"
+    },
+    {
+      "nom": "Mohammed VI",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Tanger-Tetouan-Al Hoceima",
+      "delegation": "Mdiq-Fnideq",
+      "commune": "M'Diq (Mun.)"
+    },
+    {
+      "nom": "Edderak",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Berkane",
+      "commune": "Berkane (Mun.)"
+    },
+    {
+      "nom": "Saidia",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Oriental",
+      "delegation": "Berkane",
+      "commune": "Saidia (Mun.)"
+    },
+    {
+      "nom": "Driouch",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Driouch",
+      "commune": "Driouch (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Figuig",
+      "commune": "Bouarfa (Mun.)"
+    },
+    {
+      "nom": "Guercif",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Guercif",
+      "commune": "Guercif (Mun.)"
+    },
+    {
+      "nom": "Jrada",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Jerada",
+      "commune": "Laaouinate"
+    },
+    {
+      "nom": "Mohammed Vi",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Oriental",
+      "delegation": "Nador",
+      "commune": "Al Aaroui (Mun.)"
+    },
+    {
+      "nom": "Hassani",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Nador",
+      "commune": "Nador (Mun.)"
+    },
+    {
+      "nom": "Zaio",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Oriental",
+      "delegation": "Nador",
+      "commune": "Zaio (Mun.)"
+    },
+    {
+      "nom": "Al Farabi",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Oriental",
+      "delegation": "Oujda Angad",
+      "commune": "Oujda (Mun.)"
+    },
+    {
+      "nom": "Hôpital Psychiatrique",
+      "categorie": "CPU",
+      "categorieLibelle": "Centre Psychiatrique Universitaire",
+      "region": "Oriental",
+      "delegation": "Oujda Angad",
+      "commune": "Oujda (Mun.)"
+    },
+    {
+      "nom": "Hôpital des Spécialitéss",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Oriental",
+      "delegation": "Oujda Angad",
+      "commune": "Oujda (Mun.)"
+    },
+    {
+      "nom": "Hôpital Mère-Enfant",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Oriental",
+      "delegation": "Oujda Angad",
+      "commune": "Oujda (Mun.)"
+    },
+    {
+      "nom": "Centre d'oncoligie Hassan II",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Oriental",
+      "delegation": "Oujda Angad",
+      "commune": "Sidi Moussa Lemhaya"
+    },
+    {
+      "nom": "HPr Laayoune Sidi Mellouk",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Oriental",
+      "delegation": "Taourirt",
+      "commune": "El Aioun Sidi Mellouk (Mun.)"
+    },
+    {
+      "nom": "Taourirt",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Oriental",
+      "delegation": "Taourirt",
+      "commune": "Taourirt (Mun.)"
+    },
+    {
+      "nom": "Sidi Said",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Meknes",
+      "commune": "Meknès (Mun.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Meknes",
+      "commune": "Meknès (Mun.)"
+    },
+    {
+      "nom": "Pagnon",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Meknes",
+      "commune": "Meknès (Mun.)"
+    },
+    {
+      "nom": "Moulay Ismail",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Meknes",
+      "commune": "Meknès (Mun.)"
+    },
+    {
+      "nom": "Centre d'oncologie",
+      "categorie": "CRO",
+      "categorieLibelle": "Centre Régional d'Oncologie",
+      "region": "Fès-Meknès",
+      "delegation": "Meknes",
+      "commune": "Meknès (Mun.)"
+    },
+    {
+      "nom": "Marche Verte",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Boulemane",
+      "commune": "Missour (Mun.)"
+    },
+    {
+      "nom": "S. Ahmed B. Driss Missouri",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Fès-Meknès",
+      "delegation": "Boulemane",
+      "commune": "Outat El Haj (Mun.)"
+    },
+    {
+      "nom": "Prince My Hassan",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "El Hajeb",
+      "commune": "El Hajeb (Mun.)"
+    },
+    {
+      "nom": "Al Ghassani",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Agdal (Arrond.)"
+    },
+    {
+      "nom": "Ibn Al Baitar",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Agdal (Arrond.)"
+    },
+    {
+      "nom": "Hôpital d'Oncologie",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Saiss (Arrond.)"
+    },
+    {
+      "nom": "Hôpital des spécialités",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Saiss (Arrond.)"
+    },
+    {
+      "nom": "Hôpital Mère-Enfant",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Saiss (Arrond.)"
+    },
+    {
+      "nom": "Omar Drissi",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "Fès-Médina (Arrond.)"
+    },
+    {
+      "nom": "Ibn Al Khatib",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "El Mariniyine (Arrond.)"
+    },
+    {
+      "nom": "Ibn Al Hassan",
+      "categorie": "CPU",
+      "categorieLibelle": "Centre Psychiatrique Universitaire",
+      "region": "Fès-Meknès",
+      "delegation": "Fes",
+      "commune": "El Mariniyine (Arrond.)"
+    },
+    {
+      "nom": "20 Aout (Azrou)",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Ifrane",
+      "commune": "Azrou (Mun.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Sefrou",
+      "commune": "Sefrou (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Fès-Meknès",
+      "delegation": "Taounate",
+      "commune": "Ghafsai (Mun.)"
+    },
+    {
+      "nom": "Taounate",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Taounate",
+      "commune": "Taounate (Mun.)"
+    },
+    {
+      "nom": "Ibn Baja",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Fès-Meknès",
+      "delegation": "Taza",
+      "commune": "Taza (Mun.)"
+    },
+    {
+      "nom": "Al Idrissi",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Kenitra",
+      "commune": "Kénitra (Mun.)"
+    },
+    {
+      "nom": "Zoubir Skirej",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Kenitra",
+      "commune": "Souk El Arbaa (Mun.)"
+    },
+    {
+      "nom": "Khémisset",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Khémisset",
+      "commune": "Khémisset (Mun.)"
+    },
+    {
+      "nom": "Roummani",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Khémisset",
+      "commune": "Rommani (Mun.)"
+    },
+    {
+      "nom": "Tiflet",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Khémisset",
+      "commune": "Tiflet (Mun.)"
+    },
     {
       "nom": "Ibn Sina",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "Hôpital Des Spécialités",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "Maternité Souissi",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "Hôpital D'enfants",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "Maternité Orangers",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "Med Ben Abdellah",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Agdal Riyad (Arrond.)",
-      "ville": "rabat"
+      "commune": "Agdal Riyad (Arrond.)"
     },
     {
       "nom": "My Youssef",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Hassan (Arrond.)",
-      "ville": "rabat"
+      "commune": "Hassan (Arrond.)"
     },
     {
       "nom": "Moulay Youssef (Ancien hôpital de Rabat)",
       "categorie": "HR",
       "categorieLibelle": "Hôpital Régional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Rabat",
-      "commune": "Hassan (Arrond.)",
-      "ville": "rabat"
+      "commune": "Hassan (Arrond.)"
     },
     {
       "nom": "El Ayachi",
       "categorie": "HIR",
       "categorieLibelle": "Hospital Interrégional",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Salé",
-      "commune": "Bab Lamrissa (Arrond.)",
-      "ville": "sale"
+      "commune": "Bab Lamrissa (Arrond.)"
     },
     {
       "nom": "Moulay Abdellah (Hôp.préféctoral)",
       "categorie": "HP",
       "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Salé",
-      "commune": "Hssaine (Arrond.)",
-      "ville": "sale"
+      "commune": "Hssaine (Arrond.)"
     },
     {
       "nom": "Arrazi",
       "categorie": "CPU",
       "categorieLibelle": "Centre Psychiatrique Universitaire",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Salé",
-      "commune": "Tabriquet (Arrond.)",
-      "ville": "sale"
+      "commune": "Tabriquet (Arrond.)"
+    },
+    {
+      "nom": "Jorf Elmelha",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Sidi Kacem",
+      "commune": "Jorf El Melha (Mun.)"
+    },
+    {
+      "nom": "Sidi Kacem",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Sidi Kacem",
+      "commune": "Sidi Kacem (Mun.)"
+    },
+    {
+      "nom": "Sidi Slimane",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
+      "delegation": "Sidi Slimane",
+      "commune": "Sidi Slimane (Mun.)"
     },
     {
       "nom": "Princesse Lalla Aicha (Ancien Sidi Lahcen)",
       "categorie": "HP",
       "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Rabat-Salé-Kénitra",
       "delegation": "Skhirate-Temara",
-      "commune": "Témara (Mun.)",
-      "ville": "temara"
+      "commune": "Témara (Mun.)"
+    },
+    {
+      "nom": "Haut Atlas Central",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Azilal",
+      "commune": "Azilal (Mun.)"
+    },
+    {
+      "nom": "Demnate",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Azilal",
+      "commune": "Demnate (Mun.)"
+    },
+    {
+      "nom": "Beni Mellal",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Beni Mellal",
+      "commune": "Béni Mellal (Mun.)"
+    },
+    {
+      "nom": "Moulay Ismail",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Beni Mellal",
+      "commune": "Kasba Tadla (Mun.)"
+    },
+    {
+      "nom": "Beni Mellal",
+      "categorie": "CRO",
+      "categorieLibelle": "Centre Régional d'Oncologie",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Beni Mellal",
+      "commune": "Ouled M'Barek"
+    },
+    {
+      "nom": "Fquih Ben Salah",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Fkih Ben Saleh",
+      "commune": "Fquih Ben Salah (Mun.)"
+    },
+    {
+      "nom": "Souk Sebt",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Fkih Ben Saleh",
+      "commune": "Fquih Ben Salah (Mun.)"
+    },
+    {
+      "nom": "Khenifra",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Khenifra",
+      "commune": "Khenifra (Mun.)"
+    },
+    {
+      "nom": "M'Rirt",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Khenifra",
+      "commune": "M'Rirt (Mun.)"
+    },
+    {
+      "nom": "Mohamed VI",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Khouribga",
+      "commune": "Bejaad (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Khouribga",
+      "commune": "Khouribga (Mun.)"
+    },
+    {
+      "nom": "Oued.Zem",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Béni Mellal-Khénifra",
+      "delegation": "Khouribga",
+      "commune": "Oued Zem (Mun.)"
+    },
+    {
+      "nom": "Benslimane (Hassan II)",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Benslimane",
+      "commune": "Benslimane (Mun.)"
+    },
+    {
+      "nom": "Berrchid",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Berrechid",
+      "commune": "Berrechid (Mun.)"
+    },
+    {
+      "nom": "Errazi",
+      "categorie": "HPsyP",
+      "categorieLibelle": "Hôpital Psychiatrique Provincial/préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Berrechid",
+      "commune": "Berrechid (Mun.)"
+    },
+    {
+      "nom": "Azemmour",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Casablanca-Settat",
+      "delegation": "El Jadida",
+      "commune": "Azemmour (Mun.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "El Jadida",
+      "commune": "El Jadida (Mun.)"
+    },
+    {
+      "nom": "Mediouna",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Mediouna",
+      "commune": "Mediouna (Mun.)"
+    },
+    {
+      "nom": "Tit Mellil",
+      "categorie": "HPsyP",
+      "categorieLibelle": "Hôpital Psychiatrique Provincial/préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Mediouna",
+      "commune": "Sidi Hajjaj Oued Hassar"
+    },
+    {
+      "nom": "My Abdellah",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Mohammedia",
+      "commune": "Mohammadia (Mun.)"
+    },
+    {
+      "nom": "Bouskoura",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Casablanca-Settat",
+      "delegation": "Nouaceur",
+      "commune": "Bouskoura (Mun.)"
+    },
+    {
+      "nom": "Prince My Hassan",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Nouaceur",
+      "commune": "Dar Bouazza (Mun.)"
+    },
+    {
+      "nom": "Ben Ahmed",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Casablanca-Settat",
+      "delegation": "Settat",
+      "commune": "Ben Ahmed (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Settat",
+      "commune": "Settat (Mun.)"
+    },
+    {
+      "nom": "Sidi Bennour",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Sidi Bennour",
+      "commune": "Sidi Bennour (Mun.)"
+    },
+    {
+      "nom": "Zmamra",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Casablanca-Settat",
+      "delegation": "Sidi Bennour",
+      "commune": "Zemamra (Mun.)"
+    },
+    {
+      "nom": "20 Aout 1953",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Casablanca-Settat",
+      "delegation": "Casablanca Anfa",
+      "commune": "El Maarif (Arrond.)"
+    },
+    {
+      "nom": "Ibn Rochd",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Casablanca-Settat",
+      "delegation": "Casablanca Anfa",
+      "commune": "El Maarif (Arrond.)"
+    },
+    {
+      "nom": "Hôpital D'enfants",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Casablanca-Settat",
+      "delegation": "Casablanca Anfa",
+      "commune": "El Maarif (Arrond.)"
+    },
+    {
+      "nom": "My Youssef",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Casablanca-Settat",
+      "delegation": "Casablanca Anfa",
+      "commune": "Sidi Belyout (Arrond.)"
+    },
+    {
+      "nom": "Mohamed Baouafi",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Al Fida-Mers Sultan",
+      "commune": "Al-Fida (Arrond.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Aïn Sebaâ-Hay Mohammadi",
+      "commune": "Hay Mohammadi (Arrond.)"
+    },
+    {
+      "nom": "El Hassani",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Hay Hassani",
+      "commune": "Hay-Hassani (Arrond.)"
+    },
+    {
+      "nom": "Centre de Léprologie",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Aïn Chok",
+      "commune": "Aîn-Chock (Arrond.)"
+    },
+    {
+      "nom": "Mohamed Sekkat",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Aïn Chok",
+      "commune": "Aîn-Chock (Arrond.)"
+    },
+    {
+      "nom": "Al Mansour",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Sidi Bernoussi",
+      "commune": "Sidi Bernoussi (Arrond.)"
+    },
+    {
+      "nom": "HPr Sidi Moumen",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Casablanca-Settat",
+      "delegation": "Sidi Bernoussi",
+      "commune": "Sidi Moumen (Arrond.)"
+    },
+    {
+      "nom": "Ben Msick",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Ben Msick",
+      "commune": "Ben M'Sick (Arrond.)"
+    },
+    {
+      "nom": "Sidi Othmane",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Casablanca-Settat",
+      "delegation": "Moulay Rachid",
+      "commune": "Sidi Othmane (Arrond.)"
+    },
+    {
+      "nom": "Mohammed VI",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Al Haouz",
+      "commune": "Tahannaout (Mun.)"
+    },
+    {
+      "nom": "Mohamed Vi",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Chichaoua",
+      "commune": "Chichaoua (Mun.)"
+    },
+    {
+      "nom": "Assalama",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "El Kelaa Des Sraghna",
+      "commune": "El Kelaâ des Sraghna (Mun.)"
+    },
+    {
+      "nom": "Hôpital psychiatrique",
+      "categorie": "HPsyP",
+      "categorieLibelle": "Hôpital Psychiatrique Provincial/préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "El Kelaa Des Sraghna",
+      "commune": "El Kelaâ des Sraghna (Mun.)"
+    },
+    {
+      "nom": "Princesse Lalla Khadija",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Marrakech-Safi",
+      "delegation": "El Kelaa Des Sraghna",
+      "commune": "Tamallalt (Mun.)"
+    },
+    {
+      "nom": "Sidi Med Ben Abdellah",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Essaouira",
+      "commune": "Essaouira (Mun.)"
+    },
+    {
+      "nom": "Ibn Tofeil",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Gueliz (Arrond.)"
+    },
+    {
+      "nom": "Ibn Nafis",
+      "categorie": "CPU",
+      "categorieLibelle": "Centre Psychiatrique Universitaire",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Gueliz (Arrond.)"
+    },
+    {
+      "nom": "Hopital Mère-Enfant",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Gueliz (Arrond.)"
+    },
+    {
+      "nom": "Centre d'Hématologie Oncologie",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Gueliz (Arrond.)"
+    },
+    {
+      "nom": "Arrazi",
+      "categorie": "HIR",
+      "categorieLibelle": "Hospital Interrégional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Gueliz (Arrond.)"
+    },
+    {
+      "nom": "Ibn Zohr",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Marrakech-Médina (Arrond.)"
+    },
+    {
+      "nom": "El Antaki",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Marrakech-Médina (Arrond.)"
+    },
+    {
+      "nom": "Mhamid",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Ménara (Arrond.)"
+    },
+    {
+      "nom": "Charifa",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Sidi Youssef Ben Ali (Arrond.)"
+    },
+    {
+      "nom": "Saada",
+      "categorie": "HPsyR",
+      "categorieLibelle": "Hôpital Psychiatrique Régional",
+      "region": "Marrakech-Safi",
+      "delegation": "Marrakech",
+      "commune": "Saada"
+    },
+    {
+      "nom": "Benguerir",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Rehamena",
+      "commune": "Ben Guerir (Mun.)"
+    },
+    {
+      "nom": "Mohamed V",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Safi",
+      "commune": "Safi (Mun.)"
+    },
+    {
+      "nom": "Aisha",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Marrakech-Safi",
+      "delegation": "Safi",
+      "commune": "Safi (Mun.)"
+    },
+    {
+      "nom": "Lalla Hasna",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Marrakech-Safi",
+      "delegation": "Youssoufia",
+      "commune": "Youssoufia (Mun.)"
+    },
+    {
+      "nom": "Sghiri Houmman I Ben Maati",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Errachidia",
+      "commune": "Arfoud (Mun.)"
+    },
+    {
+      "nom": "My Ali Cherif",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Errachidia",
+      "commune": "Errachidia (Mun.)"
+    },
+    {
+      "nom": "Hôpital Amir Soultan Ibn Abdelaziz",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Errachidia",
+      "commune": "Errachidia (Mun.)"
+    },
+    {
+      "nom": "20 Aout (Goulmima)",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Errachidia",
+      "commune": "Goulmima (Mun.)"
+    },
+    {
+      "nom": "Midelt",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Midelt",
+      "commune": "Midelt (Mun.)"
+    },
+    {
+      "nom": "HPr Rich",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Midelt",
+      "commune": "Er-rich (Mun.)"
+    },
+    {
+      "nom": "Sidi Hssain Bencer",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Ouarzazate",
+      "commune": "Ouarzazate (Mun.)"
+    },
+    {
+      "nom": "Bougafer",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Ouarzazate",
+      "commune": "Ouarzazate (Mun.)"
+    },
+    {
+      "nom": "HPr Kalaat M'gouna",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Tinghir",
+      "commune": "Kalaat M'Gouna (Mun.)"
+    },
+    {
+      "nom": "Tinghir",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Tinghir",
+      "commune": "Tinghir (Mun.)"
+    },
+    {
+      "nom": "Ed-Derrak",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Drâa-Tafilalet",
+      "delegation": "Zagora",
+      "commune": "Zagora (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Souss-Massa",
+      "delegation": "Agadir Ida Ou Tanane",
+      "commune": "Agadir (Mun.)"
+    },
+    {
+      "nom": "C. d'Oncologie d'Agadir",
+      "categorie": "CRO",
+      "categorieLibelle": "Centre Régional d'Oncologie",
+      "region": "Souss-Massa",
+      "delegation": "Agadir Ida Ou Tanane",
+      "commune": "Agadir (Mun.)"
+    },
+    {
+      "nom": "Mokhtar Soussi",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Chtouka Ait Baha",
+      "commune": "Biougra (Mun.)"
+    },
+    {
+      "nom": "Inezgane",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Inezgane Ait Melloul",
+      "commune": "Inezgane (Mun.)"
+    },
+    {
+      "nom": "Oulad Teima",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Souss-Massa",
+      "delegation": "Taroudant",
+      "commune": "Oulad Teima (Mun.)"
+    },
+    {
+      "nom": "Mokhtar Es-Soussi",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Taroudant",
+      "commune": "Taroudannt (Mun.)"
+    },
+    {
+      "nom": "Tata",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Tata",
+      "commune": "Tata (Mun.)"
+    },
+    {
+      "nom": "Hassan 1er",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Tiznit",
+      "commune": "Tiznit (Mun.)"
+    },
+    {
+      "nom": "Houmman El Fatouaki",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Souss-Massa",
+      "delegation": "Tiznit",
+      "commune": "Tiznit (Mun.)"
+    },
+    {
+      "nom": "Assa",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Guelmim-Oued Noun",
+      "delegation": "Assa-zag",
+      "commune": "Assa (Mun.)"
+    },
+    {
+      "nom": "Bouizakaren",
+      "categorie": "HPr",
+      "categorieLibelle": "Hôpital de Proximité",
+      "region": "Guelmim-Oued Noun",
+      "delegation": "Guelmim",
+      "commune": "Bouizakarne (Mun.)"
+    },
+    {
+      "nom": "Guelmim",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Guelmim-Oued Noun",
+      "delegation": "Guelmim",
+      "commune": "Guelmim (Mun.)"
+    },
+    {
+      "nom": "Sidi Ifni",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Guelmim-Oued Noun",
+      "delegation": "Sidi Ifni",
+      "commune": "Sidi Ifni (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Guelmim-Oued Noun",
+      "delegation": "Tan Tan",
+      "commune": "Tan Tan (Mun.)"
+    },
+    {
+      "nom": "Boujdour",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Laayoune-Sakia El Hamra",
+      "delegation": "Boujdour",
+      "commune": "Boujdour (Mun.)"
+    },
+    {
+      "nom": "Es-Smara",
+      "categorie": "HP",
+      "categorieLibelle": "Hôpital Provincial/Préfectoral",
+      "region": "Laayoune-Sakia El Hamra",
+      "delegation": "Es Semara",
+      "commune": "Es-semara (Mun.)"
+    },
+    {
+      "nom": "My Hassan Ben El Mehdi",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Laayoune-Sakia El Hamra",
+      "delegation": "Laayoune",
+      "commune": "Laayoune (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Laayoune-Sakia El Hamra",
+      "delegation": "Laayoune",
+      "commune": "Laayoune (Mun.)"
+    },
+    {
+      "nom": "Laayoune",
+      "categorie": "CRO",
+      "categorieLibelle": "Centre Régional d'Oncologie",
+      "region": "Laayoune-Sakia El Hamra",
+      "delegation": "Laayoune",
+      "commune": "Laayoune (Mun.)"
+    },
+    {
+      "nom": "Hassan II",
+      "categorie": "HR",
+      "categorieLibelle": "Hôpital Régional",
+      "region": "Eddakhla-Oued Eddahab",
+      "delegation": "Oued Ed-Dahab",
+      "commune": "Dakhla (Mun.)"
     }
   ]
 }

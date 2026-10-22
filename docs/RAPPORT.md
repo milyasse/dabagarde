@@ -90,8 +90,19 @@ Ce qui n'a pas été testé : l'envoi réel d'un ticket de signalement, le parta
 ## 4 bis. Couverture nationale (22/10/2026, 9 h 40)
 
 - **Pharmacies de garde** : 27 villes et agglomérations déclarées. Ce matin, 12 villes publiaient des gardes : Rabat, Salé, Témara, Agadir, Inezgane, Aït Melloul, Dcheira, Tikiouine, Fès, Tanger, Settat et Ben Guerir. Les autres pages de la source étaient vides : elles se rempliront dès que la source publiera. La collecte se fait désormais dans ce dépôt toutes les 2 heures.
-- **Cliniques et hôpitaux** : 475 établissements dans tout le Maroc (OpenStreetMap, extraction hebdomadaire), dont 470 positionnés et 51 avec urgences déclarées. La liste officielle du ministère n'est encore rapprochée que pour Rabat, Salé et Témara.
+- **Cliniques et hôpitaux** : 586 établissements dans tout le Maroc (OpenStreetMap, extraction hebdomadaire, et liste officielle du ministère), dont 470 positionnés et 51 avec urgences déclarées.
 - **Changer de ville** depuis les résultats : lien « Changer de ville » dans la liste et bouton « Ville » sur l'onglet Carte (vérifiés en CI).
+
+## 4 ter. Nouveaux services (22/10/2026)
+
+Ajoutés dans l'ordre proposé, vérifiés en CI (branche `services`) :
+
+1. **Bouton « Urgence »** sur tous les écrans (141, 15, 19, 177, centre antipoison).
+2. **Envoi par WhatsApp** de la fiche d'une pharmacie ou d'un établissement.
+3. **Interface en arabe**, de droite à gauche, avec bascule « عربي / FR ». Les données des sources restent dans leur langue d'origine ; les pages statiques (référencement) restent en français.
+4. **Hôpitaux publics de tout le Maroc** (liste officielle du ministère, 170 hôpitaux) : 54 positionnés via OpenStreetMap (7 vérifiés à la main, 47 automatiquement, « à confirmer »), les autres proposés sans position autour de leur commune.
+
+Services proposés pour plus tard : alerte « garde près de chez moi », pharmacies ouvertes en journée, laboratoires et radiologie, centres de santé (liste du ministère 2024), ambulances. Déconseillés : disponibilité ou prix des médicaments, conseil médical, avis, comptes utilisateurs.
 
 ## 5. Ce qui reste à finaliser
 
@@ -103,7 +114,7 @@ Ce qui n'a pas été testé : l'envoi réel d'un ticket de signalement, le parta
    - proposer un partenariat à garde24.ma si souhaité.
 4. **Contact sans compte GitHub** : une adresse e-mail de contact est à choisir (aucune n'est publiée aujourd'hui).
 5. **Mentions légales** : compléter l'identité de l'éditeur.
-6. **Version arabe** de l'interface (non réalisée).
+6. **Version arabe** : interface faite ; pages statiques encore en français (version arabe des pages de ville à prévoir pour le référencement).
 7. **Regroupement des marqueurs** sur la carte au-delà de quelques centaines de résultats (non nécessaire à la couverture actuelle).
 8. **Notifications** de changement de garde : nécessitent un service d'envoi ; non réalisées.
 9. **Domaine propre** (dabagarde.ma) : sur `github.io/dabagarde/`, le robots.txt n'est pas lu par les moteurs (il doit être à la racine du domaine). Le sitemap peut être soumis dans Search Console avec une propriété « préfixe d'URL ».

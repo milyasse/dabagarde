@@ -45,7 +45,11 @@ async function main() {
   const ministry = await readJson<MinistryFile>(path.join(ROOT, 'data-sources', 'sante', 'ministere-hopitaux-2022.json'));
   const correspondences = await readJson<CorrespondenceFile>(path.join(ROOT, 'data-sources', 'sante', 'correspondances-osm.json'));
   const manual = await readJson<ManualHealthFile>(path.join(ROOT, 'manual', 'sante.json'));
-  const establishments = buildEstablishments({ overpass: raw, ministry, correspondences, manual, log });
+  const localities = await readJson<{ localities: { name: string; lat: number; lon: number; kind: string }[] }>(path.join(ROOT, 'public', 'data', 'geo', 'localities.json'));
+  const regions = await readJson<{ regions: { provinces: { name: string; lat: number | null; lon: number | null }[] }[] }>(path.join(ROOT, 'public', 'data', 'geo', 'regions.json'));
+  const geo = localities && regions ? { places: localities.localities, provinces: regions.regions.flatMap((r) => r.provinces) } : null;
+  if (!geo) log('base géographique absente : hôpitaux du ministère non situés');
+  const establishments = buildEstablishments({ overpass: raw, ministry, correspondences, manual, geo, log });
 
   const dataset: HealthDataset = {
     generatedAt: new Date().toISOString(),

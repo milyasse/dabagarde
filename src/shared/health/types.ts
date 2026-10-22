@@ -75,6 +75,9 @@ export interface Establishment {
   sources: EstablishmentSource[];
   osmIds: string[];
   notes: string[];
+  /** Centre approximatif de la commune (hôpital officiel sans position) : sert seulement à le proposer
+   *  pour une recherche voisine ; jamais affiché comme position de l'établissement. */
+  area?: { lat: number; lng: number } | null;
 }
 
 export interface HealthDataset {

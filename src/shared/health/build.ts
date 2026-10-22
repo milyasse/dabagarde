@@ -9,6 +9,7 @@ import { isInMorocco, isValidLatLng, haversineKm } from '../distance.ts';
 import { normalizeMoroccanPhone, stripAccents } from '../text.ts';
 import { OSM_SPECIALITY } from './labels.ts';
 import { CITIES } from '../connectors/registry.ts';
+import { autoMatch, locateArea, type GeoPlace, type GeoProvinceRef } from './ministry.ts';
 import type {
   DutyDesignation, Establishment, EstablishmentSource, EstablishmentType, InfoSource, ServiceId, ServiceInfo,
 } from './types.ts';
@@ -34,11 +35,11 @@ export interface MinistryFile {
   jeuDeDonnees: string;
   licence: string;
   donneesMisesAJourLe: string;
-  hopitaux: { nom: string; categorie: string; categorieLibelle: string | null; delegation: string; commune: string; ville: CityId }[];
+  hopitaux: { nom: string; categorie: string; categorieLibelle: string | null; region?: string; delegation: string; commune: string; ville?: CityId }[];
 }
 
 export interface CorrespondenceFile {
-  correspondances: { ministere: string; osm: string[]; nomUsuel?: string }[];
+  correspondances: { ministere: string; delegation?: string; osm: string[]; nomUsuel?: string }[];
 }
 
 /** Fichier manual/sante.json : informations vérifiées à la main, toujours avec leur source. */
@@ -256,14 +257,14 @@ export function ministryEstablishment(h: MinistryFile['hopitaux'][number], file:
   if (/^(CPU|HPsy)/.test(h.categorie)) services.set('psychiatry', 'ministere');
   if (/^CRO$/.test(h.categorie)) services.set('oncology', 'ministere');
   return {
-    id: `ms-${stripAccents(h.nom.toLowerCase()).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
+    id: `ms-${stripAccents(`${h.delegation} ${h.nom}`.toLowerCase()).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
     name: officialDisplayName(h.nom),
     nameAr: null,
     type: 'public_hospital',
     typeSource: 'ministere',
     officialCategory: h.categorieLibelle,
     address: null,
-    city: h.ville,
+    city: h.ville ?? null,
     district: h.commune.replace(/\s*\((Arrond|Mun)\.\)\s*$/, '') || null,
     latitude: null,
     longitude: null,
@@ -324,6 +325,8 @@ export function buildEstablishments(input: {
   ministry: MinistryFile | null;
   correspondences: CorrespondenceFile | null;
   manual: ManualHealthFile | null;
+  /** Base géographique (localités, provinces) pour situer les communes de la liste officielle. */
+  geo?: { places: readonly GeoPlace[]; provinces: readonly GeoProvinceRef[] } | null;
   log?: (m: string) => void;
 }): Establishment[] {
   const log = input.log ?? (() => {});
@@ -331,16 +334,40 @@ export function buildEstablishments(input: {
   const osmAll = (input.overpass?.elements ?? []).filter(isRelevantOsm).map((e) => establishmentFromOsm(e, base)).filter((e): e is Establishment => !!e);
   let osm = dedupeOsm(osmAll);
   const result: Establishment[] = [];
-  for (const h of input.ministry?.hopitaux ?? []) {
+  const hospitals = input.ministry?.hopitaux ?? [];
+  // 1. correspondances vérifiées à la main ; 2. rapprochement automatique prudent (nom + commune)
+  const plan = hospitals.map((h) => {
     const official = ministryEstablishment(h, input.ministry!);
-    const corr = input.correspondences?.correspondances.find((c) => c.ministere === h.nom);
-    const keys = corr?.osm ?? [];
+    const corr = input.correspondences?.correspondances.find((c) => c.ministere === h.nom && (!c.delegation || c.delegation === h.delegation));
+    const area = input.geo ? locateArea(h, input.geo.places, input.geo.provinces) : null;
     if (corr?.nomUsuel) official.name = corr.nomUsuel;
-    const matched = osm.filter((o) => o.osmIds.some((k) => keys.includes(k)));
-    if (keys.length && !matched.length) log(`correspondance OSM introuvable pour « ${h.nom} » (${keys.join(', ')})`);
+    return { h, official, corr, area, auto: null as Establishment | null };
+  });
+  const manualKeys = new Set(plan.flatMap((p) => p.corr?.osm ?? []));
+  const pool = osm.filter((o) => !o.osmIds.some((k) => manualKeys.has(k)));
+  for (const p of plan) if (!p.corr && p.area) p.auto = autoMatch(p.h.nom, p.area, pool, p.h.categorie);
+  // un même objet OSM revendiqué par deux hôpitaux officiels : ambigu, on n'en rattache aucun
+  const claims = new Map<Establishment, number>();
+  for (const p of plan) if (p.auto) claims.set(p.auto, (claims.get(p.auto) ?? 0) + 1);
+  for (const p of plan) if (p.auto && claims.get(p.auto)! > 1) p.auto = null;
+  let autoCount = 0;
+  for (const p of plan) {
+    const keys = p.corr?.osm ?? [];
+    const matched = p.corr ? osm.filter((o) => o.osmIds.some((k) => keys.includes(k))) : p.auto ? [p.auto] : [];
+    if (keys.length && !matched.length) log(`correspondance OSM introuvable pour « ${p.h.nom} » (${keys.join(', ')})`);
     osm = osm.filter((o) => !matched.includes(o));
-    result.push(attachMinistry(official, matched));
+    const e = attachMinistry(p.official, matched);
+    if (p.auto) { autoCount++; e.notes = [...e.notes, 'Position d’OpenStreetMap rattachée automatiquement (nom et commune) : à confirmer.']; }
+    if (p.area) {
+      e.area = { lat: Math.round(p.area.lat * 1e4) / 1e4, lng: Math.round(p.area.lng * 1e4) / 1e4 };
+      if (!e.city) {
+        const c = CITIES.map((x) => ({ x, km: haversineKm(x.center, e.area!) })).sort((a, b) => a.km - b.km)[0];
+        if (c && c.km <= 20) e.city = c.x.id;
+      }
+    }
+    result.push(e);
   }
+  if (hospitals.length) log(`liste du ministère : ${hospitals.length} hôpitaux, ${plan.filter((p) => p.corr).length} rattachés à la main, ${autoCount} automatiquement, ${plan.filter((p) => !p.area).length} commune introuvable`);
   result.push(...osm);
   return applyManual(result, input.manual, log).sort((a, b) => a.name.localeCompare(b.name, 'fr'));
 }

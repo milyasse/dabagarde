@@ -204,7 +204,17 @@ if (health) {
 <div class="actions">${e.phone ? `<a class="call" href="tel:${e.phone}">Appeler ${formatPhone(e.phone)}</a>` : '<span class="muted small">Téléphone non publié</span>'}</div>
 <p class="muted small" style="margin:10px 0 0">Sources : ${e.sources.map((s) => esc(s.name)).join(', ')}</p></li>`).join('')}</ul>`;
   }
-  write({ path: 'cliniques-hopitaux/rabat-sale-temara/', title: 'Cliniques et hôpitaux à Rabat, Salé et Témara – DabaGarde', description: 'Hôpitaux publics (liste du ministère de la Santé) et cliniques recensées à Rabat, Salé et Témara, avec services d’urgences déclarés et téléphones publiés.', h1: 'Cliniques et hôpitaux', lead: 'Rabat, Salé et Témara.', cta: { href: `${BASE}?espace=sante`, label: 'Chercher autour de moi' }, body, jsonLd: [breadcrumb([{ name: 'Accueil', path: '' }, { name: 'Cliniques et hôpitaux', path: 'cliniques-hopitaux/rabat-sale-temara/' }])] }, '0.7');
+  // Hôpitaux publics de tout le Maroc (liste officielle), par région et délégation
+  const ministryFile = readJson<{ hopitaux: { nom: string; categorieLibelle: string | null; region?: string; delegation: string; commune: string }[] }>(join('data-sources', 'sante', 'ministere-hopitaux-2022.json'));
+  if (ministryFile?.hopitaux?.length) {
+    const byRegion = new Map<string, typeof ministryFile.hopitaux>();
+    for (const h of ministryFile.hopitaux) byRegion.set(h.region ?? '—', [...(byRegion.get(h.region ?? '—') ?? []), h]);
+    body += `<h2>Hôpitaux publics de tout le Maroc</h2><p class="muted small">Liste officielle du ministère de la Santé (data.gov.ma, ODbL) : ${ministryFile.hopitaux.length} hôpitaux. La position d’un hôpital n’est affichée dans l’application que lorsqu’elle a pu être rattachée à OpenStreetMap ; sinon il est proposé, sans position, pour une recherche autour de sa commune.</p>`;
+    for (const [region, list] of [...byRegion].sort((x, y) => x[0].localeCompare(y[0], 'fr'))) {
+      body += `<h3>${esc(region)}</h3><ul>${list.map((h) => `<li>${esc(h.nom)} — ${esc(h.categorieLibelle ?? '')} · ${esc(h.commune.replace(/\s*\((Arrond|Mun)\.\)/, ''))} (${esc(h.delegation)})</li>`).join('')}</ul>`;
+    }
+  }
+  write({ path: 'cliniques-hopitaux/rabat-sale-temara/', title: 'Cliniques et hôpitaux au Maroc – DabaGarde', description: 'Hôpitaux publics de tout le Maroc (liste du ministère de la Santé) et cliniques recensées dans les villes suivies, avec services d’urgences déclarés et téléphones publiés.', h1: 'Cliniques et hôpitaux', lead: 'Par ville, et la liste officielle des hôpitaux publics de tout le Maroc.', cta: { href: `${BASE}?espace=sante`, label: 'Chercher autour de moi' }, body, jsonLd: [breadcrumb([{ name: 'Accueil', path: '' }, { name: 'Cliniques et hôpitaux', path: 'cliniques-hopitaux/rabat-sale-temara/' }])] }, '0.7');
 }
 
 // ---------- Pages d'information

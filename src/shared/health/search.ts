@@ -45,10 +45,10 @@ export function searchEstablishments(list: Establishment[], q: HealthQuery): Hea
     ...e, distanceStraightLineKm: null, distanceRoadKm: null, estimatedTravelMinutes: null, rank: null, levels: levelsOf(e, q.date),
   }));
   const { ranked, unlocated: allUnlocated, outside } = filterAndRank(items, q.origin, q.radiusKm);
-  // Sans position : seulement ceux de la ville de recherche (sinon toute la liste nationale s'afficherait)
+  // Sans position : seulement ceux dont la commune (ou la ville) est proche de la recherche (sinon toute la liste nationale s'afficherait)
   const unlocated = allUnlocated.filter((e) => {
-    const c = CITIES.find((x) => x.id === e.city);
-    return !!c && haversineKm(q.origin, c.center) <= q.radiusKm + 15;
+    const center = e.area ?? CITIES.find((x) => x.id === e.city)?.center;
+    return !!center && haversineKm(q.origin, center) <= q.radiusKm + (e.area ? 5 : 15);
   });
   // le rang (et la couleur du marqueur) suit toujours la proximité ; seul l'ordre d'affichage change
   const ordered = q.sort === 'desc' ? [...ranked].reverse() : ranked;

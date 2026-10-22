@@ -1,6 +1,13 @@
 # Historique des versions
 
 
+## 2.0.0-alpha.1 — 22/10/2026 — Nouveaux services
+
+- **Bouton « Urgence »** visible sur tous les écrans : SAMU 141, Protection civile 15, Police 19, Gendarmerie royale 177, Centre antipoison 0801 000 180, composables d'un geste.
+- **Envoyer par WhatsApp** depuis la fiche d'une pharmacie ou d'un établissement : nom, garde, adresse, téléphone, itinéraire et rappel 141/15.
+- **Interface en arabe** (bouton « عربي / FR », choix mémorisé, `?lang=ar`) : sens de lecture de droite à gauche, dates en arabe, noms arabes des villes et des localités d'OpenStreetMap quand ils existent. Un test vérifie que chaque texte a sa traduction. Les données des sources (noms de pharmacies, adresses) restent telles qu'elles sont publiées ; les pages statiques restent en français.
+- **Hôpitaux publics de tout le Maroc** : liste officielle du ministère de la Santé (170 hôpitaux, data.gov.ma, ODbL), actualisée chaque semaine. 7 rattachements à OpenStreetMap vérifiés à la main et 47 automatiques (nom complet + proximité de la commune, sans ambiguïté, marqués « à confirmer ») ; les autres sont proposés sans position pour une recherche autour de leur commune. Aucune position n'est inventée.
+
 ## 2.0.0-alpha.0 — 22/10/2026 — DabaGarde (nouveau dépôt)
 
 Refonte complète, dans un dépôt séparé ; l'app actuelle reste en ligne sans changement.

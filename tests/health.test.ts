@@ -15,6 +15,10 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const read = <T>(p: string) => JSON.parse(readFileSync(path.join(ROOT, p), 'utf8')) as T;
 const OSM = read<OverpassResponse>('tests/fixtures/osm-sante-2026-10-21.json');
 const MINISTRY = read<MinistryFile>('data-sources/sante/ministere-hopitaux-2022.json');
+const GEO = {
+  places: read<{ localities: { name: string; lat: number; lon: number; kind: string }[] }>('public/data/geo/localities.json').localities,
+  provinces: read<{ regions: { provinces: { name: string; lat: number | null; lon: number | null }[] }[] }>('public/data/geo/regions.json').regions.flatMap((r) => r.provinces),
+};
 const CORR = read<CorrespondenceFile>('data-sources/sante/correspondances-osm.json');
 const el = (tags: Record<string, string>, id = 1, lat = 34.0, lon = -6.84): OverpassElement => ({ type: 'node', id, lat, lon, tags });
 
@@ -69,10 +73,11 @@ test('Liste officielle : noms lisibles', () => {
 });
 
 test('Données réelles (OSM 21/10/2026 + ministère) : fusion, aucune garde sans source officielle', () => {
-  const list = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null });
-  // les 12 hôpitaux publics du ministère sont présents, positionnés seulement quand la correspondance existe
+  const list = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null, geo: GEO });
+  // tous les hôpitaux publics du ministère sont présents, positionnés seulement quand un rattachement existe
   const official = list.filter((e) => e.sources.some((s) => s.id === 'ministere-sante'));
-  assert.equal(official.length, 12);
+  assert.equal(official.length, MINISTRY.hopitaux.length);
+  assert.ok(official.every((e) => e.area), 'chaque hôpital officiel est situé au moins par sa commune ou sa délégation');
   assert.ok(official.every((e) => e.type === 'public_hospital' && e.officialCategory));
   const ino = list.find((e) => e.name.startsWith('Institut national d'))!;
   assert.ok(ino.latitude && ino.services.some((s) => s.id === 'oncology'));
@@ -90,7 +95,7 @@ test('Données réelles (OSM 21/10/2026 + ministère) : fusion, aucune garde san
 });
 
 test('Saisie manuelle : garde et horaires vérifiés uniquement avec source et date', () => {
-  const base = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null });
+  const base = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null, geo: GEO });
   const logs: string[] = [];
   const out = applyManual(base, {
     etablissements: [
@@ -108,7 +113,7 @@ test('Saisie manuelle : garde et horaires vérifiés uniquement avec source et d
 });
 
 test('Recherche : filtres, rayon, tri croissant/décroissant, sans position à part', () => {
-  const list = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null });
+  const list = buildEstablishments({ overpass: OSM, ministry: MINISTRY, correspondences: CORR, manual: null, geo: GEO });
   const origin = { lat: 33.98, lng: -6.855 }; // Souissi
   const q = { origin, radiusKm: 5, types: [], service: null, emergencyOnly: false, date: '2026-10-21', sort: 'asc' as const };
   const asc = searchEstablishments(list, q);

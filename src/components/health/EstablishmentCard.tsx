@@ -74,7 +74,7 @@ export const EstablishmentCard = forwardRef<HTMLElement, {
           {e.nameAr && <p dir="rtl" lang="ar" className="text-[13px] font-semibold text-muted">{e.nameAr}</p>}
           <p className="text-[13px] font-semibold text-brand-700">
             {tr(TYPE_LABEL[e.type])}
-            {e.officialCategory && <span className="font-medium text-muted"> · {e.officialCategory}</span>}
+            {e.officialCategory && <span className="font-medium text-muted"> · {tr(e.officialCategory)}</span>}
             {e.typeSource === 'nom' && <span className="font-medium text-muted"> ({tr('d’après le nom')})</span>}
           </p>
           {place && <p className="text-[13px] font-medium text-muted">{place}</p>}

@@ -197,6 +197,14 @@ await section('Cliniques et hôpitaux', async () => {
   check(/^\d+ établissement/.test(head), `cliniques Rabat : « ${head} »`);
   check(!/De garde \(désignation officielle\)/.test(await page.locator('#espace-sante').innerText()), 'cliniques : aucun établissement « de garde » sans source officielle');
   await page.screenshot({ path: `${OUT}/10-cliniques.png` });
+  // liste officielle nationale : un hôpital public d'Errachidia (sans position publiée) est proposé autour de sa commune
+  const box = page.locator('#espace-sante').getByRole('combobox').first();
+  await box.fill('Errachidia');
+  await page.getByRole('option', { name: /^Errachidia/ }).first().click();
+  await wait(2500);
+  const txt = await page.locator('#espace-sante').textContent();
+  check(/Ali Cherif/.test(txt ?? ''), 'cliniques Errachidia : hôpital public de la liste du ministère proposé');
+  await page.screenshot({ path: `${OUT}/10b-cliniques-errachidia.png` });
   await ctx.close();
 });
 
