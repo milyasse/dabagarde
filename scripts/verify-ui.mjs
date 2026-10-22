@@ -93,6 +93,21 @@ await section('Parcours principal (téléphone)', async () => {
   if (n > 0) check(await page.getByRole('heading', { name: 'Vos pharmacies' }).isVisible(), 'accueil : section « Vos pharmacies » (favoris locaux)');
   check(/Récemment/.test(await page.locator('main').innerText()), 'accueil : recherches récentes');
 
+  // Base nationale : recherche d'une ville hors zone couverte et navigation par région
+  await page.getByRole('combobox', { name: /Ville, commune ou quartier/ }).fill('Ouarzaz');
+  const oz = page.getByRole('option', { name: /^Ouarzazate/ }).first();
+  await oz.waitFor({ timeout: 10000 }).catch(() => {});
+  check(await oz.isVisible().catch(() => false), 'base nationale : « Ouarzaz » propose Ouarzazate (pas encore couverte)');
+  await page.getByRole('combobox', { name: /Ville, commune ou quartier/ }).fill('');
+  await page.getByRole('button', { name: /Parcourir par région/ }).click();
+  const dlgR = page.locator('dialog[open]');
+  await dlgR.getByRole('button', { name: /Souss-Massa/ }).click();
+  await dlgR.getByRole('button', { name: /Agadir/ }).first().click();
+  const towns = await dlgR.locator('li').count();
+  check(towns > 3, `navigation région → province → villes : ${towns} localités (Souss-Massa, Agadir)`);
+  await page.screenshot({ path: `${OUT}/07b-regions.png` });
+  await dlgR.getByRole('button', { name: 'Fermer' }).click();
+
   // Ville non couverte
   await page.getByRole('button', { name: 'Marrakech' }).click();
   await results(page).locator('h2').first().waitFor({ timeout: 20000 }).catch(() => {});
