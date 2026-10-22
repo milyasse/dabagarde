@@ -90,7 +90,7 @@ Ce qui n'a pas été testé : l'envoi réel d'un ticket de signalement, le parta
 ## 5. Ce qui reste à finaliser
 
 1. **Activer GitHub Pages** : Settings → Pages → Source « GitHub Actions » (action du propriétaire du dépôt).
-2. **Base géographique** : le workflow « Base géographique » interroge OpenStreetMap. En attendant ses fichiers, la recherche ne propose que les villes couvertes. Relire `data-sources/geo/report.json` (provinces sans code, régions manquantes).
+2. **Base géographique : faite.** 12 régions, 75 provinces et préfectures, 6 566 localités (58 grandes villes, 276 villes, 5 087 villages, 1 145 quartiers), aucune anomalie. Source : extraction OpenStreetMap du Maroc publiée par Geofabrik, filtrée avec osmium (l'API Overpass, saturée, a été abandonnée). Mise à jour mensuelle ; rapport dans `data-sources/geo/report.json`.
 3. **Sources** :
    - demander un accord écrit à annuaire-gratuit.ma (ses CGU interdisent la redistribution) et à guidepharmacies.ma ;
    - contacter les Ordres et syndicats régionaux pour des tableaux officiels ;
