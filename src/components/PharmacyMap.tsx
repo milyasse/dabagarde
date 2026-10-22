@@ -96,7 +96,10 @@ export function PharmacyMap(props: {
     // Écrans tactiles : un doigt fait défiler la PAGE, deux doigts déplacent/zooment la carte
     // (sinon la carte « capture » le doigt et on ne peut plus remonter ni descendre dans la page).
     const touch = L.Browser.touch && window.matchMedia('(pointer: coarse)').matches;
-    const m = L.map(el.current, { zoomControl: false, attributionControl: true, dragging: !touch, tapHold: false, zoomSnap: 0.5 })
+    // Sur téléphone, la carte est démontée quand on revient à l'onglet Liste : sans animation de zoom,
+    // aucune fin d'animation ne tente de s'exécuter sur une carte déjà retirée (erreur « _leaflet_pos »).
+    const narrow = !window.matchMedia('(min-width: 1024px)').matches;
+    const m = L.map(el.current, { zoomControl: false, attributionControl: true, dragging: !touch, tapHold: false, zoomSnap: 0.5, zoomAnimation: !narrow, markerZoomAnimation: !narrow, fadeAnimation: !narrow })
       .setView([CONFIG.defaultCenter.lat, CONFIG.defaultCenter.lng], 12);
     L.tileLayer(CONFIG.tileUrl, { maxZoom: 19, attribution: CONFIG.tileAttribution, keepBuffer: 2, updateWhenZooming: false }).addTo(m);
     const node = el.current;
