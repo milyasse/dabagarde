@@ -25,6 +25,8 @@ const ENDPOINTS = ['https://overpass.kumi.systems/api/interpreter', 'https://map
 const CONTOURS = 'data-sources/geo/contours'; // contours simplifiés déjà obtenus : la collecte reprend où elle s'est arrêtée
 const UA = `DabaGarde-geo/1.0 (+https://github.com/${process.env.GITHUB_REPOSITORY ?? 'local'})`;
 const PAUSE_MS = 5000;
+const CONTOUR_BUDGET_MS = 45 * 60 * 1000; // au-delà, les contours manquants seront demandés au prochain passage
+const T0 = Date.now();
 
 type Pt = { lat: number; lon: number };
 type OsmMember = { type: string; ref: number; role: string; geometry?: Pt[] };
@@ -147,6 +149,11 @@ async function main() {
       provEls.push({ ...t, rings: JSON.parse(readFileSync(cache, 'utf8')) as Pt[][] });
       continue;
     }
+    if (Date.now() - T0 > CONTOUR_BUDGET_MS) {
+      anomalies.push(`Contour reporté au prochain passage : ${nameFr(t.tags)} (relation ${t.id}).`);
+      provEls.push({ ...t, rings: [] });
+      continue;
+    }
     try {
       const g = await overpass(`contour-${t.id}`, `[out:json][timeout:300];rel(${t.id});out geom;`);
       const rings = assembleRings(g[0]?.members ?? []).map(simplify);
@@ -198,14 +205,28 @@ async function main() {
   const usedIds = new Set<string>();
   const seen = new Set<string>();
   let unplaced = 0;
+  let approxCount = 0;
   for (const n of placeEls) {
     const kind = PLACE_KIND[n.tags!.place];
     const name = nameFr(n.tags);
     if (!kind || !name || n.lat == null || n.lon == null) continue;
     const pt = { lat: n.lat, lon: n.lon };
     const shape = provShapes.find((s) => pt.lat >= s.bbox[0] && pt.lat <= s.bbox[2] && pt.lon >= s.bbox[1] && pt.lon <= s.bbox[3] && s.rings.some((r) => inRing(pt, r)));
-    if (!shape) { unplaced++; continue; } // hors des provinces cartographiées (pays voisins, mer)
-    const base = `${slugify(name)}-${shape.prov.id.toLowerCase()}`;
+    let shape2 = shape;
+    let approx = false;
+    if (!shape2) {
+      // Contour indisponible : province dont le centre est le plus proche, si elle n'a pas de contour (rattachement approximatif)
+      let best: (typeof provShapes)[number] | null = null; let bd = Infinity;
+      for (const s2 of provShapes) {
+        if (s2.prov.lat === null || s2.prov.lon === null) continue;
+        const dd = (s2.prov.lat - pt.lat) ** 2 + (s2.prov.lon - pt.lon) ** 2;
+        if (dd < bd) { bd = dd; best = s2; }
+      }
+      if (!best || best.rings.length) { unplaced++; continue; } // hors du Maroc, ou dans une province dont le contour ne le contient pas
+      shape2 = best; approx = true; approxCount++;
+    }
+    const shapeF = shape2;
+    const base = `${slugify(name)}-${shapeF.prov.id.toLowerCase()}`;
     if (seen.has(base + kind)) continue;
     seen.add(base + kind);
     let id = base; let k = 2;
@@ -213,7 +234,8 @@ async function main() {
     usedIds.add(id);
     localities.push({
       id, name, nameAr: n.tags!['name:ar'] ?? null, kind,
-      provinceId: shape.prov.id, regionId: shape.regionId,
+      provinceId: shapeF.prov.id, regionId: shapeF.regionId,
+      ...(approx ? { provinceApprox: true } : {}),
       lat: round(n.lat), lon: round(n.lon),
       population: n.tags!.population && /^\d+$/.test(n.tags!.population) ? Number(n.tags!.population) : null,
       osmId: n.id,
@@ -237,7 +259,8 @@ async function main() {
   Object.assign(report, {
     finishedAt: new Date().toISOString(), ok: true,
     regions: regions.length, regionsWithProvinces: regions.filter((r) => r.provinces.length).length,
-    provinces: provShapes.length, localities: localities.length, byKind, unplacedPlaces: unplaced,
+    provinces: provShapes.length, localities: localities.length, byKind, unplacedPlaces: unplaced, approxProvince: approxCount,
+    contoursMissing: provShapes.filter((x) => !x.rings.length).length,
   });
 
   mkdirSync('public/data/geo', { recursive: true });

@@ -31,4 +31,6 @@ export interface GeoLocality {
   osmId: number;
   /** Pour un quartier : la ville de rattachement (la plus proche dans la même province). */
   parentId?: string | null;
+  /** Province déduite du centre le plus proche (contour pas encore disponible). */
+  provinceApprox?: boolean;
 }
