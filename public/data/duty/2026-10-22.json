@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "generatedAt": "2026-10-22T08:35:36.005Z",
+ "generatedAt": "2026-10-22T08:41:48.186Z",
  "records": [
   {
    "id": "ben-guerir-zarhoun",
@@ -25,7 +25,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-zarhoun-s254617.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T08:35:54.265Z",
+     "lastCheckedAt": "2026-10-22T08:42:06.573Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -544,6 +544,41 @@
    "confidenceLevel": "low",
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
+  {
+   "id": "tanger-assalam",
+   "name": "Pharmacie Assalam",
+   "address": "3, rue 48, jirari ii, el aouama 90000 tanger - maroc",
+   "city": "tanger",
+   "district": "-",
+   "latitude": 35.7517533,
+   "longitude": -5.8116138,
+   "coordinatesSource": "source",
+   "phone": null,
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-assalam-s166115.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T08:43:15.589Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
    ]
   },
   {
