@@ -18,7 +18,6 @@ OK  — filtre texte « Nassiha » : 1 résultat(s)
 OK  — onglet Carte : 16 marqueur(s)
 OK  — « Changer de ville » place le curseur dans la recherche
 OK  — changement de ville Salé → Rabat : « 19 pharmacies de garde »
-pageerror: Cannot read properties of undefined (reading '_leaflet_pos')
 OK  — onglet Carte : bouton « Ville » ramène à la recherche
 OK  — changement de ville → Casablanca (nouvelle ville couverte) : « Aucune pharmacie de garde »
 OK  — accueil : section « Vos pharmacies » (favoris locaux)
@@ -71,4 +70,4 @@ OK  — clavier : lien d’évitement en premier
 ## Ordinateur
 OK  — ordinateur : liste et carte affichées ensemble
 
-1 vérification(s) en échec
+toutes les vérifications sont passées
