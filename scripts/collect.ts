@@ -36,7 +36,7 @@ const outIdx = args.indexOf('--out');
 const OUT = outIdx >= 0 ? path.resolve(args[outIdx + 1]) : path.join(ROOT, 'public', 'data');
 const manualIdx = args.indexOf('--manual');
 const MANUAL_DIR = manualIdx >= 0 ? path.resolve(args[manualIdx + 1]) : path.join(ROOT, 'manual');
-const REQUEST_GAP_MS = 1500;
+const REQUEST_GAP_MS = 3000; // ≥ 3 s entre deux pages : au-delà d'un certain rythme, la source répond « 404 »
 const MAX_DETAIL_FETCHES = 160; // fiches « historique de garde » (mises en cache)
 const MAX_GEOCODES = 30;
 const RETENTION_DAYS = 60;
@@ -226,8 +226,19 @@ async function main() {
   };
 
   // ---- Source : annuaire-gratuit.ma
-  for (const city of CITIES.filter((c) => c.annuaire)) {
+  // Ordre tournant (selon l'heure) : si la source limite le nombre de pages par passage, ce ne sont pas
+  // toujours les mêmes villes qui manquent ; les villes refusées sont retentées une fois après une pause.
+  const annuaireCities = CITIES.filter((c) => c.annuaire);
+  const shift = Math.floor(now.getUTCHours() / 2) % annuaireCities.length;
+  const ordered = [...annuaireCities.slice(shift), ...annuaireCities.slice(0, shift)];
+  const retry: typeof ordered = [];
+  for (let pass = 0; pass < 2; pass++) {
+  const list = pass === 0 ? ordered : retry.splice(0);
+  if (pass === 1 && list.length) { log(`… nouvelle tentative pour ${list.length} ville(s) après une pause`); await sleep(FIXTURES ? 0 : 90_000); }
+  for (const city of list) {
     const url = listingUrl(city.annuaire!);
+    const prevRun = runs.findIndex((r) => r.sourceId === ANNUAIRE_ID && r.city === city.id);
+    if (prevRun >= 0) runs.splice(prevRun, 1);
     const run: SourceRunStatus = { sourceId: ANNUAIRE_ID, sourceName: ANNUAIRE_NAME, city: city.id, url, ok: false, pageDate: null, count: 0, error: null, checkedAt: new Date().toISOString() };
     runs.push(run);
     let page;
@@ -236,6 +247,7 @@ async function main() {
     } catch (e) {
       run.error = `Page inaccessible : ${(e as Error).message}`;
       log(`✗ ${city.name} : ${run.error}`);
+      if (pass === 0) retry.push(city);
       continue;
     }
     run.pageDate = page.pageDate;
@@ -290,6 +302,7 @@ async function main() {
       });
       debug(name, { pageDate: dutyDate, recordDate, hist, lat, lng, phone: d?.phone });
     }
+  }
   }
 
   // ---- Source : guidepharmacies.ma (planning hebdomadaire : semaine en cours + semaine suivante)
