@@ -1,27 +1,67 @@
 {
-  "startedAt": "2026-10-22T07:05:36.693Z",
-  "steps": [
-    "2026-10-22T07:07:26.599Z regions : 12 éléments via overpass.kumi.systems en 110 s",
-    "2026-10-22T07:12:32.398Z provinces : échec overpass.kumi.systems: fetch failed",
-    "2026-10-22T07:12:56.521Z provinces : 75 éléments via maps.mail.ru en 14 s",
-    "2026-10-22T07:15:21.363Z contour-2432231 : échec overpass.kumi.systems: HTTP 504",
-    "2026-10-22T07:15:47.014Z contour-2432231 : 1 éléments via maps.mail.ru en 16 s",
-    "2026-10-22T07:20:52.813Z contour-2432232 : échec overpass.kumi.systems: fetch failed",
-    "2026-10-22T07:21:03.923Z contour-2432232 : échec maps.mail.ru: HTTP 504",
-    "2026-10-22T07:25:34.693Z contour-2432232 : échec overpass.private.coffee: HTTP 502",
-    "2026-10-22T07:26:20.664Z contour-2432232 : 1 éléments via overpass-api.de en 36 s",
-    "2026-10-22T07:31:26.442Z contour-2432233 : échec overpass.kumi.systems: fetch failed",
-    "2026-10-22T07:32:27.474Z contour-2432233 : échec maps.mail.ru: HTTP 504",
-    "2026-10-22T07:36:50.512Z contour-2432233 : échec overpass.private.coffee: HTTP 502",
-    "2026-10-22T07:37:37.744Z contour-2432233 : 1 éléments via overpass-api.de en 37 s",
-    "2026-10-22T07:42:44.511Z contour-2432234 : échec overpass.kumi.systems: fetch failed",
-    "2026-10-22T07:43:49.033Z contour-2432234 : échec maps.mail.ru: HTTP 504",
-    "2026-10-22T07:48:31.619Z contour-2432234 : échec overpass.private.coffee: HTTP 504",
-    "2026-10-22T07:49:17.556Z contour-2432234 : 1 éléments via overpass-api.de en 36 s",
-    "2026-10-22T07:51:00.807Z contour-2504444 : échec overpass.kumi.systems: HTTP 504",
-    "2026-10-22T07:51:11.935Z contour-2504444 : échec maps.mail.ru: HTTP 504",
-    "2026-10-22T07:52:58.390Z contour-2504444 : échec overpass.private.coffee: HTTP 504",
-    "2026-10-22T07:53:08.893Z contour-2504444 : échec overpass-api.de: HTTP 502"
-  ],
-  "anomalies": []
+  "generatedAt": "2026-10-22T07:57:15.435Z",
+  "source": "Geofabrik morocco-latest.osm.pbf",
+  "anomalies": [],
+  "featuresRead": 12004,
+  "ok": true,
+  "regions": 12,
+  "provinces": 75,
+  "localities": 6566,
+  "byKind": {
+    "city": 58,
+    "town": 276,
+    "village": 5087,
+    "district": 1145
+  },
+  "perRegion": {
+    "MA-01": {
+      "provinces": 8,
+      "localites": 308
+    },
+    "MA-02": {
+      "provinces": 8,
+      "localites": 424
+    },
+    "MA-03": {
+      "provinces": 9,
+      "localites": 363
+    },
+    "MA-04": {
+      "provinces": 7,
+      "localites": 231
+    },
+    "MA-05": {
+      "provinces": 5,
+      "localites": 378
+    },
+    "MA-06": {
+      "provinces": 9,
+      "localites": 1048
+    },
+    "MA-07": {
+      "provinces": 8,
+      "localites": 724
+    },
+    "MA-08": {
+      "provinces": 5,
+      "localites": 721
+    },
+    "MA-09": {
+      "provinces": 6,
+      "localites": 2185
+    },
+    "MA-10": {
+      "provinces": 4,
+      "localites": 132
+    },
+    "MA-11": {
+      "provinces": 4,
+      "localites": 31
+    },
+    "MA-12": {
+      "provinces": 2,
+      "localites": 21
+    }
+  },
+  "placesOutsideProvinces": 13
 }
