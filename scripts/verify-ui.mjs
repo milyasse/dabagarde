@@ -148,7 +148,7 @@ await section('Parcours principal (téléphone)', async () => {
 
   // Filtre « De nuit » puis ville
   await page.getByRole('link', { name: /DabaGarde, accueil/ }).click();
-  await page.getByRole('button', { name: 'De nuit' }).click();
+  await page.getByRole('button', { name: 'De nuit', exact: true }).click();
   await page.getByRole('button', { name: /^Rabat/ }).first().click();
   await results(page).locator('h2').first().waitFor({ timeout: 20000 }).catch(() => {});
   await wait(800);
