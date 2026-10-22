@@ -1,17 +1,17 @@
-// Construit la base géographique nationale (régions, provinces/préfectures, communes, localités)
+// Construit la base géographique nationale (régions, provinces/préfectures, localités, quartiers)
 // à partir d'OpenStreetMap (licence ODbL, attribution « © les contributeurs d'OpenStreetMap »).
 //
-// Exécuté en CI (workflow « geo »), jamais dans le navigateur : la base change rarement.
-// Sorties :
-//   public/data/geo/regions.json     12 régions, avec leurs provinces
-//   public/data/geo/localities.json  localités (villes, centres, villages, quartiers) pour la recherche
-//   data-sources/geo/report.json     statistiques et anomalies à relire
+// Exécuté en CI (workflow « Base géographique »), jamais dans le navigateur : la base change rarement.
+// Trois requêtes Overpass seulement (régions, provinces avec géométrie, localités) ; chaque localité
+// est rattachée à sa province par test point-dans-polygone.
 //
-// Identifiants stables :
-//   - région   : code ISO 3166-2 officiel (MA-01 … MA-12)
-//   - province : code ISO 3166-2 publié dans OSM (ex. MA-RAB), sinon "osm-r<id>"
-//   - localité : "<slug>-<code province en minuscules>" (ex. "rabat-ma-rab"), stable tant que le nom
-//                et la province ne changent pas ; l'identifiant OSM est conservé à part.
+// Sorties :
+//   public/data/geo/regions.json     12 régions et leurs provinces
+//   public/data/geo/localities.json  villes, centres, villages et quartiers (recherche instantanée)
+//   data-sources/geo/report.json     statistiques et anomalies à relire (écrit même en cas d'échec)
+//
+// Identifiants stables : région = code ISO 3166-2 (MA-01…MA-12) ; province = code ISO publié dans OSM
+// (ex. MA-RAB), sinon "osm-r<id>" ; localité = "<slug>-<province>" (ex. "rabat-ma-rab").
 //
 // Usage : node --experimental-strip-types scripts/build-geo.ts [--fixture <dir>]
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -20,101 +20,164 @@ import { REGIONS } from '../src/shared/geo/regions.ts';
 import { slugify } from '../src/shared/geo/slug.ts';
 import type { GeoLocality, GeoProvince, GeoRegion, LocalityKind } from '../src/shared/geo/types.ts';
 
-const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
-const UA = `PharmaciesGardeMaroc-geo/1.0 (+https://github.com/${process.env.GITHUB_REPOSITORY ?? 'local'})`;
-const PAUSE_MS = 4000; // espacement entre requêtes, par respect de la politique d'usage d'Overpass
+const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+const UA = `DabaGarde-geo/1.0 (+https://github.com/${process.env.GITHUB_REPOSITORY ?? 'local'})`;
+const BBOX = '20.5,-17.3,36.1,-0.9'; // Maroc, Sahara inclus
+const PAUSE_MS = 5000;
 
-type OsmEl = { type: 'node' | 'way' | 'relation'; id: number; lat?: number; lon?: number; center?: { lat: number; lon: number }; tags?: Record<string, string> };
+type Pt = { lat: number; lon: number };
+type OsmMember = { type: string; ref: number; role: string; geometry?: Pt[] };
+type OsmEl = { type: 'node' | 'way' | 'relation'; id: number; lat?: number; lon?: number; center?: Pt; tags?: Record<string, string>; members?: OsmMember[] };
 
 const args = process.argv.slice(2);
 const fixtureDir = args.includes('--fixture') ? args[args.indexOf('--fixture') + 1] : null;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const report: Record<string, unknown> = { startedAt: new Date().toISOString(), steps: [] as string[], anomalies: [] as string[] };
+const steps = report.steps as string[];
+const anomalies = report.anomalies as string[];
+function saveReport() {
+  mkdirSync('data-sources/geo', { recursive: true });
+  writeFileSync('data-sources/geo/report.json', JSON.stringify(report, null, 2));
+}
+const log = (m: string) => { console.log(m); steps.push(`${new Date().toISOString()} ${m}`); saveReport(); };
 
 async function overpass(key: string, query: string): Promise<OsmEl[]> {
   if (fixtureDir) {
     const f = join(fixtureDir, `${key}.json`);
     return existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')).elements as OsmEl[]) : [];
   }
-  let last: unknown = null;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  const errors: string[] = [];
+  for (let attempt = 0; attempt < 2; attempt++) {
     for (const url of ENDPOINTS) {
       try {
-        const res = await fetch(url, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'data=' + encodeURIComponent(query) });
-        if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
-        const json = (await res.json()) as { elements: OsmEl[] };
+        const t0 = Date.now();
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'data=' + encodeURIComponent(query),
+          signal: AbortSignal.timeout(400_000),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = (await res.json()) as { elements: OsmEl[]; remark?: string };
+        if (json.remark && /error|timed out/i.test(json.remark)) throw new Error(json.remark.slice(0, 200));
+        log(`${key} : ${json.elements.length} éléments via ${new URL(url).host} en ${Math.round((Date.now() - t0) / 1000)} s`);
         await sleep(PAUSE_MS);
         return json.elements;
-      } catch (e) { last = e; await sleep(PAUSE_MS * 3); }
-    }
-  }
-  throw new Error(`Overpass indisponible pour ${key} : ${String(last)}`);
-}
-
-const pt = (e: OsmEl) => (e.lat != null ? { lat: e.lat, lon: e.lon! } : e.center ?? null);
-const nameFr = (t: Record<string, string> = {}) => t['name:fr'] || t['name'] || t['name:en'] || t['name:ar'] || '';
-const round = (x: number) => Math.round(x * 1e5) / 1e5;
-
-const PLACE_KIND: Record<string, LocalityKind> = { city: 'city', town: 'town', village: 'village', suburb: 'district', quarter: 'district', neighbourhood: 'district' };
-
-async function main() {
-  const report: Record<string, unknown> = { generatedAt: new Date().toISOString(), anomalies: [] as string[] };
-  const anomalies = report.anomalies as string[];
-
-  // 1. Régions : relations OSM portant un code ISO officiel connu.
-  const regionEls = await overpass('regions', '[out:json][timeout:120];rel["boundary"="administrative"]["ISO3166-2"~"^MA-(0[1-9]|1[0-2])$"];out tags center;');
-  const regionOsm = new Map(regionEls.map((r) => [r.tags!['ISO3166-2'], r]));
-
-  const regions: GeoRegion[] = [];
-  const localities: GeoLocality[] = [];
-  const usedIds = new Set<string>();
-
-  for (const ref of REGIONS) {
-    const rel = regionOsm.get(ref.code);
-    const region: GeoRegion = { id: ref.code, name: ref.name, nameAr: ref.nameAr, osmId: rel?.id ?? null, provinces: [] };
-    regions.push(region);
-    if (!rel) { anomalies.push(`Région ${ref.code} (${ref.name}) absente d'OSM : provinces non rattachées automatiquement.`); continue; }
-
-    // 2. Provinces et préfectures de la région (niveau administratif suivant).
-    const area = 3600000000 + rel.id;
-    const provEls = await overpass(`prov-${ref.code}`, `[out:json][timeout:180];area(${area})->.r;rel(area.r)["boundary"="administrative"]["admin_level"~"^(5|6)$"];out tags center;`);
-    // Ne garder que les entités portant un code ISO de province si la région en compte (évite les cercles).
-    const iso = (e: OsmEl) => /^MA-[A-Z]{3}$/.test(e.tags?.['ISO3166-2'] ?? '');
-    const kept = provEls.some(iso) ? provEls.filter(iso) : provEls.filter((e) => e.tags?.admin_level === '5');
-    for (const p of kept) {
-      const code = p.tags?.['ISO3166-2'] && /^MA-[A-Z]{3}$/.test(p.tags['ISO3166-2']) ? p.tags['ISO3166-2'] : `osm-r${p.id}`;
-      if (region.provinces.some((x) => x.id === code)) continue;
-      const c = pt(p);
-      const prov: GeoProvince = { id: code, name: nameFr(p.tags), nameAr: p.tags?.['name:ar'] ?? null, osmId: p.id, lat: c ? round(c.lat) : null, lon: c ? round(c.lon) : null };
-      region.provinces.push(prov);
-      if (code.startsWith('osm-')) anomalies.push(`Province sans code ISO : ${prov.name} (relation ${p.id}).`);
-
-      // 3. Localités de la province (villes, centres, villages, quartiers).
-      const pArea = 3600000000 + p.id;
-      const placeEls = await overpass(`places-${code}`, `[out:json][timeout:180];area(${pArea})->.p;node(area.p)["place"~"^(city|town|village|suburb|quarter|neighbourhood)$"]["name"];out;`);
-      const seen = new Set<string>();
-      for (const n of placeEls) {
-        const kind = PLACE_KIND[n.tags!.place];
-        const name = nameFr(n.tags);
-        if (!kind || !name || n.lat == null) continue;
-        const base = `${slugify(name)}-${code.toLowerCase()}`;
-        if (seen.has(base + kind)) continue; // doublon de nom dans la même province
-        seen.add(base + kind);
-        let id = base; let k = 2;
-        while (usedIds.has(id)) id = `${base}-${k++}`;
-        usedIds.add(id);
-        localities.push({
-          id, name, nameAr: n.tags!['name:ar'] ?? null, kind,
-          provinceId: code, regionId: ref.code,
-          lat: round(n.lat), lon: round(n.lon!),
-          population: n.tags!.population && /^\d+$/.test(n.tags!.population) ? Number(n.tags!.population) : null,
-          osmId: n.id,
-        });
+      } catch (e) {
+        errors.push(`${new URL(url).host}: ${String((e as Error).message ?? e)}`);
+        log(`${key} : échec ${errors.at(-1)}`);
+        await sleep(PAUSE_MS * 2);
       }
     }
-    region.provinces.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+  }
+  throw new Error(`Overpass indisponible pour ${key} : ${errors.join(' | ')}`);
+}
+
+const nameFr = (t: Record<string, string> = {}) => t['name:fr'] || t['name'] || t['name:en'] || '';
+const round = (x: number) => Math.round(x * 1e5) / 1e5;
+
+// ---------- Géométrie : assemblage des anneaux et point dans polygone
+function assembleRings(members: OsmMember[]): Pt[][] {
+  const segs = members.filter((m) => m.type === 'way' && m.role !== 'inner' && m.geometry && m.geometry.length > 1).map((m) => [...m.geometry!]);
+  const rings: Pt[][] = [];
+  const same = (a: Pt, b: Pt) => Math.abs(a.lat - b.lat) < 1e-7 && Math.abs(a.lon - b.lon) < 1e-7;
+  while (segs.length) {
+    let ring = segs.shift()!;
+    let grown = true;
+    while (!same(ring[0], ring[ring.length - 1]) && grown) {
+      grown = false;
+      for (let i = 0; i < segs.length; i++) {
+        const s = segs[i];
+        const end = ring[ring.length - 1];
+        if (same(end, s[0])) ring = ring.concat(s.slice(1));
+        else if (same(end, s[s.length - 1])) ring = ring.concat([...s].reverse().slice(1));
+        else if (same(ring[0], s[s.length - 1])) ring = s.concat(ring.slice(1));
+        else if (same(ring[0], s[0])) ring = [...s].reverse().concat(ring.slice(1));
+        else continue;
+        segs.splice(i, 1);
+        grown = true;
+        break;
+      }
+    }
+    if (ring.length >= 4) rings.push(ring);
+  }
+  return rings;
+}
+
+function inRing(p: Pt, ring: Pt[]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const a = ring[i], b = ring[j];
+    if ((a.lat > p.lat) !== (b.lat > p.lat) && p.lon < ((b.lon - a.lon) * (p.lat - a.lat)) / (b.lat - a.lat) + a.lon) inside = !inside;
+  }
+  return inside;
+}
+
+const PLACE_KIND: Record<string, LocalityKind> = { city: 'city', town: 'town', village: 'village', suburb: 'district', quarter: 'district' };
+
+async function main() {
+  // 1. Régions (codes ISO officiels) et leurs provinces membres (« subarea »)
+  const regionEls = await overpass('regions', `[out:json][timeout:300];rel["boundary"="administrative"]["ISO3166-2"~"^MA-(0[1-9]|1[0-2])$"];out body;`);
+  const regionOsm = new Map(regionEls.map((r) => [r.tags!['ISO3166-2'], r]));
+
+  // 2. Provinces et préfectures avec géométrie (une seule requête)
+  const provEls = await overpass('provinces', `[out:json][timeout:600][maxsize:1073741824];rel["boundary"="administrative"]["admin_level"="5"]["ISO3166-2"~"^MA-[A-Z]{3}$"](${BBOX});out tags center geom;`);
+  const provRegion = new Map<number, string>();
+  for (const [code, r] of regionOsm) for (const m of r.members ?? []) if (m.type === 'relation') provRegion.set(m.ref, code);
+
+  const regions: GeoRegion[] = REGIONS.map((ref) => ({ id: ref.code, name: ref.name, nameAr: ref.nameAr, osmId: regionOsm.get(ref.code)?.id ?? null, provinces: [] }));
+  const byCode = new Map(regions.map((r) => [r.id, r]));
+  for (const r of regions) if (!r.osmId) anomalies.push(`Région ${r.id} (${r.name}) absente d'OSM.`);
+
+  const provShapes: { prov: GeoProvince; regionId: string; rings: Pt[][]; bbox: [number, number, number, number] }[] = [];
+  for (const p of provEls) {
+    const code = p.tags!['ISO3166-2'];
+    const rings = assembleRings(p.members ?? []);
+    const all = rings.flat();
+    const bbox: [number, number, number, number] = all.length
+      ? [Math.min(...all.map((x) => x.lat)), Math.min(...all.map((x) => x.lon)), Math.max(...all.map((x) => x.lat)), Math.max(...all.map((x) => x.lon))]
+      : [0, 0, 0, 0];
+    let regionId = provRegion.get(p.id) ?? null;
+    if (!regionId && p.center) {
+      // À défaut d'appartenance déclarée : région dont le contour contient le centre (si la relation régionale a une géométrie, sinon anomalie)
+      anomalies.push(`Province ${code} (${nameFr(p.tags)}) non rattachée à une région dans OSM.`);
+    }
+    const prov: GeoProvince = { id: code, name: nameFr(p.tags), nameAr: p.tags?.['name:ar'] ?? null, osmId: p.id, lat: p.center ? round(p.center.lat) : null, lon: p.center ? round(p.center.lon) : null };
+    if (regionId && byCode.has(regionId)) byCode.get(regionId)!.provinces.push(prov);
+    if (!rings.length) anomalies.push(`Province ${code} sans contour exploitable.`);
+    provShapes.push({ prov, regionId: regionId ?? '', rings, bbox });
+  }
+  for (const r of regions) r.provinces.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+
+  // 3. Localités (une requête nationale), rattachées par point dans polygone
+  const placeEls = await overpass('places', `[out:json][timeout:600];node["place"~"^(city|town|village|suburb|quarter)$"]["name"](${BBOX});out;`);
+  const localities: GeoLocality[] = [];
+  const usedIds = new Set<string>();
+  const seen = new Set<string>();
+  let unplaced = 0;
+  for (const n of placeEls) {
+    const kind = PLACE_KIND[n.tags!.place];
+    const name = nameFr(n.tags);
+    if (!kind || !name || n.lat == null || n.lon == null) continue;
+    const pt = { lat: n.lat, lon: n.lon };
+    const shape = provShapes.find((s) => pt.lat >= s.bbox[0] && pt.lat <= s.bbox[2] && pt.lon >= s.bbox[1] && pt.lon <= s.bbox[3] && s.rings.some((r) => inRing(pt, r)));
+    if (!shape) { unplaced++; continue; } // hors des provinces cartographiées (pays voisins, mer)
+    const base = `${slugify(name)}-${shape.prov.id.toLowerCase()}`;
+    if (seen.has(base + kind)) continue;
+    seen.add(base + kind);
+    let id = base; let k = 2;
+    while (usedIds.has(id)) id = `${base}-${k++}`;
+    usedIds.add(id);
+    localities.push({
+      id, name, nameAr: n.tags!['name:ar'] ?? null, kind,
+      provinceId: shape.prov.id, regionId: shape.regionId,
+      lat: round(n.lat), lon: round(n.lon),
+      population: n.tags!.population && /^\d+$/.test(n.tags!.population) ? Number(n.tags!.population) : null,
+      osmId: n.id,
+    });
   }
 
-  // Les quartiers (district) sont rattachés à la ville la plus proche de la même province.
+  // Les quartiers sont rattachés à la ville la plus proche de la même province.
   const towns = localities.filter((l) => l.kind === 'city' || l.kind === 'town');
   for (const d of localities.filter((l) => l.kind === 'district')) {
     let best: GeoLocality | null = null; let bestD = Infinity;
@@ -127,16 +190,25 @@ async function main() {
   }
 
   localities.sort((a, b) => (b.population ?? 0) - (a.population ?? 0) || a.name.localeCompare(b.name, 'fr'));
-  const counts = localities.reduce<Record<string, number>>((m, l) => ((m[l.kind] = (m[l.kind] ?? 0) + 1), m), {});
-  Object.assign(report, { regions: regions.length, provinces: regions.reduce((s, r) => s + r.provinces.length, 0), localities: localities.length, byKind: counts });
+  const byKind = localities.reduce<Record<string, number>>((m, l) => ((m[l.kind] = (m[l.kind] ?? 0) + 1), m), {});
+  Object.assign(report, {
+    finishedAt: new Date().toISOString(), ok: true,
+    regions: regions.length, regionsWithProvinces: regions.filter((r) => r.provinces.length).length,
+    provinces: provShapes.length, localities: localities.length, byKind, unplacedPlaces: unplaced,
+  });
 
   mkdirSync('public/data/geo', { recursive: true });
-  mkdirSync('data-sources/geo', { recursive: true });
-  const meta = { generatedAt: report.generatedAt, source: 'OpenStreetMap', licence: 'ODbL 1.0', attribution: '© les contributeurs d’OpenStreetMap' };
+  const meta = { generatedAt: new Date().toISOString(), source: 'OpenStreetMap', licence: 'ODbL 1.0', attribution: '© les contributeurs d’OpenStreetMap' };
   writeFileSync('public/data/geo/regions.json', JSON.stringify({ ...meta, regions }));
   writeFileSync('public/data/geo/localities.json', JSON.stringify({ ...meta, localities }));
-  writeFileSync('data-sources/geo/report.json', JSON.stringify(report, null, 2));
-  console.log(JSON.stringify(report, null, 2));
+  saveReport();
+  log(`Terminé : ${regions.length} régions, ${provShapes.length} provinces, ${localities.length} localités`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  report.ok = false;
+  report.error = String((e as Error)?.stack ?? e);
+  saveReport();
+  console.error(e);
+  process.exit(1);
+});
