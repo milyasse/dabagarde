@@ -10,7 +10,7 @@ OK  — adresse partageable : ville=sale
 OK  — carte de résultat : bouton Itinéraire
 OK  — carte de résultat : appel (ou absence de numéro signalée)
 OK  — aucune pharmacie présentée comme « ouverte »
-ÉCHEC — fiche : sources, date de récupération, précision de la position
+OK  — fiche : sources, date de récupération, précision de la position
 OK  — fiche : distinction donnée récupérée / vérifiée
 OK  — signalement : ticket prérempli (motif « Pharmacie fermée »)
 OK  — favori : confirmation affichée
@@ -59,9 +59,9 @@ OK  — index.html : contenu lisible sans JavaScript
 
 ## Accessibilité de base
 OK  — éléments interactifs sans nom accessible : 0
-ÉCHEC — clavier : lien d’évitement en premier
+OK  — clavier : lien d’évitement en premier
 
 ## Ordinateur
 OK  — ordinateur : liste et carte affichées ensemble
 
-2 vérification(s) en échec
+toutes les vérifications sont passées
