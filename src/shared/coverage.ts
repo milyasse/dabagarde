@@ -45,6 +45,7 @@ export const GARDE24_CITY_SLUGS = new Set([
   'tetouan', 'tiflet', 'tikiouine', 'tinghir', 'tiznit', 'youssoufia', 'zagora', 'zeghanghane',
 ]);
 
+// label : modèle où {lieu} est remplacé par le nom du lieu à l'affichage.
 export interface ExternalLink { label: string; url: string; note: string }
 
 /** Liens vers des pages publiques d'origine, pour une ville sans source exploitable ici. */
@@ -52,10 +53,10 @@ export function externalLinks(placeName: string): ExternalLink[] {
   const out: ExternalLink[] = [];
   const slug = slugify(placeName);
   if (GARDE24_CITY_SLUGS.has(slug)) {
-    out.push({ label: `Voir la page ${placeName} sur garde24.ma`, url: `https://garde24.ma/fr/pharmacie-de-garde/${slug}`, note: 'Site indépendant, non affilié : vérifiez sa date de mise à jour.' });
+    out.push({ label: 'Voir la page {lieu} sur garde24.ma', url: `https://garde24.ma/fr/pharmacie-de-garde/${slug}`, note: 'Site indépendant, non affilié : vérifiez sa date de mise à jour.' });
   }
   out.push({
-    label: `Rechercher « pharmacie de garde ${placeName} » sur le web`,
+    label: 'Rechercher « pharmacie de garde {lieu} » sur le web',
     url: `https://www.google.com/search?q=${encodeURIComponent(`pharmacie de garde ${placeName}`)}`,
     note: 'Résultats non vérifiés par nous.',
   });

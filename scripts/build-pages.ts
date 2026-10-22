@@ -11,7 +11,7 @@ import { addDays, formatFrDate, formatMoroccoDateTime, moroccoDate } from '../sr
 import { CITIES, CONNECTORS } from '../src/shared/connectors/registry.ts';
 import { DUTY_TYPE_LABEL } from '../src/shared/duty.ts';
 import { formatPhone } from '../src/shared/text.ts';
-import { temporalStatus } from '../src/shared/temporal.ts';
+import { fillVars, temporalStatus } from '../src/shared/temporal.ts';
 import { coverageAt } from '../src/shared/coverage.ts';
 import { slugify } from '../src/shared/geo/slug.ts';
 import { usableCoords } from '../src/shared/quality.ts';
@@ -123,7 +123,7 @@ function pharmacyCard(p: Pharmacy): string {
   const src = p.sources[0];
   return `<li class="card"><h3>${esc(p.name)}</h3>
 <p class="muted small" style="margin:2px 0 0">${esc([p.district, p.address].filter(Boolean).join(' · ') || 'Adresse non communiquée par la source')}</p>
-<div class="pills"><span class="pill">${esc(t.label)}</span>${p.dutyType ? `<span class="pill ${TYPE_CLASS[p.dutyType]}">${DUTY_TYPE_LABEL[p.dutyType]}</span>` : ''}${p.hoursText ? `<span class="pill grey">${esc(p.hoursText)}</span>` : ''}${p.verificationStatus !== 'confirmed' ? '<span class="pill day">À confirmer</span>' : ''}</div>
+<div class="pills"><span class="pill">${esc(fillVars(t.label, t.vars))}</span>${p.dutyType ? `<span class="pill ${TYPE_CLASS[p.dutyType]}">${DUTY_TYPE_LABEL[p.dutyType]}</span>` : ''}${p.hoursText ? `<span class="pill grey">${esc(p.hoursText)}</span>` : ''}${p.verificationStatus !== 'confirmed' ? '<span class="pill day">À confirmer</span>' : ''}</div>
 <div class="actions">${p.phone ? `<a class="call" href="tel:${p.phone}">Appeler ${formatPhone(p.phone)}</a>` : '<span class="muted small">Téléphone non publié</span>'}${maps ? `<a href="${maps}" rel="nofollow noopener" target="_blank">Itinéraire</a>` : ''}</div>
 <p class="muted small" style="margin:10px 0 0">Source : ${src ? (src.sourceUrl ? `<a href="${esc(src.sourceUrl)}" rel="nofollow noopener" target="_blank">${esc(src.sourceName)}</a>` : esc(src.sourceName)) : '—'}${p.lastCheckedAt ? ` · récupérée le ${formatMoroccoDateTime(p.lastCheckedAt)}` : ''}</p></li>`;
 }

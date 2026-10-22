@@ -1,5 +1,6 @@
 // Espace « Cliniques et hôpitaux » : mêmes briques que l'espace Pharmacies (position, rayon, carte,
 // itinéraires OSRM, fiches), alimenté par public/data/sante/etablissements.json.
+import { tr } from '../../i18n/index.tsx';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Origin } from '../SearchPanel.tsx';
 import { OriginPicker } from '../search/OriginPicker.tsx';
@@ -98,7 +99,7 @@ export function HealthSpace(props: {
 
   const runSearch = useCallback(async (force = false) => {
     if (!origin) {
-      setOriginError('Indiquez une position de départ : « Ma position », une adresse, une ville ou un point sur la carte.');
+      setOriginError(tr('Indiquez une position de départ : « Ma position », une adresse, une ville ou un point sur la carte.'));
       return;
     }
     setOriginError(null);
@@ -110,7 +111,7 @@ export function HealthSpace(props: {
     if (sort === 'duration') setSort('asc');
     const d = force || !dataset ? await loadData(force) : dataset;
     if (!d) {
-      setSearch({ state: 'error', error: dataError ?? 'Données indisponibles.' });
+      setSearch({ state: 'error', error: tr(dataError ?? 'Données indisponibles.') });
       return;
     }
     const outcome = searchEstablishments(d.establishments, { origin, radiusKm, types, service, emergencyOnly, date: moroccoDate(), sort: 'asc' });
@@ -149,7 +150,7 @@ export function HealthSpace(props: {
       setRouteStates((s) => ({ ...s, [id]: {} }));
     } catch (err) {
       if ((err as Error).name === 'AbortError') { setRouteStates((s) => ({ ...s, [id]: {} })); return; }
-      setRouteStates((s) => ({ ...s, [id]: { error: `${(err as Error).message} Utilisez « Ouvrir dans Google Maps ».` } }));
+      setRouteStates((s) => ({ ...s, [id]: { error: `${tr((err as Error).message)} ${tr('Utilisez « Ouvrir dans Google Maps ».')}` } }));
     }
   }, [list, origin, mode, routes]);
 
@@ -223,41 +224,41 @@ export function HealthSpace(props: {
     <div id="espace-sante" className="mx-auto w-full max-w-7xl flex-1 lg:grid lg:grid-cols-[440px_1fr]">
       <div className="lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-line">
         {/* Accès rapide par ville */}
-        <section aria-label="Établissements par ville" className="bg-bg px-4 pb-1 pt-3 lg:px-6">
-          <h2 className="text-sm font-extrabold">Cliniques et hôpitaux partout au Maroc</h2>
+        <section aria-label={tr('Établissements par ville')} className="bg-bg px-4 pb-1 pt-3 lg:px-6">
+          <h2 className="text-sm font-extrabold">{tr('Cliniques et hôpitaux partout au Maroc')}</h2>
           <div className="mt-2">
             <LocalitySearch size="md" onPick={pickLocality} onLocate={() => { void props.onLocate().then((ok) => ok && requestSearch()); }} locating={props.locating} />
           </div>
-          <p className="mt-3 text-xs font-medium text-muted">Accès rapide (établissements à 10 km du centre)</p>
+          <p className="mt-3 text-xs font-medium text-muted">{tr('Accès rapide (établissements à 10 km du centre)')}</p>
           <div className="mt-1.5 grid grid-cols-3 gap-2">
             {(cityCounts ?? CITIES.filter((c) => QUICK_CITIES.includes(c.id)).map((c) => ({ ...c, n: null as number | null, urg: null as number | null }))).map((c) => (
               <button key={c.id} type="button" onClick={() => pickCity(c.id)}
-                className={`rounded-xl border bg-white px-3 py-2 text-left shadow-[0_1px_4px_rgba(13,26,20,0.05)] ${origin?.kind === 'city' && origin.city === c.id ? 'border-2 border-brand-700' : 'border-line'}`}>
+                className={`rounded-xl border bg-white px-3 py-2 text-start shadow-[0_1px_4px_rgba(13,26,20,0.05)] ${origin?.kind === 'city' && origin.city === c.id ? 'border-2 border-brand-700' : 'border-line'}`}>
                 <span className="block text-xs font-bold text-muted">{c.name}</span>
                 <span className="block text-xl font-extrabold text-ink">{c.n ?? (dataError ? '—' : <SpinnerIcon size={16} />)}</span>
-                {c.urg !== null && <span className="block text-[11px] font-semibold text-danger-600">{c.urg} avec urgences déclarées</span>}
+                {c.urg !== null && <span className="block text-[11px] font-semibold text-danger-600">{tr('{n} avec urgences déclarées', { n: c.urg })}</span>}
               </button>
             ))}
           </div>
           {dataset && (
             <p className="mt-2 text-[11px] font-medium text-muted">
-              Sources : OpenStreetMap{dataset.osmBase ? ` (données du ${formatShortDate(dataset.osmBase.slice(0, 10))})` : ''} · ministère de la Santé, liste des hôpitaux{dataset.ministryDataDate ? ` (mise à jour du ${formatShortDate(dataset.ministryDataDate)})` : ''} · actualisé le {formatMoroccoDateTime(dataset.generatedAt)}
+              {tr('Sources :')} OpenStreetMap{dataset.osmBase ? ` (${tr('données du {date}', { date: formatShortDate(dataset.osmBase.slice(0, 10)) })})` : ''} · {tr('ministère de la Santé, liste des hôpitaux')}{dataset.ministryDataDate ? ` (${tr('mise à jour du {date}', { date: formatShortDate(dataset.ministryDataDate) })})` : ''} · {tr('actualisé le {date}', { date: formatMoroccoDateTime(dataset.generatedAt) })}
             </p>
           )}
-          {dataError && <p role="alert" className="mt-2 text-sm font-semibold text-danger-600">{dataError}</p>}
+          {dataError && <p role="alert" className="mt-2 text-sm font-semibold text-danger-600">{tr(dataError)}</p>}
         </section>
 
         {/* Formulaire (replié en résumé après une recherche, comme l'espace Pharmacies) */}
         {collapsed && search.state === 'done' ? (
           <div className="flex items-center gap-3 bg-white px-4 py-3 lg:px-6">
             <p className="min-w-0 flex-1 text-sm">
-              <b>{origin?.kind === 'gps' ? 'Ma position' : origin?.kind === 'map' ? 'Point sur la carte' : origin?.kind === 'city' ? origin.label.replace('Centre de ', '') : origin?.label.split(',')[0]}</b>
-              <span className="text-muted"> · {radiusKm} km · {types.length ? types.map((t) => TYPE_LABEL[t]).join(', ') : 'tous types'}{service ? ` · ${SERVICE_LABEL[service]}` : ''}{emergencyOnly ? ' · urgences déclarées' : ''}</span>
+              <b>{origin?.kind === 'gps' ? tr('Ma position') : origin?.kind === 'map' ? tr('Point sur la carte') : origin?.kind === 'city' ? origin.label.replace('Centre de ', '') : origin?.label.split(',')[0]}</b>
+              <span className="text-muted"> · {radiusKm} km · {types.length ? types.map((t) => tr(TYPE_LABEL[t])).join(', ') : tr('tous types')}{service ? ` · ${tr(SERVICE_LABEL[service])}` : ''}{emergencyOnly ? ` · ${tr('urgences déclarées')}` : ''}</span>
             </p>
-            <button type="button" onClick={() => setCollapsed(false)} className="rounded-xl bg-brand-50 px-3 py-2 text-sm font-bold text-brand-700">Modifier</button>
+            <button type="button" onClick={() => setCollapsed(false)} className="rounded-xl bg-brand-50 px-3 py-2 text-sm font-bold text-brand-700">{tr('Modifier')}</button>
           </div>
         ) : (
-        <section aria-label="Recherche" className="space-y-4 bg-white p-4 lg:px-6">
+        <section aria-label={tr('Recherche')} className="space-y-4 bg-white p-4 lg:px-6">
           <OriginPicker
             idPrefix="sante-"
             origin={origin}
@@ -272,16 +273,16 @@ export function HealthSpace(props: {
           <RadiusPicker idPrefix="sante-" radiusKm={radiusKm} onRadius={setRadiusKm} onValidity={setRadiusErr} radii={RADII} />
 
           <fieldset className="space-y-1.5">
-            <legend className="text-xs font-bold text-muted">Type d’établissement</legend>
+            <legend className="text-xs font-bold text-muted">{tr('Type d’établissement')}</legend>
             <div className="flex flex-wrap gap-1.5">
               <button type="button" aria-pressed={types.length === 0} onClick={() => setTypes([])}
-                className={`rounded-full px-3 py-1.5 text-sm font-bold ${types.length === 0 ? 'bg-brand-700 text-white' : 'bg-bg text-ink hover:bg-brand-50'}`}>Tous</button>
+                className={`rounded-full px-3 py-1.5 text-sm font-bold ${types.length === 0 ? 'bg-brand-700 text-white' : 'bg-bg text-ink hover:bg-brand-50'}`}>{tr('Tous')}</button>
               {TYPE_FILTERS.map((t) => {
                 const on = types.includes(t.id);
                 return (
                   <button key={t.id} type="button" aria-pressed={on} onClick={() => toggleType(t.id)}
                     className={`rounded-full px-3 py-1.5 text-sm font-bold ${on ? 'bg-brand-700 text-white' : 'bg-bg text-ink hover:bg-brand-50'}`}>
-                    {t.label}
+                    {tr(t.label)}
                   </button>
                 );
               })}
@@ -290,30 +291,30 @@ export function HealthSpace(props: {
 
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <label htmlFor="sante-service" className="text-xs font-bold text-muted">Service recherché</label>
+              <label htmlFor="sante-service" className="text-xs font-bold text-muted">{tr('Service recherché')}</label>
               <select id="sante-service" value={service ?? ''} onChange={(e) => setService((e.target.value || null) as ServiceId | null)}
                 className="w-full rounded-xl border-[1.5px] border-line bg-white px-3 py-2.5 text-sm font-semibold">
-                <option value="">Tous les services</option>
-                {services.map((s) => <option key={s} value={s}>{SERVICE_LABEL[s]}</option>)}
+                <option value="">{tr('Tous les services')}</option>
+                {services.map((s) => <option key={s} value={s}>{tr(SERVICE_LABEL[s])}</option>)}
               </select>
             </div>
             <label className="flex items-center gap-2 self-end rounded-xl bg-danger-50 px-3 py-2.5 text-sm font-bold text-danger-600">
               <input type="checkbox" checked={emergencyOnly} onChange={(e) => setEmergencyOnly(e.target.checked)} className="h-4 w-4 accent-[#b42318]" />
-              Urgences déclarées uniquement
+              {tr('Urgences déclarées uniquement')}
             </label>
           </div>
           <p className="text-[11px] text-muted">
-            Les services ne sont affichés que lorsqu’une source les publie. La disponibilité en temps réel d’un service n’est publiée par aucune source consultée.
+            {tr('Les services ne sont affichés que lorsqu’une source les publie. La disponibilité en temps réel d’un service n’est publiée par aucune source consultée.')}
           </p>
 
           {criteriaChanged && search.state === 'done' && (
             <p role="status" className="rounded-lg bg-warn-50 px-3 py-2 text-[13px] font-semibold text-warn-600">
-              Critères modifiés : appuyez sur « Rechercher » pour mettre à jour les résultats.
+              {tr('Critères modifiés : appuyez sur « Rechercher » pour mettre à jour les résultats.')}
             </p>
           )}
           <button type="button" onClick={requestSearch} disabled={search.state === 'loading' || !!radiusErr}
             className={`flex w-full items-center justify-center gap-2 rounded-xl bg-brand-700 py-3.5 text-[15px] font-bold text-white hover:bg-brand-600 disabled:opacity-60 ${criteriaChanged ? 'ring-4 ring-warn-600/30' : ''}`}>
-            {search.state === 'loading' ? <SpinnerIcon /> : <HospitalIcon size={18} />} Rechercher les établissements
+            {search.state === 'loading' ? <SpinnerIcon /> : <HospitalIcon size={18} />} {tr('Rechercher les établissements')}
           </button>
         </section>
         )}
@@ -324,7 +325,7 @@ export function HealthSpace(props: {
       <div className="flex flex-col lg:sticky lg:top-[calc(env(safe-area-inset-top,0px)+57px)] lg:h-[calc(100dvh-57px)] lg:self-start">
         <div ref={mapBox} className="relative h-[48vh] min-h-[300px] scroll-mt-28 lg:h-auto lg:flex-1">
           <PharmacyMap
-            ariaLabel="Carte des cliniques et hôpitaux"
+            ariaLabel={tr('Carte des cliniques et hôpitaux')}
             origin={origin}
             radiusKm={search.state === 'done' ? search.radiusKm : radiusKm}
             pharmacies={mapItems}
@@ -333,7 +334,7 @@ export function HealthSpace(props: {
             visibleRouteIds={visibleRouteIds}
             mode={mode}
             picking={picking}
-            onPick={(lat, lng) => { setOrigin({ lat, lng, label: 'Point choisi sur la carte', kind: 'map' }); setPicking(false); }}
+            onPick={(lat, lng) => { setOrigin({ lat, lng, label: tr('Point choisi sur la carte'), kind: 'map' }); setPicking(false); }}
             onSelect={setSelectedId}
             focusSignal={focus}
             routesShown={routesShown}
@@ -351,23 +352,22 @@ export function HealthSpace(props: {
     if (search.state === 'idle') {
       return (
         <section className="space-y-2 p-4 text-sm lg:px-6">
-          <h2 className="text-base font-extrabold">Trouver une clinique ou un hôpital</h2>
-          <p>Choisissez une ville ou votre position, le rayon et, si besoin, un type d’établissement ou un service, puis lancez la recherche.</p>
+          <h2 className="text-base font-extrabold">{tr('Trouver une clinique ou un hôpital')}</h2>
+          <p>{tr('Choisissez une ville ou votre position, le rayon et, si besoin, un type d’établissement ou un service, puis lancez la recherche.')}</p>
           <p className="text-muted">
-            Chaque fiche indique ce qui est réellement publié : établissement <b>répertorié</b>, <b>urgences déclarées</b>, <b>horaires vérifiés</b>
-            et, seulement si une source officielle le précise, <b>désignation de garde</b>.
+            {tr('Chaque fiche indique ce qui est réellement publié : établissement répertorié, urgences déclarées, horaires vérifiés et, seulement si une source officielle le précise, désignation de garde.')}
           </p>
         </section>
       );
     }
     if (search.state === 'loading') {
-      return <ResultsSkeleton label="Recherche des établissements…" />;
+      return <ResultsSkeleton label={tr('Recherche des établissements…')} />;
     }
     if (search.state === 'error') {
       return (
         <div role="alert" className="m-4 rounded-xl bg-danger-50 p-3 text-sm font-semibold text-danger-600">
           {search.error}{' '}
-          <button type="button" className="underline" onClick={() => void runSearch(true)}>Réessayer</button>
+          <button type="button" className="underline" onClick={() => void runSearch(true)}>{tr('Réessayer')}</button>
         </div>
       );
     }

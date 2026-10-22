@@ -1,4 +1,5 @@
 // Navigation principale entre les deux espaces de l'application.
+import { tr } from '../i18n/index.tsx';
 import type { ReactNode } from 'react';
 import { HospitalIcon, PillIcon } from './icons.tsx';
 
@@ -10,7 +11,7 @@ export function SpaceTabs({ space, onChange }: { space: Space; onChange: (s: Spa
     { id: 'sante', label: 'Cliniques et hôpitaux', icon: <HospitalIcon size={18} /> },
   ];
   return (
-    <nav aria-label="Espaces" className="sticky top-0 z-[800] border-b border-line bg-white/95 shadow-[0_1px_6px_rgba(13,26,20,0.06)] backdrop-blur">
+    <nav aria-label={tr('Espaces')} className="sticky top-0 z-[800] border-b border-line bg-white/95 shadow-[0_1px_6px_rgba(13,26,20,0.06)] backdrop-blur">
       <div role="tablist" className="grid grid-cols-2 lg:flex lg:px-6">
         {tabs.map((t) => {
           const on = t.id === space;
@@ -25,7 +26,7 @@ export function SpaceTabs({ space, onChange }: { space: Space; onChange: (s: Spa
               className={`inline-flex items-center justify-center gap-2 border-b-[3px] px-3 py-3 text-sm font-extrabold transition-colors lg:px-5 ${on ? 'border-brand-700 text-brand-700' : 'border-transparent text-muted hover:text-brand-700'}`}
             >
               {t.icon}
-              {t.label}
+              {tr(t.label)}
             </button>
           );
         })}

@@ -38,3 +38,9 @@ export async function sharePharmacy(p: Pharmacy): Promise<'shared' | 'copied' | 
   }
   return (await copyText(url ? `${text}\n${url}` : text)) ? 'copied' : 'failed';
 }
+
+/** Lien WhatsApp avec le message prêt (nom, garde, adresse, téléphone, itinéraire). */
+export function whatsappUrl(p: Pharmacy): string {
+  const url = mapsUrl(p);
+  return `https://wa.me/?text=${encodeURIComponent(url ? `${shareText(p)}\nItinéraire : ${url}` : shareText(p))}`;
+}

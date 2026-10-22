@@ -1,3 +1,4 @@
+import { tr, useI18n } from './i18n/index.tsx';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SiteHeader } from './components/layout/SiteHeader.tsx';
 import { SiteFooter } from './components/layout/SiteFooter.tsx';
@@ -14,6 +15,7 @@ import { ReportDialog } from './components/results/ReportDialog.tsx';
 import { CoverageNotice } from './components/results/CoverageNotice.tsx';
 import type { RouteState } from './components/PharmacyCard.tsx';
 import { ResultsSkeleton } from './components/ResultsSkeleton.tsx';
+import { EmergencyButton } from './components/EmergencyButton.tsx';
 import { ListIcon, MapIcon, PinIcon } from './components/icons.tsx';
 import { getCurrentPosition, type GeoError } from './services/geolocation.ts';
 import { searchPlace } from './services/geocoding.ts';
@@ -89,6 +91,8 @@ function writeUrl(space: Space, origin: Origin | null, filter: DutyFilter) {
 }
 
 export default function App() {
+  // re-rend toute l'interface au changement de langue (les textes passent par tr())
+  useI18n();
   const initial = useMemo(readUrl, []);
   const [space, setSpace] = useState<Space>(initial.space);
   const [healthSignal, setHealthSignal] = useState(0);
@@ -171,12 +175,12 @@ export default function App() {
   // ---------- Recherche
   const runSearch = useCallback(async (force = false) => {
     if (!origin) {
-      setOriginError('Indiquez une ville, utilisez « Autour de moi » ou choisissez un point sur la carte.');
+      setOriginError(tr('Indiquez une ville, utilisez « Autour de moi » ou choisissez un point sur la carte.'));
       setEditing(true);
       return;
     }
-    if (!isIsoDate(date)) { setSearch({ state: 'error', error: 'Date invalide.' }); return; }
-    if (!(radiusKm > 0 && radiusKm <= 100)) { setSearch({ state: 'error', error: 'Rayon invalide (entre 0,1 et 100 km).' }); return; }
+    if (!isIsoDate(date)) { setSearch({ state: 'error', error: tr('Date invalide.') }); return; }
+    if (!(radiusKm > 0 && radiusKm <= 100)) { setSearch({ state: 'error', error: tr('Rayon invalide (entre 0,1 et 100 km).') }); return; }
     const seq = ++searchSeq.current;
     setOriginError(null);
     setSearch({ state: 'loading' });
@@ -197,18 +201,18 @@ export default function App() {
       const coverage = coverageAt(origin);
       if (coverage.status === 'covered') {
         if (!day && !prev) {
-          if (date > today) notices.push(`Aucune garde publiée pour le ${formatFrDate(date)}. Les plannings sont en général disponibles jusqu’à la fin de la semaine suivante.`);
-          else notices.push(`Aucune garde n’a été collectée pour le ${formatFrDate(date)} (historique conservé 60 jours).`);
+          if (date > today) notices.push(tr('Aucune garde publiée pour le {date}. Les plannings sont en général disponibles jusqu’à la fin de la semaine suivante.', { date: formatFrDate(date) }));
+          else notices.push(tr('Aucune garde n’a été collectée pour le {date} (historique conservé 60 jours).', { date: formatFrDate(date) }));
         } else if (date > today) {
-          notices.push('Date à venir : gardes issues du planning publié à l’avance, à revérifier le jour même.');
+          notices.push(tr('Date à venir : gardes issues du planning publié à l’avance, à revérifier le jour même.'));
         }
         if (date === today && st) {
           const ageH = (Date.now() - new Date(st.generatedAt).getTime()) / 3.6e6;
-          if (ageH > 6) notices.push(`Dernière collecte le ${formatMoroccoDateTime(st.generatedAt)} : les données peuvent ne pas être à jour.`);
+          if (ageH > 6) notices.push(tr('Dernière collecte le {date} : les données peuvent ne pas être à jour.', { date: formatMoroccoDateTime(st.generatedAt) }));
           const failed = st.runs.filter((r) => !r.ok && !st.runs.some((o) => o.ok && o.city === r.city));
-          if (failed.length) notices.push(`Source indisponible lors de la dernière collecte pour : ${[...new Set(failed.map((r) => CITY_NAME[r.city] ?? r.city))].join(', ')}.`);
+          if (failed.length) notices.push(tr('Source indisponible lors de la dernière collecte pour : {villes}.', { villes: [...new Set(failed.map((r) => CITY_NAME[r.city] ?? r.city))].join(', ') }));
           const stale = st.runs.filter((r) => r.ok && r.sourceId === 'annuaire-gratuit' && r.pageDate && r.pageDate < addDays(st.todayMorocco, -1));
-          if (stale.length) notices.push(`La liste du jour de ${[...new Set(stale.map((r) => CITY_NAME[r.city]))].join(', ')} affichait une date ancienne.`);
+          if (stale.length) notices.push(tr('La liste du jour de {villes} affichait une date ancienne.', { villes: [...new Set(stale.map((r) => CITY_NAME[r.city]))].join(', ') }));
         }
       }
       setSearch({ state: 'done', outcome: fixed, notice: notices.join(' ') || null, date, radiusKm, dutyFilter, originKey: originKey(origin), coverage });
@@ -217,7 +221,7 @@ export default function App() {
       setTimeout(() => resultsTop.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
     } catch (e) {
       if (seq !== searchSeq.current) return;
-      setSearch({ state: 'error', error: (e as Error).message });
+      setSearch({ state: 'error', error: tr((e as Error).message) });
     }
   }, [origin, date, radiusKm, dutyFilter, loadCityCounts]);
 
@@ -264,7 +268,7 @@ export default function App() {
     setGeoHelp(null);
     try {
       const g = await getCurrentPosition();
-      const o: Origin = { lat: g.lat, lng: g.lng, label: 'Ma position', kind: 'gps', accuracyM: g.accuracyM };
+      const o: Origin = { lat: g.lat, lng: g.lng, label: tr('Ma position'), kind: 'gps', accuracyM: g.accuracyM };
       if (andSearch) goSearch(o, pref('radius', 5));
       else { setOrigin(o); setPicking(false); }
       return true;
@@ -296,7 +300,7 @@ export default function App() {
       setRouteStates((s) => ({ ...s, [id]: {} }));
     } catch (e) {
       if ((e as Error).name === 'AbortError') { setRouteStates((s) => ({ ...s, [id]: {} })); return; }
-      setRouteStates((s) => ({ ...s, [id]: { error: `${(e as Error).message} Utilisez Google Maps ou Waze depuis la fiche.` } }));
+      setRouteStates((s) => ({ ...s, [id]: { error: `${tr((e as Error).message)} ${tr('Utilisez Google Maps ou Waze depuis la fiche.')}` } }));
     }
   }, [allResults, origin, mode, routes]);
 
@@ -363,12 +367,12 @@ export default function App() {
   const toggleFavorite = (p: Pharmacy) => {
     const was = favorites.has(p.id);
     favorites.toggle({ id: p.id, name: p.name, city: CITY_NAME[p.city] ?? p.city, phone: p.phone });
-    setToast(was ? 'Retirée des favoris' : 'Ajoutée aux favoris (sur cet appareil)');
+    setToast(tr(was ? 'Retirée des favoris' : 'Ajoutée aux favoris (sur cet appareil)'));
   };
   const share = async (p: Pharmacy) => {
     const r = await sharePharmacy(p);
-    if (r === 'copied') setToast('Fiche copiée dans le presse-papiers');
-    else if (r === 'failed') setToast('Partage indisponible sur cet appareil');
+    if (r === 'copied') setToast(tr('Fiche copiée dans le presse-papiers'));
+    else if (r === 'failed') setToast(tr('Partage indisponible sur cet appareil'));
   };
   /** Remonte à la barre de recherche et y place le curseur, pour changer de ville sans revenir à l'accueil. */
   const changePlace = () => {
@@ -385,12 +389,12 @@ export default function App() {
   };
   const changeSpace = (s: Space) => { setSpace(s); window.scrollTo({ top: 0 }); };
 
-  const placeLabel = origin?.kind === 'gps' ? 'Autour de ma position' : origin?.kind === 'map' ? 'Point choisi sur la carte' : origin?.label.split(',')[0] ?? '';
+  const placeLabel = origin?.kind === 'gps' ? tr('Autour de ma position') : origin?.kind === 'map' ? tr('Point choisi sur la carte') : origin?.label.split(',')[0] ?? '';
   const showResults = space === 'pharmacies' && search.state !== 'idle';
 
   return (
     <div className="flex min-h-full flex-col">
-      <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[2000] focus:rounded-lg focus:bg-white focus:px-3 focus:py-2 focus:font-bold">Aller au contenu</a>
+      <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[2000] focus:rounded-lg focus:bg-white focus:px-3 focus:py-2 focus:font-bold">{tr('Aller au contenu')}</a>
       <SiteHeader
         space={space}
         onSpace={changeSpace}
@@ -401,27 +405,27 @@ export default function App() {
       />
       {!online && (
         <div role="status" className="border-b border-warn-600/30 bg-warn-50 px-4 py-2.5 text-sm font-semibold text-warn-600 lg:px-6">
-          <p className="mx-auto max-w-7xl">Hors connexion : les dernières données enregistrées sur cet appareil sont affichées{status ? ` (collecte du ${formatMoroccoDateTime(status.generatedAt)})` : ''}. Itinéraires et carte indisponibles. Urgence : 141 ou 15.</p>
+          <p className="mx-auto max-w-7xl">{tr('Hors connexion : les dernières données enregistrées sur cet appareil sont affichées')}{status ? ` (${tr('collecte du {date}', { date: formatMoroccoDateTime(status.generatedAt) })})` : ''}. {tr('Itinéraires et carte indisponibles. Urgence : 141 ou 15.')}</p>
         </div>
       )}
       {geoHelp && (
         <div role="alert" className="border-b border-warn-600/30 bg-warn-50 px-4 py-3 text-sm text-warn-600 lg:px-6">
           <div className="mx-auto flex max-w-7xl items-start gap-2">
             <div className="flex-1">
-              <p className="font-extrabold">{geoHelp.message}</p>
+              <p className="font-extrabold">{tr(geoHelp.message)}</p>
               {geoHelp.help.length > 0 && (
-                <ul className="mt-1 list-disc space-y-1 pl-5 text-[13px] font-semibold text-ink">{geoHelp.help.map((h) => <li key={h}>{h}</li>)}</ul>
+                <ul className="mt-1 list-disc space-y-1 ps-5 text-[13px] font-semibold text-ink">{geoHelp.help.map((h) => <li key={h}>{tr(h)}</li>)}</ul>
               )}
-              <p className="mt-2 text-[13px] text-ink">Vous pouvez aussi saisir une ville ci-dessous.</p>
+              <p className="mt-2 text-[13px] text-ink">{tr('Vous pouvez aussi saisir une ville ci-dessous.')}</p>
             </div>
-            <button type="button" onClick={() => setGeoHelp(null)} className="rounded-lg px-2 font-bold" aria-label="Fermer">✕</button>
+            <button type="button" onClick={() => setGeoHelp(null)} className="rounded-lg px-2 font-bold" aria-label={tr('Fermer')}>✕</button>
           </div>
         </div>
       )}
 
       <main id="contenu" className="flex-1">
         {space === 'sante' ? (
-          <Suspense fallback={<Loading label="Chargement des cliniques et hôpitaux…" />}>
+          <Suspense fallback={<Loading label={tr('Chargement des cliniques et hôpitaux…')} />}>
             <HealthSpace origin={origin} setOrigin={setOrigin} locating={locating} onLocate={() => locate(false)} mode={mode} searchSignal={healthSignal} />
           </Suspense>
         ) : !showResults ? (
@@ -452,10 +456,10 @@ export default function App() {
                   <LocalitySearch size="md" inputId="recherche-ville" onPick={pickLocality} onLocate={() => void locate(true)} locating={locating} />
                 </div>
                 <p className="text-sm text-muted">
-                  <b className="text-ink">{placeLabel}</b> · {formatFrDate(date)} · {radiusKm} km · {FILTER_LABEL[dutyFilter]}
+                  <b className="text-ink">{placeLabel}</b> · {formatFrDate(date)} · {radiusKm} km · {tr(FILTER_LABEL[dutyFilter])}
                 </p>
                 <button type="button" onClick={() => setEditing((v) => !v)} aria-expanded={editing} className="rounded-full bg-brand-50 px-4 py-2 text-sm font-bold text-brand-800">
-                  {editing ? 'Fermer les critères' : 'Date, rayon, type'}
+                  {tr(editing ? 'Fermer les critères' : 'Date, rayon, type')}
                 </button>
               </div>
               {editing && (
@@ -485,8 +489,8 @@ export default function App() {
               )}
               {criteriaChanged && !editing && (
                 <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 pb-3 lg:px-5">
-                  <p className="text-[13px] font-semibold text-warn-600">Critères modifiés.</p>
-                  <button type="button" onClick={requestSearch} className="rounded-full bg-brand-700 px-3 py-1.5 text-sm font-bold text-white">Mettre à jour</button>
+                  <p className="text-[13px] font-semibold text-warn-600">{tr('Critères modifiés.')}</p>
+                  <button type="button" onClick={requestSearch} className="rounded-full bg-brand-700 px-3 py-1.5 text-sm font-bold text-white">{tr('Mettre à jour')}</button>
                 </div>
               )}
             </div>
@@ -494,14 +498,14 @@ export default function App() {
             {/* Onglets Liste / Carte sur téléphone */}
             {!isDesktop && (
               <div className="sticky top-[calc(env(safe-area-inset-top,0px)+100px)] z-[1000] flex gap-1 border-b border-line bg-bg/95 px-4 py-2 backdrop-blur md:top-[calc(env(safe-area-inset-top,0px)+56px)]">
-                <button type="button" onClick={changePlace} className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3 py-2 text-sm font-bold text-brand-800 ring-1 ring-line" aria-label="Changer de ville">
-                  <PinIcon size={16} /> Ville
+                <button type="button" onClick={changePlace} className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3 py-2 text-sm font-bold text-brand-800 ring-1 ring-line" aria-label={tr('Changer de ville')}>
+                  <PinIcon size={16} /> {tr('Ville')}
                 </button>
-                <div className="flex flex-1 gap-1" role="tablist" aria-label="Affichage des résultats">
+                <div className="flex flex-1 gap-1" role="tablist" aria-label={tr('Affichage des résultats')}>
                   {(['list', 'map'] as const).map((t) => (
                     <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
                       className={`inline-flex flex-1 items-center justify-center gap-2 rounded-full py-2 text-sm font-bold ${tab === t ? 'bg-brand-700 text-white' : 'bg-white text-ink ring-1 ring-line'}`}>
-                      {t === 'list' ? <ListIcon size={16} /> : <MapIcon size={16} />}{t === 'list' ? 'Liste' : 'Carte'}
+                      {t === 'list' ? <ListIcon size={16} /> : <MapIcon size={16} />}{tr(t === 'list' ? 'Liste' : 'Carte')}
                     </button>
                   ))}
                 </div>
@@ -514,11 +518,11 @@ export default function App() {
                   {search.state === 'done' && !installer.dismissed && (installer.canInstall || installer.ios) && (
                     <div className="mx-4 mt-4 flex items-center gap-3 rounded-2xl bg-brand-50 p-3 text-sm lg:mx-5">
                       <p className="min-w-0 flex-1 text-brand-900">
-                        <b>Installer DabaGarde</b> pour l’ouvrir en un geste, même avec une connexion faible.
-                        {installer.ios && !installer.canInstall ? ' Sur iPhone : bouton Partager, puis « Sur l’écran d’accueil ».' : ''}
+                        <b>{tr('Installer DabaGarde')}</b> {tr('pour l’ouvrir en un geste, même avec une connexion faible.')}
+                        {installer.ios && !installer.canInstall ? ` ${tr('Sur iPhone : bouton Partager, puis « Sur l’écran d’accueil ».')}` : ''}
                       </p>
-                      {installer.canInstall && <button type="button" onClick={() => void installer.install()} className="shrink-0 rounded-full bg-brand-700 px-3 py-1.5 font-bold text-white">Installer</button>}
-                      <button type="button" onClick={installer.dismiss} className="shrink-0 rounded-full px-2 py-1 font-bold text-muted" aria-label="Masquer la proposition d’installation">✕</button>
+                      {installer.canInstall && <button type="button" onClick={() => void installer.install()} className="shrink-0 rounded-full bg-brand-700 px-3 py-1.5 font-bold text-white">{tr('Installer')}</button>}
+                      <button type="button" onClick={installer.dismiss} className="shrink-0 rounded-full px-2 py-1 font-bold text-muted" aria-label={tr('Masquer la proposition d’installation')}>✕</button>
                     </div>
                   )}
                   {search.state === 'done' && <div className="px-4 pt-4 lg:px-5"><CoverageNotice placeName={placeLabel} coverage={search.coverage} onGoCovered={() => search.coverage.cityId && pickCity(search.coverage.cityId)} /></div>}
@@ -528,7 +532,7 @@ export default function App() {
               {(isDesktop || tab === 'map') && (
                 <div className="lg:sticky lg:top-[calc(env(safe-area-inset-top,0px)+57px)] lg:h-[calc(100dvh-57px)] lg:self-start">
                   <div className="relative h-[calc(100dvh-170px)] min-h-[320px] lg:h-[calc(100%-44px)]">
-                    <Suspense fallback={<Loading label="Chargement de la carte…" />}>
+                    <Suspense fallback={<Loading label={tr('Chargement de la carte…')} />}>
                     <PharmacyMap
                       origin={origin}
                       radiusKm={radiusKm}
@@ -538,7 +542,7 @@ export default function App() {
                       visibleRouteIds={visibleRouteIds}
                       mode={mode}
                       picking={picking}
-                      onPick={(lat, lng) => { setOrigin({ lat, lng, label: 'Point choisi sur la carte', kind: 'map' }); setPicking(false); }}
+                      onPick={(lat, lng) => { setOrigin({ lat, lng, label: tr('Point choisi sur la carte'), kind: 'map' }); setPicking(false); }}
                       onSelect={setSelectedId}
                       focusSignal={focus}
                       routesShown={routesShown}
@@ -571,19 +575,20 @@ export default function App() {
         onToggleFavorite={() => sheet && toggleFavorite(sheet)}
       />
       <ReportDialog p={report} date={date} onClose={() => setReport(null)} />
+      <EmergencyButton />
       {toast && (
-        <div role="status" className="fixed inset-x-0 bottom-[max(env(safe-area-inset-bottom),16px)] z-[1500] mx-auto w-fit max-w-[90vw] rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-lg">{toast}</div>
+        <div role="status" className="fixed inset-x-0 bottom-[calc(max(env(safe-area-inset-bottom),16px)+64px)] z-[1500] mx-auto w-fit max-w-[90vw] rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-lg">{toast}</div>
       )}
     </div>
   );
 
   function renderResults() {
-    if (search.state === 'loading') return <ResultsSkeleton label="Recherche des gardes publiées…" />;
+    if (search.state === 'loading') return <ResultsSkeleton label={tr('Recherche des gardes publiées…')} />;
     if (search.state === 'error') {
       return (
         <div role="alert" className="m-4 rounded-xl bg-danger-50 p-3 text-sm font-semibold text-danger-600">
           {search.error}{' '}
-          <button type="button" className="underline" onClick={() => void runSearch()}>Réessayer</button>
+          <button type="button" className="underline" onClick={() => void runSearch()}>{tr('Réessayer')}</button>
         </div>
       );
     }

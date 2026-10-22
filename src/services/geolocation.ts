@@ -37,7 +37,9 @@ function platformHelp(): string[] {
   const android = /Android/i.test(ua);
   const help: string[] = [];
   if (isInAppBrowser(ua)) {
-    help.push('Vous êtes dans le navigateur intégré d’une application : ouvrez la page dans ' + (ios ? 'Safari' : 'Chrome') + ' (menu ⋯ → « Ouvrir dans le navigateur »).');
+    help.push(ios
+      ? 'Vous êtes dans le navigateur intégré d’une application : ouvrez la page dans Safari (menu ⋯ → « Ouvrir dans le navigateur »).'
+      : 'Vous êtes dans le navigateur intégré d’une application : ouvrez la page dans Chrome (menu ⋯ → « Ouvrir dans le navigateur »).');
   }
   if (ios) {
     help.push('iPhone : Réglages → Confidentialité et sécurité → Service de localisation → activé, puis « Sites Safari » (ou Chrome) → « Lorsque l’app est active ».');

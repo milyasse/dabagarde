@@ -1,4 +1,5 @@
 // Fenêtre modale accessible (élément <dialog> natif : focus piégé, Échap pour fermer).
+import { tr } from '../i18n/index.tsx';
 import { useEffect, useRef, type ReactNode } from 'react';
 import { CloseIcon } from './icons.tsx';
 
@@ -22,7 +23,7 @@ export function Dialog(props: { open: boolean; onClose: () => void; title: strin
         <div className="flex max-h-[92dvh] flex-col">
           <div className="flex items-center gap-3 border-b border-line px-5 py-3.5">
             <h2 className="min-w-0 flex-1 truncate font-display text-lg font-extrabold">{props.title}</h2>
-            <button type="button" onClick={props.onClose} className="rounded-full p-2 text-muted hover:bg-bg" aria-label="Fermer"><CloseIcon size={20} /></button>
+            <button type="button" onClick={props.onClose} className="rounded-full p-2 text-muted hover:bg-bg" aria-label={tr('Fermer')}><CloseIcon size={20} /></button>
           </div>
           <div className="overflow-y-auto px-5 py-4">{props.children}</div>
         </div>

@@ -1,3 +1,4 @@
+import { tr } from '../i18n/index.tsx';
 import type { ConfidenceLevel, VerificationStatus } from '../shared/types.ts';
 import { CONFIDENCE_LABEL, STATUS_LABEL } from '../shared/status.ts';
 
@@ -19,9 +20,9 @@ export function StatusBadge({ status, confidence }: { status: VerificationStatus
     <span className="inline-flex flex-wrap items-center gap-1.5">
       <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-bold ${STYLE[status]}`}>
         <span className={`h-2 w-2 rounded-full ${DOT[status]}`} aria-hidden="true" />
-        {STATUS_LABEL[status]}
+        {tr(STATUS_LABEL[status])}
       </span>
-      {confidence && status !== 'expired' && <span className="text-[11px] font-semibold text-muted">{CONFIDENCE_LABEL[confidence]}</span>}
+      {confidence && status !== 'expired' && <span className="text-[11px] font-semibold text-muted">{tr(CONFIDENCE_LABEL[confidence])}</span>}
     </span>
   );
 }

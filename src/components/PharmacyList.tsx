@@ -1,4 +1,5 @@
 // Liste des résultats : tri, filtre texte, avertissements de données, cartes synchronisées avec la carte.
+import { tr } from '../i18n/index.tsx';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Pharmacy } from '../shared/types.ts';
 import type { LatLng } from '../shared/distance.ts';
@@ -90,18 +91,18 @@ export function PharmacyList(props: {
 
   const n = props.list.length;
   return (
-    <section aria-label="Résultats" className="space-y-3 p-4 lg:px-5">
+    <section aria-label={tr('Résultats')} className="space-y-3 p-4 lg:px-5">
       <div className="flex items-start gap-2">
         <div className="min-w-0 flex-1">
           <h2 className="font-display text-xl font-extrabold" aria-live="polite">
-            {n === 0 ? 'Aucune pharmacie de garde' : `${n} pharmacie${n > 1 ? 's' : ''} de garde`}
+            {n === 0 ? tr('Aucune pharmacie de garde') : tr(n > 1 ? '{n} pharmacies de garde' : '{n} pharmacie de garde', { n })}
           </h2>
           <p className="text-[13px] text-muted">
             {props.placeLabel} · {formatFrDate(props.date)} · {props.radiusKm} km ·{' '}
-            <button type="button" onClick={props.onChangePlace} className="font-bold text-brand-700 underline">Changer de ville</button>
+            <button type="button" onClick={props.onChangePlace} className="font-bold text-brand-700 underline">{tr('Changer de ville')}</button>
           </p>
         </div>
-        <button type="button" onClick={props.onRefresh} className="rounded-full bg-white p-2.5 text-brand-700 ring-1 ring-line" aria-label="Actualiser les résultats" title="Actualiser">
+        <button type="button" onClick={props.onRefresh} className="rounded-full bg-white p-2.5 text-brand-700 ring-1 ring-line" aria-label={tr('Actualiser les résultats')} title={tr('Actualiser')}>
           <RefreshIcon size={18} />
         </button>
       </div>
@@ -109,66 +110,66 @@ export function PharmacyList(props: {
       {props.dataNotice && (
         <div role="status" className="flex gap-2 rounded-xl bg-warn-50 p-3 text-sm font-semibold text-warn-600">
           <WarnIcon size={18} className="mt-0.5 shrink-0" />
-          <p>{props.dataNotice}</p>
+          <p>{tr(props.dataNotice)}</p>
         </div>
       )}
 
       {n > 0 && (
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-grid grid-cols-3 gap-1 rounded-full bg-white p-1 text-sm ring-1 ring-line" role="group" aria-label="Trier par">
+            <div className="inline-grid grid-cols-3 gap-1 rounded-full bg-white p-1 text-sm ring-1 ring-line" role="group" aria-label={tr('Trier par')}>
               {(['distance', 'status', 'duration'] as SortBy[]).map((s) => (
                 <button key={s} type="button" aria-pressed={props.sortBy === s} onClick={() => props.onSort(s)}
                   className={`rounded-full px-3 py-1.5 ${props.sortBy === s ? 'bg-brand-700 font-bold text-white' : 'font-semibold text-muted'}`}>
-                  {SORT_LABEL[s]}
+                  {tr(SORT_LABEL[s])}
                 </button>
               ))}
             </div>
             <button type="button" onClick={props.onComputeAll} disabled={props.computingAll || !props.origin}
               className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-2 text-sm font-bold text-brand-800 disabled:opacity-50">
-              {props.computingAll && <SpinnerIcon size={15} />} Calculer les trajets
+              {props.computingAll && <SpinnerIcon size={15} />} {tr('Calculer les trajets')}
             </button>
             <label className="inline-flex items-center gap-2 text-sm font-semibold">
               <input type="checkbox" checked={props.showAllRoutes} onChange={(e) => props.onShowAllRoutes(e.target.checked)} className="h-4 w-4 accent-[#0a6b47]" />
-              Tous les itinéraires
+              {tr('Tous les itinéraires')}
             </label>
           </div>
           <label className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 ring-1 ring-line focus-within:ring-2 focus-within:ring-brand-500">
             <SearchIcon size={16} className="text-muted" />
-            <span className="sr-only">Filtrer par nom, adresse ou quartier</span>
-            <input value={filter} onChange={(e) => setFilter(e.target.value)} placeholder="Filtrer par nom, adresse ou quartier" className="min-w-0 flex-1 bg-transparent text-sm outline-none" />
+            <span className="sr-only">{tr('Filtrer par nom, adresse ou quartier')}</span>
+            <input value={filter} onChange={(e) => setFilter(e.target.value)} placeholder={tr('Filtrer par nom, adresse ou quartier')} className="min-w-0 flex-1 bg-transparent text-sm outline-none" />
           </label>
           {props.sortBy === 'duration' && props.list.some((p) => p.estimatedTravelMinutes === null) && (
-            <p className="text-xs text-muted">Les pharmacies dont la durée n’est pas encore calculée sont placées à la fin. Les numéros restent ceux du classement par proximité.</p>
+            <p className="text-xs text-muted">{tr('Les pharmacies dont la durée n’est pas encore calculée sont placées à la fin. Les numéros restent ceux du classement par proximité.')}</p>
           )}
         </div>
       )}
 
       {n === 0 && (
         <div className="rounded-2xl bg-white p-4 text-sm ring-1 ring-line">
-          <p className="font-semibold">Aucune pharmacie de garde trouvée dans un rayon de {props.radiusKm} km pour cette date.</p>
-          {props.outside > 0 && <p className="mt-1 text-muted">{props.outside} pharmacie(s) de garde se trouvent au-delà de ce rayon.</p>}
-          {props.filteredOutByType > 0 && <p className="mt-1 text-muted">{props.filteredOutByType} pharmacie(s) masquée(s) par le filtre « type de garde ».</p>}
+          <p className="font-semibold">{tr('Aucune pharmacie de garde trouvée dans un rayon de {n} km pour cette date.', { n: props.radiusKm })}</p>
+          {props.outside > 0 && <p className="mt-1 text-muted">{tr('{n} pharmacie(s) de garde se trouvent au-delà de ce rayon.', { n: props.outside })}</p>}
+          {props.filteredOutByType > 0 && <p className="mt-1 text-muted">{tr('{n} pharmacie(s) masquée(s) par le filtre « type de garde ».', { n: props.filteredOutByType })}</p>}
           {props.alternative && (
-            <p className="mt-2">Ville la plus proche avec des gardes publiées : <b>{props.alternative.name}</b>, à environ {props.alternative.km} km ({props.alternative.count} garde{props.alternative.count > 1 ? 's' : ''}).</p>
+            <p className="mt-2">{tr('Ville la plus proche avec des gardes publiées :')} <b>{props.alternative.name}</b>, {tr('à environ {km} km', { km: props.alternative.km })} ({tr(props.alternative.count > 1 ? '{n} gardes' : '{n} garde', { n: props.alternative.count })}).</p>
           )}
           <div className="mt-3 flex flex-wrap gap-2">
             {props.alternative && (
-              <button type="button" onClick={() => props.onGoAlternative(props.alternative!.id)} className="rounded-xl bg-brand-700 px-4 py-2.5 font-bold text-white">Voir {props.alternative.name}</button>
+              <button type="button" onClick={() => props.onGoAlternative(props.alternative!.id)} className="rounded-xl bg-brand-700 px-4 py-2.5 font-bold text-white">{tr('Voir {nom}', { nom: props.alternative.name })}</button>
             )}
-            <button type="button" onClick={props.onEnlarge} className={`rounded-xl px-4 py-2.5 font-bold ${props.alternative ? 'bg-brand-50 text-brand-800' : 'bg-brand-700 text-white'}`}>Élargir le rayon</button>
+            <button type="button" onClick={props.onEnlarge} className={`rounded-xl px-4 py-2.5 font-bold ${props.alternative ? 'bg-brand-50 text-brand-800' : 'bg-brand-700 text-white'}`}>{tr('Élargir le rayon')}</button>
           </div>
-          <p className="mt-3 text-xs text-muted">Urgence vitale : 141 (SAMU) ou 15 (Protection civile).</p>
+          <p className="mt-3 text-xs text-muted">{tr('Urgence vitale : 141 (SAMU) ou 15 (Protection civile).')}</p>
         </div>
       )}
-      {n > 0 && shown.length === 0 && <p className="rounded-xl bg-white p-3 text-sm text-muted ring-1 ring-line">Aucun résultat ne correspond à « {filter} ».</p>}
+      {n > 0 && shown.length === 0 && <p className="rounded-xl bg-white p-3 text-sm text-muted ring-1 ring-line">{tr('Aucun résultat ne correspond à « {q} ».', { q: filter })}</p>}
 
       <div className="space-y-3">{shown.map(card)}</div>
 
       {unlocated.length > 0 && (
         <details className="rounded-2xl bg-white p-3 ring-1 ring-line" open={n === 0}>
           <summary className="cursor-pointer text-sm font-bold">
-            {unlocated.length} pharmacie(s) de garde sans position publiée (non classées, distance inconnue)
+            {tr('{n} pharmacie(s) de garde sans position publiée (non classées, distance inconnue)', { n: unlocated.length })}
           </summary>
           <div className="mt-3 space-y-3">{unlocated.map(card)}</div>
         </details>
@@ -177,7 +178,7 @@ export function PharmacyList(props: {
       {expired.length > 0 && (
         <div>
           <button type="button" onClick={() => setShowExpired((v) => !v)} className="text-sm font-bold text-muted underline">
-            {showExpired ? 'Masquer' : 'Afficher'} les gardes terminées dans le rayon ({expired.length})
+            {tr(showExpired ? 'Masquer les gardes terminées dans le rayon ({n})' : 'Afficher les gardes terminées dans le rayon ({n})', { n: expired.length })}
           </button>
           {showExpired && <div className="mt-3 space-y-3">{expired.map(card)}</div>}
         </div>
@@ -185,7 +186,7 @@ export function PharmacyList(props: {
 
       <p className="flex gap-2 rounded-xl bg-white p-3 text-xs text-muted ring-1 ring-line">
         <WarnIcon size={16} className="shrink-0 text-warn-600" />
-        <span>Informations récupérées automatiquement sur des listes publiques, non vérifiées sur le terrain. Appelez la pharmacie avant de vous déplacer. Urgence vitale : <b className="text-danger-600">141</b> (SAMU) ou <b className="text-danger-600">15</b> (Protection civile).</span>
+        <span>{tr('Informations récupérées automatiquement sur des listes publiques, non vérifiées sur le terrain. Appelez la pharmacie avant de vous déplacer.')} {tr('Urgence vitale : 141 (SAMU) ou 15 (Protection civile).')}</span>
       </p>
     </section>
   );

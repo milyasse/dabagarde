@@ -70,10 +70,14 @@ export function parseFrenchDate(text: string): string | null {
   return isIsoDate(iso) ? iso : null;
 }
 
+/** Langue des dates affichées (« fr-FR » par défaut ; l'interface en arabe passe « ar-MA »). */
+let DATE_LOCALE = 'fr-FR';
+export function setDateLocale(locale: string): void { DATE_LOCALE = locale; }
+
 /** "2026-10-13" -> "mardi 13 octobre 2026" */
 export function formatFrDate(iso: string): string {
   const d = new Date(iso + 'T12:00:00Z');
-  return new Intl.DateTimeFormat('fr-FR', {
+  return new Intl.DateTimeFormat(DATE_LOCALE === 'fr-FR' ? 'fr-FR' : `${DATE_LOCALE}-u-nu-latn`, {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
   }).format(d);
 }
@@ -88,7 +92,7 @@ export function formatShortDate(iso: string | null): string {
 export function formatMoroccoDateTime(isoUtc: string): string {
   const d = new Date(isoUtc);
   if (Number.isNaN(d.getTime())) return '—';
-  return new Intl.DateTimeFormat('fr-FR', {
+  return new Intl.DateTimeFormat(DATE_LOCALE === 'fr-FR' ? 'fr-FR' : `${DATE_LOCALE}-u-nu-latn`, {
     timeZone: MOROCCO_TZ, day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',
   }).format(d);
 }

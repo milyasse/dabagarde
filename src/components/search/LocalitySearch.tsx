@@ -1,4 +1,5 @@
 // Champ de recherche de ville, commune ou quartier, avec suggestions instantanées (combobox accessible).
+import { localName, tr } from '../../i18n/index.tsx';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { loadGeo, type GeoBase } from '../../services/geoData.ts';
 import { searchLocalities, KIND_LABEL } from '../../shared/geo/search.ts';
@@ -52,7 +53,7 @@ export function LocalitySearch(props: {
   return (
     <div className="relative">
       <div className={`flex items-center gap-2 rounded-2xl bg-white shadow-[0_8px_30px_rgba(5,59,39,.18)] ring-1 ring-line focus-within:ring-2 focus-within:ring-brand-500 ${big ? 'p-2' : 'p-1.5'}`}>
-        <SearchIcon size={22} className="ml-2 shrink-0 text-brand-600" />
+        <SearchIcon size={22} className="ms-2 shrink-0 text-brand-600" />
         <input
           ref={input}
           id={props.inputId}
@@ -61,8 +62,8 @@ export function LocalitySearch(props: {
           aria-controls={listId}
           aria-autocomplete="list"
           aria-activedescendant={open && results[active] ? `${listId}-${active}` : undefined}
-          aria-label="Ville, commune ou quartier"
-          placeholder="Ville, commune ou quartier…"
+          aria-label={tr('Ville, commune ou quartier')}
+          placeholder={tr('Ville, commune ou quartier…')}
           value={q}
           onFocus={() => { ensureGeo(); setOpen(true); }}
           onChange={(e) => { setQ(e.target.value); setOpen(true); setActive(0); ensureGeo(); }}
@@ -77,14 +78,14 @@ export function LocalitySearch(props: {
         />
         <button type="button" onClick={props.onLocate} className={`inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-700 font-bold text-white hover:bg-brand-600 ${big ? 'px-4 py-3 text-[15px]' : 'px-3 py-2 text-sm'}`}>
           {props.locating ? <SpinnerIcon size={18} /> : <GpsIcon size={18} />}
-          <span className="hidden sm:inline">Autour de moi</span>
-          <span className="sm:hidden">Position</span>
+          <span className="hidden sm:inline">{tr('Autour de moi')}</span>
+          <span className="sm:hidden">{tr('Position')}</span>
         </button>
       </div>
       {open && q.trim().length >= 2 && (
-        <ul id={listId} role="listbox" aria-label="Suggestions" className="absolute inset-x-0 top-full z-[1200] mt-2 max-h-[60vh] overflow-auto rounded-2xl bg-white p-1.5 shadow-[0_18px_50px_rgba(5,59,39,.22)] ring-1 ring-line">
-          {!geo && !geoError && <li className="flex items-center gap-2 px-3 py-3 text-sm text-muted"><SpinnerIcon size={16} /> Chargement des villes du Maroc…</li>}
-          {results.length === 0 && (geo || geoError) && <li className="px-3 py-3 text-sm text-muted">Aucun lieu trouvé pour « {q} ». Essayez l’orthographe française (ex. « Fès », « Kénitra »).</li>}
+        <ul id={listId} role="listbox" aria-label={tr('Suggestions')} className="absolute inset-x-0 top-full z-[1200] mt-2 max-h-[60vh] overflow-auto rounded-2xl bg-white p-1.5 shadow-[0_18px_50px_rgba(5,59,39,.22)] ring-1 ring-line">
+          {!geo && !geoError && <li className="flex items-center gap-2 px-3 py-3 text-sm text-muted"><SpinnerIcon size={16} /> {tr('Chargement des villes du Maroc…')}</li>}
+          {results.length === 0 && (geo || geoError) && <li className="px-3 py-3 text-sm text-muted">{tr('Aucun lieu trouvé pour « {q} ». Essayez l’orthographe française (ex. « Fès », « Kénitra »).', { q })}</li>}
           {results.map((l, i) => {
             const cov = coverageAt({ lat: l.lat, lng: l.lon });
             return (
@@ -98,12 +99,12 @@ export function LocalitySearch(props: {
                 className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 ${i === active ? 'bg-brand-50' : ''}`}
               >
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-[15px] font-bold text-ink">{l.name}{l.nameAr ? <span className="ml-2 font-medium text-muted" lang="ar" dir="rtl">{l.nameAr}</span> : null}</span>
-                  <span className="block truncate text-xs text-muted">{KIND_LABEL[l.kind]}{provinceName.get(l.provinceId) ? ` · ${provinceName.get(l.provinceId)}` : ''}</span>
+                  <span className="block truncate text-[15px] font-bold text-ink">{localName(l)}{l.nameAr && localName(l) !== l.nameAr ? <span className="ms-2 font-medium text-muted" lang="ar" dir="rtl">{l.nameAr}</span> : l.nameAr ? <span className="ms-2 font-medium text-muted" lang="fr" dir="ltr">{l.name}</span> : null}</span>
+                  <span className="block truncate text-xs text-muted">{tr(KIND_LABEL[l.kind])}{provinceName.get(l.provinceId) ? ` · ${provinceName.get(l.provinceId)}` : ''}</span>
                 </span>
                 {cov.status === 'covered'
-                  ? <span className="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-[11px] font-bold text-brand-800">Gardes disponibles</span>
-                  : <span className="shrink-0 rounded-full bg-bg px-2 py-0.5 text-[11px] font-bold text-muted">Pas encore couverte</span>}
+                  ? <span className="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-[11px] font-bold text-brand-800">{tr('Gardes disponibles')}</span>
+                  : <span className="shrink-0 rounded-full bg-bg px-2 py-0.5 text-[11px] font-bold text-muted">{tr('Pas encore couverte')}</span>}
               </li>
             );
           })}

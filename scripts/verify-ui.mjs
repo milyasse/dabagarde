@@ -242,6 +242,38 @@ await section('Accessibilité de base', async () => {
   await ctx.close();
 });
 
+await section('Urgence, WhatsApp et arabe', async () => {
+  const ctx = await browser.newContext({ ...mobile });
+  const page = await ctx.newPage();
+  await page.goto(URL + '?ville=rabat', { waitUntil: 'networkidle' });
+  await results(page).locator('h2').first().waitFor({ timeout: 20000 }).catch(() => {});
+  await page.getByRole('button', { name: 'Numéros d’urgence' }).click();
+  const dlg = page.locator('dialog[open]');
+  check(await dlg.locator('a[href="tel:141"]').count() === 1 && await dlg.locator('a[href="tel:15"]').count() === 1, 'urgence : bouton visible, 141 et 15 composables');
+  await page.screenshot({ path: `${OUT}/14-urgence.png` });
+  await page.keyboard.press('Escape');
+  await results(page).getByRole('button', { name: /^Fiche détaillée/ }).first().click();
+  const wa = page.locator('dialog[open] a[href^="https://wa.me/?text="]');
+  const href = (await wa.count()) ? await wa.first().getAttribute('href') : '';
+  check(!!href && /141/.test(decodeURIComponent(href)), 'WhatsApp : lien d’envoi de la fiche (avec rappel 141/15)');
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: 'التبديل إلى العربية' }).first().click();
+  await wait(600);
+  const dir = await page.evaluate(() => document.documentElement.dir);
+  const lang = await page.evaluate(() => document.documentElement.lang);
+  const h2 = await page.locator('section[aria-label="النتائج"] h2').first().textContent().catch(() => '');
+  check(dir === 'rtl' && lang === 'ar' && /صيدلي/.test(h2 ?? ''), `arabe : page en RTL, résultats traduits (« ${h2} »)`);
+  await page.screenshot({ path: `${OUT}/15-arabe-resultats.png` });
+  await page.goto(URL, { waitUntil: 'networkidle' });
+  const hero = await page.locator('h1').first().textContent();
+  check(/دابا/.test(hero ?? '') && (await page.evaluate(() => document.documentElement.dir)) === 'rtl', 'arabe : choix mémorisé, accueil traduit');
+  await page.screenshot({ path: `${OUT}/16-arabe-accueil.png` });
+  await page.getByRole('button', { name: 'Passer en français' }).first().click();
+  await wait(400);
+  check((await page.evaluate(() => document.documentElement.dir)) === 'ltr', 'arabe : retour au français');
+  await ctx.close();
+});
+
 await section('Ordinateur', async () => {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'fr-FR', timezoneId: 'Africa/Casablanca' });
   const page = await ctx.newPage();

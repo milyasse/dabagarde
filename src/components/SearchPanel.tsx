@@ -1,3 +1,4 @@
+import { currentLang, tr } from '../i18n/index.tsx';
 import { useState } from 'react';
 import { OriginPicker } from './search/OriginPicker.tsx';
 import { RadiusPicker } from './search/RadiusPicker.tsx';
@@ -49,7 +50,7 @@ export function SearchPanel(props: {
   const [radiusErr, setRadiusErr] = useState<string | null>(null);
 
   return (
-    <section aria-label="Recherche" className="space-y-4 bg-white p-4 lg:px-6">
+    <section aria-label={tr('Recherche')} className="space-y-4 bg-white p-4 lg:px-6">
       {/* Position de départ */}
       <OriginPicker
         origin={props.origin}
@@ -64,7 +65,7 @@ export function SearchPanel(props: {
 
       {/* Date */}
       <div className="space-y-1.5">
-        <label htmlFor="date" className="text-xs font-bold text-muted">Date recherchée</label>
+        <label htmlFor="date" className="text-xs font-bold text-muted">{tr('Date recherchée')}</label>
         <div className="flex items-center gap-2 rounded-xl border-[1.5px] border-line px-3 py-2.5 focus-within:border-brand-600">
           <CalendarIcon size={20} className="text-brand-600" />
           <input id="date" type="date" required value={props.date} onChange={(e) => e.target.value && props.onDate(e.target.value)} className="flex-1 bg-transparent text-sm font-semibold outline-none" />
@@ -77,14 +78,14 @@ export function SearchPanel(props: {
 
       {/* Type de garde */}
       <fieldset className="space-y-1.5">
-        <legend className="text-xs font-bold text-muted">Type de garde</legend>
+        <legend className="text-xs font-bold text-muted">{tr('Type de garde')}</legend>
         <div className="grid grid-cols-4 gap-1 rounded-xl bg-bg p-1">
           {FILTERS.map((f) => {
             const on = props.dutyFilter === f.v;
             return (
               <button key={f.v} type="button" aria-pressed={on} onClick={() => props.onDutyFilter(f.v)}
                 className={`rounded-lg py-2 text-sm ${on ? 'bg-white font-extrabold text-brand-700 shadow-sm' : 'font-semibold text-muted'}`}>
-                {f.l}
+                {tr(f.l)}
               </button>
             );
           })}
@@ -93,12 +94,12 @@ export function SearchPanel(props: {
 
       {props.criteriaChanged && !props.searching && (
         <p role="status" className="mb-2 rounded-lg bg-warn-50 px-3 py-2 text-[13px] font-semibold text-warn-600">
-          Critères modifiés : appuyez sur « Rechercher » pour mettre à jour les résultats.
+          {tr('Critères modifiés : appuyez sur « Rechercher » pour mettre à jour les résultats.')}
         </p>
       )}
       <button type="button" onClick={props.onSearch} disabled={props.searching || !!radiusErr}
         className={`flex w-full items-center justify-center gap-2 rounded-xl bg-brand-700 py-3.5 text-[15px] font-bold text-white hover:bg-brand-600 disabled:opacity-60 ${props.criteriaChanged ? 'ring-4 ring-warn-600/30' : ''}`}>
-        {props.searching && <SpinnerIcon />} Rechercher les pharmacies de garde
+        {props.searching && <SpinnerIcon />} {tr('Rechercher les pharmacies de garde')}
       </button>
     </section>
   );
@@ -108,9 +109,9 @@ export function SearchPanel(props: {
 function DateStrip(props: { today: string; value: string; available: string[]; onPick: (d: string) => void }) {
   const days = [-1, 0, 1, 2, 3].map((k) => addDays(props.today, k));
   const fmt = (d: string, k: number) =>
-    k === 0 ? 'Aujourd’hui' : k === 1 ? 'Demain' : k === -1 ? 'Hier' : new Intl.DateTimeFormat('fr-FR', { weekday: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(d + 'T12:00:00Z'));
+    k === 0 ? tr('Aujourd’hui') : k === 1 ? tr('Demain') : k === -1 ? tr('Hier') : new Intl.DateTimeFormat(currentLang() === 'ar' ? 'ar-MA-u-nu-latn' : 'fr-FR', { weekday: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(d + 'T12:00:00Z'));
   return (
-    <div className="flex gap-1.5 overflow-x-auto pb-1" role="group" aria-label="Raccourcis de date">
+    <div className="flex gap-1.5 overflow-x-auto pb-1" role="group" aria-label={tr('Raccourcis de date')}>
       {days.map((d, i) => {
         const k = i - 1;
         const on = props.value === d;
@@ -118,10 +119,10 @@ function DateStrip(props: { today: string; value: string; available: string[]; o
         const has = props.available.includes(d) || (k === 0 && props.available.includes(addDays(d, -1)));
         return (
           <button key={d} type="button" aria-pressed={on} onClick={() => props.onPick(d)}
-            className={`shrink-0 rounded-xl px-3 py-1.5 text-left text-xs font-bold ${on ? 'bg-brand-700 text-white' : 'bg-bg text-ink'}`}>
+            className={`shrink-0 rounded-xl px-3 py-1.5 text-start text-xs font-bold ${on ? 'bg-brand-700 text-white' : 'bg-bg text-ink'}`}>
             {fmt(d, k)}
             <span className={`block text-[10px] font-semibold ${on ? 'text-white/80' : has ? 'text-brand-600' : 'text-muted'}`}>
-              {has ? '● gardes connues' : k > 0 ? 'non publiées' : 'aucune donnée'}
+              {has ? `● ${tr('gardes connues')}` : tr(k > 0 ? 'non publiées' : 'aucune donnée')}
             </span>
           </button>
         );

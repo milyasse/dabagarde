@@ -1,4 +1,5 @@
 // Carte Leaflet / OpenStreetMap pilotée de façon impérative (contrôle fin des couches).
+import { tr } from '../i18n/index.tsx';
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -43,13 +44,13 @@ function pinIcon(p: MapItem, selected: boolean) {
 
 function popupHtml(p: MapItem, mode: 'car' | 'foot') {
   const road = p.distanceRoadKm !== null
-    ? `<div>${formatKm(p.distanceRoadKm)} par la route · ${formatMinutes(p.estimatedTravelMinutes)} ${mode === 'car' ? 'en voiture' : 'à pied'}</div>`
-    : '<div style="color:#5b6b63">Distance routière : tracez l’itinéraire</div>';
+    ? `<div>${formatKm(p.distanceRoadKm)} ${tr('par la route')} · ${formatMinutes(p.estimatedTravelMinutes)} ${tr(mode === 'car' ? 'en voiture' : 'à pied')}</div>`
+    : `<div style="color:#5b6b63">${tr('Distance routière : tracez l’itinéraire')}</div>`;
   return `<div style="min-width:180px">
     <div style="font-weight:800;font-size:14px">${p.rank ? `${p.rank}. ` : ''}${esc(p.name)}</div>
-    <div style="font-size:12px;margin-top:2px">${esc(p.statusLabel ?? (p.verificationStatus ? STATUS_LABEL[p.verificationStatus] : ''))}</div>
-    <div style="font-size:12px;margin-top:4px">${p.coordinatesSource === 'district' ? '≈ ' : ''}${formatKm(p.distanceStraightLineKm)} à vol d’oiseau</div>
-    ${p.coordinatesSource === 'district' ? '<div style="font-size:11px;color:#b45309">Position approximative (centre du quartier)</div>' : ''}
+    <div style="font-size:12px;margin-top:2px">${esc(tr(p.statusLabel ?? (p.verificationStatus ? STATUS_LABEL[p.verificationStatus] : '')))}</div>
+    <div style="font-size:12px;margin-top:4px">${p.coordinatesSource === 'district' ? '≈ ' : ''}${formatKm(p.distanceStraightLineKm)} ${tr('à vol d’oiseau')}</div>
+    ${p.coordinatesSource === 'district' ? `<div style="font-size:11px;color:#b45309">${tr('Position approximative (centre du quartier)')}</div>` : ''}
     <div style="font-size:12px">${road}</div>
   </div>`;
 }
@@ -158,9 +159,9 @@ export function PharmacyMap(props: {
     layers.current.origin = L.marker(ll, {
       icon: L.divIcon({ className: 'origin-marker', html: '<div class="origin-dot"></div>', iconSize: [22, 22], iconAnchor: [11, 11] }),
       zIndexOffset: 1000,
-      title: 'Position de départ',
+      title: tr('Position de départ'),
       keyboard: false,
-    }).addTo(m).bindTooltip('Départ');
+    }).addTo(m).bindTooltip(tr('Départ'));
     layers.current.circle = L.circle(ll, {
       radius: props.radiusKm * 1000, color: '#127A4E', weight: 2, dashArray: '6 5', fillColor: '#127A4E', fillOpacity: 0.06, interactive: false,
     }).addTo(m);
@@ -178,7 +179,7 @@ export function PharmacyMap(props: {
       if (p.latitude === null || p.longitude === null) continue;
       const mk = L.marker([p.latitude, p.longitude], {
         icon: pinIcon(p, p.id === selectedRef.current),
-        title: `${p.rank ? `Rang ${p.rank} — ` : ''}${p.name}`,
+        title: `${p.rank ? `${tr('Rang {n}', { n: p.rank })} — ` : ''}${p.name}`,
         alt: p.name,
         riseOnHover: true,
         zIndexOffset: 500 - (p.rank ?? 100),
@@ -263,31 +264,31 @@ export function PharmacyMap(props: {
       <div ref={el} className="h-full w-full" role="application" aria-label={props.ariaLabel ?? 'Carte des pharmacies de garde'} />
       {hint && (
         <div className="pointer-events-none absolute inset-0 z-[600] flex items-center justify-center bg-black/35 p-6 text-center text-sm font-bold text-white">
-          Utilisez deux doigts pour déplacer la carte, ou ouvrez-la en plein écran ⤢
+          {tr('Utilisez deux doigts pour déplacer la carte, ou ouvrez-la en plein écran ⤢')}
         </div>
       )}
       <div className="absolute right-3 top-3 z-[500] flex flex-col gap-2" style={full ? { top: 'max(env(safe-area-inset-top), 12px)' } : undefined}>
         <button type="button" onClick={() => setFull((v) => !v)} className={`rounded-xl p-2.5 shadow-md ${full ? 'bg-brand-700 text-white' : 'bg-white text-brand-700'}`}
-          title={full ? 'Quitter le plein écran' : 'Carte en plein écran'} aria-label={full ? 'Quitter le plein écran' : 'Carte en plein écran'} aria-pressed={full}>
+          title={tr(full ? 'Quitter le plein écran' : 'Carte en plein écran')} aria-label={tr(full ? 'Quitter le plein écran' : 'Carte en plein écran')} aria-pressed={full}>
           {full ? <CloseIcon size={20} /> : <ExpandIcon size={20} />}
         </button>
         <button type="button" onClick={props.onToggleRoutes} disabled={!props.canShowRoutes} aria-pressed={props.routesShown}
           className={`rounded-xl p-2.5 shadow-md disabled:opacity-50 ${props.routesShown ? 'bg-brand-700 text-white' : 'bg-white text-brand-700'}`}
-          title={props.routesShown ? 'Masquer les itinéraires' : 'Afficher les itinéraires'} aria-label={props.routesShown ? 'Masquer les itinéraires' : 'Afficher les itinéraires'}>
+          title={tr(props.routesShown ? 'Masquer les itinéraires' : 'Afficher les itinéraires')} aria-label={tr(props.routesShown ? 'Masquer les itinéraires' : 'Afficher les itinéraires')}>
           <RouteIcon size={20} />
         </button>
-        <button type="button" onClick={recenter} className="rounded-xl bg-white p-2.5 text-brand-700 shadow-md" title="Revenir à la position de départ" aria-label="Revenir à la position de départ">
+        <button type="button" onClick={recenter} className="rounded-xl bg-white p-2.5 text-brand-700 shadow-md" title={tr('Revenir à la position de départ')} aria-label={tr('Revenir à la position de départ')}>
           <GpsIcon size={20} />
         </button>
         <div className="flex flex-col overflow-hidden rounded-xl bg-white shadow-md">
-          <button type="button" onClick={() => map.current?.zoomIn()} className="px-3 py-2 text-lg font-extrabold text-brand-700" aria-label="Zoomer">+</button>
+          <button type="button" onClick={() => map.current?.zoomIn()} className="px-3 py-2 text-lg font-extrabold text-brand-700" aria-label={tr('Zoomer')}>+</button>
           <span className="h-px bg-line" />
-          <button type="button" onClick={() => map.current?.zoomOut()} className="px-3 py-2 text-lg font-extrabold text-brand-700" aria-label="Dézoomer">−</button>
+          <button type="button" onClick={() => map.current?.zoomOut()} className="px-3 py-2 text-lg font-extrabold text-brand-700" aria-label={tr('Dézoomer')}>−</button>
         </div>
       </div>
       {props.picking && (
         <div className="pointer-events-none absolute inset-x-0 top-3 z-[500] mx-auto w-fit rounded-full bg-brand-700 px-4 py-2 text-sm font-bold text-white shadow-lg">
-          Touchez la carte pour choisir le départ
+          {tr('Touchez la carte pour choisir le départ')}
         </div>
       )}
     </div>
