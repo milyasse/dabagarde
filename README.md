@@ -40,7 +40,7 @@ npm install
 npm test                 # tests unitaires et de bout en bout (sans réseau)
 npm run dev              # http://localhost:5173
 npm run build:site       # application + pages statiques dans dist/
-npm run geo              # base géographique (requêtes Overpass, quelques minutes)
+npm run geo -- geo.geojsonseq   # base géographique (voir .github/workflows/geo.yml)
 npm run typecheck
 ```
 

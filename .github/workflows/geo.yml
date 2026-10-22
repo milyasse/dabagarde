@@ -1,9 +1,11 @@
 name: Base géographique
 
+# Régions, provinces et localités à partir de l'extraction OpenStreetMap du Maroc (Geofabrik, ODbL).
+# Un téléchargement mensuel suffit : le découpage administratif change rarement.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 3 * * *' # chaque nuit : complète les contours et tuiles manquants (les autres sont en cache)
+    - cron: '17 3 2 * *' # le 2 de chaque mois
 
 permissions:
   contents: write
@@ -11,20 +13,36 @@ permissions:
 jobs:
   geo:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Construire la base (OpenStreetMap, Overpass)
-        timeout-minutes: 150
-        run: node --experimental-strip-types --no-warnings scripts/build-geo.ts
-      - name: Enregistrer (données, ou au moins le rapport en cas d'échec)
+      - name: Outils (osmium)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool > /dev/null
+      - name: Extraction OpenStreetMap du Maroc (Geofabrik)
+        run: |
+          mkdir -p "$RUNNER_TEMP/osm"
+          curl -fsSL --retry 3 -A "DabaGarde-geo/1.0 (+https://github.com/${GITHUB_REPOSITORY})" \
+            -o "$RUNNER_TEMP/osm/morocco.osm.pbf" https://download.geofabrik.de/africa/morocco-latest.osm.pbf
+          ls -lh "$RUNNER_TEMP/osm/morocco.osm.pbf"
+      - name: Filtrer (limites administratives, lieux habités)
+        run: |
+          cd "$RUNNER_TEMP/osm"
+          osmium tags-filter morocco.osm.pbf r/boundary=administrative n/place=city,town,village,suburb,quarter -o geo.osm.pbf --overwrite
+          osmium export geo.osm.pbf -f geojsonseq -a type,id --geometry-types=point,polygon -o geo.geojsonseq --overwrite
+          ls -lh geo.geojsonseq
+      - name: Construire la base
+        run: node --experimental-strip-types --no-warnings scripts/build-geo.ts "$RUNNER_TEMP/osm/geo.geojsonseq"
+      - name: Enregistrer (données, ou au moins le rapport)
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add data-sources/geo; git add public/data/geo 2>/dev/null || true
+          git rm -rq --cached data-sources/geo/contours data-sources/geo/places 2>/dev/null || true
+          rm -rf data-sources/geo/contours data-sources/geo/places
+          git add -A data-sources/geo; git add public/data/geo 2>/dev/null || true
           git commit -m "geo: base géographique du $(date -u +%Y-%m-%d) [skip ci]" || exit 0
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
