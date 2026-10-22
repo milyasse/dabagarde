@@ -87,6 +87,12 @@ Parmi les contrôles réellement exécutés :
 
 Ce qui n'a pas été testé : l'envoi réel d'un ticket de signalement, le partage natif sur téléphone (la copie de secours est codée), les performances mesurées (PageSpeed) et le site publié (Pages non activé au moment des tests).
 
+## 4 bis. Couverture nationale (22/10/2026, 9 h 40)
+
+- **Pharmacies de garde** : 27 villes et agglomérations déclarées. Ce matin, 12 villes publiaient des gardes : Rabat, Salé, Témara, Agadir, Inezgane, Aït Melloul, Dcheira, Tikiouine, Fès, Tanger, Settat et Ben Guerir. Les autres pages de la source étaient vides : elles se rempliront dès que la source publiera. La collecte se fait désormais dans ce dépôt toutes les 2 heures.
+- **Cliniques et hôpitaux** : 475 établissements dans tout le Maroc (OpenStreetMap, extraction hebdomadaire), dont 470 positionnés et 51 avec urgences déclarées. La liste officielle du ministère n'est encore rapprochée que pour Rabat, Salé et Témara.
+- **Changer de ville** depuis les résultats : lien « Changer de ville » dans la liste et bouton « Ville » sur l'onglet Carte (vérifiés en CI).
+
 ## 5. Ce qui reste à finaliser
 
 1. **Activer GitHub Pages** : Settings → Pages → Source « GitHub Actions » (action du propriétaire du dépôt).
