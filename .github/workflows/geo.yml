@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 22
       - name: Construire la base (OpenStreetMap, Overpass)
-        timeout-minutes: 60
+        timeout-minutes: 150
         run: node --experimental-strip-types --no-warnings scripts/build-geo.ts
       - name: Enregistrer (données, ou au moins le rapport en cas d'échec)
         if: always()

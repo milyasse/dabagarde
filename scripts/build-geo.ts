@@ -20,7 +20,9 @@ import { REGIONS } from '../src/shared/geo/regions.ts';
 import { slugify } from '../src/shared/geo/slug.ts';
 import type { GeoLocality, GeoProvince, GeoRegion, LocalityKind } from '../src/shared/geo/types.ts';
 
-const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+// overpass-api.de refuse les connexions depuis les machines GitHub (« fetch failed ») : miroirs d'abord.
+const ENDPOINTS = ['https://overpass.kumi.systems/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://overpass-api.de/api/interpreter'];
+const CONTOURS = 'data-sources/geo/contours'; // contours simplifiés déjà obtenus : la collecte reprend où elle s'est arrêtée
 const UA = `DabaGarde-geo/1.0 (+https://github.com/${process.env.GITHUB_REPOSITORY ?? 'local'})`;
 const PAUSE_MS = 5000;
 
@@ -46,7 +48,7 @@ async function overpass(key: string, query: string): Promise<OsmEl[]> {
     return existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')).elements as OsmEl[]) : [];
   }
   const errors: string[] = [];
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 1; attempt++) {
     for (const url of ENDPOINTS) {
       try {
         const t0 = Date.now();
@@ -103,6 +105,18 @@ function assembleRings(members: OsmMember[]): Pt[][] {
   return rings;
 }
 
+/** Simplification légère (points espacés d'au moins ~100 m, 4 décimales) : fichiers de contours compacts. */
+function simplify(ring: Pt[]): Pt[] {
+  const out: Pt[] = [];
+  for (const p of ring) {
+    const q = { lat: Math.round(p.lat * 1e4) / 1e4, lon: Math.round(p.lon * 1e4) / 1e4 };
+    const last = out[out.length - 1];
+    if (!last || Math.abs(last.lat - q.lat) + Math.abs(last.lon - q.lon) > 0.001) out.push(q);
+  }
+  if (out.length && (out[0].lat !== out[out.length - 1].lat || out[0].lon !== out[out.length - 1].lon)) out.push(out[0]);
+  return out;
+}
+
 function inRing(p: Pt, ring: Pt[]): boolean {
   let inside = false;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
@@ -125,15 +139,22 @@ async function main() {
   const ids = [...provRegion.keys()];
   if (!ids.length) throw new Error('Aucune province trouvée parmi les membres des régions');
   const provTags = await overpass('provinces', `[out:json][timeout:300];rel(id:${ids.join(',')});out tags center;`);
-  const provEls: OsmEl[] = [];
+  const provEls: (OsmEl & { rings: Pt[][] })[] = [];
   for (const t of provTags) {
     if (t.tags?.admin_level && t.tags.admin_level !== '5') continue; // cercles, communes : ignorés
+    const cache = join(CONTOURS, `${t.id}.json`);
+    if (!fixtureDir && existsSync(cache)) {
+      provEls.push({ ...t, rings: JSON.parse(readFileSync(cache, 'utf8')) as Pt[][] });
+      continue;
+    }
     try {
       const g = await overpass(`contour-${t.id}`, `[out:json][timeout:300];rel(${t.id});out geom;`);
-      provEls.push({ ...t, members: g[0]?.members ?? [] });
+      const rings = assembleRings(g[0]?.members ?? []).map(simplify);
+      if (!fixtureDir && rings.length) { mkdirSync(CONTOURS, { recursive: true }); writeFileSync(cache, JSON.stringify(rings)); }
+      provEls.push({ ...t, rings });
     } catch (e) {
       anomalies.push(`Contour indisponible pour ${nameFr(t.tags)} (relation ${t.id}) : ${String((e as Error).message).slice(0, 120)}`);
-      provEls.push({ ...t, members: [] });
+      provEls.push({ ...t, rings: [] });
     }
   }
 
@@ -146,7 +167,7 @@ async function main() {
     const iso = p.tags?.['ISO3166-2'];
     const code = iso && /^MA-[A-Z]{3}$/.test(iso) ? iso : `osm-r${p.id}`;
     if (code.startsWith('osm-')) anomalies.push(`Province sans code ISO : ${nameFr(p.tags)} (relation ${p.id}).`);
-    const rings = assembleRings(p.members ?? []);
+    const rings = p.rings;
     const bbox: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
     for (const r of rings) for (const x of r) {
       if (x.lat < bbox[0]) bbox[0] = x.lat; if (x.lon < bbox[1]) bbox[1] = x.lon;
