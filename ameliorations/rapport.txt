@@ -28,7 +28,8 @@ OK  — base nationale : « Ouarzaz » propose Ouarzazate (pas encore couverte)
 OK  — navigation région → province → villes : 233 localités (Souss-Massa, Agadir)
 OK  — ville non couverte (Essaouira) : message explicite, aucune donnée inventée
 OK  — ville non couverte : lien vers la page publique d’origine
-ÉCHEC — Parcours principal (téléphone) : locator.click: Error: strict mode violation: getByRole('button', { name: 'De nuit' }) resolved to 2 elements:
+OK  — filtre « De nuit » appliqué et visible dans l’adresse
+OK  — filtre « De nuit » : 0 résultat(s), tous de nuit
 
 ## Lien partagé et géolocalisation acceptée
 OK  — lien ?ville=temara : recherche lancée à l’ouverture
@@ -71,4 +72,4 @@ OK  — clavier : lien d’évitement en premier
 ## Ordinateur
 OK  — ordinateur : liste et carte affichées ensemble
 
-1 vérification(s) en échec
+toutes les vérifications sont passées
