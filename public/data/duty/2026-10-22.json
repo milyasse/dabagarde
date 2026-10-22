@@ -1,7 +1,202 @@
 {
  "date": "2026-10-22",
- "generatedAt": "2026-10-22T08:41:48.186Z",
+ "generatedAt": "2026-10-22T10:36:31.433Z",
  "records": [
+  {
+   "id": "ain-aouda-annassiha",
+   "name": "Pharmacie Annassiha",
+   "address": "603 S1 lot B Riad Ouled Mtaâ Témara",
+   "city": "ain-aouda",
+   "district": "Oulad Mtaâ",
+   "latitude": 33.939892,
+   "longitude": -6.914715,
+   "coordinatesSource": "district",
+   "phone": "+212537560866",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Oulad Mtaâ (9h00 à 23h00)",
+   "hoursText": "9h-23h",
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-22",
+   "sources": [
+    {
+     "sourceId": "guidepharmacies",
+     "sourceName": "guidepharmacies.ma",
+     "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-annassiha-jeu.html",
+     "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
+     "sourcePublishedAt": "2026-10-19",
+     "lastCheckedAt": "2026-10-22T10:38:26.309Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "label": "Planning hebdomadaire publié"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Oulad Mtaâ (9h00 à 23h00)"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
+  {
+   "id": "ain-aouda-conseil",
+   "name": "Pharmacie Du Conseil",
+   "address": "33 Rue De Rabat Temara",
+   "city": "ain-aouda",
+   "district": "Centre",
+   "latitude": 33.8466328,
+   "longitude": -6.8496632,
+   "coordinatesSource": "geocoded",
+   "phone": "+212537741163",
+   "dutyDate": "2026-10-22",
+   "dutyType": null,
+   "dutyLabel": "Centre",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-22",
+   "sources": [
+    {
+     "sourceId": "guidepharmacies",
+     "sourceName": "guidepharmacies.ma",
+     "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-du-conseil.html",
+     "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
+     "sourcePublishedAt": "2026-10-19",
+     "lastCheckedAt": "2026-10-22T10:38:26.309Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "label": "Planning hebdomadaire publié"
+     },
+     "dutyType": null,
+     "dutyLabel": "Centre"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
+  {
+   "id": "ain-aouda-grande-tamesna",
+   "name": "Pharmacie La Grande Pharmacie De Tamesna",
+   "address": "172, Marina d'or (à côté de jouteya Tamesna)",
+   "city": "ain-aouda",
+   "district": "Tamesna",
+   "latitude": 33.831981,
+   "longitude": -6.920345,
+   "coordinatesSource": "district",
+   "phone": "+212537013065",
+   "dutyDate": "2026-10-22",
+   "dutyType": "day",
+   "dutyLabel": "Tamesna (9h à 00h00)",
+   "hoursText": "9h-24h",
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-22",
+   "sources": [
+    {
+     "sourceId": "guidepharmacies",
+     "sourceName": "guidepharmacies.ma",
+     "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/la-grande-pharmacie-de-tamesna-jeu.html",
+     "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
+     "sourcePublishedAt": "2026-10-19",
+     "lastCheckedAt": "2026-10-22T10:38:26.309Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "label": "Planning hebdomadaire publié"
+     },
+     "dutyType": "day",
+     "dutyLabel": "Tamesna (9h à 00h00)"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
+  {
+   "id": "ain-aouda-moulay-idriss",
+   "name": "Pharmacie Moulay Idriss",
+   "address": "Secteur 1 Lot 103 Massira 1",
+   "city": "ain-aouda",
+   "district": "El Massira",
+   "latitude": 33.931567,
+   "longitude": -6.901402,
+   "coordinatesSource": "district",
+   "phone": "+212537602270",
+   "dutyDate": "2026-10-22",
+   "dutyType": null,
+   "dutyLabel": "El Massira",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-22",
+   "sources": [
+    {
+     "sourceId": "guidepharmacies",
+     "sourceName": "guidepharmacies.ma",
+     "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-moulay-idriss.html",
+     "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
+     "sourcePublishedAt": "2026-10-19",
+     "lastCheckedAt": "2026-10-22T10:38:26.309Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "label": "Planning hebdomadaire publié"
+     },
+     "dutyType": null,
+     "dutyLabel": "El Massira"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
+  {
+   "id": "ain-aouda-regragui",
+   "name": "Pharmacie Regragui",
+   "address": "42 Residence attawfik,casino, Plage Harhoura",
+   "city": "ain-aouda",
+   "district": "Harhoura",
+   "latitude": 33.914435,
+   "longitude": -6.97026,
+   "coordinatesSource": "district",
+   "phone": "+212537744305",
+   "dutyDate": "2026-10-22",
+   "dutyType": null,
+   "dutyLabel": "Harhoura",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-22",
+   "sources": [
+    {
+     "sourceId": "guidepharmacies",
+     "sourceName": "guidepharmacies.ma",
+     "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-regragui.html",
+     "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
+     "sourcePublishedAt": "2026-10-19",
+     "lastCheckedAt": "2026-10-22T10:38:26.309Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "label": "Planning hebdomadaire publié"
+     },
+     "dutyType": null,
+     "dutyLabel": "Harhoura"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans le planning hebdomadaire de la source."
+   ]
+  },
   {
    "id": "ben-guerir-zarhoun",
    "name": "Pharmacie Zarhoun",
@@ -25,7 +220,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-zarhoun-s254617.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
      "sourcePublishedAt": "2026-10-22",
-     "lastCheckedAt": "2026-10-22T08:42:06.573Z",
+     "lastCheckedAt": "2026-10-22T10:36:46.698Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -33,6 +228,228 @@
      },
      "dutyType": "night",
      "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-kobba",
+   "name": "Pharmacie Al Kobba",
+   "address": "rue 2 jnane hjij, ain nakbi proche de l'ancien dar dbegh",
+   "city": "fes",
+   "district": "Medina Jnanat",
+   "latitude": 34.0644072,
+   "longitude": -4.9549902,
+   "coordinatesSource": "source",
+   "phone": "+212535669159",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-al-kobba-s242204.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-arrajae",
+   "name": "Pharmacie Arrajae",
+   "address": "pharmacie errajae, a 100m du station taxi et le marché hay al merja",
+   "city": "fes",
+   "district": "Zouagha",
+   "latitude": 34.033298492432,
+   "longitude": -5,
+   "coordinatesSource": "source",
+   "phone": "+212535726162",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-arrajae-s241926.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-hopital-universitaire",
+   "name": "Pharmacie De L'hôpital Universitaire",
+   "address": "hay al amal bd madina monaouara",
+   "city": "fes",
+   "district": "Saiss",
+   "latitude": 34.0266888,
+   "longitude": -5.0308009,
+   "coordinatesSource": "source",
+   "phone": "+212532110816",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-de-l'hopital-universitaire-s238498.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-lhoumadi",
+   "name": "Pharmacie Lhoumadi",
+   "address": "numéro 320 lot. mountazeh 3, route meknes",
+   "city": "fes",
+   "district": "Les Merinides",
+   "latitude": 34.0511521,
+   "longitude": -5.0414955,
+   "coordinatesSource": "source",
+   "phone": "+212611248625",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-lhoumadi-s238176.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-masjid-arreda",
+   "name": "Pharmacie Masjid Arreda",
+   "address": "route imouzzar. lotissement arrida. derriere mosquée arrida",
+   "city": "fes",
+   "district": "Agdal",
+   "latitude": 34.0030978,
+   "longitude": -4.9983859,
+   "coordinatesSource": "source",
+   "phone": "+212532034526",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-masjid-arreda-s246384.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-siberia",
+   "name": "Pharmacie Siberia",
+   "address": "commune ain chkef, douar khrabcha",
+   "city": "fes",
+   "district": "Ain Chkef",
+   "latitude": 34.0181246,
+   "longitude": -5.0078451,
+   "coordinatesSource": "source",
+   "phone": "+212655173677",
+   "dutyDate": "2026-10-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-22",
+   "dutyEndDate": "2026-10-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-siberia-s251245.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-10-22",
+     "lastCheckedAt": "2026-10-22T10:37:07.728Z",
+     "historyMatch": {
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
     }
    ],
    "verificationStatus": "confirmed",
@@ -62,7 +479,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-al-hikma-r-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -101,7 +518,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-arrayhane.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -140,7 +557,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-avenue-dalger-hassan-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -179,7 +596,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-chbanat-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -218,7 +635,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-ksar-labhar-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -257,7 +674,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-michlifen.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:34.586Z",
+     "lastCheckedAt": "2026-10-22T10:38:09.138Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -296,7 +713,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-al-hikma.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -335,7 +752,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-bettana.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -374,7 +791,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-du-myrte-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -413,7 +830,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-hajji-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -452,7 +869,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-lopera.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -491,7 +908,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-nassiha.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -530,7 +947,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-parc-addoha.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:38.472Z",
+     "lastCheckedAt": "2026-10-22T10:38:14.485Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-23",
@@ -604,7 +1021,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-annassiha-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:41.473Z",
+     "lastCheckedAt": "2026-10-22T10:38:20.343Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -643,7 +1060,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-du-conseil.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:41.473Z",
+     "lastCheckedAt": "2026-10-22T10:38:20.343Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -682,7 +1099,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/la-grande-pharmacie-de-tamesna-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:41.473Z",
+     "lastCheckedAt": "2026-10-22T10:38:20.343Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -721,7 +1138,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-moulay-idriss.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:41.473Z",
+     "lastCheckedAt": "2026-10-22T10:38:20.343Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
@@ -760,7 +1177,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-regragui.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-10-19",
-     "lastCheckedAt": "2026-10-22T02:32:41.473Z",
+     "lastCheckedAt": "2026-10-22T10:38:20.343Z",
      "historyMatch": {
       "start": "2026-10-22",
       "end": "2026-10-22",
