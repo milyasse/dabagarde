@@ -10,7 +10,6 @@
 // classes CSS, afin de résister aux changements de mise en page. Si la structure change
 // au point que rien n'est extrait, le collecteur signale la source « en erreur ».
 
-import type { CityId } from '../types.ts';
 import { parseFrenchDate, isIsoDate } from '../dates.ts';
 import { cleanSpaces, decodeEntities, htmlToText, normalizeMoroccanPhone, titleCase } from '../text.ts';
 import { findDutyLabel, findHoursText } from '../duty.ts';
@@ -20,14 +19,9 @@ export const ANNUAIRE_ID = 'annuaire-gratuit';
 export const ANNUAIRE_NAME = 'annuaire-gratuit.ma';
 export const ANNUAIRE_BASE = 'https://www.annuaire-gratuit.ma';
 
-export const ANNUAIRE_CITY_SLUGS: Record<CityId, string> = {
-  rabat: 'rabat',
-  sale: 'sale',
-  temara: 'temara',
-};
-
-export function listingUrl(city: CityId): string {
-  return `${ANNUAIRE_BASE}/pharmacie-garde-${ANNUAIRE_CITY_SLUGS[city]}.html`;
+/** Page « liste du jour » d'une ville (slug de la ville chez la source, ex. « rabat », « el-jadida »). */
+export function listingUrl(slug: string): string {
+  return `${ANNUAIRE_BASE}/pharmacie-garde-${slug}.html`;
 }
 
 export interface ListingEntry {

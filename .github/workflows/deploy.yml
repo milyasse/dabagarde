@@ -1,16 +1,15 @@
-name: Déploiement
+name: Collecte et déploiement
 
-# Pendant la refonte, les gardes sont collectées par l'app actuelle (milyasse/pharmacies-garde-maroc).
-# Ce dépôt reprend ses données publiées au lieu de solliciter une seconde fois les sources.
 on:
+  schedule:
+    - cron: '7 */2 * * *'      # toutes les 2 heures (UTC)
+    - cron: '40 7,19 * * *'    # autour des changements de garde (≈ 8h40 et 20h40 au Maroc)
   push:
     branches: [main]
-  schedule:
-    - cron: '35 */2 * * *' # ~30 min après la collecte de l'app actuelle
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,20 +22,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Données de garde publiées par l'app actuelle
-        uses: actions/checkout@v4
-        with:
-          repository: milyasse/pharmacies-garde-maroc
-          path: source-app
-          sparse-checkout: public/data
-      - name: Copier les données
-        run: |
-          rsync -a --exclude geo source-app/public/data/ public/data/
-          rm -rf source-app
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm test
+      - name: Collecte des pharmacies de garde (toutes les villes des sources)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: npm run collect
+      - name: Collecte des cliniques et hôpitaux
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: npm run collect:sante
+      - name: Enregistrer les données
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: collecte du $(TZ=Africa/Casablanca date '+%Y-%m-%d %H:%M') (heure du Maroc) [skip ci]"
+            git pull --rebase --autostash origin main || true
+            git push origin HEAD:main
+          fi
       - run: npm install --no-audit --no-fund
       - run: npm run typecheck
       - name: Construire

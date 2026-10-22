@@ -42,10 +42,11 @@ test('searchLocalities : ville d’abord, puis quartiers ; insensible aux accent
 
 test('coverageAt : couverte, proche, non couverte', () => {
   assert.equal(coverageAt({ lat: 34.02, lng: -6.84 }).status, 'covered'); // Rabat
-  assert.equal(coverageAt({ lat: 34.26, lng: -6.58 }).status, 'near'); // Kénitra (~35 km)
-  const c = coverageAt({ lat: 31.63, lng: -8.0 }); // Marrakech
+  assert.equal(coverageAt({ lat: 34.26, lng: -6.58 }).status, 'covered'); // Kénitra (source ajoutée)
+  assert.equal(coverageAt({ lat: 33.789, lng: -7.159 }).status, 'near'); // Bouznika, entre Témara et Mohammedia
+  const c = coverageAt({ lat: 31.51, lng: -9.77 }); // Essaouira
   assert.equal(c.status, 'none');
-  assert.ok((c.distanceKm ?? 0) > 200);
+  assert.ok((c.distanceKm ?? 0) > 100);
 });
 
 test('externalLinks : lien vers la page d’origine si elle existe, sinon recherche web', () => {

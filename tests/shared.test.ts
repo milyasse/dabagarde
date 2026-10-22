@@ -257,7 +257,7 @@ test('import CSV d’un tableau de garde officiel (jours à venir)', async () =>
     'date;ville;nom;adresse;telephone;type;source;source_url',
     '20/10/2026;Témara;Pharmacie Labchir;;0537 64 29 50;24h;Tableau officiel;https://exemple.invalid/t.pdf',
     '2026-10-20;Rabat;"Pharmacie ""Test""";1 rue X;;jour;;https://exemple.invalid/t.pdf',
-    '2026-10-20;Fès;Pharmacie Y;;;nuit;;https://exemple.invalid/t.pdf',
+    '2026-10-20;Ifrane;Pharmacie Y;;;nuit;;https://exemple.invalid/t.pdf',
     '2026-10-20;Salé;Pharmacie Z;;;nuit;;',
   ].join('\n');
   const { rows, errors } = parseManualCsv(csv);

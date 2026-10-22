@@ -19,16 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Données de garde publiées par l'app actuelle
-        uses: actions/checkout@v4
-        with:
-          repository: milyasse/pharmacies-garde-maroc
-          path: source-app
-          sparse-checkout: public/data
-      - run: |
-          rsync -a --exclude geo source-app/public/data/ public/data/
-          rm -rf source-app
-          mkdir -p verif
+      - run: mkdir -p verif
       - uses: actions/setup-node@v4
         with:
           node-version: 22

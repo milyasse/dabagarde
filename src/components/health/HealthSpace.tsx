@@ -25,6 +25,10 @@ import { CITIES } from '../../shared/connectors/registry.ts';
 import { formatMoroccoDateTime, formatShortDate, moroccoDate } from '../../shared/dates.ts';
 import { haversineKm } from '../../shared/distance.ts';
 import type { CityId } from '../../shared/types.ts';
+import { LocalitySearch } from '../search/LocalitySearch.tsx';
+import type { GeoLocality } from '../../shared/geo/types.ts';
+
+const QUICK_CITIES: CityId[] = ['rabat', 'casablanca', 'marrakech', 'fes', 'tanger', 'agadir'];
 
 type State =
   | { state: 'idle' }
@@ -195,10 +199,17 @@ export function HealthSpace(props: {
     requestSearch();
   };
 
+  const pickLocality = (l: GeoLocality) => {
+    setOrigin({ lat: l.lat, lng: l.lon, label: l.name, kind: 'address' });
+    setRadiusKm((r) => (l.kind === 'district' ? 5 : r < 10 ? 10 : r));
+    setPicking(false);
+    requestSearch();
+  };
+
   const services = useMemo(() => (dataset ? availableServices(dataset.establishments) : []), [dataset]);
   const cityCounts = useMemo(() => {
     if (!dataset) return null;
-    return CITIES.map((c) => ({
+    return CITIES.filter((c) => QUICK_CITIES.includes(c.id)).map((c) => ({
       ...c,
       n: dataset.establishments.filter((e) => e.latitude !== null && haversineKm(c.center, { lat: e.latitude, lng: e.longitude! }) <= 10).length,
       urg: dataset.establishments.filter((e) => e.emergency === 'yes' && e.latitude !== null && haversineKm(c.center, { lat: e.latitude, lng: e.longitude! }) <= 10).length,
@@ -206,23 +217,20 @@ export function HealthSpace(props: {
   }, [dataset]);
 
   const toggleType = (t: EstablishmentType) => setTypes((v) => (v.includes(t) ? v.filter((x) => x !== t) : [...v, t]));
-  const nearest = origin ? Math.min(...CITIES.map((c) => haversineKm(origin, c.center))) : 0;
-  const dataNotice = [
-    dataset?.lastError ?? null,
-    origin && nearest > 25 ? 'Votre position est hors de la zone couverte (Rabat, Salé, Témara).' : null,
-  ].filter(Boolean).join(' ') || null;
+  const dataNotice = dataset?.lastError ?? null;
 
   return (
     <div id="espace-sante" className="mx-auto w-full max-w-7xl flex-1 lg:grid lg:grid-cols-[440px_1fr]">
       <div className="lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-line">
         {/* Accès rapide par ville */}
         <section aria-label="Établissements par ville" className="bg-bg px-4 pb-1 pt-3 lg:px-6">
-          <div className="flex items-baseline justify-between gap-2">
-            <h2 className="text-sm font-extrabold">Cliniques et hôpitaux répertoriés</h2>
-            <span className="text-xs font-medium text-muted">à 10 km du centre</span>
+          <h2 className="text-sm font-extrabold">Cliniques et hôpitaux partout au Maroc</h2>
+          <div className="mt-2">
+            <LocalitySearch size="md" onPick={pickLocality} onLocate={() => { void props.onLocate().then((ok) => ok && requestSearch()); }} locating={props.locating} />
           </div>
-          <div className="mt-2 grid grid-cols-3 gap-2">
-            {(cityCounts ?? CITIES.map((c) => ({ ...c, n: null as number | null, urg: null as number | null }))).map((c) => (
+          <p className="mt-3 text-xs font-medium text-muted">Accès rapide (établissements à 10 km du centre)</p>
+          <div className="mt-1.5 grid grid-cols-3 gap-2">
+            {(cityCounts ?? CITIES.filter((c) => QUICK_CITIES.includes(c.id)).map((c) => ({ ...c, n: null as number | null, urg: null as number | null }))).map((c) => (
               <button key={c.id} type="button" onClick={() => pickCity(c.id)}
                 className={`rounded-xl border bg-white px-3 py-2 text-left shadow-[0_1px_4px_rgba(13,26,20,0.05)] ${origin?.kind === 'city' && origin.city === c.id ? 'border-2 border-brand-700' : 'border-line'}`}>
                 <span className="block text-xs font-bold text-muted">{c.name}</span>

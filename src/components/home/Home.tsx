@@ -4,7 +4,8 @@ import { LocalitySearch } from '../search/LocalitySearch.tsx';
 import type { GeoLocality } from '../../shared/geo/types.ts';
 import type { CityCount, DutyFilter } from '../../shared/search.ts';
 import type { CityId, CollectorStatus } from '../../shared/types.ts';
-import { CITY_NAME, CONNECTORS } from '../../shared/connectors/registry.ts';
+import { CITIES, CITY_NAME, CONNECTORS } from '../../shared/connectors/registry.ts';
+import { useState } from 'react';
 import { formatFrDate, formatMoroccoDateTime } from '../../shared/dates.ts';
 import { PAGES, pageUrl } from '../../brand.ts';
 import { ChevronIcon, ClockIcon, MoonIcon, PhoneIcon, PinIcon, StarIcon, WarnIcon } from '../icons.tsx';
@@ -14,15 +15,17 @@ export interface FavoritePharmacy { id: string; name: string; city: string; phon
 
 /** Grandes villes proposées en accès rapide même sans source : la page explique l'absence de données. */
 export const MAJOR_CITIES: { name: string; lat: number; lon: number }[] = [
-  { name: 'Casablanca', lat: 33.5731, lon: -7.5898 },
-  { name: 'Marrakech', lat: 31.6295, lon: -7.9811 },
-  { name: 'Fès', lat: 34.0331, lon: -5.0003 },
-  { name: 'Tanger', lat: 35.7595, lon: -5.834 },
-  { name: 'Agadir', lat: 30.4278, lon: -9.5981 },
-  { name: 'Meknès', lat: 33.8935, lon: -5.5473 },
-  { name: 'Oujda', lat: 34.6814, lon: -1.9086 },
-  { name: 'Kénitra', lat: 34.261, lon: -6.5802 },
-];
+  { name: 'Essaouira', lat: 31.5118, lon: -9.7621 },
+  { name: 'Laâyoune', lat: 27.1545, lon: -13.1954 },
+  { name: 'Béni Mellal', lat: 32.3373, lon: -6.3498 },
+  { name: 'Errachidia', lat: 31.9291, lon: -4.4341 },
+  { name: 'Ouarzazate', lat: 30.9202, lon: -6.9109 },
+  { name: 'Taza', lat: 34.2302, lon: -4.0101 },
+  { name: 'Larache', lat: 35.1951, lon: -6.154 },
+  { name: 'Al Hoceïma', lat: 35.245, lon: -3.9313 },
+  { name: 'Guelmim', lat: 28.9864, lon: -10.0574 },
+  { name: 'Dakhla', lat: 23.6941, lon: -15.9431 },
+]
 
 const QUICK: { v: DutyFilter; label: string; icon: ReactNode }[] = [
   { v: 'all', label: 'De garde aujourd’hui', icon: <ClockIcon size={16} /> },
@@ -40,7 +43,7 @@ const FAQ: { q: string; a: string }[] = [
 type CityRow = { city: CityId; active: number; night: number; continuous: number };
 function cityRows(counts: CityCount[] | null): CityRow[] {
   if (counts) return counts.map((c) => ({ city: c.city, active: c.active, night: c.night, continuous: c.continuous }));
-  return (['rabat', 'sale', 'temara'] as CityId[]).map((city) => ({ city, active: -1, night: 0, continuous: 0 }));
+  return CITIES.map((c) => ({ city: c.id, active: -1, night: 0, continuous: 0 }));
 }
 
 export function Home(props: {
@@ -64,6 +67,9 @@ export function Home(props: {
   const clockRaw = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Africa/Casablanca', weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(props.now);
   const clock = clockRaw.charAt(0).toUpperCase() + clockRaw.slice(1);
   const sources = CONNECTORS.filter((c) => c.enabled && c.homepage);
+  const [allCities, setAllCities] = useState(false);
+  const rows = cityRows(props.counts).sort((a, b) => b.active - a.active || CITY_NAME[a.city].localeCompare(CITY_NAME[b.city], 'fr'));
+  const visibleCities = allCities ? rows : rows.slice(0, 9);
   return (
     <div>
       {/* ---------- Recherche */}
@@ -128,14 +134,14 @@ export function Home(props: {
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 id="h-villes" className="font-display text-2xl font-extrabold">Villes couvertes</h2>
-              <p className="mt-1 text-sm text-muted">Gardes publiées pour le {formatFrDate(props.date)}.</p>
+              <p className="mt-1 text-sm text-muted">{rows.length} villes et agglomérations · gardes publiées pour le {formatFrDate(props.date)}.</p>
             </div>
             <button type="button" onClick={props.onOpenRegions} className="inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-sm font-bold text-brand-700 ring-1 ring-line hover:bg-brand-50">
               Parcourir par région <ChevronIcon size={16} />
             </button>
           </div>
-          <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-            {cityRows(props.counts).map((c) => (
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleCities.map((c) => (
               <li key={c.city}>
                 <button type="button" onClick={() => props.onPickCity(c.city)} className="group flex w-full items-center gap-4 rounded-2xl bg-white p-4 text-left ring-1 ring-line transition hover:ring-2 hover:ring-brand-500">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><PinIcon size={24} /></span>
@@ -150,6 +156,11 @@ export function Home(props: {
               </li>
             ))}
           </ul>
+          {rows.length > 9 && (
+            <button type="button" onClick={() => setAllCities((v) => !v)} aria-expanded={allCities} className="mt-3 text-sm font-bold text-brand-700 underline">
+              {allCities ? 'Afficher moins de villes' : `Voir les ${rows.length} villes couvertes`}
+            </button>
+          )}
           <h3 className="mt-8 text-sm font-extrabold uppercase tracking-wider text-muted">Autres grandes villes</h3>
           <p className="mt-1 text-sm text-muted">Pas encore de source fiable réutilisable : nous vous indiquons où trouver l’information d’origine.</p>
           <ul className="mt-3 flex flex-wrap gap-2">

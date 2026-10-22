@@ -37,12 +37,12 @@ const OUT = outIdx >= 0 ? path.resolve(args[outIdx + 1]) : path.join(ROOT, 'publ
 const manualIdx = args.indexOf('--manual');
 const MANUAL_DIR = manualIdx >= 0 ? path.resolve(args[manualIdx + 1]) : path.join(ROOT, 'manual');
 const REQUEST_GAP_MS = 1500;
-const MAX_DETAIL_FETCHES = 45;
-const MAX_GEOCODES = 15;
+const MAX_DETAIL_FETCHES = 160; // fiches « historique de garde » (mises en cache)
+const MAX_GEOCODES = 30;
 const RETENTION_DAYS = 60;
 
 const repo = process.env.GITHUB_REPOSITORY ? `https://github.com/${process.env.GITHUB_REPOSITORY}` : 'local';
-const USER_AGENT = `PharmaciesGardeMaroc/1.0 (+${repo}; collecte espacée de gardes publiques)`;
+const USER_AGENT = `DabaGarde/2.0 (+${repo}; collecte espacée de gardes publiques)`;
 
 const log = (...a: unknown[]) => console.log('[collect]', ...a);
 const debug = (...a: unknown[]) => VERBOSE && console.log('[debug]', ...a);
@@ -226,8 +226,8 @@ async function main() {
   };
 
   // ---- Source : annuaire-gratuit.ma
-  for (const city of CITIES) {
-    const url = listingUrl(city.id);
+  for (const city of CITIES.filter((c) => c.annuaire)) {
+    const url = listingUrl(city.annuaire!);
     const run: SourceRunStatus = { sourceId: ANNUAIRE_ID, sourceName: ANNUAIRE_NAME, city: city.id, url, ok: false, pageDate: null, count: 0, error: null, checkedAt: new Date().toISOString() };
     runs.push(run);
     let page;
@@ -294,7 +294,7 @@ async function main() {
 
   // ---- Source : guidepharmacies.ma (planning hebdomadaire : semaine en cours + semaine suivante)
   const guideCache = await readJson<Record<string, { address: string | null; phone: string | null; at: string }>>(path.join(OUT, 'cache', 'guide-details.json'), {});
-  let guideDetailBudget = 40;
+  let guideDetailBudget = 90;
   // Pharmacies dont la position exacte est connue (publiée par une autre source), pour compléter
   const precise: DutyRecord[] = [...byDate.values()].flat().filter((r) => r.coordinatesSource === 'source');
   const dutyDirP = path.join(OUT, 'duty');
@@ -304,13 +304,29 @@ async function main() {
       if (snap) precise.push(...snap.records.filter((r) => r.coordinatesSource === 'source'));
     }
   }
-  for (const city of CITIES) {
-    for (const url of [guideWeekUrl(city.id), guideWeekUrl(city.id, nextMonday(today))]) {
+  for (const city of CITIES.filter((c) => c.guide?.length)) {
+    // Le nom de page n'est pas toujours connu à l'avance : on essaie les variantes déclarées (ex. « kenitra », « mehdia-kenitra »).
+    let slug: string | null = null;
+    let firstWeek: ReturnType<typeof parseGuideWeek> | null = null;
+    let lastErr = '';
+    for (const cand of city.guide!) {
+      try {
+        const w = parseGuideWeek(await politeFetch(guideWeekUrl(cand)));
+        if (w.days.length || w.weekStart) { slug = cand; firstWeek = w; break; }
+        lastErr = 'planning illisible';
+      } catch (e) { lastErr = (e as Error).message; }
+    }
+    if (!slug) {
+      runs.push({ sourceId: GUIDE_ID, sourceName: GUIDE_NAME, city: city.id, url: guideWeekUrl(city.guide![0]), ok: false, pageDate: null, count: 0, error: `Page inaccessible : ${lastErr}`, checkedAt: new Date().toISOString() });
+      log(`✗ ${GUIDE_NAME} ${city.name} : aucune page trouvée (${city.guide!.join(', ')}) — ${lastErr}`);
+      continue;
+    }
+    for (const url of [guideWeekUrl(slug), guideWeekUrl(slug, nextMonday(today))]) {
       const run: SourceRunStatus = { sourceId: GUIDE_ID, sourceName: GUIDE_NAME, city: city.id, url, ok: false, pageDate: null, count: 0, error: null, checkedAt: new Date().toISOString() };
       runs.push(run);
       let week;
       try {
-        week = parseGuideWeek(await politeFetch(url));
+        week = url === guideWeekUrl(slug) && firstWeek ? firstWeek : parseGuideWeek(await politeFetch(url));
       } catch (e) {
         run.error = `Page inaccessible : ${(e as Error).message}`;
         log(`✗ ${GUIDE_NAME} ${city.name} : ${run.error}`);

@@ -11,7 +11,7 @@
 // (identiques pour toutes les pharmacies d'un même quartier). Ils ne sont jamais présentés comme
 // la position de la pharmacie : ils servent seulement de position approximative signalée comme telle.
 
-import type { CityId, DutyType } from '../types.ts';
+import type { DutyType } from '../types.ts';
 import { addDays, isIsoDate, parseFrenchDate, parseHours } from '../dates.ts';
 import { cleanSpaces, decodeEntities, htmlToText, normalizeMoroccanPhone, titleCase } from '../text.ts';
 import { isInMorocco, isValidLatLng } from '../distance.ts';
@@ -20,10 +20,9 @@ export const GUIDE_ID = 'guidepharmacies';
 export const GUIDE_NAME = 'guidepharmacies.ma';
 export const GUIDE_BASE = 'https://www.guidepharmacies.ma';
 
-export const GUIDE_CITY_SLUGS: Record<CityId, string> = { rabat: 'rabat', sale: 'sale', temara: 'temara' };
-
-export function guideWeekUrl(city: CityId, monday?: string): string {
-  const u = `${GUIDE_BASE}/pharmacies-de-garde/${GUIDE_CITY_SLUGS[city]}.html`;
+/** Planning d'une ville (slug de la ville chez la source, ex. « rabat », « casablanca »). */
+export function guideWeekUrl(slug: string, monday?: string): string {
+  const u = `${GUIDE_BASE}/pharmacies-de-garde/${slug}.html`;
   return monday ? `${u}?date=${monday}` : u;
 }
 

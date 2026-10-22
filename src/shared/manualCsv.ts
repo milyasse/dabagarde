@@ -6,6 +6,7 @@
 // - source_url est obligatoire : chaque ligne doit être vérifiable.
 
 import type { CityId, DutyType } from './types.ts';
+import { CITIES } from './connectors/registry.ts';
 import { addDays, isIsoDate } from './dates.ts';
 import { stripAccents } from './text.ts';
 
@@ -54,11 +55,9 @@ function toIso(s: string): string | null {
 }
 
 function toCity(s: string): CityId | null {
-  const t = stripAccents(s.toLowerCase()).trim();
-  if (t.startsWith('rabat')) return 'rabat';
-  if (t.startsWith('sale')) return 'sale';
-  if (t.startsWith('temara')) return 'temara';
-  return null;
+  const t = stripAccents(s.toLowerCase()).trim().replace(/[’'\s]+/g, '-');
+  const c = CITIES.find((x) => x.id === t || t.startsWith(x.id) || stripAccents(x.name.toLowerCase()).replace(/[’'\s]+/g, '-') === t);
+  return c ? c.id : null;
 }
 
 function toType(s: string): DutyType | null {

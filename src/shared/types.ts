@@ -11,7 +11,8 @@ export type VerificationStatus =
 
 export type ConfidenceLevel = 'high' | 'medium' | 'low';
 
-export type CityId = 'rabat' | 'sale' | 'temara';
+/** Identifiant de ville couverte (slug), défini dans connectors/registry.ts. */
+export type CityId = string;
 
 export interface SourceRef {
   sourceId: string; // identifiant du connecteur (ex. "annuaire-gratuit")

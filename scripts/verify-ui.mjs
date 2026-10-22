@@ -87,6 +87,27 @@ await section('Parcours principal (téléphone)', async () => {
     await page.getByRole('tab', { name: 'Liste' }).click();
   } else note('Aucune garde publiée pour Salé à cette heure : contrôles de fiche ignorés.');
 
+  // Changer de ville depuis les résultats (sans revenir à l'accueil)
+  await results(page).getByRole('button', { name: 'Changer de ville' }).click();
+  await wait(600);
+  const focused = await page.evaluate(() => document.activeElement?.id ?? '');
+  check(focused === 'recherche-ville', '« Changer de ville » place le curseur dans la recherche');
+  await page.keyboard.type('Rab');
+  await page.getByRole('option', { name: /^Rabat/ }).first().click();
+  await page.waitForFunction(() => /Rabat ·/.test(document.querySelector('section[aria-label="Résultats"]')?.textContent ?? ''), null, { timeout: 20000 }).catch(() => {});
+  const after = await results(page).innerText().catch(() => '');
+  check(/Rabat ·/.test(after) && page.url().includes('ville=rabat'), `changement de ville Salé → Rabat : « ${(await heading(page))} »`);
+  await page.screenshot({ path: `${OUT}/06b-changement-ville.png` });
+  // Même chose depuis l'onglet Carte (bouton « Ville »)
+  await page.getByRole('tab', { name: 'Carte' }).click();
+  await page.getByRole('button', { name: 'Changer de ville' }).first().click();
+  await wait(600);
+  check(await page.evaluate(() => document.activeElement?.id === 'recherche-ville'), 'onglet Carte : bouton « Ville » ramène à la recherche');
+  await page.keyboard.type('Casabl');
+  await page.getByRole('option', { name: /^Casablanca/ }).first().click();
+  await page.waitForFunction(() => /Casablanca ·/.test(document.querySelector('section[aria-label="Résultats"]')?.textContent ?? ''), null, { timeout: 20000 }).catch(() => {});
+  check(/Casablanca ·/.test(await results(page).innerText().catch(() => '')), `changement de ville → Casablanca (nouvelle ville couverte) : « ${(await heading(page))} »`);
+
   // Retour à l'accueil : favoris
   await page.getByRole('link', { name: /DabaGarde, accueil/ }).click();
   await wait(800);
@@ -109,13 +130,13 @@ await section('Parcours principal (téléphone)', async () => {
   await dlgR.getByRole('button', { name: 'Fermer' }).click();
 
   // Ville non couverte
-  await page.getByRole('button', { name: 'Marrakech' }).click();
+  await page.getByRole('button', { name: 'Essaouira' }).click();
   await results(page).locator('h2').first().waitFor({ timeout: 20000 }).catch(() => {});
   await wait(1200);
-  const cov = await page.getByText(/Pas encore de liste de garde fiable pour Marrakech/).count();
-  check(cov === 1, 'ville non couverte (Marrakech) : message explicite, aucune donnée inventée');
+  const cov = await page.getByText(/Pas encore de liste de garde fiable pour Essaouira/).count();
+  check(cov === 1, 'ville non couverte (Essaouira) : message explicite, aucune donnée inventée');
   const g24 = await page.getByRole('link', { name: /garde24\.ma/ }).getAttribute('href').catch(() => null);
-  check(g24 === 'https://garde24.ma/fr/pharmacie-de-garde/marrakech', 'ville non couverte : lien vers la page publique d’origine');
+  check(g24 === 'https://garde24.ma/fr/pharmacie-de-garde/essaouira', 'ville non couverte : lien vers la page publique d’origine');
   await page.screenshot({ path: `${OUT}/07-non-couverte.png` });
 
   // Filtre « De nuit » puis ville

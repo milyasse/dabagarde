@@ -19,6 +19,7 @@ export function LocalitySearch(props: {
   locating: boolean;
   size?: 'lg' | 'md';
   autoFocus?: boolean;
+  inputId?: string;
 }) {
   const [q, setQ] = useState('');
   const [geo, setGeo] = useState<GeoBase | null>(null);
@@ -54,6 +55,7 @@ export function LocalitySearch(props: {
         <SearchIcon size={22} className="ml-2 shrink-0 text-brand-600" />
         <input
           ref={input}
+          id={props.inputId}
           role="combobox"
           aria-expanded={open && results.length > 0}
           aria-controls={listId}

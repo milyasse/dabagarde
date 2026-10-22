@@ -16,7 +16,7 @@ import { ReportDialog } from './components/results/ReportDialog.tsx';
 import { CoverageNotice } from './components/results/CoverageNotice.tsx';
 import type { RouteState } from './components/PharmacyCard.tsx';
 import { ResultsSkeleton } from './components/ResultsSkeleton.tsx';
-import { ListIcon, MapIcon } from './components/icons.tsx';
+import { ListIcon, MapIcon, PinIcon } from './components/icons.tsx';
 import { getCurrentPosition, type GeoError } from './services/geolocation.ts';
 import { searchPlace } from './services/geocoding.ts';
 import { getRoute, type RouteResult, type TravelMode } from './services/routing.ts';
@@ -352,6 +352,12 @@ export default function App() {
     if (r === 'copied') setToast('Fiche copiée dans le presse-papiers');
     else if (r === 'failed') setToast('Partage indisponible sur cet appareil');
   };
+  /** Remonte à la barre de recherche et y place le curseur, pour changer de ville sans revenir à l'accueil. */
+  const changePlace = () => {
+    setTab('list');
+    resultsTop.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => { const el = document.getElementById('recherche-ville') as HTMLInputElement | null; el?.focus(); el?.select(); }, 350);
+  };
   const goHome = () => {
     setSpace('pharmacies');
     setSearch({ state: 'idle' });
@@ -418,7 +424,7 @@ export default function App() {
             <div className="border-b border-line bg-white">
               <div className="flex flex-wrap items-center gap-3 px-4 py-3 lg:px-5">
                 <div className="min-w-[16rem] flex-1">
-                  <LocalitySearch size="md" onPick={pickLocality} onLocate={() => void locate(true)} locating={locating} />
+                  <LocalitySearch size="md" inputId="recherche-ville" onPick={pickLocality} onLocate={() => void locate(true)} locating={locating} />
                 </div>
                 <p className="text-sm text-muted">
                   <b className="text-ink">{placeLabel}</b> · {formatFrDate(date)} · {radiusKm} km · {FILTER_LABEL[dutyFilter]}
@@ -462,13 +468,18 @@ export default function App() {
 
             {/* Onglets Liste / Carte sur téléphone */}
             {!isDesktop && (
-              <div className="sticky top-[calc(env(safe-area-inset-top,0px)+100px)] z-[1000] flex gap-1 border-b border-line bg-bg/95 px-4 py-2 backdrop-blur md:top-[calc(env(safe-area-inset-top,0px)+56px)]" role="tablist" aria-label="Affichage des résultats">
-                {(['list', 'map'] as const).map((t) => (
-                  <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
-                    className={`inline-flex flex-1 items-center justify-center gap-2 rounded-full py-2 text-sm font-bold ${tab === t ? 'bg-brand-700 text-white' : 'bg-white text-ink ring-1 ring-line'}`}>
-                    {t === 'list' ? <ListIcon size={16} /> : <MapIcon size={16} />}{t === 'list' ? 'Liste' : 'Carte'}
-                  </button>
-                ))}
+              <div className="sticky top-[calc(env(safe-area-inset-top,0px)+100px)] z-[1000] flex gap-1 border-b border-line bg-bg/95 px-4 py-2 backdrop-blur md:top-[calc(env(safe-area-inset-top,0px)+56px)]">
+                <button type="button" onClick={changePlace} className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3 py-2 text-sm font-bold text-brand-800 ring-1 ring-line" aria-label="Changer de ville">
+                  <PinIcon size={16} /> Ville
+                </button>
+                <div className="flex flex-1 gap-1" role="tablist" aria-label="Affichage des résultats">
+                  {(['list', 'map'] as const).map((t) => (
+                    <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
+                      className={`inline-flex flex-1 items-center justify-center gap-2 rounded-full py-2 text-sm font-bold ${tab === t ? 'bg-brand-700 text-white' : 'bg-white text-ink ring-1 ring-line'}`}>
+                      {t === 'list' ? <ListIcon size={16} /> : <MapIcon size={16} />}{t === 'list' ? 'Liste' : 'Carte'}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -569,6 +580,7 @@ export default function App() {
         showAllRoutes={showAllRoutes}
         onShowAllRoutes={setShowAllRoutes}
         onRefresh={() => void runSearch(true)}
+        onChangePlace={changePlace}
         onEnlarge={() => { setRadiusKm((r) => Math.min(100, r < 5 ? 5 : r < 10 ? 10 : r < 20 ? 20 : r < 30 ? 30 : r * 2)); requestSearch(); }}
       />
     );

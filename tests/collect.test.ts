@@ -25,7 +25,8 @@ test('collecteur : fichiers produits, statuts, aucune donnée inventée', () => 
   const manual = mkdtempSync(path.join(tmpdir(), 'pgm-manual-'));
   runCollector(out, manual);
   const status = JSON.parse(readFileSync(path.join(out, 'status.json'), 'utf8')) as CollectorStatus;
-  assert.equal(status.runs.filter((r) => r.sourceId === 'annuaire-gratuit').length, 3);
+  assert.equal(status.runs.filter((r) => r.sourceId === 'annuaire-gratuit' && r.ok).length, 3, 'les 3 villes des pages modèles sont lues ; les autres (sans page modèle) sont signalées en erreur');
+  assert.ok(status.runs.filter((r) => r.sourceId === 'annuaire-gratuit' && !r.ok).every((r) => r.error), 'une ville illisible est signalée, jamais remplie');
   assert.ok(status.connectors.some((c) => c.id === 'wadifapublic' && !c.enabled));
   const tem = status.runs.find((r) => r.city === 'temara' && r.sourceId === 'annuaire-gratuit')!;
   assert.equal(tem.pageDate, '2026-10-13');

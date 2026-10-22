@@ -1,6 +1,7 @@
 // Recherche d'établissements : filtres (type, service, urgences déclarées), rayon, classement par distance.
 // Réutilise filterAndRank (Haversine) de l'espace Pharmacies.
-import { filterAndRank, type LatLng } from '../distance.ts';
+import { filterAndRank, haversineKm, type LatLng } from '../distance.ts';
+import { CITIES } from '../connectors/registry.ts';
 import type { Establishment, EstablishmentLevels, EstablishmentResult, EstablishmentType, ServiceId } from './types.ts';
 
 export type SortOrder = 'asc' | 'desc';
@@ -43,7 +44,12 @@ export function searchEstablishments(list: Establishment[], q: HealthQuery): Hea
   const items: EstablishmentResult[] = kept.map((e) => ({
     ...e, distanceStraightLineKm: null, distanceRoadKm: null, estimatedTravelMinutes: null, rank: null, levels: levelsOf(e, q.date),
   }));
-  const { ranked, unlocated, outside } = filterAndRank(items, q.origin, q.radiusKm);
+  const { ranked, unlocated: allUnlocated, outside } = filterAndRank(items, q.origin, q.radiusKm);
+  // Sans position : seulement ceux de la ville de recherche (sinon toute la liste nationale s'afficherait)
+  const unlocated = allUnlocated.filter((e) => {
+    const c = CITIES.find((x) => x.id === e.city);
+    return !!c && haversineKm(q.origin, c.center) <= q.radiusKm + 15;
+  });
   // le rang (et la couleur du marqueur) suit toujours la proximité ; seul l'ordre d'affichage change
   const ordered = q.sort === 'desc' ? [...ranked].reverse() : ranked;
   return { ranked: ordered, unlocated, outside, filteredOut: list.length - kept.length };

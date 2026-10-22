@@ -5,7 +5,7 @@ name: Base géographique
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 3 2 * *' # le 2 de chaque mois
+    - cron: '17 3 * * 1' # chaque lundi (base géographique + cliniques et hôpitaux)
 
 permissions:
   contents: write
@@ -32,9 +32,16 @@ jobs:
           cd "$RUNNER_TEMP/osm"
           osmium tags-filter morocco.osm.pbf r/boundary=administrative n/place=city,town,village,suburb,quarter -o geo.osm.pbf --overwrite
           osmium export geo.osm.pbf -f geojsonseq -a type,id --geometry-types=point,polygon -o geo.geojsonseq --overwrite
-          ls -lh geo.geojsonseq
+          osmium tags-filter morocco.osm.pbf nwr/amenity=hospital,clinic nwr/healthcare=hospital,clinic -o sante.osm.pbf --overwrite
+          osmium export sante.osm.pbf -f geojsonseq -a type,id --geometry-types=point,polygon -o sante.geojsonseq --overwrite
+          osmium fileinfo -g header.option.osmosis_replication_timestamp morocco.osm.pbf > osm-base.txt || true
+          ls -lh geo.geojsonseq sante.geojsonseq
       - name: Construire la base
         run: node --experimental-strip-types --no-warnings scripts/build-geo.ts "$RUNNER_TEMP/osm/geo.geojsonseq"
+      - name: Cliniques et hôpitaux de tout le Maroc
+        run: |
+          node --experimental-strip-types --no-warnings scripts/osm-health.ts "$RUNNER_TEMP/osm/sante.geojsonseq" "$(cat $RUNNER_TEMP/osm/osm-base.txt 2>/dev/null)"
+          npm run collect:sante
       - name: Enregistrer (données, ou au moins le rapport)
         if: always()
         run: |
@@ -42,7 +49,7 @@ jobs:
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git rm -rq --cached data-sources/geo/contours data-sources/geo/places 2>/dev/null || true
           rm -rf data-sources/geo/contours data-sources/geo/places
-          git add -A data-sources/geo; git add public/data/geo 2>/dev/null || true
+          git add -A data-sources/geo; git add public/data/geo public/data/sante 2>/dev/null || true
           git commit -m "geo: base géographique du $(date -u +%Y-%m-%d) [skip ci]" || exit 0
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"

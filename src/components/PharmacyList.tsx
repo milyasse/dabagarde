@@ -42,6 +42,7 @@ export function PharmacyList(props: {
   onShowAllRoutes: (v: boolean) => void;
   onRefresh: () => void;
   onEnlarge: () => void;
+  onChangePlace: () => void;
 }) {
   const refs = useRef(new Map<string, HTMLElement>());
   const [showExpired, setShowExpired] = useState(false);
@@ -93,7 +94,10 @@ export function PharmacyList(props: {
           <h2 className="font-display text-xl font-extrabold" aria-live="polite">
             {n === 0 ? 'Aucune pharmacie de garde' : `${n} pharmacie${n > 1 ? 's' : ''} de garde`}
           </h2>
-          <p className="text-[13px] text-muted">{props.placeLabel} · {formatFrDate(props.date)} · {props.radiusKm} km</p>
+          <p className="text-[13px] text-muted">
+            {props.placeLabel} · {formatFrDate(props.date)} · {props.radiusKm} km ·{' '}
+            <button type="button" onClick={props.onChangePlace} className="font-bold text-brand-700 underline">Changer de ville</button>
+          </p>
         </div>
         <button type="button" onClick={props.onRefresh} className="rounded-full bg-white p-2.5 text-brand-700 ring-1 ring-line" aria-label="Actualiser les résultats" title="Actualiser">
           <RefreshIcon size={18} />

@@ -8,6 +8,7 @@ import type { CityId } from '../types.ts';
 import { isInMorocco, isValidLatLng, haversineKm } from '../distance.ts';
 import { normalizeMoroccanPhone, stripAccents } from '../text.ts';
 import { OSM_SPECIALITY } from './labels.ts';
+import { CITIES } from '../connectors/registry.ts';
 import type {
   DutyDesignation, Establishment, EstablishmentSource, EstablishmentType, InfoSource, ServiceId, ServiceInfo,
 } from './types.ts';
@@ -130,10 +131,15 @@ function addNameServices(name: string, out: Map<ServiceId, InfoSource>) {
 
 export function cityFromOsm(t: Record<string, string>): CityId | null {
   const c = stripAccents((t['addr:city'] ?? '').toLowerCase());
-  if (/rabat|الرباط/.test(c)) return 'rabat';
+  if (!c) return null;
   if (/\bsale\b|سلا/.test(c)) return 'sale';
   if (/temara|تمارة/.test(c)) return 'temara';
-  return null;
+  if (/rabat|الرباط/.test(c)) return 'rabat';
+  const hit = CITIES.find((x) => {
+    const n = stripAccents(x.name.toLowerCase());
+    return c === n || c.startsWith(n + ' ') || c === x.id.replace(/-/g, ' ');
+  });
+  return hit ? hit.id : null;
 }
 
 function addressFromOsm(t: Record<string, string>): string | null {
