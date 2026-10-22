@@ -1,13 +1,18 @@
 name: Vérifications
 
+# Contrôles de chaque branche de travail. Les journaux et captures sont publiés sur la branche
+# « ci-reports » (dossier = nom de la branche vérifiée) pour pouvoir être relus sans accès aux logs.
 on:
   push:
-    branches-ignore: [main]
-  pull_request:
+    branches-ignore: [main, ci-reports]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   verify:
@@ -23,36 +28,66 @@ jobs:
       - run: |
           rsync -a --exclude geo source-app/public/data/ public/data/
           rm -rf source-app
+          mkdir -p verif
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
+      - name: Dépendances
+        run: npm install --no-audit --no-fund > verif/install.txt 2>&1 || (cat verif/install.txt; exit 1)
       - name: Types
-        run: npm run typecheck
+        id: types
+        continue-on-error: true
+        run: npm run typecheck 2>&1 | tee verif/typecheck.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Tests
-        run: npm test
+        id: tests
+        continue-on-error: true
+        run: npm test 2>&1 | tee verif/tests.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Recherche de secrets
+        id: secrets
+        continue-on-error: true
         run: |
-          if git grep -nE '(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|ghp_[A-Za-z0-9]{30,}|AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,})' -- . ':!package-lock.json'; then echo "::error::Secret potentiel détecté"; exit 1; fi
+          if git grep -nE '(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|ghp_[A-Za-z0-9]{30,}|AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,})' -- . ':!package-lock.json' > verif/secrets.txt; then exit 1; else echo "Aucun secret détecté" > verif/secrets.txt; fi
       - name: Construire
+        id: build
+        continue-on-error: true
         env:
           BASE_PATH: /dabagarde/
           SITE_URL: https://milyasse.github.io/dabagarde
-        run: npm run build:site
+        run: npm run build:site 2>&1 | tee verif/build.txt; test ${PIPESTATUS[0]} -eq 0
       - name: Playwright
+        if: steps.build.outcome == 'success'
         run: |
-          npm install --no-save --no-audit --no-fund playwright@1.48.2
-          npx playwright install --with-deps chromium
+          npm install --no-save --no-audit --no-fund playwright@1.48.2 > /dev/null 2>&1
+          npx playwright install --with-deps chromium > /dev/null 2>&1
       - name: Parcours de l'interface
+        id: ui
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
         env:
           BASE_PATH: /dabagarde/
         run: |
-          npx vite preview --port 4173 --strictPort &
+          npx vite preview --port 4173 --strictPort > /dev/null 2>&1 &
           sleep 5
-          node scripts/verify-ui.mjs
-      - uses: actions/upload-artifact@v4
+          node scripts/verify-ui.mjs 2>&1 | tee verif/parcours.txt; test ${PIPESTATUS[0]} -eq 0
+      - name: Publier le rapport (branche ci-reports)
         if: always()
-        with:
-          name: verification
-          path: verif
-          retention-days: 7
+        env:
+          BR: ${{ github.ref_name }}
+        run: |
+          {
+            echo "branche: $BR"; echo "commit: $GITHUB_SHA"; echo "date: $(date -u +%FT%TZ)"
+            echo "types: ${{ steps.types.outcome }}"; echo "tests: ${{ steps.tests.outcome }}"
+            echo "secrets: ${{ steps.secrets.outcome }}"; echo "build: ${{ steps.build.outcome }}"; echo "interface: ${{ steps.ui.outcome }}"
+          } > verif/resume.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          D=$(mktemp -d)
+          if git fetch --depth 1 origin ci-reports 2>/dev/null; then git worktree add "$D" FETCH_HEAD; cd "$D"; git checkout -B ci-reports; else git worktree add --detach "$D"; cd "$D"; git checkout --orphan ci-reports; git rm -rfq .; fi
+          SAFE=$(echo "$BR" | tr '/' '_')
+          rm -rf "$SAFE"; mkdir -p "$SAFE"; cp -r "$GITHUB_WORKSPACE/verif/." "$SAFE/"
+          git add -A && git commit -qm "Rapport $BR ${GITHUB_SHA::7}" && git push -q origin ci-reports
+      - name: Verdict
+        if: always()
+        run: |
+          cat verif/resume.txt
+          ! grep -E ': (failure)$' verif/resume.txt

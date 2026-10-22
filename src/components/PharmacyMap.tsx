@@ -254,7 +254,7 @@ export function PharmacyMap(props: {
   }
 
   return (
-    <div className={`${full ? 'fixed inset-0 z-[900] bg-bg' : 'relative h-full w-full'} ${props.picking ? 'map-picking' : ''}`}>
+    <div className={`${full ? 'fixed inset-0 z-[1300] bg-bg' : 'relative h-full w-full'} ${props.picking ? 'map-picking' : ''}`}>
       <div ref={el} className="h-full w-full" role="application" aria-label={props.ariaLabel ?? 'Carte des pharmacies de garde'} />
       {hint && (
         <div className="pointer-events-none absolute inset-0 z-[600] flex items-center justify-center bg-black/35 p-6 text-center text-sm font-bold text-white">

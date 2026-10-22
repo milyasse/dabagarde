@@ -213,7 +213,7 @@ export function HealthSpace(props: {
   ].filter(Boolean).join(' ') || null;
 
   return (
-    <main id="espace-sante" className="flex-1 lg:grid lg:min-h-0 lg:grid-cols-[440px_1fr]">
+    <div id="espace-sante" className="mx-auto w-full max-w-7xl flex-1 lg:grid lg:grid-cols-[440px_1fr]">
       <div className="lg:min-h-0 lg:overflow-y-auto lg:border-r lg:border-line">
         {/* Accès rapide par ville */}
         <section aria-label="Établissements par ville" className="bg-bg px-4 pb-1 pt-3 lg:px-6">
@@ -313,8 +313,8 @@ export function HealthSpace(props: {
         {isDesktop && renderResults()}
       </div>
 
-      <div className="flex flex-col lg:min-h-0">
-        <div ref={mapBox} className="relative h-[48vh] min-h-[300px] scroll-mt-14 lg:h-auto lg:flex-1">
+      <div className="flex flex-col lg:sticky lg:top-[calc(env(safe-area-inset-top,0px)+57px)] lg:h-[calc(100dvh-57px)] lg:self-start">
+        <div ref={mapBox} className="relative h-[48vh] min-h-[300px] scroll-mt-28 lg:h-auto lg:flex-1">
           <PharmacyMap
             ariaLabel="Carte des cliniques et hôpitaux"
             origin={origin}
@@ -336,7 +336,7 @@ export function HealthSpace(props: {
         <div className="bg-white px-4 py-2"><MapLegend count={list.length || 5} approx={false} /></div>
         {!isDesktop && renderResults()}
       </div>
-    </main>
+    </div>
   );
 
   function renderResults() {

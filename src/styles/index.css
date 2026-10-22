@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
-/* Tokens alignés sur le fichier Figma « Pharmacies de Garde Maroc — UI » */
+/* DabaGarde : vert pharmacie et blanc, neutres teintés de vert ; une seule couleur d'action. */
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --color-brand-700: #0b5d3b;
-  --color-brand-600: #127a4e;
-  --color-brand-50: #e8f4ee;
-  --color-bg: #f3f5f4;
-  --color-line: #dde3e0;
-  --color-ink: #13201a;
-  --color-muted: #5b6b63;
-  --color-warn-600: #b45309;
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-900: #053b27;
+  --color-brand-800: #08503a;
+  --color-brand-700: #0a6b47;
+  --color-brand-600: #0f8457;
+  --color-brand-500: #17a06b;
+  --color-brand-200: #bfe6d2;
+  --color-brand-100: #dcf2e7;
+  --color-brand-50: #eef9f3;
+  --color-bg: #f4f7f5;
+  --color-surface: #ffffff;
+  --color-line: #dce5e0;
+  --color-ink: #0f1f18;
+  --color-muted: #52645b;
+  --color-night-700: #33408f;
+  --color-night-50: #eceefa;
+  --color-h24-700: #0e6f68;
+  --color-h24-50: #e3f4f2;
+  --color-warn-600: #a54c06;
   --color-warn-50: #fff4e5;
   --color-danger-600: #b42318;
   --color-danger-50: #fdecea;
@@ -20,7 +31,20 @@
 html, body, #root { height: 100%; }
 body { @apply bg-bg text-ink antialiased; -webkit-tap-highlight-color: transparent; }
 
-:focus-visible { outline: 3px solid #1d6fd8; outline-offset: 2px; }
+:focus-visible { outline: 3px solid #17a06b; outline-offset: 2px; border-radius: 6px; }
+.font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+.tabular { font-variant-numeric: tabular-nums; }
+/* Fond de l'accueil : grille de rues très discrète (évoque la carte sans la répéter) */
+.hero-bg {
+  background-color: var(--color-brand-800);
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+    radial-gradient(120% 90% at 85% 0%, rgba(23,160,107,.55), transparent 60%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+}
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
 
 /* Marqueurs numérotés Leaflet */
 .rank-marker { background: transparent; border: 0; }

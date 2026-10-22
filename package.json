@@ -20,7 +20,8 @@
     "geo": "node --experimental-strip-types --no-warnings scripts/build-geo.ts"
   },
   "dependencies": {
-    "gsap": "^3.13.0",
+    "@fontsource-variable/bricolage-grotesque": "^5.1.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.1.0",
     "leaflet": "^1.9.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

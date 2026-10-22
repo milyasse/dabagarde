@@ -40,15 +40,16 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icons/favicon.svg', 'icons/apple-touch-icon.png'],
       manifest: {
-        name: 'Pharmacies de Garde Maroc',
-        short_name: 'Pharma Garde',
-        description: 'Pharmacies de garde autour de vous à Rabat, Salé et Témara, avec sources datées et itinéraires.',
+        id: base,
+        name: 'DabaGarde – Pharmacies de garde au Maroc',
+        short_name: 'DabaGarde',
+        description: 'La pharmacie de garde, maintenant : listes datées et sourcées, carte, appel et itinéraire.',
         lang: 'fr',
         start_url: base,
         scope: base,
         display: 'standalone',
-        background_color: '#0A1628',
-        theme_color: '#0B5D3B',
+        background_color: '#08503a',
+        theme_color: '#08503a',
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
@@ -58,7 +59,9 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,webp,woff2}'],
         globIgnores: ['**/data/**'],
-        navigateFallbackDenylist: [/\/data\//],
+        // Seule la page d'application (racine, avec ou sans paramètres) est servie hors connexion ;
+        // les pages statiques (villes, urgences…) restent servies par le réseau.
+        navigateFallbackAllowlist: [new RegExp(`^${base.replace(/\//g, '\\/')}(\\?.*)?$`)],
         runtimeCaching: [
           {
             // Données de garde : toujours tenter le réseau d'abord (fraîcheur), cache en secours hors-ligne

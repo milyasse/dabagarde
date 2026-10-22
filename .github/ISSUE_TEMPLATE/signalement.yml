@@ -1,0 +1,32 @@
+name: Signaler une information incorrecte
+description: Numéro erroné, adresse incorrecte, pharmacie fermée, horaires inexacts, pharmacie introuvable…
+title: "[Signalement] "
+labels: ["signalement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Chaque signalement est examiné avant toute modification des données. N’indiquez aucune donnée personnelle.
+  - type: input
+    id: pharmacie
+    attributes:
+      label: Pharmacie concernée
+      description: Nom, ville (et identifiant si vous venez de l’application)
+    validations:
+      required: true
+  - type: input
+    id: probleme
+    attributes:
+      label: Problème constaté
+      placeholder: Numéro erroné / Adresse incorrecte / Pharmacie fermée / Horaires inexacts / Introuvable / Autre
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date de la garde consultée (AAAA-MM-JJ)
+  - type: textarea
+    id: details
+    attributes:
+      label: Précisions
+      description: Ce que vous avez constaté, et comment (appel, sur place…).

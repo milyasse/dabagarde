@@ -58,3 +58,33 @@ export const HospitalIcon = ({ size, ...p }: P) => (
 export const PillIcon = ({ size, ...p }: P) => (
   <svg {...base(size)} {...p}><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)" /><path d="m8.5 8.5 7 7" /></svg>
 );
+export const SearchIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+);
+export const ShareIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4" /></svg>
+);
+export const StarIcon = ({ size, filled, ...p }: P & { filled?: boolean }) => (
+  <svg {...base(size)} fill={filled ? 'currentColor' : 'none'} {...p}><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" /></svg>
+);
+export const FlagIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><path d="M5 21V4M5 4h11l-2 4 2 4H5" /></svg>
+);
+export const MoonIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" /></svg>
+);
+export const ClockIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+);
+export const ListIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" /></svg>
+);
+export const MenuIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+);
+export const ChevronIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><path d="m9 6 6 6-6 6" /></svg>
+);
+export const InfoIcon = ({ size, ...p }: P) => (
+  <svg {...base(size)} {...p}><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg>
+);
