@@ -1,10 +1,9 @@
 // Carte de résultat : l'essentiel (statut, distance, appel, itinéraire) visible sans ouvrir la fiche.
-import { tr } from '../i18n/index.tsx';
+import { cityLabel, tr } from '../i18n/index.tsx';
 import { forwardRef } from 'react';
 import type { Pharmacy } from '../shared/types.ts';
 import { formatKm, formatMinutes } from '../shared/distance.ts';
 import { formatPhone } from '../shared/text.ts';
-import { CITY_NAME } from '../shared/connectors/registry.ts';
 import { rankColor } from '../utils/colors.ts';
 import type { TravelMode } from '../services/routing.ts';
 import type { LatLng } from '../shared/distance.ts';
@@ -62,7 +61,7 @@ export const PharmacyCard = forwardRef<HTMLElement, {
         )}
         <div className="min-w-0 flex-1">
           <h3 className="text-[16px] font-extrabold leading-snug">{p.name}</h3>
-          <p className="text-[13px] text-muted">{[p.district, CITY_NAME[p.city] ?? p.city].filter(Boolean).join(' · ')}</p>
+          <p className="text-[13px] text-muted">{[p.district, cityLabel(p.city)].filter(Boolean).join(' · ')}</p>
         </div>
         <button type="button" onClick={(e) => { e.stopPropagation(); onToggleFavorite(); }} aria-pressed={favorite} aria-label={tr(favorite ? 'Retirer des favoris' : 'Ajouter aux favoris')} className={`-me-1 -mt-1 rounded-full p-2 ${favorite ? 'text-brand-600' : 'text-muted hover:text-ink'}`}>
           <StarIcon size={20} filled={favorite} />

@@ -236,6 +236,10 @@ export const AR: Record<string, string> = {
   'Informations récupérées automatiquement sur des listes publiques, non vérifiées sur le terrain. Appelez la pharmacie avant de vous déplacer.': 'معلومات مسترجعة آليا من لوائح عمومية، غير متحقق منها ميدانيا. اتصلوا بالصيدلية قبل التنقل.',
 
   // --- Carte de résultat et fiche
+  'Garde publiée pour le {date}': 'حراسة منشورة ليوم {date}',
+  'Tél.': 'الهاتف:',
+  'Appelez avant de vous déplacer. Source :': 'اتصلوا قبل التنقل. المصدر:',
+  'Itinéraire :': 'المسار:',
   'Rang {n}': 'الرتبة {n}',
   'Non classée': 'غير مرتبة',
   'Non classé': 'غير مرتب',

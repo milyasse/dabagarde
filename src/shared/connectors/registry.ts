@@ -4,36 +4,39 @@
 import type { CityId, ConnectorInfo } from '../types.ts';
 
 /** Villes couvertes par au moins une source (slug de page chez chaque source ; les villes absentes d'une source sont simplement ignorées par elle). */
-export interface City { id: CityId; name: string; center: { lat: number; lng: number }; annuaire?: string; guide?: string[] }
+export interface City {
+  /** Nom arabe affiché dans l'interface en arabe. */
+  nameAr?: string;
+  id: CityId; name: string; center: { lat: number; lng: number }; annuaire?: string; guide?: string[] }
 
 export const CITIES: City[] = [
-  { id: 'rabat', name: 'Rabat', center: { lat: 34.0209, lng: -6.8416 }, annuaire: 'rabat', guide: ['rabat'] },
-  { id: 'sale', name: 'Salé', center: { lat: 34.0531, lng: -6.7985 }, annuaire: 'sale', guide: ['sale'] },
-  { id: 'temara', name: 'Témara', center: { lat: 33.9287, lng: -6.9063 }, annuaire: 'temara', guide: ['temara', 'temara-tamesna'] },
-  { id: 'ain-aouda', name: 'Aïn Aouda', center: { lat: 33.8071, lng: -6.7912 }, guide: ['ain-aouda'] },
-  { id: 'kenitra', name: 'Kénitra', center: { lat: 34.2646, lng: -6.5702 }, annuaire: 'kenitra', guide: ['kenitra', 'mehdia-kenitra', 'kenitra-mehdia'] },
-  { id: 'casablanca', name: 'Casablanca', center: { lat: 33.5945, lng: -7.62 }, annuaire: 'casablanca', guide: ['casablanca'] },
-  { id: 'mohammedia', name: 'Mohammedia', center: { lat: 33.6958, lng: -7.3893 }, annuaire: 'mohammedia' },
-  { id: 'berrechid', name: 'Berrechid', center: { lat: 33.2677, lng: -7.5812 }, annuaire: 'berrechid' },
-  { id: 'settat', name: 'Settat', center: { lat: 33.0024, lng: -7.6199 }, annuaire: 'settat' },
-  { id: 'el-jadida', name: 'El Jadida', center: { lat: 33.2433, lng: -8.4988 }, annuaire: 'el-jadida' },
-  { id: 'khouribga', name: 'Khouribga', center: { lat: 32.8857, lng: -6.9088 }, annuaire: 'khouribga' },
-  { id: 'marrakech', name: 'Marrakech', center: { lat: 31.6258, lng: -7.9892 }, annuaire: 'marrakech' },
-  { id: 'ben-guerir', name: 'Ben Guerir', center: { lat: 32.239, lng: -7.9581 }, annuaire: 'ben-guerir' },
-  { id: 'safi', name: 'Safi', center: { lat: 32.2994, lng: -9.2395 }, annuaire: 'safi' },
-  { id: 'agadir', name: 'Agadir', center: { lat: 30.4205, lng: -9.5839 }, annuaire: 'agadir' },
-  { id: 'inezgane', name: 'Inezgane', center: { lat: 30.3563, lng: -9.5459 }, annuaire: 'inezgane' },
-  { id: 'ait-melloul', name: 'Aït Melloul', center: { lat: 30.3388, lng: -9.5045 }, annuaire: 'ait-melloul' },
-  { id: 'dcheira', name: 'Dcheira El Jihadia', center: { lat: 30.3744, lng: -9.5322 }, annuaire: 'dcheira' },
-  { id: 'tikiouine', name: 'Tikiouine', center: { lat: 30.4019, lng: -9.5262 }, annuaire: 'tikiouine' },
-  { id: 'fes', name: 'Fès', center: { lat: 34.0347, lng: -5.0162 }, annuaire: 'fes' },
-  { id: 'sefrou', name: 'Sefrou', center: { lat: 33.8249, lng: -4.8333 }, annuaire: 'sefrou' },
-  { id: 'meknes', name: 'Meknès', center: { lat: 33.8984, lng: -5.5322 }, annuaire: 'meknes' },
-  { id: 'tanger', name: 'Tanger', center: { lat: 35.7695, lng: -5.8045 }, annuaire: 'tanger' },
-  { id: 'tetouan', name: 'Tétouan', center: { lat: 35.5697, lng: -5.3758 }, annuaire: 'tetouan' },
-  { id: 'oujda', name: 'Oujda', center: { lat: 34.6779, lng: -1.9293 }, annuaire: 'oujda' },
-  { id: 'nador', name: 'Nador', center: { lat: 35.1739, lng: -2.9292 }, annuaire: 'nador' },
-  { id: 'selouane', name: 'Selouane', center: { lat: 35.0728, lng: -2.9417 }, annuaire: 'selouane' },
+  { id: 'rabat', name: 'Rabat', nameAr: 'الرباط', center: { lat: 34.0209, lng: -6.8416 }, annuaire: 'rabat', guide: ['rabat'] },
+  { id: 'sale', name: 'Salé', nameAr: 'سلا', center: { lat: 34.0531, lng: -6.7985 }, annuaire: 'sale', guide: ['sale'] },
+  { id: 'temara', name: 'Témara', nameAr: 'تمارة', center: { lat: 33.9287, lng: -6.9063 }, annuaire: 'temara', guide: ['temara', 'temara-tamesna'] },
+  { id: 'ain-aouda', name: 'Aïn Aouda', nameAr: 'عين عودة', center: { lat: 33.8071, lng: -6.7912 }, guide: ['ain-aouda'] },
+  { id: 'kenitra', name: 'Kénitra', nameAr: 'القنيطرة', center: { lat: 34.2646, lng: -6.5702 }, annuaire: 'kenitra', guide: ['kenitra', 'mehdia-kenitra', 'kenitra-mehdia'] },
+  { id: 'casablanca', name: 'Casablanca', nameAr: 'الدار البيضاء', center: { lat: 33.5945, lng: -7.62 }, annuaire: 'casablanca', guide: ['casablanca'] },
+  { id: 'mohammedia', name: 'Mohammedia', nameAr: 'المحمدية', center: { lat: 33.6958, lng: -7.3893 }, annuaire: 'mohammedia' },
+  { id: 'berrechid', name: 'Berrechid', nameAr: 'برشيد', center: { lat: 33.2677, lng: -7.5812 }, annuaire: 'berrechid' },
+  { id: 'settat', name: 'Settat', nameAr: 'سطات', center: { lat: 33.0024, lng: -7.6199 }, annuaire: 'settat' },
+  { id: 'el-jadida', name: 'El Jadida', nameAr: 'الجديدة', center: { lat: 33.2433, lng: -8.4988 }, annuaire: 'el-jadida' },
+  { id: 'khouribga', name: 'Khouribga', nameAr: 'خريبكة', center: { lat: 32.8857, lng: -6.9088 }, annuaire: 'khouribga' },
+  { id: 'marrakech', name: 'Marrakech', nameAr: 'مراكش', center: { lat: 31.6258, lng: -7.9892 }, annuaire: 'marrakech' },
+  { id: 'ben-guerir', name: 'Ben Guerir', nameAr: 'ابن جرير', center: { lat: 32.239, lng: -7.9581 }, annuaire: 'ben-guerir' },
+  { id: 'safi', name: 'Safi', nameAr: 'آسفي', center: { lat: 32.2994, lng: -9.2395 }, annuaire: 'safi' },
+  { id: 'agadir', name: 'Agadir', nameAr: 'أكادير', center: { lat: 30.4205, lng: -9.5839 }, annuaire: 'agadir' },
+  { id: 'inezgane', name: 'Inezgane', nameAr: 'إنزكان', center: { lat: 30.3563, lng: -9.5459 }, annuaire: 'inezgane' },
+  { id: 'ait-melloul', name: 'Aït Melloul', nameAr: 'أيت ملول', center: { lat: 30.3388, lng: -9.5045 }, annuaire: 'ait-melloul' },
+  { id: 'dcheira', name: 'Dcheira El Jihadia', nameAr: 'الدشيرة الجهادية', center: { lat: 30.3744, lng: -9.5322 }, annuaire: 'dcheira' },
+  { id: 'tikiouine', name: 'Tikiouine', nameAr: 'تيكيوين', center: { lat: 30.4019, lng: -9.5262 }, annuaire: 'tikiouine' },
+  { id: 'fes', name: 'Fès', nameAr: 'فاس', center: { lat: 34.0347, lng: -5.0162 }, annuaire: 'fes' },
+  { id: 'sefrou', name: 'Sefrou', nameAr: 'صفرو', center: { lat: 33.8249, lng: -4.8333 }, annuaire: 'sefrou' },
+  { id: 'meknes', name: 'Meknès', nameAr: 'مكناس', center: { lat: 33.8984, lng: -5.5322 }, annuaire: 'meknes' },
+  { id: 'tanger', name: 'Tanger', nameAr: 'طنجة', center: { lat: 35.7695, lng: -5.8045 }, annuaire: 'tanger' },
+  { id: 'tetouan', name: 'Tétouan', nameAr: 'تطوان', center: { lat: 35.5697, lng: -5.3758 }, annuaire: 'tetouan' },
+  { id: 'oujda', name: 'Oujda', nameAr: 'وجدة', center: { lat: 34.6779, lng: -1.9293 }, annuaire: 'oujda' },
+  { id: 'nador', name: 'Nador', nameAr: 'الناظور', center: { lat: 35.1739, lng: -2.9292 }, annuaire: 'nador' },
+  { id: 'selouane', name: 'Selouane', nameAr: 'سلوان', center: { lat: 35.0728, lng: -2.9417 }, annuaire: 'selouane' },
 ];
 
 export const CITY_NAME: Record<CityId, string> = Object.fromEntries(CITIES.map((c) => [c.id, c.name]));

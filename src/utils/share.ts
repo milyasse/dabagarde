@@ -1,4 +1,5 @@
 // Partage d'une fiche (Web Share API, sinon copie dans le presse-papiers).
+import { tr } from '../i18n/index.tsx';
 import type { Pharmacy } from '../shared/types.ts';
 import { formatPhone } from '../shared/text.ts';
 import { formatShortDate } from '../shared/dates.ts';
@@ -17,10 +18,10 @@ export function wazeUrl(p: Pick<Pharmacy, 'latitude' | 'longitude'>): string | n
 export function shareText(p: Pharmacy): string {
   return [
     `${p.name} (${[p.district, CITY_NAME[p.city] ?? p.city].filter(Boolean).join(', ')})`,
-    `Garde publiée pour le ${formatShortDate(p.dutyStart ?? p.dutyDate)}${p.hoursText ? ` · ${p.hoursText}` : ''}`,
+    `${tr('Garde publiée pour le {date}', { date: formatShortDate(p.dutyStart ?? p.dutyDate) })}${p.hoursText ? ` · ${p.hoursText}` : ''}`,
     p.address ?? '',
-    p.phone ? `Tél. ${formatPhone(p.phone)}` : '',
-    'Appelez avant de vous déplacer. Source : ' + p.sourceName,
+    p.phone ? `${tr('Tél.')} ${formatPhone(p.phone)}` : '',
+    `${tr('Appelez avant de vous déplacer. Source :')} ${p.sourceName}`,
   ].filter(Boolean).join('\n');
 }
 
@@ -42,5 +43,6 @@ export async function sharePharmacy(p: Pharmacy): Promise<'shared' | 'copied' | 
 /** Lien WhatsApp avec le message prêt (nom, garde, adresse, téléphone, itinéraire). */
 export function whatsappUrl(p: Pharmacy): string {
   const url = mapsUrl(p);
-  return `https://wa.me/?text=${encodeURIComponent(url ? `${shareText(p)}\nItinéraire : ${url}` : shareText(p))}`;
+  const lines = [shareText(p), url ? `${tr('Itinéraire :')} ${url}` : '', tr('Urgence vitale : 141 (SAMU) ou 15 (Protection civile).')].filter(Boolean);
+  return `https://wa.me/?text=${encodeURIComponent(lines.join('\n'))}`;
 }

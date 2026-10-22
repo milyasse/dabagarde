@@ -1,6 +1,6 @@
 // Signalement d'une erreur. Les signalements deviennent des tickets publics, examinés avant toute
 // correction des données (aucune modification automatique).
-import { tr } from '../../i18n/index.tsx';
+import { cityLabel, tr } from '../../i18n/index.tsx';
 import { useEffect, useState } from 'react';
 import type { Pharmacy } from '../../shared/types.ts';
 import { Dialog } from '../Dialog.tsx';
@@ -40,7 +40,7 @@ export function ReportDialog(props: { p: Pharmacy | null; date: string; onClose:
     <Dialog open={!!p} onClose={props.onClose} title={tr('Signaler une information incorrecte')}>
       {p && (
         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-          <p className="text-sm"><b>{p.name}</b> · {CITY_NAME[p.city] ?? p.city}</p>
+          <p className="text-sm"><b>{p.name}</b> · {cityLabel(p.city)}</p>
           <fieldset>
             <legend className="text-sm font-bold">{tr('Quel est le problème ?')}</legend>
             <div className="mt-2 grid gap-2 sm:grid-cols-2">

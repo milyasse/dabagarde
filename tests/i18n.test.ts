@@ -37,7 +37,7 @@ export function extractKeys(): Set<string> {
       i = j;
     }
     // libellés déclarés dans des constantes puis traduits à l'affichage
-    for (const m of s.matchAll(/\b(?:label|l|q|a|title|note|detail): '((?:[^'\\]|\\.)*)'/g)) if (/[a-zé]{2}/.test(m[1])) keys.add(m[1]);
+    for (const m of s.matchAll(/\b(?:label|l|q|a|k|title|note|detail): '((?:[^'\\]|\\.)*)'/g)) if (/[a-zé]{2}/.test(m[1])) keys.add(m[1]);
     if (/Record<\w+, string> = \{/.test(s)) {
       for (const block of s.matchAll(/(?:LABEL|SORT_LABEL)[^=]*= \{([^}]*)\}/g)) for (const m of block[1].matchAll(LIT)) keys.add(m[1]);
     }

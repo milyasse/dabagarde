@@ -4,6 +4,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { AR } from './ar.ts';
 import { setDateLocale } from '../shared/dates.ts';
+import { CITIES } from '../shared/connectors/registry.ts';
 
 export type Lang = 'fr' | 'ar';
 let current: Lang = 'fr';
@@ -15,6 +16,12 @@ export function tr(s: string, vars?: Record<string, string | number>): string {
 }
 
 export const currentLang = () => current;
+
+/** Nom d'une ville suivie (identifiant) dans la langue choisie. */
+export function cityLabel(id: string): string {
+  const c = CITIES.find((x) => x.id === id);
+  return c ? localName(c) : id;
+}
 
 /** Nom d'un lieu dans la langue choisie (nom arabe d'OpenStreetMap quand il existe). */
 export const localName = (o: { name: string; nameAr?: string | null }) => (current === 'ar' && o.nameAr ? o.nameAr : o.name);

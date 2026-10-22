@@ -1,4 +1,4 @@
-import { tr, useI18n } from './i18n/index.tsx';
+import { cityLabel, tr, useI18n } from './i18n/index.tsx';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SiteHeader } from './components/layout/SiteHeader.tsx';
 import { SiteFooter } from './components/layout/SiteFooter.tsx';
@@ -56,11 +56,14 @@ function savePref(k: string, v: unknown) {
 const FILTER_LABEL: Record<DutyFilter, string> = { all: 'tous types', day: 'garde de jour', night: 'garde de nuit', continuous: 'garde 24 h/24' };
 const FILTERS = new Set<DutyFilter>(['all', 'day', 'night', 'continuous']);
 
+/** Avertissement de données, traduit à l'affichage (la langue peut changer après la recherche). */
+type Notice = { k: string; v?: Record<string, string> };
+
 type SearchState =
   | { state: 'idle' }
   | { state: 'loading' }
   | { state: 'error'; error: string }
-  | { state: 'done'; outcome: SearchOutcome; notice: string | null; date: string; radiusKm: number; dutyFilter: DutyFilter; originKey: string; coverage: Coverage };
+  | { state: 'done'; outcome: SearchOutcome; notices: Notice[]; date: string; radiusKm: number; dutyFilter: DutyFilter; originKey: string; coverage: Coverage };
 
 const originKey = (o: Origin | null) => (o ? `${o.lat.toFixed(5)},${o.lng.toFixed(5)}` : '');
 
@@ -197,25 +200,25 @@ export default function App() {
       const outcome = buildResults({ dayRecords: clean(day), previousDayRecords: clean(prev), date, origin, radiusKm, dutyFilter });
       const fix = (l: Pharmacy[]) => l.map(usableCoords);
       const fixed: SearchOutcome = { ...outcome, ranked: fix(outcome.ranked), expired: fix(outcome.expired), unlocated: fix(outcome.unlocated) };
-      const notices: string[] = [];
+      const notices: Notice[] = [];
       const coverage = coverageAt(origin);
       if (coverage.status === 'covered') {
         if (!day && !prev) {
-          if (date > today) notices.push(tr('Aucune garde publiée pour le {date}. Les plannings sont en général disponibles jusqu’à la fin de la semaine suivante.', { date: formatFrDate(date) }));
-          else notices.push(tr('Aucune garde n’a été collectée pour le {date} (historique conservé 60 jours).', { date: formatFrDate(date) }));
+          if (date > today) notices.push({ k: 'Aucune garde publiée pour le {date}. Les plannings sont en général disponibles jusqu’à la fin de la semaine suivante.', v: { date: formatFrDate(date) } });
+          else notices.push({ k: 'Aucune garde n’a été collectée pour le {date} (historique conservé 60 jours).', v: { date: formatFrDate(date) } });
         } else if (date > today) {
-          notices.push(tr('Date à venir : gardes issues du planning publié à l’avance, à revérifier le jour même.'));
+          notices.push({ k: 'Date à venir : gardes issues du planning publié à l’avance, à revérifier le jour même.' });
         }
         if (date === today && st) {
           const ageH = (Date.now() - new Date(st.generatedAt).getTime()) / 3.6e6;
-          if (ageH > 6) notices.push(tr('Dernière collecte le {date} : les données peuvent ne pas être à jour.', { date: formatMoroccoDateTime(st.generatedAt) }));
+          if (ageH > 6) notices.push({ k: 'Dernière collecte le {date} : les données peuvent ne pas être à jour.', v: { date: formatMoroccoDateTime(st.generatedAt) } });
           const failed = st.runs.filter((r) => !r.ok && !st.runs.some((o) => o.ok && o.city === r.city));
-          if (failed.length) notices.push(tr('Source indisponible lors de la dernière collecte pour : {villes}.', { villes: [...new Set(failed.map((r) => CITY_NAME[r.city] ?? r.city))].join(', ') }));
+          if (failed.length) notices.push({ k: 'Source indisponible lors de la dernière collecte pour : {villes}.', v: { villes: [...new Set(failed.map((r) => cityLabel(r.city)))].join(', ') } });
           const stale = st.runs.filter((r) => r.ok && r.sourceId === 'annuaire-gratuit' && r.pageDate && r.pageDate < addDays(st.todayMorocco, -1));
-          if (stale.length) notices.push(tr('La liste du jour de {villes} affichait une date ancienne.', { villes: [...new Set(stale.map((r) => CITY_NAME[r.city]))].join(', ') }));
+          if (stale.length) notices.push({ k: 'La liste du jour de {villes} affichait une date ancienne.', v: { villes: [...new Set(stale.map((r) => cityLabel(r.city)))].join(', ') } });
         }
       }
-      setSearch({ state: 'done', outcome: fixed, notice: notices.join(' ') || null, date, radiusKm, dutyFilter, originKey: originKey(origin), coverage });
+      setSearch({ state: 'done', outcome: fixed, notices, date, radiusKm, dutyFilter, originKey: originKey(origin), coverage });
       setSelectedId(fixed.ranked[0]?.id ?? null);
       setEditing(false);
       setTimeout(() => resultsTop.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
@@ -389,7 +392,7 @@ export default function App() {
   };
   const changeSpace = (s: Space) => { setSpace(s); window.scrollTo({ top: 0 }); };
 
-  const placeLabel = origin?.kind === 'gps' ? tr('Autour de ma position') : origin?.kind === 'map' ? tr('Point choisi sur la carte') : origin?.label.split(',')[0] ?? '';
+  const placeLabel = origin?.kind === 'gps' ? tr('Autour de ma position') : origin?.kind === 'map' ? tr('Point choisi sur la carte') : origin?.kind === 'city' && origin.city ? cityLabel(origin.city) : origin?.label.split(',')[0] ?? '';
   const showResults = space === 'pharmacies' && search.state !== 'idle';
 
   return (
@@ -456,7 +459,7 @@ export default function App() {
                   <LocalitySearch size="md" inputId="recherche-ville" onPick={pickLocality} onLocate={() => void locate(true)} locating={locating} />
                 </div>
                 <p className="text-sm text-muted">
-                  <b className="text-ink">{placeLabel}</b> · {formatFrDate(date)} · {radiusKm} km · {tr(FILTER_LABEL[dutyFilter])}
+                  <b className="text-ink">{placeLabel}</b> · {formatFrDate(date)} · {radiusKm} {tr('km')} · {tr(FILTER_LABEL[dutyFilter])}
                 </p>
                 <button type="button" onClick={() => setEditing((v) => !v)} aria-expanded={editing} className="rounded-full bg-brand-50 px-4 py-2 text-sm font-bold text-brand-800">
                   {tr(editing ? 'Fermer les critères' : 'Date, rayon, type')}
@@ -604,7 +607,7 @@ export default function App() {
         unlocated={view.unlocated}
         outside={search.outcome.outside}
         filteredOutByType={search.outcome.filteredOutByType}
-        dataNotice={search.notice}
+        dataNotice={search.notices.map((n) => tr(n.k, n.v)).join(' ') || null}
         sortBy={sortBy}
         onSort={(s) => { setSortBy(s); if (s === 'duration') void computeAll(); }}
         selectedId={selectedId}

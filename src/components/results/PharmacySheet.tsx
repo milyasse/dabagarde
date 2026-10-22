@@ -1,5 +1,5 @@
 // Fiche détaillée d'une pharmacie : garde, position, sources, qualité, actions.
-import { tr } from '../../i18n/index.tsx';
+import { cityLabel, tr } from '../../i18n/index.tsx';
 import type { ReactNode } from 'react';
 import type { Pharmacy } from '../../shared/types.ts';
 import { Dialog } from '../Dialog.tsx';
@@ -10,7 +10,6 @@ import { CONFIDENCE_LABEL, STATUS_LABEL } from '../../shared/status.ts';
 import { formatMoroccoDateTime, formatShortDate } from '../../shared/dates.ts';
 import { formatKm, formatMinutes } from '../../shared/distance.ts';
 import { formatPhone } from '../../shared/text.ts';
-import { CITY_NAME } from '../../shared/connectors/registry.ts';
 import { GEO_PRECISION_LABEL, QUALITY_LABEL, geoPrecision, type QualityFlag } from '../../shared/quality.ts';
 import { mapsUrl, wazeUrl, whatsappUrl } from '../../utils/share.ts';
 import { ExternalIcon, FlagIcon, MapIcon, PhoneIcon, ShareIcon, StarIcon, WhatsAppIcon } from '../icons.tsx';
@@ -48,7 +47,7 @@ export function PharmacySheet(props: {
           <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-2">
               <span className={`rounded-full px-3 py-1 text-sm font-bold ${TEMPORAL_STYLE[t.kind]}`}>{tr(t.label, t.vars)}</span>
-              <span className="text-sm text-muted">{[p.district, CITY_NAME[p.city] ?? p.city].filter(Boolean).join(' · ')}</span>
+              <span className="text-sm text-muted">{[p.district, cityLabel(p.city)].filter(Boolean).join(' · ')}</span>
             </div>
             {t.detail && <p className="-mt-3 text-sm text-muted">{tr(t.detail, t.vars)}</p>}
 

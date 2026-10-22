@@ -1,5 +1,5 @@
 // Accueil : recherche centrale, villes, fraîcheur des données, aide.
-import { currentLang, tr } from '../../i18n/index.tsx';
+import { cityLabel, currentLang, localName, tr } from '../../i18n/index.tsx';
 import type { ReactNode } from 'react';
 import { LocalitySearch } from '../search/LocalitySearch.tsx';
 import type { GeoLocality } from '../../shared/geo/types.ts';
@@ -14,17 +14,17 @@ export interface RecentPlace { id: string; name: string; lat: number; lon: numbe
 export interface FavoritePharmacy { id: string; name: string; city: string; phone: string | null }
 
 /** Grandes villes proposées en accès rapide même sans source : la page explique l'absence de données. */
-export const MAJOR_CITIES: { name: string; lat: number; lon: number }[] = [
-  { name: 'Essaouira', lat: 31.5118, lon: -9.7621 },
-  { name: 'Laâyoune', lat: 27.1545, lon: -13.1954 },
-  { name: 'Béni Mellal', lat: 32.3373, lon: -6.3498 },
-  { name: 'Errachidia', lat: 31.9291, lon: -4.4341 },
-  { name: 'Ouarzazate', lat: 30.9202, lon: -6.9109 },
-  { name: 'Taza', lat: 34.2302, lon: -4.0101 },
-  { name: 'Larache', lat: 35.1951, lon: -6.154 },
-  { name: 'Al Hoceïma', lat: 35.245, lon: -3.9313 },
-  { name: 'Guelmim', lat: 28.9864, lon: -10.0574 },
-  { name: 'Dakhla', lat: 23.6941, lon: -15.9431 },
+export const MAJOR_CITIES: { name: string; nameAr: string; lat: number; lon: number }[] = [
+  { name: 'Essaouira', nameAr: 'الصويرة', lat: 31.5118, lon: -9.7621 },
+  { name: 'Laâyoune', nameAr: 'العيون', lat: 27.1545, lon: -13.1954 },
+  { name: 'Béni Mellal', nameAr: 'بني ملال', lat: 32.3373, lon: -6.3498 },
+  { name: 'Errachidia', nameAr: 'الرشيدية', lat: 31.9291, lon: -4.4341 },
+  { name: 'Ouarzazate', nameAr: 'ورزازات', lat: 30.9202, lon: -6.9109 },
+  { name: 'Taza', nameAr: 'تازة', lat: 34.2302, lon: -4.0101 },
+  { name: 'Larache', nameAr: 'العرائش', lat: 35.1951, lon: -6.154 },
+  { name: 'Al Hoceïma', nameAr: 'الحسيمة', lat: 35.245, lon: -3.9313 },
+  { name: 'Guelmim', nameAr: 'كلميم', lat: 28.9864, lon: -10.0574 },
+  { name: 'Dakhla', nameAr: 'الداخلة', lat: 23.6941, lon: -15.9431 },
 ]
 
 const QUICK: { v: DutyFilter; label: string; icon: ReactNode }[] = [
@@ -147,7 +147,7 @@ export function Home(props: {
                 <button type="button" onClick={() => props.onPickCity(c.city)} className="group flex w-full items-center gap-4 rounded-2xl bg-white p-4 text-start ring-1 ring-line transition hover:ring-2 hover:ring-brand-500">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><PinIcon size={24} /></span>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-display text-lg font-extrabold">{CITY_NAME[c.city]}</span>
+                    <span className="block font-display text-lg font-extrabold">{cityLabel(c.city)}</span>
                     <span className="block text-sm text-muted tabular">
                       {c.active < 0 ? tr(props.countsLoading ? 'Chargement…' : 'Données indisponibles') : c.active === 0 ? tr('Aucune garde publiée') : `${tr(c.active > 1 ? '{n} gardes' : '{n} garde', { n: c.active })}${c.night ? ` · ${tr('{n} de nuit', { n: c.night })}` : ''}${c.continuous ? ` · ${tr('{n} en 24 h/24', { n: c.continuous })}` : ''}`}
                     </span>
@@ -163,7 +163,7 @@ export function Home(props: {
               <p className="mt-1 text-sm text-muted">{tr('La source n’a pas encore publié la garde du jour pour ces villes : elle apparaîtra ici dès sa publication.')}</p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {quietCities.map((c) => (
-                  <li key={c.city}><button type="button" onClick={() => props.onPickCity(c.city)} className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold ring-1 ring-line hover:ring-brand-500">{CITY_NAME[c.city]}</button></li>
+                  <li key={c.city}><button type="button" onClick={() => props.onPickCity(c.city)} className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold ring-1 ring-line hover:ring-brand-500">{cityLabel(c.city)}</button></li>
                 ))}
               </ul>
             </div>
@@ -173,7 +173,7 @@ export function Home(props: {
           <ul className="mt-3 flex flex-wrap gap-2">
             {MAJOR_CITIES.map((c) => (
               <li key={c.name}>
-                <button type="button" onClick={() => props.onPickPlace({ id: `major-${c.name}`, name: c.name, lat: c.lat, lon: c.lon })} className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold ring-1 ring-line hover:ring-brand-500">{c.name}</button>
+                <button type="button" onClick={() => props.onPickPlace({ id: `major-${c.name}`, name: c.name, lat: c.lat, lon: c.lon })} className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold ring-1 ring-line hover:ring-brand-500">{localName(c)}</button>
               </li>
             ))}
             <li><a href={pageUrl(PAGES.villes)} className="inline-block rounded-full px-3.5 py-2 text-sm font-bold text-brand-700 underline">{tr('Toutes les villes')}</a></li>

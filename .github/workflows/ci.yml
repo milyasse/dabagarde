@@ -38,6 +38,13 @@ jobs:
         continue-on-error: true
         run: |
           if git grep -nE '(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|ghp_[A-Za-z0-9]{30,}|AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9]{32,})' -- . ':!package-lock.json' > verif/secrets.txt; then exit 1; else echo "Aucun secret détecté" > verif/secrets.txt; fi
+      - name: Liste des hôpitaux du ministère (contrôle du format)
+        continue-on-error: true
+        run: |
+          pip install -q openpyxl > /dev/null 2>&1 || true
+          curl -fsSL --retry 3 -A "DabaGarde/2.0 (+https://github.com/${GITHUB_REPOSITORY})" -o "$RUNNER_TEMP/hopitaux.xlsx" \
+            "https://data.gov.ma/data/fr/dataset/2932e8a4-272c-4101-80ef-85519de47e7c/resource/7ac78092-9ef1-4389-a54f-06ac95efae8e/download/repartition-des-hopitaux-par-region-et-province-2022.xlsx"
+          python3 scripts/ministry-hospitals.py "$RUNNER_TEMP/hopitaux.xlsx" --brut > verif/ministere-brut.json 2> verif/ministere-erreur.txt
       - name: Construire
         id: build
         continue-on-error: true

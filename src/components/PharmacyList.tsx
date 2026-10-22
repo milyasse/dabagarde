@@ -98,7 +98,7 @@ export function PharmacyList(props: {
             {n === 0 ? tr('Aucune pharmacie de garde') : tr(n > 1 ? '{n} pharmacies de garde' : '{n} pharmacie de garde', { n })}
           </h2>
           <p className="text-[13px] text-muted">
-            {props.placeLabel} · {formatFrDate(props.date)} · {props.radiusKm} km ·{' '}
+            {props.placeLabel} · {formatFrDate(props.date)} · {props.radiusKm} {tr('km')} ·{' '}
             <button type="button" onClick={props.onChangePlace} className="font-bold text-brand-700 underline">{tr('Changer de ville')}</button>
           </p>
         </div>
