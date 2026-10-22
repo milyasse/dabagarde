@@ -1,0 +1,69 @@
+
+## Parcours principal (téléphone)
+OK  — accueil : titre principal visible immédiatement (pas d’écran de lancement)
+OK  — accueil : recherche centrale par ville
+OK  — accueil : villes couvertes listées
+OK  — recherche instantanée : « Sal » propose Salé
+OK  — résultats Salé : « 16 pharmacies de garde »
+OK  — ville couverte : aucun avertissement de couverture
+OK  — adresse partageable : ville=sale
+OK  — carte de résultat : bouton Itinéraire
+OK  — carte de résultat : appel (ou absence de numéro signalée)
+OK  — aucune pharmacie présentée comme « ouverte »
+OK  — fiche : sources, date de récupération, précision de la position
+OK  — fiche : distinction donnée récupérée / vérifiée
+OK  — signalement : ticket prérempli (motif « Pharmacie fermée »)
+OK  — favori : confirmation affichée
+OK  — filtre texte « Nassiha » : 1 résultat(s)
+OK  — onglet Carte : 16 marqueur(s)
+OK  — accueil : section « Vos pharmacies » (favoris locaux)
+OK  — accueil : recherches récentes
+OK  — base nationale : « Ouarzaz » propose Ouarzazate (pas encore couverte)
+OK  — navigation région → province → villes : 233 localités (Souss-Massa, Agadir)
+OK  — ville non couverte (Marrakech) : message explicite, aucune donnée inventée
+OK  — ville non couverte : lien vers la page publique d’origine
+OK  — filtre « De nuit » appliqué et visible dans l’adresse
+OK  — filtre « De nuit » : 0 résultat(s), tous de nuit
+
+## Lien partagé et géolocalisation acceptée
+OK  — lien ?ville=temara : recherche lancée à l’ouverture
+OK  — géolocalisation : recherche autour de ma position
+OK  — aucune position GPS dans l’adresse de la page
+
+## Géolocalisation refusée
+OK  — message explicite (« L’accès à votre position est bloqué pour ce site.
+
+Ordinateur : cliquez sur l’icône à gauche de l’ad »)
+
+## Cliniques et hôpitaux
+OK  — espace Cliniques : adresse ?espace=sante
+OK  — cliniques Rabat : « 39 établissements »
+OK  — cliniques : aucun établissement « de garde » sans source officielle
+
+## Pages statiques et référencement
+OK  — page /pharmacie-de-garde/rabat/ servie
+OK  — page Rabat : titre H1 sans JavaScript
+OK  — page Rabat : 9 garde(s) lisibles sans JavaScript
+OK  — page Rabat : balise canonical
+OK  — page Rabat : données structurées (fil d’Ariane, liste)
+OK  — page /villes/ : servie, un seul H1
+OK  — page /urgences/ : servie, un seul H1
+OK  — page /comment-ca-marche/ : servie, un seul H1
+OK  — page /faq/ : servie, un seul H1
+OK  — page /contact/ : servie, un seul H1
+OK  — page /confidentialite/ : servie, un seul H1
+OK  — page /mentions-legales/ : servie, un seul H1
+OK  — page /cliniques-hopitaux/rabat-sale-temara/ : servie, un seul H1
+OK  — sitemap.xml : pages de ville, aucune URL de recherche
+OK  — robots.txt : déclare le sitemap
+OK  — index.html : URL canonique absolue
+OK  — index.html : contenu lisible sans JavaScript
+
+## Accessibilité de base
+OK  — éléments interactifs sans nom accessible : 0
+OK  — clavier : lien d’évitement en premier
+
+## Ordinateur
+OK  — ordinateur : liste et carte affichées ensemble
+
+toutes les vérifications sont passées

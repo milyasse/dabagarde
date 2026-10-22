@@ -1,0 +1,368 @@
+
+> dabagarde@2.0.0-alpha.0 test
+> node --experimental-strip-types --no-warnings --test tests/*.test.ts
+
+TAP version 13
+# Subtest: collecteur : fichiers produits, statuts, aucune donnée inventée
+ok 1 - collecteur : fichiers produits, statuts, aucune donnée inventée
+  ---
+  duration_ms: 312.324975
+  type: 'test'
+  ...
+# Subtest: collecteur : deuxième passage idempotent (pas de doublons)
+ok 2 - collecteur : deuxième passage idempotent (pas de doublons)
+  ---
+  duration_ms: 351.675935
+  type: 'test'
+  ...
+# Subtest: collecteur : saisie manuelle fusionnée, contradiction détectée
+ok 3 - collecteur : saisie manuelle fusionnée, contradiction détectée
+  ---
+  duration_ms: 168.600117
+  type: 'test'
+  ...
+# Subtest: recherche : rayon, rang, filtre par type, expirées séparées
+ok 4 - recherche : rayon, rang, filtre par type, expirées séparées
+  ---
+  duration_ms: 174.835403
+  type: 'test'
+  ...
+# Subtest: compteurs par ville : actives et répartition par type
+ok 5 - compteurs par ville : actives et répartition par type
+  ---
+  duration_ms: 169.401575
+  type: 'test'
+  ...
+# Subtest: collecteur : tableau CSV à venir enrichi par les pharmacies connues
+ok 6 - collecteur : tableau CSV à venir enrichi par les pharmacies connues
+  ---
+  duration_ms: 321.499661
+  type: 'test'
+  ...
+# Subtest: OSM : on écarte cabinets, laboratoires, centres de santé, noms génériques et objets sans nom
+ok 7 - OSM : on écarte cabinets, laboratoires, centres de santé, noms génériques et objets sans nom
+  ---
+  duration_ms: 5.932324
+  type: 'test'
+  ...
+# Subtest: OSM : type déduit de l’opérateur déclaré, sinon du nom, sinon « statut non publié »
+ok 8 - OSM : type déduit de l’opérateur déclaré, sinon du nom, sinon « statut non publié »
+  ---
+  duration_ms: 0.889085
+  type: 'test'
+  ...
+# Subtest: OSM : téléphone normalisé, urgences et spécialités seulement si déclarées
+ok 9 - OSM : téléphone normalisé, urgences et spécialités seulement si déclarées
+  ---
+  duration_ms: 2.366674
+  type: 'test'
+  ...
+# Subtest: OSM : doublons (même nom, < 300 m) fusionnés, nom le plus descriptif conservé
+ok 10 - OSM : doublons (même nom, < 300 m) fusionnés, nom le plus descriptif conservé
+  ---
+  duration_ms: 1.45752
+  type: 'test'
+  ...
+# Subtest: Liste officielle : noms lisibles
+ok 11 - Liste officielle : noms lisibles
+  ---
+  duration_ms: 0.765003
+  type: 'test'
+  ...
+# Subtest: Données réelles (OSM 21/10/2026 + ministère) : fusion, aucune garde sans source officielle
+ok 12 - Données réelles (OSM 21/10/2026 + ministère) : fusion, aucune garde sans source officielle
+  ---
+  duration_ms: 32.449787
+  type: 'test'
+  ...
+# Subtest: Saisie manuelle : garde et horaires vérifiés uniquement avec source et date
+ok 13 - Saisie manuelle : garde et horaires vérifiés uniquement avec source et date
+  ---
+  duration_ms: 17.7576
+  type: 'test'
+  ...
+# Subtest: Recherche : filtres, rayon, tri croissant/décroissant, sans position à part
+ok 14 - Recherche : filtres, rayon, tri croissant/décroissant, sans position à part
+  ---
+  duration_ms: 13.202747
+  type: 'test'
+  ...
+# Subtest: Un établissement sans information reste sans information
+ok 15 - Un établissement sans information reste sans information
+  ---
+  duration_ms: 3.738144
+  type: 'test'
+  ...
+# Subtest: slugify : accents, apostrophes, espaces
+ok 16 - slugify : accents, apostrophes, espaces
+  ---
+  duration_ms: 2.036616
+  type: 'test'
+  ...
+# Subtest: normalizeQuery ignore accents et ponctuation
+ok 17 - normalizeQuery ignore accents et ponctuation
+  ---
+  duration_ms: 3.473148
+  type: 'test'
+  ...
+# Subtest: searchLocalities : ville d’abord, puis quartiers ; insensible aux accents
+ok 18 - searchLocalities : ville d’abord, puis quartiers ; insensible aux accents
+  ---
+  duration_ms: 1.818297
+  type: 'test'
+  ...
+# Subtest: coverageAt : couverte, proche, non couverte
+ok 19 - coverageAt : couverte, proche, non couverte
+  ---
+  duration_ms: 0.477304
+  type: 'test'
+  ...
+# Subtest: externalLinks : lien vers la page d’origine si elle existe, sinon recherche web
+ok 20 - externalLinks : lien vers la page d’origine si elle existe, sinon recherche web
+  ---
+  duration_ms: 1.181564
+  type: 'test'
+  ...
+# Subtest: temporalStatus : jamais « ouverte », période publiée respectée
+ok 21 - temporalStatus : jamais « ouverte », période publiée respectée
+  ---
+  duration_ms: 27.216793
+  type: 'test'
+  ...
+# Subtest: qualité : téléphone, coordonnées, précision, doublons
+ok 22 - qualité : téléphone, coordonnées, précision, doublons
+  ---
+  duration_ms: 1.536819
+  type: 'test'
+  ...
+# Subtest: nettoyage : libellé de rubrique à la place de l’adresse, nom incomplet signalé
+ok 23 - nettoyage : libellé de rubrique à la place de l’adresse, nom incomplet signalé
+  ---
+  duration_ms: 0.431348
+  type: 'test'
+  ...
+# Subtest: Haversine : Rabat (gare Agdal) → Témara centre ≈ 9 km
+ok 24 - Haversine : Rabat (gare Agdal) → Témara centre ≈ 9 km
+  ---
+  duration_ms: 2.214539
+  type: 'test'
+  ...
+# Subtest: Haversine : distance nulle et symétrie
+ok 25 - Haversine : distance nulle et symétrie
+  ---
+  duration_ms: 0.356638
+  type: 'test'
+  ...
+# Subtest: Haversine : 1° de latitude ≈ 111,2 km
+ok 26 - Haversine : 1° de latitude ≈ 111,2 km
+  ---
+  duration_ms: 0.260397
+  type: 'test'
+  ...
+# Subtest: filtrage par rayon + classement croissant + rangs 1..n
+ok 27 - filtrage par rayon + classement croissant + rangs 1..n
+  ---
+  duration_ms: 1.338076
+  type: 'test'
+  ...
+# Subtest: coordonnées (0,0) ou hors bornes rejetées
+ok 28 - coordonnées (0,0) ou hors bornes rejetées
+  ---
+  duration_ms: 0.149691
+  type: 'test'
+  ...
+# Subtest: format des distances
+ok 29 - format des distances
+  ---
+  duration_ms: 0.178445
+  type: 'test'
+  ...
+# Subtest: parseFrenchDate
+ok 30 - parseFrenchDate
+  ---
+  duration_ms: 0.957784
+  type: 'test'
+  ...
+# Subtest: date du Maroc calculée par fuseau (pas de décalage en dur)
+ok 31 - date du Maroc calculée par fuseau (pas de décalage en dur)
+  ---
+  duration_ms: 20.224392
+  type: 'test'
+  ...
+# Subtest: plages horaires publiées
+ok 32 - plages horaires publiées
+  ---
+  duration_ms: 1.137862
+  type: 'test'
+  ...
+# Subtest: classification du type de garde
+ok 33 - classification du type de garde
+  ---
+  duration_ms: 0.970749
+  type: 'test'
+  ...
+# Subtest: téléphones marocains : normalisation, masqués refusés
+ok 34 - téléphones marocains : normalisation, masqués refusés
+  ---
+  duration_ms: 0.479378
+  type: 'test'
+  ...
+# Subtest: liste Témara : date « mise à jour le », 3 entrées, quartiers, coordonnées
+ok 35 - liste Témara : date « mise à jour le », 3 entrées, quartiers, coordonnées
+  ---
+  duration_ms: 7.531131
+  type: 'test'
+  ...
+# Subtest: liste Rabat : date tirée du titre « Aujourd’hui … »
+ok 36 - liste Rabat : date tirée du titre « Aujourd’hui … »
+  ---
+  duration_ms: 2.504933
+  type: 'test'
+  ...
+# Subtest: liste Salé vide signalée comme vide (pas une erreur de parseur)
+ok 37 - liste Salé vide signalée comme vide (pas une erreur de parseur)
+  ---
+  duration_ms: 0.39516
+  type: 'test'
+  ...
+# Subtest: fiche : téléphone (1er lien tel:), coordonnées, historique trié
+ok 38 - fiche : téléphone (1er lien tel:), coordonnées, historique trié
+  ---
+  duration_ms: 2.038299
+  type: 'test'
+  ...
+# Subtest: fiche JSON-LD prioritaire
+ok 39 - fiche JSON-LD prioritaire
+  ---
+  duration_ms: 0.721712
+  type: 'test'
+  ...
+# Subtest: fiche sans téléphone ni coordonnées : null, rien d’inventé
+ok 40 - fiche sans téléphone ni coordonnées : null, rien d’inventé
+  ---
+  duration_ms: 0.963155
+  type: 'test'
+  ...
+# Subtest: historique : lignes invalides ignorées
+ok 41 - historique : lignes invalides ignorées
+  ---
+  duration_ms: 0.295273
+  type: 'test'
+  ...
+# Subtest: statut : liste datée du jour + historique → Confirmée (confiance moyenne)
+ok 42 - statut : liste datée du jour + historique → Confirmée (confiance moyenne)
+  ---
+  duration_ms: 0.8218
+  type: 'test'
+  ...
+# Subtest: statut : page périmée et pas d’historique → À confirmer
+ok 43 - statut : page périmée et pas d’historique → À confirmer
+  ---
+  duration_ms: 0.421199
+  type: 'test'
+  ...
+# Subtest: statut : page datée mais collectée un autre jour → pas de confirmation par la liste
+ok 44 - statut : page datée mais collectée un autre jour → pas de confirmation par la liste
+  ---
+  duration_ms: 0.393347
+  type: 'test'
+  ...
+# Subtest: statut : deux sources en désaccord → Sources contradictoires
+ok 45 - statut : deux sources en désaccord → Sources contradictoires
+  ---
+  duration_ms: 0.455664
+  type: 'test'
+  ...
+# Subtest: statut : deux sources datées concordantes → confiance élevée
+ok 46 - statut : deux sources datées concordantes → confiance élevée
+  ---
+  duration_ms: 0.337572
+  type: 'test'
+  ...
+# Subtest: expiration : fin publiée passée → Expirée
+ok 47 - expiration : fin publiée passée → Expirée
+  ---
+  duration_ms: 0.315221
+  type: 'test'
+  ...
+# Subtest: expiration : garde de jour 9h-23h après 23h → Expirée
+ok 48 - expiration : garde de jour 9h-23h après 23h → Expirée
+  ---
+  duration_ms: 1.296049
+  type: 'test'
+  ...
+# Subtest: sélection : garde de nuit de la veille incluse le matin, exclue des gardes de jour
+ok 49 - sélection : garde de nuit de la veille incluse le matin, exclue des gardes de jour
+  ---
+  duration_ms: 0.793767
+  type: 'test'
+  ...
+# Subtest: sélection : fenêtre publiée qui ne couvre pas la date → exclue
+ok 50 - sélection : fenêtre publiée qui ne couvre pas la date → exclue
+  ---
+  duration_ms: 0.161873
+  type: 'test'
+  ...
+# Subtest: doublons : même pharmacie, noms écrits différemment → fusion des sources
+ok 51 - doublons : même pharmacie, noms écrits différemment → fusion des sources
+  ---
+  duration_ms: 1.836581
+  type: 'test'
+  ...
+# Subtest: doublons : homonymes éloignés de plusieurs km → non fusionnés
+ok 52 - doublons : homonymes éloignés de plusieurs km → non fusionnés
+  ---
+  duration_ms: 0.475711
+  type: 'test'
+  ...
+# Subtest: similarité de noms
+ok 53 - similarité de noms
+  ---
+  duration_ms: 0.204112
+  type: 'test'
+  ...
+# Subtest: couleurs de rang : 1 vert foncé, 2 vert clair, 3 bleu, 4 orange, 5 violet, 6+ distinctes
+ok 54 - couleurs de rang : 1 vert foncé, 2 vert clair, 3 bleu, 4 orange, 5 violet, 6+ distinctes
+  ---
+  duration_ms: 0.217026
+  type: 'test'
+  ...
+# Subtest: structure réelle observée (cartes ag_pharmacy_card, 13/10/2026)
+ok 55 - structure réelle observée (cartes ag_pharmacy_card, 13/10/2026)
+  ---
+  duration_ms: 2.491117
+  type: 'test'
+  ...
+# Subtest: import CSV d’un tableau de garde officiel (jours à venir)
+ok 56 - import CSV d’un tableau de garde officiel (jours à venir)
+  ---
+  duration_ms: 3.323407
+  type: 'test'
+  ...
+# Subtest: guidepharmacies : planning hebdomadaire, jours, types, centre de quartier
+ok 57 - guidepharmacies : planning hebdomadaire, jours, types, centre de quartier
+  ---
+  duration_ms: 8.885157
+  type: 'test'
+  ...
+# Subtest: guidepharmacies : fiche (adresse + téléphone)
+ok 58 - guidepharmacies : fiche (adresse + téléphone)
+  ---
+  duration_ms: 1.648258
+  type: 'test'
+  ...
+# Subtest: fusion : position exacte prioritaire sur le centre de quartier, pas de faux conflit de fin de garde
+ok 59 - fusion : position exacte prioritaire sur le centre de quartier, pas de faux conflit de fin de garde
+  ---
+  duration_ms: 1.017417
+  type: 'test'
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1701.679464
