@@ -22,7 +22,6 @@ import type { GeoLocality, GeoProvince, GeoRegion, LocalityKind } from '../src/s
 
 const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
 const UA = `DabaGarde-geo/1.0 (+https://github.com/${process.env.GITHUB_REPOSITORY ?? 'local'})`;
-const BBOX = '20.5,-17.3,36.1,-0.9'; // Maroc, Sahara inclus
 const PAUSE_MS = 5000;
 
 type Pt = { lat: number; lon: number };
@@ -120,10 +119,23 @@ async function main() {
   const regionEls = await overpass('regions', `[out:json][timeout:300];rel["boundary"="administrative"]["ISO3166-2"~"^MA-(0[1-9]|1[0-2])$"];out body;`);
   const regionOsm = new Map(regionEls.map((r) => [r.tags!['ISO3166-2'], r]));
 
-  // 2. Provinces et préfectures avec géométrie (une seule requête)
-  const provEls = await overpass('provinces', `[out:json][timeout:600][maxsize:1073741824];rel["boundary"="administrative"]["admin_level"="5"]["ISO3166-2"~"^MA-[A-Z]{3}$"](${BBOX});out tags center geom;`);
+  // 2. Provinces et préfectures : membres « subarea » des régions, puis contour de chacune (petites requêtes)
   const provRegion = new Map<number, string>();
-  for (const [code, r] of regionOsm) for (const m of r.members ?? []) if (m.type === 'relation') provRegion.set(m.ref, code);
+  for (const [code, r] of regionOsm) for (const m of r.members ?? []) if (m.type === 'relation' && m.role === 'subarea') provRegion.set(m.ref, code);
+  const ids = [...provRegion.keys()];
+  if (!ids.length) throw new Error('Aucune province trouvée parmi les membres des régions');
+  const provTags = await overpass('provinces', `[out:json][timeout:300];rel(id:${ids.join(',')});out tags center;`);
+  const provEls: OsmEl[] = [];
+  for (const t of provTags) {
+    if (t.tags?.admin_level && t.tags.admin_level !== '5') continue; // cercles, communes : ignorés
+    try {
+      const g = await overpass(`contour-${t.id}`, `[out:json][timeout:300];rel(${t.id});out geom;`);
+      provEls.push({ ...t, members: g[0]?.members ?? [] });
+    } catch (e) {
+      anomalies.push(`Contour indisponible pour ${nameFr(t.tags)} (relation ${t.id}) : ${String((e as Error).message).slice(0, 120)}`);
+      provEls.push({ ...t, members: [] });
+    }
+  }
 
   const regions: GeoRegion[] = REGIONS.map((ref) => ({ id: ref.code, name: ref.name, nameAr: ref.nameAr, osmId: regionOsm.get(ref.code)?.id ?? null, provinces: [] }));
   const byCode = new Map(regions.map((r) => [r.id, r]));
@@ -131,13 +143,16 @@ async function main() {
 
   const provShapes: { prov: GeoProvince; regionId: string; rings: Pt[][]; bbox: [number, number, number, number] }[] = [];
   for (const p of provEls) {
-    const code = p.tags!['ISO3166-2'];
+    const iso = p.tags?.['ISO3166-2'];
+    const code = iso && /^MA-[A-Z]{3}$/.test(iso) ? iso : `osm-r${p.id}`;
+    if (code.startsWith('osm-')) anomalies.push(`Province sans code ISO : ${nameFr(p.tags)} (relation ${p.id}).`);
     const rings = assembleRings(p.members ?? []);
-    const all = rings.flat();
-    const bbox: [number, number, number, number] = all.length
-      ? [Math.min(...all.map((x) => x.lat)), Math.min(...all.map((x) => x.lon)), Math.max(...all.map((x) => x.lat)), Math.max(...all.map((x) => x.lon))]
-      : [0, 0, 0, 0];
-    let regionId = provRegion.get(p.id) ?? null;
+    const bbox: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const r of rings) for (const x of r) {
+      if (x.lat < bbox[0]) bbox[0] = x.lat; if (x.lon < bbox[1]) bbox[1] = x.lon;
+      if (x.lat > bbox[2]) bbox[2] = x.lat; if (x.lon > bbox[3]) bbox[3] = x.lon;
+    }
+    const regionId = provRegion.get(p.id) ?? null;
     if (!regionId && p.center) {
       // À défaut d'appartenance déclarée : région dont le contour contient le centre (si la relation régionale a une géométrie, sinon anomalie)
       anomalies.push(`Province ${code} (${nameFr(p.tags)}) non rattachée à une région dans OSM.`);
@@ -149,8 +164,15 @@ async function main() {
   }
   for (const r of regions) r.provinces.sort((a, b) => a.name.localeCompare(b.name, 'fr'));
 
-  // 3. Localités (une requête nationale), rattachées par point dans polygone
-  const placeEls = await overpass('places', `[out:json][timeout:600];node["place"~"^(city|town|village|suburb|quarter)$"]["name"](${BBOX});out;`);
+  // 3. Localités, rattachées à leur province par point dans polygone
+  // Localités par tuiles (requêtes plus légères pour les serveurs Overpass)
+  const placeEls: OsmEl[] = [];
+  const TILES: [number, number, number, number][] = [];
+  for (let i = 0; i < 6; i++) for (let j = 0; j < 4; j++) TILES.push([round(20.5 + 2.6 * i), round(-17.3 + 4.1 * j), round(20.5 + 2.6 * (i + 1)), round(-17.3 + 4.1 * (j + 1))]);
+  for (const [a, b, c, d] of TILES) {
+    const els = await overpass(`places-${a.toFixed(1)}_${b.toFixed(1)}`, `[out:json][timeout:300];node["place"~"^(city|town|village|suburb|quarter)$"]["name"](${a},${b},${c},${d});out;`);
+    placeEls.push(...els);
+  }
   const localities: GeoLocality[] = [];
   const usedIds = new Set<string>();
   const seen = new Set<string>();
