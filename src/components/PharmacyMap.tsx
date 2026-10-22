@@ -129,7 +129,7 @@ export function PharmacyMap(props: {
     });
     layers.current.routes = L.layerGroup().addTo(m);
     map.current = m;
-    const ro = new ResizeObserver(() => m.invalidateSize());
+    const ro = new ResizeObserver(() => { if (map.current === m) m.invalidateSize(); });
     ro.observe(el.current);
     return () => {
       clearTimeout(hintTimer);
@@ -137,6 +137,7 @@ export function PharmacyMap(props: {
       node.removeEventListener('touchmove', onTouchMove);
       node.removeEventListener('touchend', onTouchEnd);
       ro.disconnect();
+      m.stop();
       m.remove();
       map.current = null;
       layers.current = { markers: new Map(), routes: null };
@@ -240,10 +241,11 @@ export function PharmacyMap(props: {
       if (touch) m.dragging.disable();
       document.body.style.overflow = '';
     }
-    setTimeout(() => m.invalidateSize(), 50);
+    // la carte peut avoir été démontée entre-temps (passage de l'onglet Carte à Liste)
+    const t = setTimeout(() => { if (map.current === m) m.invalidateSize(); }, 50);
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setFull(false);
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    return () => { clearTimeout(t); window.removeEventListener('keydown', onKey); };
   }, [full]);
 
   function recenter() {
