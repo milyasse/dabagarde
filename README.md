@@ -99,7 +99,7 @@ manual/                   saisie manuelle de tableaux officiels
 
 ## Tests
 
-`npm test` (60 tests, Node `node:test`, sans dépendance ni réseau) couvre : Haversine, filtrage par rayon, classement et rangs, dates/fuseau/plages horaires, types de garde, téléphones, parseurs liste/fiche, statuts de fiabilité, expiration, gardes de nuit de la veille, doublons et contradictions, collecteur de bout en bout, couleurs de rang.
+`npm test` (59 tests, Node `node:test`, sans dépendance ni réseau) couvre : Haversine, filtrage par rayon, classement et rangs, dates/fuseau/plages horaires, types de garde, téléphones, parseurs liste/fiche, statuts de fiabilité, expiration, gardes de nuit de la veille, doublons et contradictions, collecteur de bout en bout, couleurs de rang.
 
 Les pages modèles de `tests/fixtures/` reproduisent la structure observée des pages sources ; elles ne remplacent pas un essai réel (`npm run check:sources`).
 

@@ -15,7 +15,7 @@ Refonte complète, dans un dépôt séparé ; l'app actuelle reste en ligne sans
 - Référencement : pages statiques régénérées à chaque déploiement (villes couvertes, annuaire, cliniques et hôpitaux, urgences, méthode, FAQ, contact, confidentialité, mentions légales), canonical, Open Graph, données structurées, sitemap, robots, 404 ; contenu lisible sans JavaScript.
 - Écran de lancement retiré du site web (contenu visible immédiatement, meilleur pour les visiteurs venant d'un moteur de recherche).
 - Adresses partageables : `?ville=`, `?lieu=&lat=&lng=` (centre de ville), `?type=`, `?espace=sante` ; aucune position GPS dans l'adresse.
-- Vérifications automatiques sur chaque branche (types, 60 tests, recherche de secrets, build, parcours Playwright) avec rapports sur la branche `ci-reports`.
+- Vérifications automatiques sur chaque branche (types, 59 tests, recherche de secrets, build, parcours Playwright) avec rapports sur la branche `ci-reports`.
 
 ## 1.7.0 — 21/10/2026
 - **Cliniques et hôpitaux : « Calculer les trajets »**, comme pour les pharmacies : itinéraires routiers des 12 établissements les plus proches, tri par **durée de trajet**, option **« Tous les itinéraires »** sur la carte. Tri : Plus proches · Plus éloignés · Durée.
