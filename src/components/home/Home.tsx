@@ -5,7 +5,6 @@ import type { GeoLocality } from '../../shared/geo/types.ts';
 import type { CityCount, DutyFilter } from '../../shared/search.ts';
 import type { CityId, CollectorStatus } from '../../shared/types.ts';
 import { CITIES, CITY_NAME, CONNECTORS } from '../../shared/connectors/registry.ts';
-import { useState } from 'react';
 import { formatFrDate, formatMoroccoDateTime } from '../../shared/dates.ts';
 import { PAGES, pageUrl } from '../../brand.ts';
 import { ChevronIcon, ClockIcon, MoonIcon, PhoneIcon, PinIcon, StarIcon, WarnIcon } from '../icons.tsx';
@@ -67,9 +66,10 @@ export function Home(props: {
   const clockRaw = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Africa/Casablanca', weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(props.now);
   const clock = clockRaw.charAt(0).toUpperCase() + clockRaw.slice(1);
   const sources = CONNECTORS.filter((c) => c.enabled && c.homepage);
-  const [allCities, setAllCities] = useState(false);
   const rows = cityRows(props.counts).sort((a, b) => b.active - a.active || CITY_NAME[a.city].localeCompare(CITY_NAME[b.city], 'fr'));
-  const visibleCities = allCities ? rows : rows.slice(0, 9);
+  // Villes avec des gardes publiées en cartes ; les autres (suivies mais vides aujourd'hui) en liste compacte
+  const visibleCities = props.counts ? rows.filter((r) => r.active !== 0) : rows.slice(0, 6);
+  const quietCities = props.counts ? rows.filter((r) => r.active === 0) : [];
   return (
     <div>
       {/* ---------- Recherche */}
@@ -134,7 +134,7 @@ export function Home(props: {
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <h2 id="h-villes" className="font-display text-2xl font-extrabold">Villes couvertes</h2>
-              <p className="mt-1 text-sm text-muted">{rows.length} villes et agglomérations · gardes publiées pour le {formatFrDate(props.date)}.</p>
+              <p className="mt-1 text-sm text-muted">{props.counts ? `${visibleCities.length} villes avec des gardes publiées pour le ${formatFrDate(props.date)} · ${rows.length} villes suivies` : `Gardes publiées pour le ${formatFrDate(props.date)}`}.</p>
             </div>
             <button type="button" onClick={props.onOpenRegions} className="inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-sm font-bold text-brand-700 ring-1 ring-line hover:bg-brand-50">
               Parcourir par région <ChevronIcon size={16} />
@@ -156,10 +156,16 @@ export function Home(props: {
               </li>
             ))}
           </ul>
-          {rows.length > 9 && (
-            <button type="button" onClick={() => setAllCities((v) => !v)} aria-expanded={allCities} className="mt-3 text-sm font-bold text-brand-700 underline">
-              {allCities ? 'Afficher moins de villes' : `Voir les ${rows.length} villes couvertes`}
-            </button>
+          {quietCities.length > 0 && (
+            <div className="mt-5">
+              <h3 className="text-sm font-extrabold uppercase tracking-wider text-muted">Suivies, rien de publié pour l’instant</h3>
+              <p className="mt-1 text-sm text-muted">La source n’a pas encore publié la garde du jour pour ces villes : elle apparaîtra ici dès sa publication.</p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {quietCities.map((c) => (
+                  <li key={c.city}><button type="button" onClick={() => props.onPickCity(c.city)} className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold ring-1 ring-line hover:ring-brand-500">{CITY_NAME[c.city]}</button></li>
+                ))}
+              </ul>
+            </div>
           )}
           <h3 className="mt-8 text-sm font-extrabold uppercase tracking-wider text-muted">Autres grandes villes</h3>
           <p className="mt-1 text-sm text-muted">Pas encore de source fiable réutilisable : nous vous indiquons où trouver l’information d’origine.</p>

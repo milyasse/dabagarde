@@ -43,6 +43,8 @@ export function PharmacyList(props: {
   onRefresh: () => void;
   onEnlarge: () => void;
   onChangePlace: () => void;
+  alternative: { id: string; name: string; count: number; km: number } | null;
+  onGoAlternative: (cityId: string) => void;
 }) {
   const refs = useRef(new Map<string, HTMLElement>());
   const [showExpired, setShowExpired] = useState(false);
@@ -147,7 +149,16 @@ export function PharmacyList(props: {
           <p className="font-semibold">Aucune pharmacie de garde trouvée dans un rayon de {props.radiusKm} km pour cette date.</p>
           {props.outside > 0 && <p className="mt-1 text-muted">{props.outside} pharmacie(s) de garde se trouvent au-delà de ce rayon.</p>}
           {props.filteredOutByType > 0 && <p className="mt-1 text-muted">{props.filteredOutByType} pharmacie(s) masquée(s) par le filtre « type de garde ».</p>}
-          <button type="button" onClick={props.onEnlarge} className="mt-3 rounded-xl bg-brand-700 px-4 py-2.5 font-bold text-white">Élargir le rayon</button>
+          {props.alternative && (
+            <p className="mt-2">Ville la plus proche avec des gardes publiées : <b>{props.alternative.name}</b>, à environ {props.alternative.km} km ({props.alternative.count} garde{props.alternative.count > 1 ? 's' : ''}).</p>
+          )}
+          <div className="mt-3 flex flex-wrap gap-2">
+            {props.alternative && (
+              <button type="button" onClick={() => props.onGoAlternative(props.alternative!.id)} className="rounded-xl bg-brand-700 px-4 py-2.5 font-bold text-white">Voir {props.alternative.name}</button>
+            )}
+            <button type="button" onClick={props.onEnlarge} className={`rounded-xl px-4 py-2.5 font-bold ${props.alternative ? 'bg-brand-50 text-brand-800' : 'bg-brand-700 text-white'}`}>Élargir le rayon</button>
+          </div>
+          <p className="mt-3 text-xs text-muted">Urgence vitale : 141 (SAMU) ou 15 (Protection civile).</p>
         </div>
       )}
       {n > 0 && shown.length === 0 && <p className="rounded-xl bg-white p-3 text-sm text-muted ring-1 ring-line">Aucun résultat ne correspond à « {filter} ».</p>}

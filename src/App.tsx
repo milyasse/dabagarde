@@ -1,14 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SiteHeader } from './components/layout/SiteHeader.tsx';
 import { SiteFooter } from './components/layout/SiteFooter.tsx';
 import { Home, type FavoritePharmacy, type RecentPlace } from './components/home/Home.tsx';
 import { SearchPanel, type Origin } from './components/SearchPanel.tsx';
-import { PharmacyMap } from './components/PharmacyMap.tsx';
 import { PharmacyList, type SortBy } from './components/PharmacyList.tsx';
 import { MapLegend } from './components/MapLegend.tsx';
 import { SourceStatus } from './components/SourceStatus.tsx';
 import { type Space } from './components/SpaceTabs.tsx';
-import { HealthSpace } from './components/health/HealthSpace.tsx';
 import { LocalitySearch } from './components/search/LocalitySearch.tsx';
 import { RegionBrowser } from './components/search/RegionBrowser.tsx';
 import { PharmacySheet } from './components/results/PharmacySheet.tsx';
@@ -26,12 +24,19 @@ import type { CityId, CollectorStatus, Pharmacy } from './shared/types.ts';
 import { addDays, formatFrDate, formatMoroccoDateTime, isIsoDate, moroccoDate } from './shared/dates.ts';
 import { CITIES, CITY_NAME } from './shared/connectors/registry.ts';
 import { coverageAt, type Coverage } from './shared/coverage.ts';
+import { haversineKm } from './shared/distance.ts';
 import { findDuplicates, qualityFlags, usableCoords } from './shared/quality.ts';
 import type { GeoLocality } from './shared/geo/types.ts';
 import { sharePharmacy } from './utils/share.ts';
 import { useStoredList } from './hooks/useStoredList.ts';
+import { useInstall, useOnline } from './hooks/useInstall.ts';
 import { useMediaQuery, DESKTOP } from './hooks/useMediaQuery.ts';
 import { CONFIG } from './config.ts';
+
+// Chargés à la demande : la carte (Leaflet) et l'espace santé ne pèsent pas sur l'ouverture de l'accueil.
+const PharmacyMap = lazy(() => import('./components/PharmacyMap.tsx').then((m) => ({ default: m.PharmacyMap })));
+const HealthSpace = lazy(() => import('./components/health/HealthSpace.tsx').then((m) => ({ default: m.HealthSpace })));
+const Loading = ({ label }: { label: string }) => <div role="status" className="flex h-full min-h-[200px] items-center justify-center text-sm font-semibold text-muted">{label}</div>;
 
 // Préférences non sensibles uniquement (jamais la position)
 function pref<T>(k: string, fallback: T): T {
@@ -127,6 +132,8 @@ export default function App() {
   const resultsTop = useRef<HTMLDivElement>(null);
 
   const recents = useStoredList<RecentPlace>('dg.recents', 6);
+  const installer = useInstall();
+  const online = useOnline();
   const favorites = useStoredList<FavoritePharmacy>('dg.favoris', 30);
 
   useEffect(() => savePref('radius', radiusKm), [radiusKm]);
@@ -327,6 +334,17 @@ export default function App() {
     return { list: sortBy === 'duration' ? sortByDuration(ranked) : ranked, ranked, expired: withRoutes(search.outcome.expired), unlocated: search.outcome.unlocated };
   }, [search, withRoutes, sortBy]);
 
+  // Aucune garde ici pour la date : la ville la plus proche où la source en publie
+  const alternative = useMemo(() => {
+    if (search.state !== 'done' || !origin || !cityCounts || search.date !== date) return null;
+    if (search.outcome.ranked.length || search.outcome.unlocated.length) return null;
+    const list = cityCounts.filter((c) => c.active > 0).map((c) => {
+      const city = CITIES.find((x) => x.id === c.city)!;
+      return { id: c.city, name: city.name, count: c.active, km: Math.round(haversineKm(origin, city.center)) };
+    }).filter((c) => c.km > 3).sort((a, b) => a.km - b.km);
+    return list[0] ?? null;
+  }, [search, origin, cityCounts, date]);
+
   const mapPharmacies = useMemo(() => (view ? [...view.ranked, ...view.expired] : []), [view]);
   const visibleRouteIds = useMemo(() => (showAllRoutes ? Object.keys(routes) : selectedId ? [selectedId] : []), [showAllRoutes, routes, selectedId]);
 
@@ -381,6 +399,11 @@ export default function App() {
         locating={locating}
         onOpenSettings={() => setSettingsOpen(true)}
       />
+      {!online && (
+        <div role="status" className="border-b border-warn-600/30 bg-warn-50 px-4 py-2.5 text-sm font-semibold text-warn-600 lg:px-6">
+          <p className="mx-auto max-w-7xl">Hors connexion : les dernières données enregistrées sur cet appareil sont affichées{status ? ` (collecte du ${formatMoroccoDateTime(status.generatedAt)})` : ''}. Itinéraires et carte indisponibles. Urgence : 141 ou 15.</p>
+        </div>
+      )}
       {geoHelp && (
         <div role="alert" className="border-b border-warn-600/30 bg-warn-50 px-4 py-3 text-sm text-warn-600 lg:px-6">
           <div className="mx-auto flex max-w-7xl items-start gap-2">
@@ -398,7 +421,9 @@ export default function App() {
 
       <main id="contenu" className="flex-1">
         {space === 'sante' ? (
-          <HealthSpace origin={origin} setOrigin={setOrigin} locating={locating} onLocate={() => locate(false)} mode={mode} searchSignal={healthSignal} />
+          <Suspense fallback={<Loading label="Chargement des cliniques et hôpitaux…" />}>
+            <HealthSpace origin={origin} setOrigin={setOrigin} locating={locating} onLocate={() => locate(false)} mode={mode} searchSignal={healthSignal} />
+          </Suspense>
         ) : !showResults ? (
           <Home
             now={now}
@@ -486,6 +511,16 @@ export default function App() {
             <div className="lg:grid lg:grid-cols-[minmax(0,480px)_1fr]">
               {(isDesktop || tab === 'list') && (
                 <div className="min-w-0">
+                  {search.state === 'done' && !installer.dismissed && (installer.canInstall || installer.ios) && (
+                    <div className="mx-4 mt-4 flex items-center gap-3 rounded-2xl bg-brand-50 p-3 text-sm lg:mx-5">
+                      <p className="min-w-0 flex-1 text-brand-900">
+                        <b>Installer DabaGarde</b> pour l’ouvrir en un geste, même avec une connexion faible.
+                        {installer.ios && !installer.canInstall ? ' Sur iPhone : bouton Partager, puis « Sur l’écran d’accueil ».' : ''}
+                      </p>
+                      {installer.canInstall && <button type="button" onClick={() => void installer.install()} className="shrink-0 rounded-full bg-brand-700 px-3 py-1.5 font-bold text-white">Installer</button>}
+                      <button type="button" onClick={installer.dismiss} className="shrink-0 rounded-full px-2 py-1 font-bold text-muted" aria-label="Masquer la proposition d’installation">✕</button>
+                    </div>
+                  )}
                   {search.state === 'done' && <div className="px-4 pt-4 lg:px-5"><CoverageNotice placeName={placeLabel} coverage={search.coverage} onGoCovered={() => search.coverage.cityId && pickCity(search.coverage.cityId)} /></div>}
                   {search.state === 'done' && search.coverage.status === 'none' ? null : renderResults()}
                 </div>
@@ -493,6 +528,7 @@ export default function App() {
               {(isDesktop || tab === 'map') && (
                 <div className="lg:sticky lg:top-[calc(env(safe-area-inset-top,0px)+57px)] lg:h-[calc(100dvh-57px)] lg:self-start">
                   <div className="relative h-[calc(100dvh-170px)] min-h-[320px] lg:h-[calc(100%-44px)]">
+                    <Suspense fallback={<Loading label="Chargement de la carte…" />}>
                     <PharmacyMap
                       origin={origin}
                       radiusKm={radiusKm}
@@ -509,6 +545,7 @@ export default function App() {
                       onToggleRoutes={() => setRoutesShown((v) => !v)}
                       canShowRoutes={Object.keys(routes).length > 0}
                     />
+                    </Suspense>
                   </div>
                   <div className="bg-white px-4 py-2"><MapLegend count={view?.ranked.length ?? 5} /></div>
                 </div>
@@ -581,6 +618,8 @@ export default function App() {
         onShowAllRoutes={setShowAllRoutes}
         onRefresh={() => void runSearch(true)}
         onChangePlace={changePlace}
+        alternative={alternative}
+        onGoAlternative={(id) => pickCity(id)}
         onEnlarge={() => { setRadiusKm((r) => Math.min(100, r < 5 ? 5 : r < 10 ? 10 : r < 20 ? 20 : r < 30 ? 30 : r * 2)); requestSearch(); }}
       />
     );

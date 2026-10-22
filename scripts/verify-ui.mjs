@@ -107,6 +107,13 @@ await section('Parcours principal (téléphone)', async () => {
   await page.getByRole('option', { name: /^Casablanca/ }).first().click();
   await page.waitForFunction(() => /Casablanca ·/.test(document.querySelector('section[aria-label="Résultats"]')?.textContent ?? ''), null, { timeout: 20000 }).catch(() => {});
   check(/Casablanca ·/.test(await results(page).innerText().catch(() => '')), `changement de ville → Casablanca (nouvelle ville couverte) : « ${(await heading(page))} »`);
+  if (/Aucune/.test(await heading(page))) {
+    await wait(800);
+    const alt = await results(page).getByRole('button', { name: /^Voir / }).first();
+    const has = await alt.isVisible().catch(() => false);
+    check(has, 'ville sans garde publiée : ville la plus proche avec des gardes proposée');
+    if (has) { const label = await alt.innerText(); await alt.click(); await wait(2500); check(/pharmacies? de garde/.test(await heading(page)), `« ${label} » : gardes affichées (« ${await heading(page)} »)`); }
+  }
 
   // Retour à l'accueil : favoris
   await page.getByRole('link', { name: /DabaGarde, accueil/ }).click();
