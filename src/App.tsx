@@ -416,7 +416,7 @@ export default function App() {
           <div ref={resultsTop} className="scroll-mt-28">
             {/* Barre de recherche compacte */}
             <div className="border-b border-line bg-white">
-              <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 lg:px-5">
+              <div className="flex flex-wrap items-center gap-3 px-4 py-3 lg:px-5">
                 <div className="min-w-[16rem] flex-1">
                   <LocalitySearch size="md" onPick={pickLocality} onLocate={() => void locate(true)} locating={locating} />
                 </div>
@@ -472,11 +472,11 @@ export default function App() {
               </div>
             )}
 
-            <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-[minmax(0,460px)_1fr]">
+            <div className="lg:grid lg:grid-cols-[minmax(0,480px)_1fr]">
               {(isDesktop || tab === 'list') && (
                 <div className="min-w-0">
                   {search.state === 'done' && <div className="px-4 pt-4 lg:px-5"><CoverageNotice placeName={placeLabel} coverage={search.coverage} onGoCovered={() => search.coverage.cityId && pickCity(search.coverage.cityId)} /></div>}
-                  {renderResults()}
+                  {search.state === 'done' && search.coverage.status === 'none' ? null : renderResults()}
                 </div>
               )}
               {(isDesktop || tab === 'map') && (

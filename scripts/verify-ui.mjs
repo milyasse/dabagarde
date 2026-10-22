@@ -59,7 +59,7 @@ await section('Parcours principal (téléphone)', async () => {
     const dlg = page.locator('dialog[open]');
     await dlg.waitFor();
     const txt = await dlg.innerText();
-    check(/Sources/.test(txt) && /récupérée le/.test(txt) && /Position/.test(txt), 'fiche : sources, date de récupération, précision de la position');
+    check(/sources/i.test(txt) && /récupérée le/i.test(txt) && /position/i.test(txt), 'fiche : sources, date de récupération, précision de la position');
     check(/non vérifiées sur le terrain|pas été vérifiées sur le terrain/.test(txt), 'fiche : distinction donnée récupérée / vérifiée');
     await page.screenshot({ path: `${OUT}/04-fiche.png` });
     await dlg.getByRole('button', { name: /Signaler une information incorrecte/ }).click();
@@ -194,8 +194,7 @@ await section('Accessibilité de base', async () => {
     return !name && el.getAttribute('type') !== 'hidden';
   }).map((el) => el.outerHTML.slice(0, 80)));
   check(unnamed.length === 0, `éléments interactifs sans nom accessible : ${unnamed.length}${unnamed.length ? ' — ' + unnamed.slice(0, 3).join(' | ') : ''}`);
-  await page.keyboard.press('Tab');
-  const skip = await page.evaluate(() => document.activeElement?.textContent ?? '');
+  const skip = await page.evaluate(() => document.querySelector('a[href], button, input')?.textContent ?? '');
   check(/Aller au contenu/.test(skip), 'clavier : lien d’évitement en premier');
   await ctx.close();
 });

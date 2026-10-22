@@ -1,3 +1,15 @@
+# Couverture nationale — étude des sources (22/10/2026)
+
+Objectif : couvrir tout le Maroc **sans jamais présenter une ville comme couverte sans source exploitable**.
+
+| Source | Couverture observée | Conditions de réutilisation | Décision |
+|---|---|---|---|
+| **garde24.ma** | 75 villes publiées (page d'accueil, 22/10/2026) | Conditions d'utilisation : interdiction explicite de « scraper, crawler, moissonner, extraire ou copier systématiquement » et de « copier, republier, vendre ou exploiter les données », y compris via JSON/API. Aucune API publique. | **Aucune donnée reprise.** Lien vers la page publique de la ville quand elle existe (`src/shared/coverage.ts`). Demande de partenariat possible. |
+| **annuaire-gratuit.ma** | Rabat, Salé, Témara, Agadir, Tanger, Fès, Aït Melloul, Inezgane, Ben Guerir, Berrechid, Settat… | Conditions générales : interdiction de reproduire le site ou une partie sur un autre serveur, de produire des travaux dérivés et de redistribuer l'information. | **Utilisée pour Rabat, Salé, Témara seulement (décision du porteur, 22/10/2026), non étendue.** Risque juridique à régulariser : demande d'accord écrite recommandée, sinon désactivation. |
+| **guidepharmacies.ma** | Rabat, Salé, Témara-Tamesna, Aïn Aouda, Kénitra-Mehdia, Casablanca | Aucune condition d'utilisation publiée ; mention « © Santeservice Maroc ». robots.txt n'interdit pas les pages de garde. | Utilisée pour Rabat, Salé, Témara. Extension à Kénitra et Casablanca techniquement possible : **à décider après demande d'accord**. |
+| Ordres et syndicats régionaux de pharmaciens | Variable (certaines villes publient un tableau, souvent en PDF ou sur les réseaux sociaux) | Information publique ; réutilisation à confirmer avec l'émetteur | Saisie manuelle possible (`manual/`), source et date citées. Priorité 1 : partenariats. |
+| OpenStreetMap | Tout le Maroc (régions, provinces, localités, quartiers) | ODbL : réutilisation libre avec attribution | **Base géographique nationale** (`scripts/build-geo.ts`). Ne contient pas les gardes. |
+
 # Sources des gardes — étude de faisabilité (13/10/2026)
 
 Zone de démarrage : **Rabat, Salé, Témara**.

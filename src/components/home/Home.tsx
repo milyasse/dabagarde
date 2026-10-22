@@ -61,14 +61,15 @@ export function Home(props: {
   onRemoveFavorite: (id: string) => void;
   onOpenRegions: () => void;
 }) {
-  const clock = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Africa/Casablanca', weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(props.now);
+  const clockRaw = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Africa/Casablanca', weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(props.now);
+  const clock = clockRaw.charAt(0).toUpperCase() + clockRaw.slice(1);
   const sources = CONNECTORS.filter((c) => c.enabled && c.homepage);
   return (
     <div>
       {/* ---------- Recherche */}
       <section className="hero-bg text-white">
         <div className="mx-auto max-w-3xl px-4 pb-10 pt-8 sm:pt-14 lg:pb-14">
-          <p className="text-sm font-semibold capitalize text-brand-100/90">{clock} · heure du Maroc</p>
+          <p className="text-sm font-semibold text-brand-100/90">{clock} · heure du Maroc</p>
           <h1 className="font-display mt-2 text-[34px] font-extrabold leading-[1.05] sm:text-5xl">
             Une pharmacie de garde,<br /><span className="text-brand-200">maintenant.</span>
           </h1>

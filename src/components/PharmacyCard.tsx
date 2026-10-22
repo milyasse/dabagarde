@@ -71,7 +71,7 @@ export const PharmacyCard = forwardRef<HTMLElement, {
       <div className="mt-3 flex flex-wrap items-center gap-1.5">
         <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${TEMPORAL_STYLE[t.kind]}`}>{t.label}</span>
         {p.dutyType && <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${TYPE_STYLE[p.dutyType]}`}>{DUTY_TYPE_LABEL[p.dutyType]}</span>}
-        {p.hoursText && <span className="rounded-full bg-bg px-2.5 py-1 text-xs font-semibold text-ink">{p.hoursText}</span>}
+        {p.hoursText && !(p.dutyType === 'continuous' && /24\s*h?\s*\/\s*24/i.test(p.hoursText)) && <span className="rounded-full bg-bg px-2.5 py-1 text-xs font-semibold text-ink">{p.hoursText}</span>}
         {p.verificationStatus !== 'confirmed' && p.verificationStatus !== 'expired' && (
           <span className="rounded-full bg-warn-50 px-2.5 py-1 text-xs font-bold text-warn-600">{STATUS_LABEL[p.verificationStatus]}</span>
         )}

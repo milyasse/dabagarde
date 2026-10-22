@@ -51,10 +51,10 @@ export function PharmacySheet(props: {
             </div>
             {t.detail && <p className="-mt-3 text-sm text-muted">{t.detail}</p>}
 
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
               {p.phone
-                ? <a href={`tel:${p.phone}`} className="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-700 py-3 font-bold text-white sm:col-span-1"><PhoneIcon size={18} /> Appeler</a>
-                : <span className="col-span-2 flex items-center justify-center rounded-xl border border-dashed border-line py-3 text-sm text-muted sm:col-span-1">Téléphone non publié</span>}
+                ? <a href={`tel:${p.phone}`} className="col-span-3 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-700 py-3 font-bold text-white sm:col-span-1"><PhoneIcon size={18} /> Appeler</a>
+                : <span className="col-span-3 flex items-center justify-center rounded-xl border border-dashed border-line py-3 text-sm text-muted sm:col-span-1">Téléphone non publié</span>}
               <button type="button" onClick={props.onShowOnMap} disabled={p.latitude === null} className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-50 py-3 font-bold text-brand-800 disabled:opacity-40"><MapIcon size={18} /> Carte</button>
               <button type="button" onClick={props.onShare} className="inline-flex items-center justify-center gap-2 rounded-xl bg-bg py-3 font-bold"><ShareIcon size={18} /> Partager</button>
               <button type="button" onClick={props.onToggleFavorite} aria-pressed={props.favorite} className="inline-flex items-center justify-center gap-2 rounded-xl bg-bg py-3 font-bold"><StarIcon size={18} filled={props.favorite} /> {props.favorite ? 'Retirer' : 'Favori'}</button>
