@@ -1,6 +1,6 @@
 {
  "date": "2026-10-25",
- "generatedAt": "2026-10-26T08:46:46.123Z",
+ "generatedAt": "2026-10-26T10:42:03.102Z",
  "records": [
   {
    "id": "ain-aouda-mamoune",
@@ -2678,7 +2678,7 @@
    "phone": "+212663455044",
    "dutyDate": "2026-10-25",
    "dutyType": "day",
-   "dutyLabel": "Garde de jour",
+   "dutyLabel": "Garde Jour",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-10-25",
    "dutyEndDate": "2026-10-25",
@@ -2704,19 +2704,21 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-al-masjid-s237000.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
      "sourcePublishedAt": "2026-10-26",
-     "lastCheckedAt": "2026-10-26T04:37:14.160Z",
+     "lastCheckedAt": "2026-10-26T10:44:09.440Z",
      "historyMatch": {
       "start": "2026-10-25",
       "end": "2026-10-26",
       "label": "Garde Jour"
      },
      "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyLabel": "Garde Jour"
     }
    ],
    "verificationStatus": "confirmed",
    "confidenceLevel": "high",
-   "notes": []
+   "notes": [
+    "Numéros de téléphone différents selon les sources."
+   ]
   },
   {
    "id": "temara-errachad",
