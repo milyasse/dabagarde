@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "generatedAt": "2026-10-25T22:27:11.424Z",
+ "generatedAt": "2026-10-26T00:55:00.423Z",
  "records": [
   {
    "id": "ain-aouda-masjid",
@@ -79,6 +79,43 @@
    "notes": [
     "Planning publié à l’avance : à revérifier le jour même."
    ]
+  },
+  {
+   "id": "ben-guerir-hay-nour",
+   "name": "Pharmacie Hay Nour",
+   "address": "hay ennour, rue 10 n°267",
+   "city": "ben-guerir",
+   "district": "-",
+   "latitude": 32.2359364,
+   "longitude": -7.9538378,
+   "coordinatesSource": "source",
+   "phone": "+212524318236",
+   "dutyDate": "2026-10-26",
+   "dutyType": "night",
+   "dutyLabel": "Garde Nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-10-26",
+   "dutyEndDate": "2026-10-27",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-hay-nour-s243227.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
+     "sourcePublishedAt": "2026-10-26",
+     "lastCheckedAt": "2026-10-26T00:56:51.662Z",
+     "historyMatch": {
+      "start": "2026-10-26",
+      "end": "2026-10-27",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde Nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "kenitra-golf",
