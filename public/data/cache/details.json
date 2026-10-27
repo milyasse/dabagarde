@@ -16244,6 +16244,11 @@
    "longitude": -6.8975754,
    "history": [
     {
+     "start": "2026-10-26",
+     "end": "2026-10-27",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-10-25",
      "end": "2026-10-26",
      "label": "Garde Jour"
@@ -16286,16 +16291,11 @@
     {
      "start": "2026-09-12",
      "end": "2026-09-13",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-08-07",
-     "end": "2026-08-08",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-10-26T00:56:24.910Z"
+  "fetchedAt": "2026-10-27T00:45:24.625Z"
  },
  "s245316": {
   "detail": {
@@ -22706,5 +22706,67 @@
    ]
   },
   "fetchedAt": "2026-10-26T14:48:36.118Z"
+ },
+ "s243499": {
+  "detail": {
+   "name": "Pharmacie Nabih El Ouadi",
+   "address": "14 rue ghazouani hay zaouia azouzia",
+   "phone": "+212524317339",
+   "latitude": 32.229536,
+   "longitude": -7.9574856,
+   "history": [
+    {
+     "start": "2026-10-27",
+     "end": "2026-10-28",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-09-05",
+     "end": "2026-09-11",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-07-29",
+     "end": "2026-07-30",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-06-18",
+     "end": "2026-06-19",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-05-08",
+     "end": "2026-05-09",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-03-28",
+     "end": "2026-03-29",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-02-21",
+     "end": "2026-02-27",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-02-15",
+     "end": "2026-02-16",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-01-04",
+     "end": "2026-01-05",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-11-27",
+     "end": "2025-11-28",
+     "label": "Garde Nuit FAQ Questions fréquentes sur Pharm"
+    }
+   ]
+  },
+  "fetchedAt": "2026-10-27T00:45:54.871Z"
  }
 }
