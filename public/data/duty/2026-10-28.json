@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generatedAt": "2026-10-29T08:54:43.089Z",
+ "generatedAt": "2026-10-29T10:49:30.645Z",
  "records": [
   {
    "id": "ain-aouda-masjid",
@@ -1622,7 +1622,7 @@
    "phone": "+212663455044",
    "dutyDate": "2026-10-28",
    "dutyType": "day",
-   "dutyLabel": "Garde de jour",
+   "dutyLabel": "Garde Jour",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-10-28",
    "dutyEndDate": "2026-10-28",
@@ -1648,19 +1648,21 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-al-masjid-s237000.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
      "sourcePublishedAt": "2026-10-29",
-     "lastCheckedAt": "2026-10-29T04:48:14.033Z",
+     "lastCheckedAt": "2026-10-29T10:51:49.028Z",
      "historyMatch": {
       "start": "2026-10-28",
       "end": "2026-10-29",
       "label": "Garde Jour"
      },
      "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyLabel": "Garde Jour"
     }
    ],
    "verificationStatus": "confirmed",
    "confidenceLevel": "high",
-   "notes": []
+   "notes": [
+    "Numéros de téléphone différents selon les sources."
+   ]
   },
   {
    "id": "temara-annaourasse",
@@ -1726,7 +1728,7 @@
    "phone": "+212537561393",
    "dutyDate": "2026-10-28",
    "dutyType": "day",
-   "dutyLabel": "Garde de jour",
+   "dutyLabel": "Garde Jour",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-10-28",
    "dutyEndDate": "2026-10-28",
@@ -1752,14 +1754,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-erraha-s252608.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
      "sourcePublishedAt": "2026-10-29",
-     "lastCheckedAt": "2026-10-29T04:48:14.033Z",
+     "lastCheckedAt": "2026-10-29T10:51:49.028Z",
      "historyMatch": {
       "start": "2026-10-28",
       "end": "2026-10-29",
       "label": "Garde Jour"
      },
      "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyLabel": "Garde Jour"
     }
    ],
    "verificationStatus": "confirmed",
