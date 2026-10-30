@@ -16244,6 +16244,11 @@
    "longitude": -6.8975754,
    "history": [
     {
+     "start": "2026-10-29",
+     "end": "2026-10-30",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-10-28",
      "end": "2026-10-29",
      "label": "Garde Jour"
@@ -16286,16 +16291,11 @@
     {
      "start": "2026-09-15",
      "end": "2026-09-16",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-09-14",
-     "end": "2026-09-15",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-10-29T00:54:27.332Z"
+  "fetchedAt": "2026-10-30T00:56:21.340Z"
  },
  "s245316": {
   "detail": {
@@ -22096,6 +22096,11 @@
    "longitude": -6.8865786,
    "history": [
     {
+     "start": "2026-10-29",
+     "end": "2026-10-30",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-10-28",
      "end": "2026-10-29",
      "label": "Garde Jour"
@@ -22138,16 +22143,11 @@
     {
      "start": "2026-09-01",
      "end": "2026-09-02",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-08-31",
-     "end": "2026-09-01",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-10-29T00:54:24.782Z"
+  "fetchedAt": "2026-10-30T00:56:18.686Z"
  },
  "s254064": {
   "detail": {
@@ -28717,5 +28717,67 @@
    ]
   },
   "fetchedAt": "2026-10-29T14:59:00.388Z"
+ },
+ "s252785": {
+  "detail": {
+   "name": "Pharmacie Jnane Adam",
+   "address": "lotiss. jnane el kheir 3, n° 327 près de hilal hmer",
+   "phone": "+212633318964",
+   "latitude": 32.2415887,
+   "longitude": -7.9367813,
+   "history": [
+    {
+     "start": "2026-10-30",
+     "end": "2026-10-31",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-09-15",
+     "end": "2026-09-16",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-06-21",
+     "end": "2026-06-22",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-05-16",
+     "end": "2026-05-22",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-03-31",
+     "end": "2026-04-01",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-01-08",
+     "end": "2026-01-09",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-11-30",
+     "end": "2025-12-01",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-10-25",
+     "end": "2025-10-31",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2025-10-17",
+     "end": "2025-10-18",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-09-11",
+     "end": "2025-09-12",
+     "label": "Garde Nuit FAQ Questions fréquentes sur Pharm"
+    }
+   ]
+  },
+  "fetchedAt": "2026-10-30T00:56:51.736Z"
  }
 }
