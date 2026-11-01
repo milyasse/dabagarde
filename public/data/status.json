@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-01T16:39:14.388Z",
+ "generatedAt": "2026-11-01T18:43:28.042Z",
  "todayMorocco": "2026-11-01",
  "dates": [
   "2026-10-12",
@@ -35,24 +35,13 @@
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
-   "city": "el-jadida",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
-   "ok": true,
-   "pageDate": "2026-11-01",
-   "count": 10,
-   "error": null,
-   "checkedAt": "2026-11-01T16:39:14.428Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
    "city": "khouribga",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
    "ok": true,
    "pageDate": "2026-11-01",
    "count": 6,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:15.756Z"
+   "checkedAt": "2026-11-01T18:43:28.087Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -63,7 +52,7 @@
    "pageDate": "2026-11-01",
    "count": 40,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:33.738Z"
+   "checkedAt": "2026-11-01T18:43:44.619Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -74,7 +63,7 @@
    "pageDate": "2026-11-01",
    "count": 4,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:34.304Z"
+   "checkedAt": "2026-11-01T18:43:45.315Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -85,7 +74,7 @@
    "pageDate": "2026-11-01",
    "count": 7,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:37.037Z"
+   "checkedAt": "2026-11-01T18:43:47.943Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -96,7 +85,7 @@
    "pageDate": "2026-11-01",
    "count": 10,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:40.216Z"
+   "checkedAt": "2026-11-01T18:43:50.919Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -107,7 +96,7 @@
    "pageDate": "2026-11-01",
    "count": 4,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:43.058Z"
+   "checkedAt": "2026-11-01T18:43:53.807Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -118,7 +107,7 @@
    "pageDate": "2026-11-01",
    "count": 5,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:46.036Z"
+   "checkedAt": "2026-11-01T18:43:56.820Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -129,7 +118,7 @@
    "pageDate": "2026-11-01",
    "count": 1,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:49.032Z"
+   "checkedAt": "2026-11-01T18:44:00.010Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -140,7 +129,7 @@
    "pageDate": "2026-11-01",
    "count": 1,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:51.912Z"
+   "checkedAt": "2026-11-01T18:44:03.222Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -151,7 +140,7 @@
    "pageDate": "2026-11-01",
    "count": 12,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:55.088Z"
+   "checkedAt": "2026-11-01T18:44:05.998Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -162,7 +151,7 @@
    "pageDate": "2026-11-01",
    "count": 6,
    "error": null,
-   "checkedAt": "2026-11-01T16:39:58.029Z"
+   "checkedAt": "2026-11-01T18:44:08.825Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -173,7 +162,7 @@
    "pageDate": "2026-11-01",
    "count": 0,
    "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
-   "checkedAt": "2026-11-01T16:40:01.446Z"
+   "checkedAt": "2026-11-01T18:44:12.067Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -184,7 +173,7 @@
    "pageDate": "2026-11-01",
    "count": 20,
    "error": null,
-   "checkedAt": "2026-11-01T16:40:05.636Z"
+   "checkedAt": "2026-11-01T18:44:15.073Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -195,18 +184,18 @@
    "pageDate": "2026-11-01",
    "count": 10,
    "error": null,
-   "checkedAt": "2026-11-01T16:40:08.261Z"
+   "checkedAt": "2026-11-01T18:44:18.006Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "oujda",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:44:14.668Z"
+   "ok": true,
+   "pageDate": "2026-11-01",
+   "count": 5,
+   "error": null,
+   "checkedAt": "2026-11-01T18:44:22.295Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -217,7 +206,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:44:28.479Z"
+   "checkedAt": "2026-11-01T18:48:32.007Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -228,7 +217,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:44:42.277Z"
+   "checkedAt": "2026-11-01T18:48:45.524Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -239,7 +228,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:44:55.812Z"
+   "checkedAt": "2026-11-01T18:49:02.179Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -250,7 +239,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:45:10.090Z"
+   "checkedAt": "2026-11-01T18:49:23.500Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -261,7 +250,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:45:23.666Z"
+   "checkedAt": "2026-11-01T18:49:37.009Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -272,7 +261,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:45:37.209Z"
+   "checkedAt": "2026-11-01T18:49:50.533Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -283,7 +272,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:45:50.753Z"
+   "checkedAt": "2026-11-01T18:50:04.126Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -294,7 +283,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:46:04.302Z"
+   "checkedAt": "2026-11-01T18:50:18.944Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -305,7 +294,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:46:17.847Z"
+   "checkedAt": "2026-11-01T18:50:32.494Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -316,7 +305,18 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-01T16:46:31.379Z"
+   "checkedAt": "2026-11-01T18:50:46.016Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "el-jadida",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-01T18:50:59.347Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -327,7 +327,7 @@
    "pageDate": "2026-10-26",
    "count": 11,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:46.554Z"
+   "checkedAt": "2026-11-01T18:51:17.034Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -338,7 +338,7 @@
    "pageDate": "2026-11-02",
    "count": 58,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:46.557Z"
+   "checkedAt": "2026-11-01T18:51:17.036Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -349,7 +349,7 @@
    "pageDate": "2026-10-26",
    "count": 8,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:51.762Z"
+   "checkedAt": "2026-11-01T18:51:20.749Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -360,7 +360,7 @@
    "pageDate": "2026-11-02",
    "count": 63,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:51.764Z"
+   "checkedAt": "2026-11-01T18:51:20.750Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -371,7 +371,7 @@
    "pageDate": "2026-10-26",
    "count": 8,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:57.818Z"
+   "checkedAt": "2026-11-01T18:51:26.751Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -382,7 +382,7 @@
    "pageDate": "2026-11-02",
    "count": 40,
    "error": null,
-   "checkedAt": "2026-11-01T16:46:57.819Z"
+   "checkedAt": "2026-11-01T18:51:26.752Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -393,7 +393,7 @@
    "pageDate": "2026-10-26",
    "count": 8,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:03.809Z"
+   "checkedAt": "2026-11-01T18:51:32.865Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -404,7 +404,7 @@
    "pageDate": "2026-11-02",
    "count": 40,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:03.809Z"
+   "checkedAt": "2026-11-01T18:51:32.866Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -415,7 +415,7 @@
    "pageDate": "2026-10-26",
    "count": 1,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:38.261Z"
+   "checkedAt": "2026-11-01T18:52:13.889Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -424,9 +424,9 @@
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html?date=2026-11-02",
    "ok": true,
    "pageDate": "2026-11-02",
-   "count": 0,
+   "count": 6,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:38.261Z"
+   "checkedAt": "2026-11-01T18:52:13.890Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -437,7 +437,7 @@
    "pageDate": "2026-08-03",
    "count": 0,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:43.426Z"
+   "checkedAt": "2026-11-01T18:52:31.996Z"
   },
   {
    "sourceId": "guidepharmacies",
@@ -448,7 +448,7 @@
    "pageDate": "2026-11-02",
    "count": 0,
    "error": null,
-   "checkedAt": "2026-11-01T16:47:43.426Z"
+   "checkedAt": "2026-11-01T18:52:31.996Z"
   }
  ],
  "connectors": [
