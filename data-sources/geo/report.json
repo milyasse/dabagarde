@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-26T03:41:09.741Z",
+  "generatedAt": "2026-11-02T03:59:24.198Z",
   "source": "Geofabrik morocco-latest.osm.pbf",
   "anomalies": [],
-  "featuresRead": 12004,
+  "featuresRead": 12011,
   "ok": true,
   "regions": 12,
   "provinces": 75,
-  "localities": 6566,
+  "localities": 6568,
   "byKind": {
     "city": 58,
     "town": 276,
     "village": 5087,
-    "district": 1145
+    "district": 1147
   },
   "perRegion": {
     "MA-01": {
@@ -24,7 +24,7 @@
     },
     "MA-03": {
       "provinces": 9,
-      "localites": 363
+      "localites": 365
     },
     "MA-04": {
       "provinces": 7,
