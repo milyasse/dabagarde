@@ -1,6 +1,6 @@
 {
  "date": "2026-11-01",
- "generatedAt": "2026-11-02T08:42:50.768Z",
+ "generatedAt": "2026-11-02T09:02:57.640Z",
  "records": [
   {
    "id": "ain-aouda-abi-horaira",
@@ -337,14 +337,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-oued-makhazine-s253368.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
      "sourcePublishedAt": "2026-11-02",
-     "lastCheckedAt": "2026-11-02T08:46:03.316Z",
+     "lastCheckedAt": "2026-11-02T09:03:30.222Z",
      "historyMatch": {
       "start": "2026-11-01",
       "end": "2026-11-02",
       "label": "Garde Nuit"
      },
-     "dutyType": null,
-     "dutyLabel": null
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
     }
    ],
    "verificationStatus": "confirmed",
