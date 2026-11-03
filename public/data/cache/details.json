@@ -41734,6 +41734,11 @@
    "longitude": -6.923804,
    "history": [
     {
+     "start": "2026-11-02",
+     "end": "2026-11-03",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-01",
      "end": "2026-11-02",
      "label": "Garde Jour"
@@ -41776,16 +41781,11 @@
     {
      "start": "2026-09-19",
      "end": "2026-09-20",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-08-14",
-     "end": "2026-08-15",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-02T01:02:56.972Z"
+  "fetchedAt": "2026-11-03T00:59:43.489Z"
  },
  "s241972": {
   "detail": {
@@ -51292,5 +51292,67 @@
    ]
   },
   "fetchedAt": "2026-11-02T17:05:32.697Z"
+ },
+ "s243405": {
+  "detail": {
+   "name": "Pharmacie Hay Ryad",
+   "address": "hay ryad, entre l'école al wahda et café al mohajir",
+   "phone": "+212524316501",
+   "latitude": 32.2314023,
+   "longitude": -7.9458809,
+   "history": [
+    {
+     "start": "2026-11-03",
+     "end": "2026-11-04",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-01-12",
+     "end": "2026-01-13",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-01-03",
+     "end": "2026-01-09",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2025-12-05",
+     "end": "2025-12-06",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2024-12-28",
+     "end": "2025-01-03",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2024-07-06",
+     "end": "2024-07-12",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2024-06-30",
+     "end": "2024-07-01",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2024-04-18",
+     "end": "2024-04-19",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2024-01-31",
+     "end": "2024-02-01",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2024-01-20",
+     "end": "2024-01-26",
+     "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
+    }
+   ]
+  },
+  "fetchedAt": "2026-11-03T01:00:14.471Z"
  }
 }
