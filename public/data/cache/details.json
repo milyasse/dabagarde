@@ -41734,6 +41734,11 @@
    "longitude": -6.923804,
    "history": [
     {
+     "start": "2026-11-03",
+     "end": "2026-11-04",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-02",
      "end": "2026-11-03",
      "label": "Garde Jour"
@@ -41776,16 +41781,11 @@
     {
      "start": "2026-09-20",
      "end": "2026-09-21",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-09-19",
-     "end": "2026-09-20",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-03T00:59:43.489Z"
+  "fetchedAt": "2026-11-04T01:00:48.653Z"
  },
  "s241972": {
   "detail": {
@@ -47673,6 +47673,11 @@
    "longitude": -6.8885059,
    "history": [
     {
+     "start": "2026-11-03",
+     "end": "2026-11-04",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-02",
      "end": "2026-11-03",
      "label": "Garde Jour"
@@ -47715,16 +47720,11 @@
     {
      "start": "2026-08-15",
      "end": "2026-08-16",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-07-17",
-     "end": "2026-07-18",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-02T11:04:29.850Z"
+  "fetchedAt": "2026-11-04T01:00:46.211Z"
  },
  "s258080": {
   "detail": {
@@ -47735,13 +47735,18 @@
    "longitude": -6.923804,
    "history": [
     {
+     "start": "2026-11-03",
+     "end": "2026-11-04",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-02",
      "end": "2026-11-03",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-02T11:04:32.842Z"
+  "fetchedAt": "2026-11-04T01:00:51.643Z"
  },
  "s247226": {
   "detail": {
@@ -53578,5 +53583,22 @@
    ]
   },
   "fetchedAt": "2026-11-03T10:59:30.235Z"
+ },
+ "s258031": {
+  "detail": {
+   "name": "Pharmacie Manal Basri",
+   "address": "hay takkadoum groupe 3, ben guerir 43150",
+   "phone": "+212524324884",
+   "latitude": 32.25044,
+   "longitude": -7.9508165,
+   "history": [
+    {
+     "start": "2026-11-04",
+     "end": "2026-11-05",
+     "label": "Garde Nuit FAQ Questions fréquentes sur Pharm"
+    }
+   ]
+  },
+  "fetchedAt": "2026-11-04T01:01:22.266Z"
  }
 }
