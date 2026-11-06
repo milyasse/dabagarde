@@ -41734,6 +41734,11 @@
    "longitude": -6.923804,
    "history": [
     {
+     "start": "2026-11-05",
+     "end": "2026-11-06",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-04",
      "end": "2026-11-05",
      "label": "Garde Jour"
@@ -41776,16 +41781,11 @@
     {
      "start": "2026-09-22",
      "end": "2026-09-23",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-09-21",
-     "end": "2026-09-22",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-05T01:02:37.749Z"
+  "fetchedAt": "2026-11-06T01:05:35.788Z"
  },
  "s241972": {
   "detail": {
@@ -47673,6 +47673,11 @@
    "longitude": -6.8885059,
    "history": [
     {
+     "start": "2026-11-05",
+     "end": "2026-11-06",
+     "label": "Garde Jour"
+    },
+    {
      "start": "2026-11-04",
      "end": "2026-11-05",
      "label": "Garde Jour"
@@ -47715,16 +47720,11 @@
     {
      "start": "2026-09-07",
      "end": "2026-09-08",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2026-08-16",
-     "end": "2026-08-17",
      "label": "Garde Jour FAQ Questions fréquentes sur Pharm"
     }
    ]
   },
-  "fetchedAt": "2026-11-05T01:02:35.197Z"
+  "fetchedAt": "2026-11-06T01:05:33.520Z"
  },
  "s258080": {
   "detail": {
@@ -47734,6 +47734,11 @@
    "latitude": 33.917166,
    "longitude": -6.923804,
    "history": [
+    {
+     "start": "2026-11-05",
+     "end": "2026-11-06",
+     "label": "Garde Jour"
+    },
     {
      "start": "2026-11-04",
      "end": "2026-11-05",
@@ -47751,7 +47756,7 @@
     }
    ]
   },
-  "fetchedAt": "2026-11-05T01:02:40.749Z"
+  "fetchedAt": "2026-11-06T01:05:38.784Z"
  },
  "s247226": {
   "detail": {
@@ -57808,5 +57813,67 @@
    ]
   },
   "fetchedAt": "2026-11-05T14:59:31.164Z"
+ },
+ "s243334": {
+  "detail": {
+   "name": "Pharmacie Hay Takadoum",
+   "address": "hay takadoum (ex sshita) près de hamam",
+   "phone": "+212524317673",
+   "latitude": 32.23903275,
+   "longitude": -7.95813084,
+   "history": [
+    {
+     "start": "2026-11-06",
+     "end": "2026-11-07",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-10-10",
+     "end": "2026-10-16",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-09-29",
+     "end": "2026-09-30",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-05-09",
+     "end": "2026-05-10",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-04-10",
+     "end": "2026-04-11",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-03-21",
+     "end": "2026-03-27",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2026-02-14",
+     "end": "2026-02-15",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2026-01-18",
+     "end": "2026-01-19",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-12-11",
+     "end": "2025-12-12",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2025-09-22",
+     "end": "2025-09-23",
+     "label": "Garde Nuit FAQ Questions fréquentes sur Pharm"
+    }
+   ]
+  },
+  "fetchedAt": "2026-11-06T01:06:09.266Z"
  }
 }
