@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generatedAt": "2026-11-07T08:52:29.701Z",
+ "generatedAt": "2026-11-07T10:43:58.214Z",
  "records": [
   {
    "id": "ain-aouda-zahrawi",
@@ -962,7 +962,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-almahatta-s236049.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:29:53.136Z",
+     "lastCheckedAt": "2026-11-07T10:49:52.591Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
@@ -2000,7 +2000,7 @@
    "phone": "+212537873017",
    "dutyDate": "2026-11-06",
    "dutyType": "continuous",
-   "dutyLabel": "Hay Arrahma (24h/24h)",
+   "dutyLabel": "Ouvert 24h/24",
    "hoursText": "24h/24",
    "dutyStartDate": "2026-11-06",
    "dutyEndDate": "2026-11-07",
@@ -2026,7 +2026,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-ibn-al-haytam-s243943.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:30:02.562Z",
+     "lastCheckedAt": "2026-11-07T10:50:43.686Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
@@ -2271,14 +2271,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-de-sefrou-s235886.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:29:38.204Z",
+     "lastCheckedAt": "2026-11-07T10:48:28.679Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
@@ -2296,8 +2296,8 @@
    "coordinatesSource": "source",
    "phone": "+212532021550",
    "dutyDate": "2026-11-06",
-   "dutyType": "day",
-   "dutyLabel": "Garde de jour",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-11-06",
    "dutyEndDate": "2026-11-07",
@@ -2308,14 +2308,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-imane-s238342.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:29:38.204Z",
+     "lastCheckedAt": "2026-11-07T10:48:28.679Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
     }
    ],
    "verificationStatus": "confirmed",
@@ -2345,14 +2345,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-setti-massaouda-s235892.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:29:38.204Z",
+     "lastCheckedAt": "2026-11-07T10:48:28.679Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
@@ -2382,14 +2382,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-zine-el-abidine-s235937.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-07",
-     "lastCheckedAt": "2026-11-07T08:29:38.204Z",
+     "lastCheckedAt": "2026-11-07T10:48:28.679Z",
      "historyMatch": {
       "start": "2026-11-06",
       "end": "2026-11-07",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
