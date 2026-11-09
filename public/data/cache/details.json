@@ -40363,6 +40363,11 @@
    "longitude": -5.371433333333,
    "history": [
     {
+     "start": "2026-11-09",
+     "end": "2026-11-15",
+     "label": "Garde Nuit"
+    },
+    {
      "start": "2026-10-26",
      "end": "2026-11-01",
      "label": "Garde Jour"
@@ -40405,16 +40410,11 @@
     {
      "start": "2025-02-10",
      "end": "2025-02-16",
-     "label": "Garde Jour"
-    },
-    {
-     "start": "2025-01-27",
-     "end": "2025-02-02",
-     "label": "Garde Nuit FAQ Questions fréquentes sur Grand"
+     "label": "Garde Jour FAQ Questions fréquentes sur Grand"
     }
    ]
   },
-  "fetchedAt": "2026-11-02T08:47:26.489Z"
+  "fetchedAt": "2026-11-09T20:28:22.744Z"
  },
  "s238621": {
   "detail": {
@@ -72681,5 +72681,47 @@
    ]
   },
   "fetchedAt": "2026-11-09T14:57:56.271Z"
+ },
+ "s241163": {
+  "detail": {
+   "name": "Pharmacie Fadil",
+   "address": "K050 rue de Sebta km 5 n°13 Mallalienne Hajrat Laâroussa",
+   "phone": "+212539994311",
+   "latitude": 35.6049,
+   "longitude": -5.3355,
+   "history": [
+    {
+     "start": "2026-11-09",
+     "end": "2026-11-15",
+     "label": "Garde Nuit"
+    },
+    {
+     "start": "2022-07-04",
+     "end": "2022-07-10",
+     "label": "Garde Jour"
+    },
+    {
+     "start": "2021-04-26",
+     "end": "2021-05-02",
+     "label": "Garde Jour et Nuit"
+    },
+    {
+     "start": "2021-04-19",
+     "end": "2021-04-25",
+     "label": "Garde Jour et Nuit"
+    },
+    {
+     "start": "2021-03-01",
+     "end": "2021-03-07",
+     "label": "Garde Jour et Nuit"
+    },
+    {
+     "start": "2020-07-13",
+     "end": "2020-07-19",
+     "label": "Garde Jour Services / Spécialités : Pharmacie"
+    }
+   ]
+  },
+  "fetchedAt": "2026-11-09T20:28:20.323Z"
  }
 }

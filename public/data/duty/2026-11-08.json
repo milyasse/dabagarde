@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "generatedAt": "2026-11-09T14:56:49.756Z",
+ "generatedAt": "2026-11-09T20:27:40.230Z",
  "records": [
   {
    "id": "ain-aouda-afaq",
@@ -559,7 +559,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-almahatta-s236049.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T14:58:02.598Z",
+     "lastCheckedAt": "2026-11-09T20:28:25.733Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
@@ -596,7 +596,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-el-bachiri-s236963.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T14:58:02.598Z",
+     "lastCheckedAt": "2026-11-09T20:28:25.733Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
@@ -2046,7 +2046,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-mhirez-s235918.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T14:57:23.197Z",
+     "lastCheckedAt": "2026-11-09T20:28:04.817Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
@@ -2071,7 +2071,7 @@
    "coordinatesSource": "source",
    "phone": "+212535660672",
    "dutyDate": "2026-11-08",
-   "dutyType": "night",
+   "dutyType": "day",
    "dutyLabel": "Garde de nuit",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-11-08",
@@ -2083,14 +2083,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-setti-massaouda-s235892.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T14:57:23.197Z",
+     "lastCheckedAt": "2026-11-09T20:28:04.817Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
       "label": "Garde Jour"
      },
-     "dutyType": "night",
-     "dutyLabel": "Garde de nuit"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
