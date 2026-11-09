@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "generatedAt": "2026-11-09T08:48:47.001Z",
+ "generatedAt": "2026-11-09T10:58:43.653Z",
  "records": [
   {
    "id": "ain-aouda-afaq",
@@ -559,7 +559,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-almahatta-s236049.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T08:53:38.544Z",
+     "lastCheckedAt": "2026-11-09T11:01:58.358Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
@@ -596,7 +596,7 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-el-bachiri-s236963.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T08:53:38.544Z",
+     "lastCheckedAt": "2026-11-09T11:01:58.358Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
@@ -2046,14 +2046,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-mhirez-s235918.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T08:52:38.366Z",
+     "lastCheckedAt": "2026-11-09T11:01:05.967Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
       "label": "Garde Jour et Nuit"
      },
-     "dutyType": "continuous",
-     "dutyLabel": "Ouvert 24h/24"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
@@ -2071,8 +2071,8 @@
    "coordinatesSource": "source",
    "phone": "+212535660672",
    "dutyDate": "2026-11-08",
-   "dutyType": "day",
-   "dutyLabel": "Garde de jour",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
    "hoursText": "9h-23h",
    "dutyStartDate": "2026-11-08",
    "dutyEndDate": "2026-11-09",
@@ -2083,14 +2083,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-setti-massaouda-s235892.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T08:52:38.366Z",
+     "lastCheckedAt": "2026-11-09T11:01:05.967Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
     }
    ],
    "verificationStatus": "confirmed",
@@ -3194,14 +3194,14 @@
      "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacie-granada-s236248.html",
      "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
      "sourcePublishedAt": "2026-11-09",
-     "lastCheckedAt": "2026-11-09T08:53:50.513Z",
+     "lastCheckedAt": "2026-11-09T11:03:13.348Z",
      "historyMatch": {
       "start": "2026-11-08",
       "end": "2026-11-09",
       "label": "Garde Jour"
      },
-     "dutyType": "day",
-     "dutyLabel": "Garde de jour"
+     "dutyType": null,
+     "dutyLabel": null
     }
    ],
    "verificationStatus": "confirmed",
