@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-18T17:11:08.958Z",
- "todayMorocco": "2026-11-18",
+ "generatedAt": "2026-11-19T00:16:53.663Z",
+ "todayMorocco": "2026-11-19",
  "dates": [
   "2026-10-12",
   "2026-10-13",
@@ -56,13 +56,101 @@
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
+   "city": "rabat",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-rabat.html",
+   "ok": true,
+   "pageDate": "2026-11-19",
+   "count": 10,
+   "error": null,
+   "checkedAt": "2026-11-19T00:16:53.696Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "sale",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
+   "ok": true,
+   "pageDate": "2026-11-19",
+   "count": 7,
+   "error": null,
+   "checkedAt": "2026-11-19T00:16:54.498Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "temara",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
+   "ok": true,
+   "pageDate": "2026-11-19",
+   "count": 7,
+   "error": null,
+   "checkedAt": "2026-11-19T00:16:56.980Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "kenitra",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+   "ok": false,
+   "pageDate": "2026-11-19",
+   "count": 0,
+   "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
+   "checkedAt": "2026-11-19T00:17:03.053Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "casablanca",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+   "ok": true,
+   "pageDate": "2026-11-19",
+   "count": 40,
+   "error": null,
+   "checkedAt": "2026-11-19T00:17:05.872Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "mohammedia",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+   "ok": false,
+   "pageDate": "2026-11-19",
+   "count": 0,
+   "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
+   "checkedAt": "2026-11-19T00:17:08.939Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "berrechid",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-berrechid.html",
+   "ok": false,
+   "pageDate": "2026-11-19",
+   "count": 0,
+   "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
+   "checkedAt": "2026-11-19T00:17:12.018Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
+   "city": "settat",
+   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
+   "ok": true,
+   "pageDate": "2026-11-19",
+   "count": 4,
+   "error": null,
+   "checkedAt": "2026-11-19T00:17:14.977Z"
+  },
+  {
+   "sourceId": "annuaire-gratuit",
+   "sourceName": "annuaire-gratuit.ma",
    "city": "el-jadida",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 14,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:09.014Z"
+   "checkedAt": "2026-11-19T00:17:18.034Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -70,10 +158,10 @@
    "city": "khouribga",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 6,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:10.340Z"
+   "checkedAt": "2026-11-19T00:17:20.920Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -81,10 +169,10 @@
    "city": "marrakech",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-marrakech.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 42,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:12.274Z"
+   "checkedAt": "2026-11-19T00:17:23.912Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -92,10 +180,10 @@
    "city": "ben-guerir",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-ben-guerir.html",
    "ok": false,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 0,
    "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
-   "checkedAt": "2026-11-18T17:11:15.640Z"
+   "checkedAt": "2026-11-19T00:17:26.949Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -103,10 +191,10 @@
    "city": "safi",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 7,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:18.188Z"
+   "checkedAt": "2026-11-19T00:17:29.828Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -114,10 +202,10 @@
    "city": "agadir",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-agadir.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 10,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:21.307Z"
+   "checkedAt": "2026-11-19T00:17:32.897Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -125,65 +213,65 @@
    "city": "inezgane",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-inezgane.html",
    "ok": true,
-   "pageDate": "2026-11-18",
+   "pageDate": "2026-11-19",
    "count": 4,
    "error": null,
-   "checkedAt": "2026-11-18T17:11:24.359Z"
+   "checkedAt": "2026-11-19T00:17:35.913Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "ait-melloul",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-ait-melloul.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 5,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:27.436Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:21:38.662Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "dcheira",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-dcheira.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 1,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:30.299Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:21:52.004Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "tikiouine",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-tikiouine.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 1,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:33.173Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:22:05.344Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "fes",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 12,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:36.767Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:22:18.685Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "sefrou",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 6,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:39.357Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:22:32.023Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -191,32 +279,32 @@
    "city": "meknes",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-meknes.html",
    "ok": false,
-   "pageDate": "2026-11-18",
+   "pageDate": null,
    "count": 0,
-   "error": "Aucune pharmacie extraite : la structure de la page a peut-être changé.",
-   "checkedAt": "2026-11-18T17:11:42.287Z"
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:22:45.358Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "tanger",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 20,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:45.244Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:22:58.709Z"
   },
   {
    "sourceId": "annuaire-gratuit",
    "sourceName": "annuaire-gratuit.ma",
    "city": "tetouan",
    "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
-   "ok": true,
-   "pageDate": "2026-11-18",
-   "count": 2,
-   "error": null,
-   "checkedAt": "2026-11-18T17:11:48.378Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : HTTP 404",
+   "checkedAt": "2026-11-19T00:23:12.055Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -227,7 +315,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:15:53.015Z"
+   "checkedAt": "2026-11-19T00:23:25.397Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -238,7 +326,7 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:16:06.584Z"
+   "checkedAt": "2026-11-19T00:23:38.732Z"
   },
   {
    "sourceId": "annuaire-gratuit",
@@ -249,227 +337,73 @@
    "pageDate": null,
    "count": 0,
    "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:16:20.152Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "rabat",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-rabat.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:16:33.680Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "sale",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-sale.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:16:47.105Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "temara",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-temara.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:17:00.717Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "kenitra",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:17:14.347Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "casablanca",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:17:27.968Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "mohammedia",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:17:41.555Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "berrechid",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-berrechid.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:17:54.943Z"
-  },
-  {
-   "sourceId": "annuaire-gratuit",
-   "sourceName": "annuaire-gratuit.ma",
-   "city": "settat",
-   "url": "https://www.annuaire-gratuit.ma/pharmacie-garde-settat.html",
-   "ok": false,
-   "pageDate": null,
-   "count": 0,
-   "error": "Page inaccessible : HTTP 404",
-   "checkedAt": "2026-11-18T17:18:08.347Z"
+   "checkedAt": "2026-11-19T00:23:52.072Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "rabat",
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
-   "ok": true,
-   "pageDate": "2026-11-16",
-   "count": 45,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:23.971Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "rabat",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 56,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:23.994Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:06.122Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "sale",
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
-   "ok": true,
-   "pageDate": "2026-11-16",
-   "count": 49,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:29.235Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "sale",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 56,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:29.250Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:08.549Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "temara",
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
-   "ok": true,
-   "pageDate": "2026-11-16",
-   "count": 31,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:35.125Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "temara",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 38,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:35.131Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:14.543Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "ain-aouda",
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
-   "ok": true,
-   "pageDate": "2026-11-16",
-   "count": 31,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:41.162Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "ain-aouda",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 38,
-   "error": null,
-   "checkedAt": "2026-11-18T17:18:41.165Z"
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:17.542Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "kenitra",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
-   "ok": true,
-   "pageDate": "2026-11-16",
-   "count": 6,
-   "error": null,
-   "checkedAt": "2026-11-18T17:19:17.231Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "kenitra",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 4,
-   "error": null,
-   "checkedAt": "2026-11-18T17:19:17.233Z"
+   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra.html",
+   "ok": false,
+   "pageDate": null,
+   "count": 0,
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:26.545Z"
   },
   {
    "sourceId": "guidepharmacies",
    "sourceName": "guidepharmacies.ma",
    "city": "casablanca",
    "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/casablanca.html",
-   "ok": true,
-   "pageDate": "2026-08-03",
+   "ok": false,
+   "pageDate": null,
    "count": 0,
-   "error": null,
-   "checkedAt": "2026-11-18T17:19:22.723Z"
-  },
-  {
-   "sourceId": "guidepharmacies",
-   "sourceName": "guidepharmacies.ma",
-   "city": "casablanca",
-   "url": "https://www.guidepharmacies.ma/pharmacies-de-garde/casablanca.html?date=2026-11-23",
-   "ok": true,
-   "pageDate": "2026-11-23",
-   "count": 0,
-   "error": null,
-   "checkedAt": "2026-11-18T17:19:22.723Z"
+   "error": "Page inaccessible : planning illisible",
+   "checkedAt": "2026-11-19T00:24:29.546Z"
   }
  ],
  "connectors": [
