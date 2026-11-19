@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "generatedAt": "2026-11-19T01:27:05.784Z",
+ "generatedAt": "2026-11-19T10:11:49.877Z",
  "records": [
   {
    "id": "ain-aouda-mamoune",
@@ -25,7 +25,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-mamoune-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:37.597Z",
+     "lastCheckedAt": "2026-11-19T10:14:58.973Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -64,7 +64,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-mostaocef.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:37.597Z",
+     "lastCheckedAt": "2026-11-19T10:14:58.973Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -103,7 +103,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-jardins-des-oudayas-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:37.597Z",
+     "lastCheckedAt": "2026-11-19T10:14:58.973Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -142,7 +142,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-miramar.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:37.597Z",
+     "lastCheckedAt": "2026-11-19T10:14:58.973Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -181,7 +181,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-sami.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:37.597Z",
+     "lastCheckedAt": "2026-11-19T10:14:58.973Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -196,6 +196,302 @@
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
    ]
+  },
+  {
+   "id": "fes-marwa",
+   "name": "Pharmacie Al Marwa",
+   "address": "pharmacie almarwa, lot alhadiqa 2 al olya, route oued fes",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.0607959,
+   "longitude": -5.0286279,
+   "coordinatesSource": "source",
+   "phone": "+212535646499",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-marwa-s243882.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-assanabil",
+   "name": "Pharmacie Assanabil",
+   "address": "pharmacie asanabil, immeuble bennani, bd sanabil. pres du dernier arrêt du bus n°14",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.021274,
+   "longitude": -5.0354208,
+   "coordinatesSource": "source",
+   "phone": "+212535606379",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-assanabil-s247389.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-bab-boujloud",
+   "name": "Pharmacie Bab Boujloud",
+   "address": "place bab boujloud fès médina",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.0619756,
+   "longitude": -4.9857939,
+   "coordinatesSource": "source",
+   "phone": "+212535633222",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-boujloud-s240973.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-chifae-oulad-maala",
+   "name": "Pharmacie Chifae Oulad Maala",
+   "address": "hay ain chkef douar oulad maala",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.0405315,
+   "longitude": -5.0087831,
+   "coordinatesSource": "source",
+   "phone": "+212666271416",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifae-oulad-maala-s253305.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-taiba",
+   "name": "Pharmacie Taiba",
+   "address": "pharmacie taiba, lotissement el fadila n° 20, ain amer, route ain chkef",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.033298492432,
+   "longitude": -5,
+   "coordinatesSource": "source",
+   "phone": "+212535607777",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-taiba-s98963.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "fes-yousra",
+   "name": "Pharmacie Yousra",
+   "address": "pharmacie yousra, 801 quartier industriel sidi brahim",
+   "city": "fes",
+   "district": null,
+   "latitude": 34.0294166,
+   "longitude": -4.9818244,
+   "coordinatesSource": "source",
+   "phone": "+212535640583",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-yousra-s97580.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-fes.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:26.163Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "kenitra-chark-madina",
+   "name": "Pharmacie Chark Al Madina",
+   "address": "lotiss. El Wafa 1320 local n°4",
+   "city": "kenitra",
+   "district": null,
+   "latitude": 34.227152040337,
+   "longitude": -6.5457981670456,
+   "coordinatesSource": "source",
+   "phone": "+212608556141",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chark-al-madina-s240957.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:14:17.111Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "kenitra-marche",
+   "name": "Pharmacie du Marché",
+   "address": "1 bd Prince Moulay Abdallah",
+   "city": "kenitra",
+   "district": null,
+   "latitude": 34.263514640279,
+   "longitude": -6.5844176031242,
+   "coordinatesSource": "source",
+   "phone": "+212537371054",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-marche-s236188.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-kenitra.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:14:17.111Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "kenitra-florida",
@@ -220,7 +516,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia/pharmacie-florida-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:35:11.532Z",
+     "lastCheckedAt": "2026-11-19T10:15:36.358Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -235,6 +531,265 @@
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
    ]
+  },
+  {
+   "id": "nador-afra",
+   "name": "Pharmacie Afra",
+   "address": "96, av Mly. Rachid , Jaadar",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.178594154912,
+   "longitude": -2.9254365766601,
+   "coordinatesSource": "source",
+   "phone": "+212536350808",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-afra-s237066.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-masjid",
+   "name": "Pharmacie Al Masjid",
+   "address": "bd Mohammed V",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.177383,
+   "longitude": -2.925266,
+   "coordinatesSource": "source",
+   "phone": "+212536350148",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-masjid-s235969.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-almahatta",
+   "name": "Pharmacie AlMahatta",
+   "address": "254, av Hassan II",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.1751,
+   "longitude": -2.922383333333,
+   "coordinatesSource": "source",
+   "phone": "+212536604408",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-almahatta-s236049.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-amal",
+   "name": "Pharmacie Amal",
+   "address": "4 bd prince Héritier sidi Mohammed q. administratif",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.17576666667,
+   "longitude": -2.926716666667,
+   "coordinatesSource": "source",
+   "phone": "+212536337600",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-amal-s246446.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-dar-makhzen",
+   "name": "Pharmacie Dar El Makhzen",
+   "address": "Douar Bouyzarzaren",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.162917444485,
+   "longitude": -2.9697657911804,
+   "coordinatesSource": "source",
+   "phone": "+212536330361",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-dar-el-makhzen-s235955.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-laarassi",
+   "name": "Pharmacie Laârassi",
+   "address": "356 bd Prince Héritier Sidi Mohamed q. Laârassi",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.1769,
+   "longitude": -2.925366666667,
+   "coordinatesSource": "source",
+   "phone": "+212536600380",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-laarassi-s237589.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-noor",
+   "name": "Pharmacie Noor",
+   "address": "213 bd Massira El Khadra",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.17365,
+   "longitude": -2.928733333333,
+   "coordinatesSource": "source",
+   "phone": "+212536337657",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-noor-s238700.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:35.258Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "rabat-bahja",
@@ -259,7 +814,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-al-bahja-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -298,7 +853,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/carre-sante-beaute.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -337,7 +892,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-chems-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -376,7 +931,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-descartes.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -415,7 +970,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-errahma.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -454,7 +1009,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-ibn-baytar-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -493,7 +1048,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-normale-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:21.628Z",
+     "lastCheckedAt": "2026-11-19T10:14:38.043Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -532,7 +1087,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-abdedine.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -571,7 +1126,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-alkhadraa-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -649,7 +1204,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-argana-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -688,7 +1243,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-du-maghreb-arabe-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -727,7 +1282,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-dyar.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -766,7 +1321,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-inbiat.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -805,7 +1360,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-machaallah.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -844,7 +1399,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-parc-addoha.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -883,7 +1438,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-sakani.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -922,7 +1477,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-volubilis.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:25.431Z",
+     "lastCheckedAt": "2026-11-19T10:14:43.662Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -937,6 +1492,413 @@
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
    ]
+  },
+  {
+   "id": "sefrou-province",
+   "name": "Pharmacie la Province",
+   "address": "q. chram v.n.",
+   "city": "sefrou",
+   "district": null,
+   "latitude": 33.828709,
+   "longitude": -4.833836,
+   "coordinatesSource": "source",
+   "phone": "+212535682139",
+   "dutyDate": "2026-11-19",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-province-s235916.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-sefrou.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:47.227Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "selouane-jamiaa",
+   "name": "Pharmacie Al Jamiaa",
+   "address": "lotiss. Al Omrane lot. n°3079",
+   "city": "selouane",
+   "district": null,
+   "latitude": 35.064614,
+   "longitude": -2.91082,
+   "coordinatesSource": "source",
+   "phone": "+212536358625",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-jamiaa-s235977.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:59.242Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "selouane-manco",
+   "name": "Pharmacie Manco",
+   "address": "bd Mohammed V",
+   "city": "selouane",
+   "district": null,
+   "latitude": 35.07494,
+   "longitude": -2.939456,
+   "coordinatesSource": "source",
+   "phone": "+212611162101",
+   "dutyDate": "2026-11-19",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-manco-s236464.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:13:59.242Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-amalat-beni-makada",
+   "name": "Pharmacie Amalat Beni Makada",
+   "address": "avenue principale gorziana, bir aharchoun, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7416133,
+   "longitude": -5.8096704,
+   "coordinatesSource": "source",
+   "phone": "+212539953664",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-amalat-beni-makada-s237835.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-anfa",
+   "name": "Pharmacie Anfa",
+   "address": "23, avenue haroun errachid, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7689108,
+   "longitude": -5.8170894,
+   "coordinatesSource": "source",
+   "phone": "+212539331288",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-anfa-s165295.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-grand-stade",
+   "name": "Pharmacie Du Grand Stade",
+   "address": "avenue des far, (roca), 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7381812,
+   "longitude": -5.8478982,
+   "coordinatesSource": "source",
+   "phone": "+212539385750",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-grand-stade-s238564.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-gharbi",
+   "name": "Pharmacie El Gharbi",
+   "address": "route de la nouvelle gare, complexe résidentiel maria towers, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7226316,
+   "longitude": -5.8253049,
+   "coordinatesSource": "source",
+   "phone": "+212667287488",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-gharbi-s251905.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-fares",
+   "name": "Pharmacie Fares",
+   "address": "34 bis, avenue abdesslam ben bouhout, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7553295,
+   "longitude": -5.7950379,
+   "coordinatesSource": "source",
+   "phone": "+212539956469",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fares-s165252.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-mediterranee",
+   "name": "Pharmacie Mediterranee",
+   "address": "66, avenue plage walidia, tanja balia, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7691965,
+   "longitude": -5.767555,
+   "coordinatesSource": "source",
+   "phone": "+212539945046",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mediterranee-s164926.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-mehdia-golf",
+   "name": "Pharmacie Mehdia Golf",
+   "address": "lot golf 4, nr. 10, al moujahidine, 90040 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7640284,
+   "longitude": -5.8518934,
+   "coordinatesSource": "source",
+   "phone": "+212539377343",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mehdia-golf-s238386.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-tingis",
+   "name": "Pharmacie Tingis",
+   "address": "1, avenue imam mouslim, dradeb ain hayyani, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7855257,
+   "longitude": -5.8255992,
+   "coordinatesSource": "source",
+   "phone": "+212539933635",
+   "dutyDate": "2026-11-19",
+   "dutyType": "day",
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": "2026-11-19",
+   "dutyEndDate": "2026-11-20",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-tingis-s241891.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-19",
+     "lastCheckedAt": "2026-11-19T10:12:56.183Z",
+     "historyMatch": {
+      "start": "2026-11-19",
+      "end": "2026-11-20",
+      "label": "Garde Jour"
+     },
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "temara-mamoune",
@@ -961,7 +1923,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-mamoune-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:31.437Z",
+     "lastCheckedAt": "2026-11-19T10:14:52.658Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -1000,7 +1962,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-mostaocef.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:31.437Z",
+     "lastCheckedAt": "2026-11-19T10:14:52.658Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -1039,7 +2001,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-jardins-des-oudayas-jeu.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:31.437Z",
+     "lastCheckedAt": "2026-11-19T10:14:52.658Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
@@ -1078,7 +2040,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-miramar.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:31.437Z",
+     "lastCheckedAt": "2026-11-19T10:14:52.658Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-20",
@@ -1117,7 +2079,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-sami.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-19T01:34:31.437Z",
+     "lastCheckedAt": "2026-11-19T10:14:52.658Z",
      "historyMatch": {
       "start": "2026-11-19",
       "end": "2026-11-19",
