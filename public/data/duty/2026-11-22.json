@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generatedAt": "2026-11-22T12:29:14.026Z",
+ "generatedAt": "2026-11-22T15:38:34.721Z",
  "records": [
   {
    "id": "ain-aouda-2000",
@@ -25,7 +25,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-2000-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -64,7 +64,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-anouar-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -103,7 +103,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-atlantique-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -181,7 +181,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-ennassim-sam.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -220,7 +220,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-khizrane-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -259,7 +259,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-mosquee-zahra-sam.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -298,7 +298,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-soussan-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:45.841Z",
+     "lastCheckedAt": "2026-11-22T15:40:57.730Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -337,7 +337,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia/pharmacie-mehdia-kasba-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:37:22.584Z",
+     "lastCheckedAt": "2026-11-22T15:41:33.233Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -376,7 +376,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia/pharmacie-nouha-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/kenitra-mehdia.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:37:22.584Z",
+     "lastCheckedAt": "2026-11-22T15:41:33.233Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -391,6 +391,117 @@
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
    ]
+  },
+  {
+   "id": "nador-grande",
+   "name": "La Grande Pharmacie",
+   "address": "97 av Abdelkarim Khattabi",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.17805,
+   "longitude": -2.926766666667,
+   "coordinatesSource": "source",
+   "phone": "+212536607360",
+   "dutyDate": "2026-11-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/la-grande-pharmacie-s236059.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:53.084Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-alikhlass",
+   "name": "Pharmacie Alikhlass",
+   "address": "route Zghanghan Ihddaden",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.15963333333,
+   "longitude": -2.969466666667,
+   "coordinatesSource": "source",
+   "phone": "+212536330508",
+   "dutyDate": "2026-11-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alikhlass-s235957.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:53.084Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "nador-rif",
+   "name": "Pharmacie du Rif",
+   "address": "85 bd. Youssef Ben Tachfine",
+   "city": "nador",
+   "district": null,
+   "latitude": 35.17688333333,
+   "longitude": -2.927833333333,
+   "coordinatesSource": "source",
+   "phone": "+212536337283",
+   "dutyDate": "2026-11-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-rif-s235967.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-nador.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:53.084Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "rabat-amana",
@@ -415,7 +526,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-al-amana-00hh.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -454,7 +565,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-al-kawthar-sam.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -493,7 +604,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-de-la-medina-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -532,7 +643,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-des-cliniques-00h-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -571,7 +682,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-du-cedre-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -610,7 +721,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-fellat-24hh.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -649,7 +760,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-les-iris-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -688,7 +799,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-les-lilas-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -727,7 +838,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-secteur-15-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -766,7 +877,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat/pharmacie-sofia-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/rabat.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:26.353Z",
+     "lastCheckedAt": "2026-11-22T15:40:40.014Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -805,7 +916,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-achouhadaa-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -844,7 +955,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-al-aaraf-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -883,7 +994,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-baassine-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -922,7 +1033,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-darshabab-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -961,7 +1072,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-du-myrte-00h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -1000,7 +1111,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/grande-pharmacie-de-sale-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1039,7 +1150,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-hay-karima-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1078,7 +1189,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-jardins-maamoura-24h.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1117,7 +1228,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-les-jumelles-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1156,7 +1267,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-moulay-ismail-s-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1234,7 +1345,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale/pharmacie-yahia-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/sale.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:34.850Z",
+     "lastCheckedAt": "2026-11-22T15:40:45.080Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1249,6 +1360,376 @@
    "notes": [
     "Garde publiée dans le planning hebdomadaire de la source."
    ]
+  },
+  {
+   "id": "selouane-chouhada",
+   "name": "Pharmacie El Chouhada",
+   "address": "hay ElJouhara , n°73",
+   "city": "selouane",
+   "district": null,
+   "latitude": 35.0652,
+   "longitude": -2.926416666667,
+   "coordinatesSource": "source",
+   "phone": "+212536609253",
+   "dutyDate": "2026-11-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-chouhada-s236064.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:40:05.500Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "selouane-taourirt-bousatta",
+   "name": "Pharmacie Taourirt Bousatta",
+   "address": "Taourirt Bousatta",
+   "city": "selouane",
+   "district": null,
+   "latitude": 35.08874227707,
+   "longitude": -2.9391886084106,
+   "coordinatesSource": "source",
+   "phone": "+212536609735",
+   "dutyDate": "2026-11-22",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-taourirt-bousatta-s236066.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-selouane.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:40:05.500Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Jour et Nuit"
+     },
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-ain-echifae",
+   "name": "Pharmacie Ain Echifae",
+   "address": "1, lot. el azizia rés. aya 4, complexe al hassani, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7352234,
+   "longitude": -5.8510096,
+   "coordinatesSource": "source",
+   "phone": "+212539384145",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-echifae-s237209.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-beni-ouriaghel",
+   "name": "Pharmacie Beni Ouriaghel",
+   "address": "2, rue 149, hay béni ouriaghel ii, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7452085,
+   "longitude": -5.8300729,
+   "coordinatesSource": "source",
+   "phone": "+212539315217",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-beni-ouriaghel-s237676.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-bouarraquia",
+   "name": "Pharmacie Bouarraquia",
+   "address": "34, av hassan ii, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.782583,
+   "longitude": -5.8180581,
+   "coordinatesSource": "source",
+   "phone": "+212539375885",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bouarraquia-s238396.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-doha-louama",
+   "name": "Pharmacie Doha Louama",
+   "address": "route al aouama, près de bureau adoha",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7241397,
+   "longitude": -5.8068678,
+   "coordinatesSource": "source",
+   "phone": "+212550111380",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-doha-louama-s237473.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-source",
+   "name": "Pharmacie La Source",
+   "address": "rue al kadissia, en face complexe al majd, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7420984,
+   "longitude": -5.796985,
+   "coordinatesSource": "source",
+   "phone": "+212539958247",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-source-s24497.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-masjid-mabrouka",
+   "name": "Pharmacie Masjid Mabrouka",
+   "address": "rue 3, nr.52, mabrouka, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7573132,
+   "longitude": -5.8127769,
+   "coordinatesSource": "source",
+   "phone": "+212539952910",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-masjid-mabrouka-s165212.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-moustaghfir",
+   "name": "Pharmacie Moustaghfir",
+   "address": "avenue moulay rachid, ziaten, 90000 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7467556,
+   "longitude": -5.8670981,
+   "coordinatesSource": "source",
+   "phone": "+212539310774",
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-moustaghfir-s101804.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
+  },
+  {
+   "id": "tanger-trial-atlas",
+   "name": "Pharmacie Trial Atlas",
+   "address": "hay moudjahidines, asspiranssa, 90040 tanger - maroc",
+   "city": "tanger",
+   "district": null,
+   "latitude": 35.7676255,
+   "longitude": -5.8391047,
+   "coordinatesSource": "source",
+   "phone": null,
+   "dutyDate": "2026-11-22",
+   "dutyType": "night",
+   "dutyLabel": "Garde de nuit",
+   "hoursText": null,
+   "dutyStartDate": "2026-11-22",
+   "dutyEndDate": "2026-11-23",
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-trial-atlas-s244551.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tanger.html",
+     "sourcePublishedAt": "2026-11-22",
+     "lastCheckedAt": "2026-11-22T15:39:14.407Z",
+     "historyMatch": {
+      "start": "2026-11-22",
+      "end": "2026-11-23",
+      "label": "Garde Nuit"
+     },
+     "dutyType": "night",
+     "dutyLabel": "Garde de nuit"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "medium",
+   "notes": []
   },
   {
    "id": "temara-2000",
@@ -1273,7 +1754,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-2000-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -1312,7 +1793,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-al-anouar-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -1351,7 +1832,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-atlantique-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1429,7 +1910,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-ennassim-sam.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1468,7 +1949,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-khizrane-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
@@ -1507,7 +1988,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-mosquee-zahra-sam.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-23",
@@ -1546,7 +2027,7 @@
      "sourceUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/ain-aouda/pharmacie-soussan-dim.html",
      "listingUrl": "https://www.guidepharmacies.ma/pharmacies-de-garde/temara.html",
      "sourcePublishedAt": "2026-11-16",
-     "lastCheckedAt": "2026-11-22T12:36:39.731Z",
+     "lastCheckedAt": "2026-11-22T15:40:51.818Z",
      "historyMatch": {
       "start": "2026-11-22",
       "end": "2026-11-22",
