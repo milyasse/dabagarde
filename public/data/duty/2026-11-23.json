@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "generatedAt": "2026-11-22T20:40:54.473Z",
+ "generatedAt": "2026-11-23T00:27:32.703Z",
  "records": [
   {
    "id": "ain-aouda-anouar",
@@ -237,6 +237,1896 @@
    ]
   },
   {
+   "id": "casablanca-afriquia",
+   "name": "Pharmacie Afriquia",
+   "address": "1017 route de Médiouna",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.554687102162,
+   "longitude": -7.5921039500153,
+   "coordinatesSource": "source",
+   "phone": "+212522371428",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-afriquia-s234821.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-adarissa",
+   "name": "Pharmacie Al Adarissa",
+   "address": "bd El Adarissa lotiss. Jnanat n°49",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.515753181439,
+   "longitude": -7.6450681445801,
+   "coordinatesSource": "source",
+   "phone": "+212522321080",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-adarissa-s258246.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-alaqsa",
+   "name": "Pharmacie AlAqsa",
+   "address": "6 rue du Soldat Emile Brunet résid. AlAmane",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.582259983407,
+   "longitude": -7.5761529944729,
+   "coordinatesSource": "source",
+   "phone": "+212522630063",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alaqsa-s237780.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-alhadika",
+   "name": "Pharmacie AlHadika",
+   "address": "résid. Alhadika (rte de Rabat) imm.2 n° B28 Beausite",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.60317091524,
+   "longitude": -7.5330782081413,
+   "coordinatesSource": "source",
+   "phone": "+212522666551",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alhadika-s11490.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-aloroba",
+   "name": "Pharmacie AlOroba",
+   "address": "avenue du Deux Mars lot. Rajaa Saïda rue 14 n°15",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5562,
+   "longitude": -7.60596,
+   "coordinatesSource": "source",
+   "phone": "+212522870365",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aloroba-s235205.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-anafe",
+   "name": "Pharmacie Anafé",
+   "address": "37 rue Félix et Max Guedj Branes",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5951,
+   "longitude": -7.62141,
+   "coordinatesSource": "source",
+   "phone": "+212522274194",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-anafe-s237561.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-ayour",
+   "name": "Pharmacie Ayour",
+   "address": "54 rue Lhoussine Assoussi (Sidi Moumen) lot Annasr Yamna",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5816,
+   "longitude": -7.53573,
+   "coordinatesSource": "source",
+   "phone": "+212522726250",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ayour-s241704.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-bachkou",
+   "name": "Pharmacie Bachkou",
+   "address": "carrière Bachkou (Polo) projet Erac 47-48",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5553257314,
+   "longitude": -7.6293450353348,
+   "coordinatesSource": "source",
+   "phone": "+212522833545",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bachkou-s237565.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-camya",
+   "name": "Pharmacie Camya",
+   "address": "Lotiss. Lina , lot 316, rue 13 n°1",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.518318557135,
+   "longitude": -7.6482510106716,
+   "coordinatesSource": "source",
+   "phone": "+212522580842",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-camya-s237570.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-carnot",
+   "name": "Pharmacie Carnot",
+   "address": "15, rue Jaafar El Barmaki",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.593522619009,
+   "longitude": -7.5831674929477,
+   "coordinatesSource": "source",
+   "phone": "+212522638657",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-carnot-s235008.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-carrieres-centrales",
+   "name": "Pharmacie carrières centrales",
+   "address": "avenue Chaouki Jilali Meskini ex Lhoucin B.A Toto, Projet Hassan II imm. 12 n°14",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.587346144225,
+   "longitude": -7.5554890073481,
+   "coordinatesSource": "source",
+   "phone": "+212522636158",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-carrieres-centrales-s235002.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-cite-cheminots",
+   "name": "Pharmacie Cité des Cheminots",
+   "address": "rue Echcharif Idrissi cité o.n.c.f bloc 2 n°1",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.599715518953,
+   "longitude": -7.5642047451064,
+   "coordinatesSource": "source",
+   "phone": "+212522400396",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-cite-des-cheminots-s234855.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-dakar",
+   "name": "Pharmacie Dakar",
+   "address": "hay Yasmina (Aïn Chok) rue 50 n°81",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.535736229697,
+   "longitude": -7.5799280164445,
+   "coordinatesSource": "source",
+   "phone": "+212522874471",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-dakar-s235212.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-opera",
+   "name": "Pharmacie De L'Opera",
+   "address": "82 rue Mohamed Bahi -ex Meissonnier",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.580552,
+   "longitude": -7.633008,
+   "coordinatesSource": "source",
+   "phone": "+212522231172",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-l-039-opera-s254058.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-commune",
+   "name": "Pharmacie de la commune",
+   "address": "3 bd Zagora",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.554723028858,
+   "longitude": -7.5965690391049,
+   "coordinatesSource": "source",
+   "phone": "+212522527171",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-commune-s234920.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-plage",
+   "name": "Pharmacie de la Plage",
+   "address": "46 bd Haj Ahmed Mekouar -ex C.Caillat El Gantour",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.617418219152,
+   "longitude": -7.5422241234481,
+   "coordinatesSource": "source",
+   "phone": "+212522351393",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-plage-s238289.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-sante",
+   "name": "Pharmacie de la Santé",
+   "address": "Hay Walaa Lot Attacharouk imm.8 n°2 tranche 7",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.571292706457,
+   "longitude": -7.5215953347886,
+   "coordinatesSource": "source",
+   "phone": "+212522717325",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-sante-s241708.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-derb-takadoum",
+   "name": "Pharmacie derb Takadoum",
+   "address": "hay Takadoum, rue 26 n°5",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.583435822175,
+   "longitude": -7.5652992484772,
+   "coordinatesSource": "source",
+   "phone": "+212522613110",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-derb-takadoum-s237556.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-enfants",
+   "name": "Pharmacie des enfants",
+   "address": "34 rue Ibn Jahir -ex Taravo Hassan",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.6015,
+   "longitude": -7.64416,
+   "coordinatesSource": "source",
+   "phone": "+212522209044",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-enfants-s237754.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-paradis",
+   "name": "Pharmacie du Paradis",
+   "address": "dar Lamane, bloc L n°8",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.59314121789,
+   "longitude": -7.5544778772247,
+   "coordinatesSource": "source",
+   "phone": "+212522608071",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-paradis-s234978.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-port",
+   "name": "Pharmacie du port",
+   "address": "357, bd Tahar El Alaoui",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5999,
+   "longitude": -7.62301,
+   "coordinatesSource": "source",
+   "phone": "+212522264794",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-port-s238288.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-quartier-industriel",
+   "name": "Pharmacie du Quartier industriel",
+   "address": "douar Lissasfa II (route d'El Jadida) bloc A n°508",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.53192927457,
+   "longitude": -7.6697482890152,
+   "coordinatesSource": "source",
+   "phone": "+212522651575",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-quartier-industriel-s235022.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-elkawtar",
+   "name": "Pharmacie ElKawtar",
+   "address": "10 bd Oued Sebou (hay El Oulfa) Mosquée Ferrara I Oulfa",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5565,
+   "longitude": -7.67451,
+   "coordinatesSource": "source",
+   "phone": "+212522904050",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elkawtar-s106868.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-ennour",
+   "name": "Pharmacie Ennour",
+   "address": "219, bd Abou Dar Ghafari-ex E, lot. Tarik",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.609340665936,
+   "longitude": -7.5122623413547,
+   "coordinatesSource": "source",
+   "phone": "+212522731525",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ennour-s235111.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-erreda",
+   "name": "Pharmacie Erreda",
+   "address": "162 avenue Aviateur Bourgadam",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.590376028447,
+   "longitude": -7.5734871286652,
+   "coordinatesSource": "source",
+   "phone": "+212522602012",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-erreda-s234973.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-essalama",
+   "name": "Pharmacie Essalama",
+   "address": "342 av du Six Novembre 1975 - ex B",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5506,
+   "longitude": -7.58018,
+   "coordinatesSource": "source",
+   "phone": "+212522371203",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-essalama-s234819.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-ezohours",
+   "name": "Pharmacie Ezohours",
+   "address": "hay Aïn Chiffa (Ben Msik sud) I rue 2 n°30",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.570808220926,
+   "longitude": -7.5849725994888,
+   "coordinatesSource": "source",
+   "phone": "+212522833149",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ezohours-s235189.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-garden-california",
+   "name": "Pharmacie Garden California",
+   "address": "lotiss. La Colline - Casablanca résid. California Garden",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.534557,
+   "longitude": -7.640171,
+   "coordinatesSource": "source",
+   "phone": "+212522787544",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-garden-california-s252524.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-hay-azzeddine",
+   "name": "Pharmacie Hay Azzeddine",
+   "address": "hay Azeddine, rue 4 n°3",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.574148584009,
+   "longitude": -7.5679637039105,
+   "coordinatesSource": "source",
+   "phone": "+212522625301",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-azzeddine-s234994.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-khlil",
+   "name": "Pharmacie Khlil",
+   "address": "derb El Miter II, rue 11, n°50",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.604,
+   "longitude": -7.62148,
+   "coordinatesSource": "source",
+   "phone": "+212522828350",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-khlil-s238143.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-mission",
+   "name": "Pharmacie la Mission",
+   "address": "K120 cité Sidi Bernoussi km 12 résid. Al Boustane II",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.617378679174,
+   "longitude": -7.4957273678765,
+   "coordinatesSource": "source",
+   "phone": "+212522741930",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-mission-s237316.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-porte-anassi",
+   "name": "Pharmacie La Porte D'Anassi",
+   "address": "lot. Anassi 1C M1 Bis 25 Ahl Loghlam",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5869,
+   "longitude": -7.50148,
+   "coordinatesSource": "source",
+   "phone": "+212522768558",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-porte-d-039-anassi-s254006.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-massira-hassania",
+   "name": "Pharmacie Massira Hassania",
+   "address": "lotiss. Al Massira Al Hassania lot 55 rue 6",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.550303064421,
+   "longitude": -7.6755571510124,
+   "coordinatesSource": "source",
+   "phone": "+212522895777",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-massira-hassania-s238782.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-mazola",
+   "name": "Pharmacie Mazola",
+   "address": "hay Saada - ex Mazola (q. Aviation) n°51 rue 4",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.567379461478,
+   "longitude": -7.6707878468239,
+   "coordinatesSource": "source",
+   "phone": "+212522933689",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mazola-s241542.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-mediouna",
+   "name": "Pharmacie Médiouna",
+   "address": "866 route de Médiouna",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.55253532,
+   "longitude": -7.59016908,
+   "coordinatesSource": "source",
+   "phone": "+212522284979",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mediouna-s234713.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-merini",
+   "name": "Pharmacie Merini",
+   "address": "lotiss. Menzeh (Ain Diab) rue 13 lot Diar El Menzeh 2",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.532717,
+   "longitude": -7.678885,
+   "coordinatesSource": "source",
+   "phone": "+212522651399",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-merini-s235021.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-nouvelle-ain-borja",
+   "name": "Pharmacie Nouvelle Ain Borja",
+   "address": "136 X bd Ibn Tachfine",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.586357122689,
+   "longitude": -7.5861942852974,
+   "coordinatesSource": "source",
+   "phone": "+212522621760",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nouvelle-ain-borja-s241545.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-sahel",
+   "name": "Pharmacie Sahel",
+   "address": "142 route d' Azemmour Farah 1",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.5617,
+   "longitude": -7.71979,
+   "coordinatesSource": "source",
+   "phone": "+212522903838",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sahel-s235232.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-sakani",
+   "name": "Pharmacie Sakani",
+   "address": "lot. Al Azhar résid. Sakani imm. 8 n°801 bloc I",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.601229528181,
+   "longitude": -7.4803107736313,
+   "coordinatesSource": "source",
+   "phone": "+212522741352",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sakani-s235131.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "casablanca-yathrib",
+   "name": "Pharmacie Yathrib",
+   "address": "lotiss. Al Moustakbal Gh 4 n°24 Sidi Maârouf",
+   "city": "casablanca",
+   "district": null,
+   "latitude": 33.524920981379,
+   "longitude": -7.6500491726138,
+   "coordinatesSource": "source",
+   "phone": "+212522972573",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-yathrib-s235271.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-casablanca.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:29:21.018Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-achour",
+   "name": "Pharmacie Achour",
+   "address": "bd Abdelhamid Bnou Badis",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.237257,
+   "longitude": -8.503518,
+   "coordinatesSource": "source",
+   "phone": "+212523361665",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-achour-s241062.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-mahabba",
+   "name": "Pharmacie Al Mahabba",
+   "address": "431 hay Essalam 1 - Autre ville",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.223745,
+   "longitude": -8.500578,
+   "coordinatesSource": "source",
+   "phone": "+212523343077",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-mahabba-s251553.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-alimam-malik",
+   "name": "Pharmacie AlImam Malik",
+   "address": "15 lotiss. Laaroussi rue Laksiba",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.249354,
+   "longitude": -8.52528,
+   "coordinatesSource": "source",
+   "phone": "+212523390950",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alimam-malik-s54463.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-californie",
+   "name": "Pharmacie Californie",
+   "address": "7, lotiss. Al Massira, av. Al Massira",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.249522,
+   "longitude": -8.506441,
+   "coordinatesSource": "source",
+   "phone": "+212670855017",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-californie-s236484.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-ilyase-salam",
+   "name": "Pharmacie Ilyase Salam",
+   "address": "85 hay Essalam 1 - Autre ville",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.22119,
+   "longitude": -8.49957,
+   "coordinatesSource": "source",
+   "phone": "+212523395293",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ilyase-salam-s253284.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-islam",
+   "name": "Pharmacie Islam",
+   "address": "lotiss. Essalam n° 25",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.221379,
+   "longitude": -8.503044,
+   "coordinatesSource": "source",
+   "phone": "+212523342245",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-islam-s238321.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-khalil-jabrane",
+   "name": "Pharmacie Khalil Jabrane",
+   "address": "108 lotiss. El Wafa imm. A q. Al Matar",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.228595,
+   "longitude": -8.51984,
+   "coordinatesSource": "source",
+   "phone": "+212523371757",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-khalil-jabrane-s235380.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-lafrique",
+   "name": "Pharmacie Lafrique",
+   "address": "11 Extension Annakhil centre commercial Al Albabe",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.232059,
+   "longitude": -8.500716,
+   "coordinatesSource": "source",
+   "phone": "+212523378528",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lafrique-s243429.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-lokmane",
+   "name": "Pharmacie Lokmane",
+   "address": "12 bd Moulay Abdallah grp Ennakhil",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.24096666667,
+   "longitude": -8.519216666667,
+   "coordinatesSource": "source",
+   "phone": "+212523392269",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lokmane-s235391.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-mouilha",
+   "name": "Pharmacie Mouilha",
+   "address": "173 bd Abderrahmane Doukkali lotiss. Mouilha",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.25303333333,
+   "longitude": -8.5182,
+   "coordinatesSource": "source",
+   "phone": "+212523393513",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mouilha-s242387.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-nations-unies",
+   "name": "Pharmacie Nations Unies",
+   "address": "12 bd Allal Fassi hay Al Matar",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.239855,
+   "longitude": -8.52397,
+   "coordinatesSource": "source",
+   "phone": null,
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nations-unies-s253500.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-oscar",
+   "name": "Pharmacie Oscar",
+   "address": "23 bd Mohammed VI",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.2498,
+   "longitude": -8.50005,
+   "coordinatesSource": "source",
+   "phone": "+212523351235",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oscar-s243701.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-populaire",
+   "name": "Pharmacie populaire",
+   "address": "120 bd Mohamed Zerktouni",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.25463333333,
+   "longitude": -8.5068,
+   "coordinatesSource": "source",
+   "phone": "+212523342696",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-populaire-s238470.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "el-jadida-sanaa",
+   "name": "Pharmacie Sanaa",
+   "address": "lotiss. Saâda 3 résid. Nour Al Mohit A3 local L3",
+   "city": "el-jadida",
+   "district": null,
+   "latitude": 33.24314464615,
+   "longitude": -8.5357746391144,
+   "coordinatesSource": "source",
+   "phone": "+212523393534",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-21h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sanaa-s241825.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-el-jadida.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:42.193Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
    "id": "kenitra-saadaoui",
    "name": "Pharmacie Saadaoui",
    "address": "أمام مؤسسة محمد السادس للتضامن, دار البحارة, سكتور 9 القصبة, الهاتف. 89 88 38 0537",
@@ -273,6 +2163,496 @@
    "confidenceLevel": "low",
    "notes": [
     "Planning publié à l’avance : à revérifier le jour même."
+   ]
+  },
+  {
+   "id": "khouribga-almanar",
+   "name": "Pharmacie AlManar",
+   "address": "34 Amicale Watane Arabi ElFath",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.894923291215,
+   "longitude": -6.9288779585388,
+   "coordinatesSource": "source",
+   "phone": "+212523564157",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-almanar-s237332.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "khouribga-baghdad",
+   "name": "Pharmacie Baghdad",
+   "address": "556 rue Baghdad",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.880823,
+   "longitude": -6.923396,
+   "coordinatesSource": "source",
+   "phone": "+212523491676",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-baghdad-s235479.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "khouribga-cadi-ayad",
+   "name": "Pharmacie Cadi Ayad",
+   "address": "13 rue Essahaba",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.894782,
+   "longitude": -6.890873,
+   "coordinatesSource": "source",
+   "phone": "+212701608434",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-cadi-ayad-s244361.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "khouribga-espoir-alamal",
+   "name": "Pharmacie Espoir Alamal",
+   "address": "1047 bd des Arcades AlQods I",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.889086199231,
+   "longitude": -6.930950605896,
+   "coordinatesSource": "source",
+   "phone": "+212523498882",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-espoir-alamal-s253943.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "khouribga-marhaba",
+   "name": "Pharmacie Marhaba",
+   "address": "88 lotiss. Yasmina II",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.888292669176,
+   "longitude": -6.8908335058716,
+   "coordinatesSource": "source",
+   "phone": "+212523580970",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-marhaba-s235532.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "khouribga-mouhcine-ex-bismiallah",
+   "name": "Pharmacie Mouhcine Ex Bismiallah",
+   "address": "2 rue Ibn Batouta",
+   "city": "khouribga",
+   "district": null,
+   "latitude": 32.88870555556,
+   "longitude": -6.916494444444,
+   "coordinatesSource": "source",
+   "phone": "+212523560086",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mouhcine-ex-bismiallah-s253558.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-khouribga.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:27.087Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "mohammedia-fath",
+   "name": "Pharmacie Al Fath",
+   "address": "hay hassania i, rue g n°586",
+   "city": "mohammedia",
+   "district": null,
+   "latitude": 33.6795412,
+   "longitude": -7.392854,
+   "coordinatesSource": "source",
+   "phone": "+212523280971",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-fath-s242456.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:24.076Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "mohammedia-chifa",
+   "name": "Pharmacie Chifa",
+   "address": "hay hassania ii, bloc b, n°213",
+   "city": "mohammedia",
+   "district": null,
+   "latitude": 33.6819655,
+   "longitude": -7.3983658,
+   "coordinatesSource": "source",
+   "phone": "+212523282252",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifa-s241087.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:24.076Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "mohammedia-elwahda",
+   "name": "Pharmacie Elwahda",
+   "address": "427, lotiss. al wahda, el alia",
+   "city": "mohammedia",
+   "district": null,
+   "latitude": 33.6813429,
+   "longitude": -7.3856304,
+   "coordinatesSource": "source",
+   "phone": "+212523285840",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elwahda-s154809.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-mohammedia.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:31:24.076Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "oujda-israe",
+   "name": "Pharmacie Al Israe",
+   "address": "hay Essalam 2 al Ounia",
+   "city": "oujda",
+   "district": null,
+   "latitude": 34.692181,
+   "longitude": -1.880861,
+   "coordinatesSource": "source",
+   "phone": "+212536748777",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-israe-s242367.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:35:09.134Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "oujda-asfour",
+   "name": "Pharmacie Asfour",
+   "address": "174 rue Ras Asfrou",
+   "city": "oujda",
+   "district": null,
+   "latitude": 34.67741666667,
+   "longitude": -1.908333333333,
+   "coordinatesSource": "source",
+   "phone": "+212536686613",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-asfour-s241159.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:35:09.134Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "oujda-merjane",
+   "name": "Pharmacie Merjane",
+   "address": "2 bd Ennakhil lot. Belhoucine",
+   "city": "oujda",
+   "district": null,
+   "latitude": 34.69255,
+   "longitude": -1.899,
+   "coordinatesSource": "source",
+   "phone": "+212536707191",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-merjane-s236131.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:35:09.134Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "oujda-mosquee-anajd",
+   "name": "Pharmacie Mosquée Anajd",
+   "address": "Hay Anajd II bloc A n°C 2 Sidi Yahya",
+   "city": "oujda",
+   "district": null,
+   "latitude": 34.662315,
+   "longitude": -1.875107,
+   "coordinatesSource": "source",
+   "phone": "+212550012828",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mosquee-anajd-s236461.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:35:09.134Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "oujda-ridouane",
+   "name": "Pharmacie Ridouane",
+   "address": "1 bd Mouad Ibn Jabal",
+   "city": "oujda",
+   "district": null,
+   "latitude": 34.66418333333,
+   "longitude": -1.936,
+   "coordinatesSource": "source",
+   "phone": "+212536518600",
+   "dutyDate": "2026-11-23",
+   "dutyType": "continuous",
+   "dutyLabel": "Ouvert 24h/24",
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ridouane-s238335.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-oujda.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:35:09.134Z",
+     "historyMatch": null,
+     "dutyType": "continuous",
+     "dutyLabel": "Ouvert 24h/24"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
    ]
   },
   {
@@ -585,6 +2965,251 @@
    "confidenceLevel": "low",
    "notes": [
     "Planning publié à l’avance : à revérifier le jour même."
+   ]
+  },
+  {
+   "id": "safi-bensassi",
+   "name": "Pharmacie Bensassi",
+   "address": "56 rte dar Caid rue 16",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.27472,
+   "longitude": -9.231516,
+   "coordinatesSource": "source",
+   "phone": "+212524625635",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bensassi-s252467.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-plateau",
+   "name": "Pharmacie du Plateau",
+   "address": "14 bd Mly Ismail v.n.",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.29396666667,
+   "longitude": -9.229116666667,
+   "coordinatesSource": "source",
+   "phone": "+212524627281",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-plateau-s235596.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-medina",
+   "name": "Pharmacie la Médina",
+   "address": "92 av Bir Anzarane Sidi Boudhab",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.29873333333,
+   "longitude": -9.242416666667,
+   "coordinatesSource": "source",
+   "phone": "+212524464293",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-medina-s241522.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-rayhane",
+   "name": "Pharmacie Rayhane",
+   "address": "18 rue Sakia village Taibi",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.285203738937,
+   "longitude": -9.2186935031967,
+   "coordinatesSource": "source",
+   "phone": "+212524623477",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rayhane-s241521.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-safia",
+   "name": "Pharmacie Safia",
+   "address": "bd Araar lotiss. Safia Jnane",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.32363333333,
+   "longitude": -9.229833333333,
+   "coordinatesSource": "source",
+   "phone": "+212524669695",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-safia-s235639.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-sentir",
+   "name": "Pharmacie Sentir",
+   "address": "rue des Crêtes jnane Achakouri",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.304929181879,
+   "longitude": -9.2392231309967,
+   "coordinatesSource": "source",
+   "phone": "+212524629483",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sentir-s235601.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "safi-tazi",
+   "name": "Pharmacie Tazi",
+   "address": "2 Lot Fnait Manazile Baladia Sidi Ouassel",
+   "city": "safi",
+   "district": null,
+   "latitude": 32.265396891326,
+   "longitude": -9.2493726099091,
+   "coordinatesSource": "source",
+   "phone": "+212524650221",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-tazi-s235609.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-safi.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:32:53.975Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
    ]
   },
   {
@@ -1131,6 +3756,321 @@
    "confidenceLevel": "low",
    "notes": [
     "Planning publié à l’avance : à revérifier le jour même."
+   ]
+  },
+  {
+   "id": "tetouan-amine",
+   "name": "Pharmacie Al Amine",
+   "address": "173 av Kallaline lotiss. Baissa",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 33.611657,
+   "longitude": -5.335463,
+   "coordinatesSource": "source",
+   "phone": null,
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-amine-s253524.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-boras",
+   "name": "Pharmacie Boras",
+   "address": "av. Med ElKharraz , rue 4 n°4",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.58368333333,
+   "longitude": -5.352666666667,
+   "coordinatesSource": "source",
+   "phone": "+212539971343",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-boras-s236407.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-elfeddane",
+   "name": "Pharmacie ElFeddane",
+   "address": "2, bd. Mohammed V",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.5701,
+   "longitude": -5.369516666667,
+   "coordinatesSource": "source",
+   "phone": "+212539967461",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elfeddane-s237367.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-imane",
+   "name": "Pharmacie Imane",
+   "address": "Hay kouilma route azarkaa",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.554,
+   "longitude": -5.354691,
+   "coordinatesSource": "source",
+   "phone": "+212539717106",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-imane-s236368.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-lawada",
+   "name": "Pharmacie Lawada",
+   "address": "29 av. khalid Bnou Loualid",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.57286666667,
+   "longitude": -5.3826,
+   "coordinatesSource": "source",
+   "phone": "+212539700496",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lawada-s241619.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-nakhil",
+   "name": "Pharmacie Nakhil",
+   "address": "168 av. Hassan II",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.56841666667,
+   "longitude": -5.376266666667,
+   "coordinatesSource": "source",
+   "phone": "+212539700539",
+   "dutyDate": "2026-11-23",
+   "dutyType": null,
+   "dutyLabel": null,
+   "hoursText": null,
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nakhil-s236351.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": null,
+     "dutyLabel": null
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-rkaina",
+   "name": "Pharmacie Rkaina",
+   "address": "66 av. Al Amanaa Kourat Sbâa",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.5567,
+   "longitude": -5.3834,
+   "coordinatesSource": "source",
+   "phone": "+212539992734",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rkaina-s236440.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-touebla",
+   "name": "Pharmacie Touebla",
+   "address": "10 Rue Nahr Souss Touebla",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.56488333333,
+   "longitude": -5.398433333333,
+   "coordinatesSource": "source",
+   "phone": "+212539712288",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-touebla-s242062.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
+   ]
+  },
+  {
+   "id": "tetouan-touta",
+   "name": "Pharmacie Touta",
+   "address": "106 rue Mohammedia ElMhannach",
+   "city": "tetouan",
+   "district": null,
+   "latitude": 35.56821,
+   "longitude": -5.35607,
+   "coordinatesSource": "source",
+   "phone": "+212539991479",
+   "dutyDate": "2026-11-23",
+   "dutyType": "day",
+   "dutyLabel": "Garde de jour",
+   "hoursText": "9h-23h",
+   "dutyStartDate": null,
+   "dutyEndDate": null,
+   "sources": [
+    {
+     "sourceId": "annuaire-gratuit",
+     "sourceName": "annuaire-gratuit.ma",
+     "sourceUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-touta-s236439.html",
+     "listingUrl": "https://www.annuaire-gratuit.ma/pharmacie-garde-tetouan.html",
+     "sourcePublishedAt": "2026-11-23",
+     "lastCheckedAt": "2026-11-23T00:34:39.117Z",
+     "historyMatch": null,
+     "dutyType": "day",
+     "dutyLabel": "Garde de jour"
+    }
+   ],
+   "verificationStatus": "confirmed",
+   "confidenceLevel": "low",
+   "notes": [
+    "Garde publiée dans la liste du jour, absente de l’historique de la fiche."
    ]
   }
  ]
